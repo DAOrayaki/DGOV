@@ -4,51 +4,61 @@ import Button from '@material-ui/core/Button'
 import WalletConnectProvider from '@walletconnect/web3-provider'
 import { getCurrentNetworkName } from 'src/utils/web3'
 import styles from '../style.module.css'
+import Fortmatic from "fortmatic"
+import Web3 from 'web3';
+import detectEthereumProvider from '@metamask/detect-provider'
+import {
+  BscConnector,
+  UserRejectedRequestError
+} from '@binance-chain/bsc-connector'
+import {
+  ConnectionRejectedError,
+  useWallet,
+  UseWalletProvider
+} from 'use-wallet'
+
 
 type Props = {
-  account: string
+  account1: string
   setProviderData: Function
 }
 
 let web3ConnectListenersAdded = false
 
-const web3Connect = new Web3Connect.Core({
-  network: getCurrentNetworkName() || 'rinkeby',
-  providerOptions: {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        infuraId: process.env.REACT_APP_INFURA_ID,
-      },
-    },
-  },
-})
 
-const Web3ConnectButton: React.FC<Props> = ({ account, setProviderData }) => {
+const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
   const connectProvider = (provider: any) => setProviderData(provider)
   const disconnectProvider = () => setProviderData()
+  const { account, connect, reset, status } = useWallet()
 
   useEffect(() => {
     if (!web3ConnectListenersAdded) {
       web3ConnectListenersAdded = true
-
-      web3Connect.on('connect', (provider: any) => {
-        connectProvider(provider)
-      })
-
-      web3Connect.on('disconnect', () => {
-        disconnectProvider()
-      })
-
-      web3Connect.on('close', () => {})
     }
   })
 
+  const connectMetamask = async () => {
+    //@ts-ignore
+    connect('bsc')
+    // const provider = await detectEthereumProvider()
+    // const provider = <window className="bin</window>
+    //@ts-ignore
+    const provider = window.BinanceChain
+
+    if (provider) {
+      // if (provider !== window.ethereum) {
+        // console.log('Do you have multiple wallets installed?')
+      // }
+      connectProvider(provider)
+    }
+
+  }
+
   const getTypeOfAccount = () => {
     let type: string
-    if (account === process.env.REACT_APP_OPERATOR_ADDRESS) {
+    if (account1 === process.env.REACT_APP_OPERATOR_ADDRESS) {
       type = 'Operator'
-    } else if (account === process.env.REACT_APP_ORACLE_ADDRESS) {
+    } else if (account1 === process.env.REACT_APP_ORACLE_ADDRESS) {
       type = 'Oracle'
     } else {
       type = 'Trader'
@@ -56,20 +66,54 @@ const Web3ConnectButton: React.FC<Props> = ({ account, setProviderData }) => {
     return type
   }
 
-  return account ? (
-    <div className={styles.header}>
-      <div className={styles.bold}>{getTypeOfAccount()}:</div>
-      <div>{account}</div>
-      <div>
-        <Button variant="contained" onClick={disconnectProvider}>
-          Disconnect
-        </Button>
+  return account1 ? (
+    // <UseWalletProvider
+    //   connectors={{
+    //     //@ts-ignore
+    //     bsc: {
+    //       web3ReactConnector() {
+    //         return new BscConnector({ supportedChainIds: [56, 97] })
+    //       },
+    //       //@ts-ignore
+    //       handleActivationError(err: Error) {
+    //         if (err instanceof UserRejectedRequestError) {
+    //           return new ConnectionRejectedError()
+    //         }
+    //       },
+    //     },
+    //   }}
+    // >
+      <div className={styles.header}>
+        <div className={styles.bold}>{getTypeOfAccount()}:</div>
+        <div>{account1}</div>
+        <div>
+          <Button variant="contained" onClick={() => reset()}>
+            Disconnect
+          </Button>
+        </div>
       </div>
-    </div>
+    // </UseWalletProvider>
   ) : (
-    <Button variant="contained" onClick={() => web3Connect.toggleModal()}>
-      Connect
-    </Button>
+    // <UseWalletProvider
+    //   connectors={{
+    //     //@ts-ignore
+    //     bsc: {
+    //       web3ReactConnector() {
+    //         return new BscConnector({ supportedChainIds: [56, 97] })
+    //       },
+    //       //@ts-ignore
+    //       handleActivationError(err) {
+    //         if (err instanceof UserRejectedRequestError) {
+    //           return new ConnectionRejectedError()
+    //         }
+    //       },
+    //     },
+    //   }}
+    // >
+      <Button variant="contained" onClick={connectMetamask}>
+        Connect
+      </Button>
+    // </UseWalletProvider>
   )
 }
 

@@ -114,9 +114,10 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
 
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
 
-    const collateralBalance = await collateral.contract.balanceOf(account)
+    // const collateralBalance = await collateral.contract.balanceOf(account)
+    const collateralBalance = await collateral.contract.allowance(account, marketInfo.lmsrAddress)
     if (cost.gt(collateralBalance)) {
-      await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
+      // await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
       await collateral.contract.approve(marketInfo.lmsrAddress, formatedAmount.toString(), {
         from: account,
       })
@@ -176,10 +177,13 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     await getMarketInfo()
   }
 
-  const resolve = async (resolutionOutcomeIndex: number) => {
+  const resolve = async (resolutionOutcomeIndex: Array<Boolean>) => {
+    // const payouts = Array.from(
+    //   { length: marketInfo.outcomes.length },
+    //   (value: any, index: number) => (index === resolutionOutcomeIndex ? 1 : 0),
+    // )
     const payouts = Array.from(
-      { length: marketInfo.outcomes.length },
-      (value: any, index: number) => (index === resolutionOutcomeIndex ? 1 : 0),
+      resolutionOutcomeIndex, (value: any, index: number) =>(value === true? 1: 0),
     )
 
     const tx = await conditionalTokensRepo.reportPayouts(marketInfo.questionId, payouts, account)

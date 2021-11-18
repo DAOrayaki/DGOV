@@ -1,6 +1,8 @@
 import ConditionalTokens from '../abi/ConditionalTokens.json'
 import LMSRMarketMaker from '../abi/LMSRMarketMaker.json'
 import WETH9 from '../abi/WETH9.json'
+import YAKI from '../abi/YAKI.json'
+
 const TruffleContract = require('@truffle/contract')
 
 let contracts: Object | undefined
@@ -34,7 +36,8 @@ const loadConditionalTokensContract = async (web3: any) => {
 const loadWETH9Contract = async (web3: any) => {
   let weth9Contract
   if (!contracts) {
-    weth9Contract = TruffleContract(WETH9)
+    // weth9Contract = TruffleContract(WETH9)
+    weth9Contract = TruffleContract(YAKI)
     weth9Contract.setProvider(web3.currentProvider)
   }
   return weth9Contract
@@ -61,9 +64,9 @@ const loadContracts = async (web3: any, lmsrAddress: string, account: string) =>
       const collateralToken = {
         address: await lmsrMarketMaker.collateralToken(),
         contract: await WETH9Contract.at(await lmsrMarketMaker.collateralToken()),
-        name: 'Wrapped Ether',
+        name: 'YAKI TOKEN',
         decimals: 18,
-        symbol: 'WETH',
+        symbol: 'YAKI',
       }
 
       contracts = { lmsrMarketMaker, conditionalTokens, collateralToken }

@@ -15,15 +15,21 @@ module.exports = function(deployer) {
       )
     );
 
-    const WETH9 = artifacts.require("WETH9");
-    const collateralToken = await WETH9.deployed();
+    // const WETH9 = artifacts.require("WETH9");
+    const YAKI = artifacts.require("YAKI");
+    // const collateralToken = await WETH9.deployed();
+    const collateralToken = await YAKI.deployed();
+
 
     const lmsrMarketMakerFactory = await artifacts
       .require("LMSRMarketMakerFactory")
       .deployed();
 
+    lmsrMarketMakerFactory.autoGas = true;
+    lmsrMarketMakerFactory.gasMultiplier = 0.1;
+
     const { ammFunding } = deployConfig;
-    await collateralToken.deposit({ value: ammFunding });
+    // await collateralToken.deposit({ value: ammFunding });
     await collateralToken.approve(lmsrMarketMakerFactory.address, ammFunding);
 
     // Get conditional tokens

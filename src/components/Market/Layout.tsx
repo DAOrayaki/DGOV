@@ -1,6 +1,7 @@
 import React from 'react'
-import { Paper, Button, TextField, RadioGroup, FormControlLabel, Radio } from '@material-ui/core'
+import { Paper, Button, TextField, RadioGroup, FormControlLabel, Radio, Checkbox } from '@material-ui/core'
 import styles from '../style.module.css'
+import  {useState} from "react"
 
 type TradingFormProps = {
   isMarketClosed: boolean
@@ -131,23 +132,64 @@ const OperatorActions: React.FC<OperatorActionsProps> = ({ isMarketClosed, close
   </>
 )
 
-const OracleActions: React.FC<OracleActionsProps> = ({ isMarketClosed, marketInfo, resolve }) => (
+// const OracleActions: React.FC<OracleActionsProps> = ({ isMarketClosed, marketInfo, resolve }) => (
+//   <>
+//     <h3>Oracle actions:</h3>
+//     <div className={styles.actions}>
+//       {marketInfo.outcomes.map((outcome: any, index: number) => (
+//         <Button
+//           key={outcome.short}
+//           variant="contained"
+//           onClick={() => resolve(index)}
+//           disabled={!isMarketClosed}
+//         >
+//           Resolve {outcome.title}
+//         </Button>
+//       ))}
+//     </div>
+//   </>
+// )
+const OracleActions: React.FC<OracleActionsProps> = ({ isMarketClosed, marketInfo, resolve }) => {
+
+  const [checkedState, setCheckedState] = useState(
+    new Array(marketInfo.outcomes.length).fill(false)
+  );
+
+  const handleOnChange = (position:any) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  };
+
+  return (
   <>
     <h3>Oracle actions:</h3>
-    <div className={styles.actions}>
+    <div>
       {marketInfo.outcomes.map((outcome: any, index: number) => (
-        <Button
-          key={outcome.short}
-          variant="contained"
-          onClick={() => resolve(index)}
-          disabled={!isMarketClosed}
-        >
-          Resolve {outcome.title}
-        </Button>
+        <li key={index}>
+        <input
+        type="checkbox"
+        id={`custom-checkbox-${index}`}
+        name={outcome.short}
+        value={outcome.title}
+        checked={checkedState[index]}
+        onChange={() => handleOnChange(index)}
+        />
+        <label htmlFor={`custom-checkbox-${index}`}> {outcome.title} </label>
+        </li>
       ))}
+    <Button 
+          onClick={() => resolve(checkedState)}
+          variant="contained"
+          disabled={!isMarketClosed}
+    >Resolve</Button>
+
     </div>
   </>
-)
+  )
+}
+
 
 const Layout: React.FC<LayoutProps> = ({
   account,

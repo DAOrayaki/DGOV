@@ -13,9 +13,15 @@ const App: React.FC = () => {
     let newWeb3, newAccount
     if (provider) {
       newWeb3 = new Web3(provider)
+      // newWeb3 = new Web3(new Web3.providers.HttpProvider(process.env.REACT_APP_NETWORK!));
+      // newWeb3 = new Web3(process.env.REACT_APP_NETWORK!)
       newAccount = await getWeb3Account(newWeb3)
     } else {
-      newWeb3 = null
+      // newWeb3 = null
+      // newWeb3 = new Web3(new Web3.providers.HttpProvider(process.env.REACT_APP_NETWORK!));
+      // newWeb3 = new Web3(process.env.REACT_APP_NETWORK!)
+      newWeb3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545');
+      // newWeb3 = new Web3()
       newAccount = null
     }
     setWeb3(newWeb3)
@@ -27,7 +33,7 @@ const App: React.FC = () => {
       <h1>Conditional Tokens Tutorial: Categorical Market Example</h1>
       {process.env.REACT_APP_ORACLE_ADDRESS && process.env.REACT_APP_OPERATOR_ADDRESS ? (
         <>
-          <Web3ConnectButton account={account} setProviderData={setProviderData} />
+          <Web3ConnectButton account1={account} setProviderData={setProviderData} />
           {web3 && account && <Market web3={web3} account={account} />}
         </>
       ) : (
