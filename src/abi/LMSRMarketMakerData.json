@@ -34,9 +34,9 @@
       "type": "event"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMakerFactory.sol\":\"LMSRMarketMakerData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x11a610a3fa07ac8a59a09a76fdb944f058fdb06d3414fe49995595e68cd17d41\",\"urls\":[\"bzz-raw://2a5c18b43bb4ebfaf9faa71b6b6dac1daf00f596625da94778594a70bc43b5c4\",\"dweb:/ipfs/QmWUFR7eKVsMS61UCK1yY2bQQhcqEQHAAmJ2FJ3GozWV8k\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd8e6583f45a98380ff10a5656a7ae7ba6a275e0d051043e5842f0d541abd7caa\",\"urls\":[\"bzz-raw://f2d5b356fa0ed73fa67eb5c5bb874aa382833bddd5fff30463868610b262c515\",\"dweb:/ipfs/QmYWqCK6moph6oeBEUc1nDaGz4GRdGXmykwKD5rykVbhcU\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x4971631d7de74464fed3e0abac04553e917be5e8cd10b3f825e2e7c39ccc2734\",\"urls\":[\"bzz-raw://a48ecdf843110a28c441681fd7172028bf72a03149c7016cc6472fde08f8a521\",\"dweb:/ipfs/QmRzsL1o6iVEFmqBYCo3XpM4kpvbK7iSJWssXHQ3gHb5uq\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMaker.sol\":{\"keccak256\":\"0x8410f1b98f546b1e6edc4b402bfc20a2956018415c6917421d9eef472633ac65\",\"urls\":[\"bzz-raw://29c8b4dbf6329fc89f4583fab8ba062f216b9579dc980c9bc9a50232e4382c58\",\"dweb:/ipfs/QmPzfHt9ywEMjngVREdtZ2ywG5isfivPfkH9pzGXebv3cv\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMakerFactory.sol\":{\"keccak256\":\"0xeb3422a373f1395835a2fb2fecf25eb9b8c963f2b1c6a068e1cbb8d356375858\",\"urls\":[\"bzz-raw://85ee572f9a332bcc077f239e6431ccbf82eae92f2e1da60c1030e7be15d9313f\",\"dweb:/ipfs/QmNQc1DTsvt2h3idHzPjvqQDxenuDAWhXnLA5NLDzyG641\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa4addb4855f472eb1a4719298b5db759e475dd42bcd8de73d04c1ffc3b01bf40\",\"urls\":[\"bzz-raw://ab57c56ae8acce44a196cde3df144e12e8210d883b8c1b660f9a4e9e67fac00f\",\"dweb:/ipfs/QmQmjcWGQdmoogx9DBm8wtXxejXjDyuhmDFeihiCmzjd8N\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/Whitelist.sol\":{\"keccak256\":\"0xe608e935510e8190d6d9fd7a0a6ecc02776d0dd106cbcbe3bac5ee0309abfae5\",\"urls\":[\"bzz-raw://06eba859e4fd4f7f35ce5d652abd29858e3052872c2802ce80fc3df752387134\",\"dweb:/ipfs/QmXqMsiTBAgfgZvfL5rP1QjFhfw56JBdyVmJJRmB2WoFJ4\"]},\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]},\"@gnosis.pm/util-contracts/contracts/Fixed192x64Math.sol\":{\"keccak256\":\"0xad15b641bf8f5862034749b679ab91cb2c330c2ca997da4455863dc169ab82d4\",\"urls\":[\"bzz-raw://8eb410f1015ba6faf23c17a5c94d5dce9838392639d01c20bc33d43669befb34\",\"dweb:/ipfs/QmScvV8NpQNBNApJXyLFcLAG4hwWExSkwPhWJrJxLqk9x5\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158201d8a73aff4e84f1831b97d5801d16bcd884b0e0c9ed1bdfdd354ae9f0c1b216c64736f6c63430005110032",
-  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158201d8a73aff4e84f1831b97d5801d16bcd884b0e0c9ed1bdfdd354ae9f0c1b216c64736f6c63430005110032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMakerFactory.sol\":\"LMSRMarketMakerData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x11a610a3fa07ac8a59a09a76fdb944f058fdb06d3414fe49995595e68cd17d41\",\"urls\":[\"bzz-raw://2a5c18b43bb4ebfaf9faa71b6b6dac1daf00f596625da94778594a70bc43b5c4\",\"dweb:/ipfs/QmWUFR7eKVsMS61UCK1yY2bQQhcqEQHAAmJ2FJ3GozWV8k\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd8e6583f45a98380ff10a5656a7ae7ba6a275e0d051043e5842f0d541abd7caa\",\"urls\":[\"bzz-raw://f2d5b356fa0ed73fa67eb5c5bb874aa382833bddd5fff30463868610b262c515\",\"dweb:/ipfs/QmYWqCK6moph6oeBEUc1nDaGz4GRdGXmykwKD5rykVbhcU\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x4971631d7de74464fed3e0abac04553e917be5e8cd10b3f825e2e7c39ccc2734\",\"urls\":[\"bzz-raw://a48ecdf843110a28c441681fd7172028bf72a03149c7016cc6472fde08f8a521\",\"dweb:/ipfs/QmRzsL1o6iVEFmqBYCo3XpM4kpvbK7iSJWssXHQ3gHb5uq\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMaker.sol\":{\"keccak256\":\"0x8410f1b98f546b1e6edc4b402bfc20a2956018415c6917421d9eef472633ac65\",\"urls\":[\"bzz-raw://29c8b4dbf6329fc89f4583fab8ba062f216b9579dc980c9bc9a50232e4382c58\",\"dweb:/ipfs/QmPzfHt9ywEMjngVREdtZ2ywG5isfivPfkH9pzGXebv3cv\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/LMSRMarketMakerFactory.sol\":{\"keccak256\":\"0xeb3422a373f1395835a2fb2fecf25eb9b8c963f2b1c6a068e1cbb8d356375858\",\"urls\":[\"bzz-raw://85ee572f9a332bcc077f239e6431ccbf82eae92f2e1da60c1030e7be15d9313f\",\"dweb:/ipfs/QmNQc1DTsvt2h3idHzPjvqQDxenuDAWhXnLA5NLDzyG641\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa4addb4855f472eb1a4719298b5db759e475dd42bcd8de73d04c1ffc3b01bf40\",\"urls\":[\"bzz-raw://ab57c56ae8acce44a196cde3df144e12e8210d883b8c1b660f9a4e9e67fac00f\",\"dweb:/ipfs/QmQmjcWGQdmoogx9DBm8wtXxejXjDyuhmDFeihiCmzjd8N\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/Whitelist.sol\":{\"keccak256\":\"0xe608e935510e8190d6d9fd7a0a6ecc02776d0dd106cbcbe3bac5ee0309abfae5\",\"urls\":[\"bzz-raw://06eba859e4fd4f7f35ce5d652abd29858e3052872c2802ce80fc3df752387134\",\"dweb:/ipfs/QmXqMsiTBAgfgZvfL5rP1QjFhfw56JBdyVmJJRmB2WoFJ4\"]},\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]},\"@gnosis.pm/util-contracts/contracts/Fixed192x64Math.sol\":{\"keccak256\":\"0xad15b641bf8f5862034749b679ab91cb2c330c2ca997da4455863dc169ab82d4\",\"urls\":[\"bzz-raw://8eb410f1015ba6faf23c17a5c94d5dce9838392639d01c20bc33d43669befb34\",\"dweb:/ipfs/QmScvV8NpQNBNApJXyLFcLAG4hwWExSkwPhWJrJxLqk9x5\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820f5402266063fdd96e63436821774c5e95f45de45d326742936b5b9556887eaa764736f6c63430005110032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820f5402266063fdd96e63436821774c5e95f45de45d326742936b5b9556887eaa764736f6c63430005110032",
   "sourceMap": "641:814:7:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;641:814:7;;;;;;;",
   "deployedSourceMap": "641:814:7:-;;;;;",
   "source": "pragma solidity ^0.5.1;\n\nimport { IERC20 } from \"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\";\nimport { ConditionalTokens } from \"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\";\nimport { CTHelpers } from \"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\";\nimport { ConstructedCloneFactory } from \"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\";\nimport { LMSRMarketMaker } from \"./LMSRMarketMaker.sol\";\nimport { Whitelist } from \"./Whitelist.sol\";\nimport { ERC1155TokenReceiver } from \"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\";\n\ncontract LMSRMarketMakerData {\n    address internal _owner;\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n\n\n    bytes4 internal constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;\n    mapping(bytes4 => bool) internal _supportedInterfaces;\n\n\n    uint64 constant FEE_RANGE = 10**18;\n    event AMMCreated(uint initialFunding);\n    ConditionalTokens internal pmSystem;\n    IERC20 internal collateralToken;\n    bytes32[] internal conditionIds;\n    uint internal atomicOutcomeSlotCount;\n    uint64 internal fee;\n    uint internal funding;\n    Stage internal stage;\n    Whitelist internal whitelist;\n\n    uint[] internal outcomeSlotCounts;\n    bytes32[][] internal collectionIds;\n    uint[] internal positionIds;\n\n    enum Stage {\n        Running,\n        Paused,\n        Closed\n    }\n}\n\ncontract LMSRMarketMakerFactory is ConstructedCloneFactory, LMSRMarketMakerData {\n    event LMSRMarketMakerCreation(address indexed creator, LMSRMarketMaker lmsrMarketMaker, ConditionalTokens pmSystem, IERC20 collateralToken, bytes32[] conditionIds, uint64 fee, uint funding);\n\n    LMSRMarketMaker public implementationMaster;\n\n    constructor() public {\n        implementationMaster = new LMSRMarketMaker();\n    }\n\n    function cloneConstructor(bytes calldata consData) external {\n        (\n            ConditionalTokens _pmSystem,\n            IERC20 _collateralToken,\n            bytes32[] memory _conditionIds,\n            uint64 _fee,\n            Whitelist _whitelist\n        ) = abi.decode(consData, (ConditionalTokens, IERC20, bytes32[], uint64, Whitelist));\n\n        _owner = msg.sender;\n        emit OwnershipTransferred(address(0), _owner);\n\n        _supportedInterfaces[_INTERFACE_ID_ERC165] = true;\n        _supportedInterfaces[\n            ERC1155TokenReceiver(0).onERC1155Received.selector ^\n            ERC1155TokenReceiver(0).onERC1155BatchReceived.selector\n        ] = true;\n\n        // Validate inputs\n        require(address(_pmSystem) != address(0) && _fee < FEE_RANGE);\n        pmSystem = _pmSystem;\n        collateralToken = _collateralToken;\n        conditionIds = _conditionIds;\n        fee = _fee;\n        whitelist = _whitelist;\n\n        atomicOutcomeSlotCount = 1;\n        outcomeSlotCounts = new uint[](conditionIds.length);\n        for (uint i = 0; i < conditionIds.length; i++) {\n            uint outcomeSlotCount = pmSystem.getOutcomeSlotCount(conditionIds[i]);\n            atomicOutcomeSlotCount *= outcomeSlotCount;\n            outcomeSlotCounts[i] = outcomeSlotCount;\n        }\n        require(atomicOutcomeSlotCount > 1, \"conditions must be valid\");\n\n        collectionIds = new bytes32[][](conditionIds.length);\n        _recordCollectionIDsForAllConditions(conditionIds.length, bytes32(0));\n\n        stage = Stage.Paused;\n        emit AMMCreated(funding);\n    }\n\n    function _recordCollectionIDsForAllConditions(uint conditionsLeft, bytes32 parentCollectionId) private {\n        if(conditionsLeft == 0) {\n            positionIds.push(CTHelpers.getPositionId(collateralToken, parentCollectionId));\n            return;\n        }\n\n        conditionsLeft--;\n\n        uint outcomeSlotCount = outcomeSlotCounts[conditionsLeft];\n\n        collectionIds[conditionsLeft].push(parentCollectionId);\n        for(uint i = 0; i < outcomeSlotCount; i++) {\n            _recordCollectionIDsForAllConditions(\n                conditionsLeft,\n                CTHelpers.getCollectionId(\n                    parentCollectionId,\n                    conditionIds[conditionsLeft],\n                    1 << i\n                )\n            );\n        }\n    }\n\n    function createLMSRMarketMaker(ConditionalTokens pmSystem, IERC20 collateralToken, bytes32[] calldata conditionIds, uint64 fee, Whitelist whitelist, uint funding)\n        external\n        returns (LMSRMarketMaker lmsrMarketMaker)\n    {\n        lmsrMarketMaker = LMSRMarketMaker(createClone(address(implementationMaster), abi.encode(pmSystem, collateralToken, conditionIds, fee, whitelist)));\n        collateralToken.transferFrom(msg.sender, address(this), funding);\n        collateralToken.approve(address(lmsrMarketMaker), funding);\n        lmsrMarketMaker.changeFunding(int(funding));\n        lmsrMarketMaker.resume();\n        lmsrMarketMaker.transferOwnership(msg.sender);\n        emit LMSRMarketMakerCreation(msg.sender, lmsrMarketMaker, pmSystem, collateralToken, conditionIds, fee, funding);\n    }\n}\n",
@@ -1585,7 +1585,7 @@
                         "name": "abi",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6866,
+                        "referencedDeclaration": 6864,
                         "src": "2141:3:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_abi",
@@ -1654,7 +1654,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6879,
+                        "referencedDeclaration": 6877,
                         "src": "2240:3:7",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -2339,10 +2339,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "2584:7:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3263,10 +3263,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6883,
+                      "referencedDeclaration": 6881,
                       "src": "3176:7:7",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4772,7 +4772,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6866,
+                                  "referencedDeclaration": 6864,
                                   "src": "4550:3:7",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -4899,7 +4899,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6879,
+                          "referencedDeclaration": 6877,
                           "src": "4658:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4929,7 +4929,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6931,
+                            "referencedDeclaration": 6929,
                             "src": "4678:4:7",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_LMSRMarketMakerFactory_$3016",
@@ -5341,7 +5341,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6879,
+                          "referencedDeclaration": 6877,
                           "src": "4892:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -5427,7 +5427,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6879,
+                          "referencedDeclaration": 6877,
                           "src": "4942:3:7",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -7411,7 +7411,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6866,
+                                  "referencedDeclaration": 6864,
                                   "type": "abi",
                                   "value": "abi"
                                 },
@@ -7595,7 +7595,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6879,
+                                  "referencedDeclaration": 6877,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -8116,10 +8116,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -9241,10 +9241,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6883,
+                              "referencedDeclaration": 6881,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -11125,7 +11125,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6866,
+                                              "referencedDeclaration": 6864,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -11312,7 +11312,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6879,
+                                  "referencedDeclaration": 6877,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11365,7 +11365,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6931,
+                                  "referencedDeclaration": 6929,
                                   "type": "contract LMSRMarketMakerFactory",
                                   "value": "this"
                                 },
@@ -11786,7 +11786,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6879,
+                                  "referencedDeclaration": 6877,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11887,7 +11887,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6879,
+                                  "referencedDeclaration": 6877,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -12020,7 +12020,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T14:26:43.574Z",
+  "updatedAt": "2021-11-29T01:12:07.431Z",
   "devdoc": {
     "methods": {}
   },

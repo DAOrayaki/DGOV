@@ -1,9 +1,9 @@
 {
   "contractName": "CTHelpers",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":\"CTHelpers\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]}},\"version\":1}",
-  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158200a7a61814dd4ad20602c542d9f0938d260564159bfd9a5e6e55a1ff0c783c88c64736f6c63430005110032",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158200a7a61814dd4ad20602c542d9f0938d260564159bfd9a5e6e55a1ff0c783c88c64736f6c63430005110032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":\"CTHelpers\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]}},\"version\":1}",
+  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a72315820fdbd08cdb7eccea84ccb9d4acef2388e8bf2857e1bae3e896e054b677fc1da9c64736f6c63430005110032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a72315820fdbd08cdb7eccea84ccb9d4acef2388e8bf2857e1bae3e896e054b677fc1da9c64736f6c63430005110032",
   "sourceMap": "107:18313:0:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "107:18313:0:-;;;;;;;;",
   "source": "pragma solidity ^0.5.1;\n\nimport { IERC20 } from \"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\";\n\nlibrary CTHelpers {\n    /// @dev Constructs a condition ID from an oracle, a question ID, and the outcome slot count for the question.\n    /// @param oracle The account assigned to report the result for the prepared condition.\n    /// @param questionId An identifier for the question to be answered by the oracle.\n    /// @param outcomeSlotCount The number of outcome slots which should be used for this condition. Must not exceed 256.\n    function getConditionId(address oracle, bytes32 questionId, uint outcomeSlotCount) internal pure returns (bytes32) {\n        return keccak256(abi.encodePacked(oracle, questionId, outcomeSlotCount));\n    }\n\n    uint constant P = 21888242871839275222246405745257275088696311157297823662689037894645226208583;\n    uint constant B = 3;\n\n    function sqrt(uint x) private pure returns (uint y) {\n        uint p = P;\n        // solium-disable-next-line security/no-inline-assembly\n        assembly {\n            // add chain generated via https://crypto.stackexchange.com/q/27179/71252\n            // and transformed to the following program:\n\n            // x=1; y=x+x; z=y+y; z=z+z; y=y+z; x=x+y; y=y+x; z=y+y; t=z+z; t=z+t; t=t+t;\n            // t=t+t; z=z+t; x=x+z; z=x+x; z=z+z; y=y+z; z=y+y; z=z+z; z=z+z; z=y+z; x=x+z;\n            // z=x+x; z=z+z; z=z+z; z=x+z; y=y+z; x=x+y; z=x+x; z=z+z; y=y+z; z=y+y; t=z+z;\n            // t=t+t; t=t+t; z=z+t; x=x+z; y=y+x; z=y+y; z=z+z; z=z+z; x=x+z; z=x+x; z=z+z;\n            // z=x+z; z=z+z; z=z+z; z=x+z; y=y+z; z=y+y; t=z+z; t=t+t; t=z+t; t=y+t; t=t+t;\n            // t=t+t; t=t+t; t=t+t; z=z+t; x=x+z; z=x+x; z=x+z; y=y+z; z=y+y; z=y+z; z=z+z;\n            // t=z+z; t=z+t; w=t+t; w=w+w; w=w+w; w=w+w; w=w+w; t=t+w; z=z+t; x=x+z; y=y+x;\n            // z=y+y; x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; z=x+x; z=x+z; z=z+z; y=y+z; z=y+y;\n            // z=z+z; x=x+z; y=y+x; z=y+y; z=y+z; x=x+z; y=y+x; x=x+y; y=y+x; z=y+y; z=z+z;\n            // z=y+z; x=x+z; z=x+x; z=x+z; y=y+z; x=x+y; y=y+x; x=x+y; y=y+x; z=y+y; z=y+z;\n            // z=z+z; x=x+z; y=y+x; z=y+y; z=y+z; z=z+z; x=x+z; z=x+x; t=z+z; t=t+t; t=z+t;\n            // t=x+t; t=t+t; t=t+t; t=t+t; t=t+t; z=z+t; y=y+z; x=x+y; y=y+x; x=x+y; z=x+x;\n            // z=x+z; z=z+z; z=z+z; z=z+z; z=x+z; y=y+z; z=y+y; z=y+z; z=z+z; x=x+z; z=x+x;\n            // z=x+z; y=y+z; x=x+y; z=x+x; z=z+z; y=y+z; x=x+y; z=x+x; y=y+z; x=x+y; y=y+x;\n            // z=y+y; z=y+z; x=x+z; y=y+x; z=y+y; z=y+z; z=z+z; z=z+z; x=x+z; z=x+x; z=z+z;\n            // z=z+z; z=x+z; y=y+z; x=x+y; z=x+x; t=x+z; t=t+t; t=t+t; z=z+t; y=y+z; z=y+y;\n            // x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; y=y+x; z=y+y; t=y+z; z=y+t; z=z+z; z=z+z;\n            // z=t+z; x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; z=x+x; z=x+z; y=y+z; x=x+y; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\n            // x=x+x; x=x+x; x=x+x; x=x+x; res=y+x\n            // res == (P + 1) // 4\n\n            y := mulmod(x, x, p)\n            {\n                let z := mulmod(y, y, p)\n                z := mulmod(z, z, p)\n                y := mulmod(y, z, p)\n                x := mulmod(x, y, p)\n                y := mulmod(y, x, p)\n                z := mulmod(y, y, p)\n                {\n                    let t := mulmod(z, z, p)\n                    t := mulmod(z, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    z := mulmod(z, t, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(y, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    t := mulmod(z, z, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    z := mulmod(z, t, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(x, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    t := mulmod(z, z, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(z, t, p)\n                    t := mulmod(y, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    z := mulmod(z, t, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    z := mulmod(z, z, p)\n                    t := mulmod(z, z, p)\n                    t := mulmod(z, t, p)\n                    {\n                        let w := mulmod(t, t, p)\n                        w := mulmod(w, w, p)\n                        w := mulmod(w, w, p)\n                        w := mulmod(w, w, p)\n                        w := mulmod(w, w, p)\n                        t := mulmod(t, w, p)\n                    }\n                    z := mulmod(z, t, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(x, z, p)\n                    z := mulmod(z, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(y, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    t := mulmod(z, z, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(z, t, p)\n                    t := mulmod(x, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    z := mulmod(z, t, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(x, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    z := mulmod(y, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    x := mulmod(x, z, p)\n                    z := mulmod(x, x, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(x, z, p)\n                    y := mulmod(y, z, p)\n                    x := mulmod(x, y, p)\n                    z := mulmod(x, x, p)\n                    t := mulmod(x, z, p)\n                    t := mulmod(t, t, p)\n                    t := mulmod(t, t, p)\n                    z := mulmod(z, t, p)\n                    y := mulmod(y, z, p)\n                    z := mulmod(y, y, p)\n                    x := mulmod(x, z, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    x := mulmod(x, y, p)\n                    y := mulmod(y, x, p)\n                    z := mulmod(y, y, p)\n                    t := mulmod(y, z, p)\n                    z := mulmod(y, t, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(z, z, p)\n                    z := mulmod(t, z, p)\n                }\n                x := mulmod(x, z, p)\n                y := mulmod(y, x, p)\n                x := mulmod(x, y, p)\n                y := mulmod(y, x, p)\n                x := mulmod(x, y, p)\n                z := mulmod(x, x, p)\n                z := mulmod(x, z, p)\n                y := mulmod(y, z, p)\n            }\n            x := mulmod(x, y, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            x := mulmod(x, x, p)\n            y := mulmod(y, x, p)\n        }\n    }\n\n    /// @dev Constructs an outcome collection ID from a parent collection and an outcome collection.\n    /// @param parentCollectionId Collection ID of the parent outcome collection, or bytes32(0) if there's no parent.\n    /// @param conditionId Condition ID of the outcome collection to combine with the parent outcome collection.\n    /// @param indexSet Index set of the outcome collection to combine with the parent outcome collection.\n    function getCollectionId(bytes32 parentCollectionId, bytes32 conditionId, uint indexSet) internal view returns (bytes32) {\n        uint x1 = uint(keccak256(abi.encodePacked(conditionId, indexSet)));\n        bool odd = x1 >> 255 != 0;\n        uint y1;\n        uint yy;\n        do {\n            x1 = addmod(x1, 1, P);\n            yy = addmod(mulmod(x1, mulmod(x1, x1, P), P), B, P);\n            y1 = sqrt(yy);\n        } while(mulmod(y1, y1, P) != yy);\n        if(odd && y1 % 2 == 0 || !odd && y1 % 2 == 1)\n            y1 = P - y1;\n\n        uint x2 = uint(parentCollectionId);\n        if(x2 != 0) {\n            odd = x2 >> 254 != 0;\n            x2 = (x2 << 2) >> 2;\n            yy = addmod(mulmod(x2, mulmod(x2, x2, P), P), B, P);\n            uint y2 = sqrt(yy);\n            if(odd && y2 % 2 == 0 || !odd && y2 % 2 == 1)\n                y2 = P - y2;\n            require(mulmod(y2, y2, P) == yy, \"invalid parent collection ID\");\n\n            (bool success, bytes memory ret) = address(6).staticcall(abi.encode(x1, y1, x2, y2));\n            require(success, \"ecadd failed\");\n            (x1, y1) = abi.decode(ret, (uint, uint));\n        }\n\n        if(y1 % 2 == 1)\n            x1 ^= 1 << 254;\n\n        return bytes32(x1);\n    }\n\n    /// @dev Constructs a position ID from a collateral token and an outcome collection. These IDs are used as the ERC-1155 ID for this contract.\n    /// @param collateralToken Collateral token which backs the position.\n    /// @param collectionId ID of the outcome collection associated with this position.\n    function getPositionId(IERC20 collateralToken, bytes32 collectionId) internal pure returns (uint) {\n        return uint(keccak256(abi.encodePacked(collateralToken, collectionId)));\n    }\n}",
@@ -132,7 +132,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6866,
+                            "referencedDeclaration": 6864,
                             "src": "689:3:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -179,7 +179,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6873,
+                      "referencedDeclaration": 6871,
                       "src": "679:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -483,15 +483,6 @@
                 {
                   "externalReferences": [
                     {
-                      "y": {
-                        "declaration": 35,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "4581:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
                       "x": {
                         "declaration": 32,
                         "isOffset": false,
@@ -645,6 +636,15 @@
                       }
                     },
                     {
+                      "y": {
+                        "declaration": 35,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "4581:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
                       "x": {
                         "declaration": 32,
                         "isOffset": false,
@@ -686,6 +686,15 @@
                         "isOffset": false,
                         "isSlot": false,
                         "src": "4153:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "x": {
+                        "declaration": 32,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "4786:1:0",
                         "valueSize": 1
                       }
                     },
@@ -829,16 +838,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "4470:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
-                      "p": {
-                        "declaration": 38,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "4476:1:0",
+                        "src": "4511:1:0",
                         "valueSize": 1
                       }
                     },
@@ -847,7 +847,16 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "4786:1:0",
+                        "src": "4514:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "p": {
+                        "declaration": 38,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "4517:1:0",
                         "valueSize": 1
                       }
                     },
@@ -883,16 +892,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "4511:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
-                      "x": {
-                        "declaration": 32,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "4514:1:0",
+                        "src": "4470:1:0",
                         "valueSize": 1
                       }
                     },
@@ -901,7 +901,7 @@
                         "declaration": 38,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "4517:1:0",
+                        "src": "4476:1:0",
                         "valueSize": 1
                       }
                     },
@@ -1887,6 +1887,15 @@
                       }
                     },
                     {
+                      "x": {
+                        "declaration": 32,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "15820:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
                       "y": {
                         "declaration": 35,
                         "isOffset": false,
@@ -1945,7 +1954,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "15820:1:0",
+                        "src": "15853:1:0",
                         "valueSize": 1
                       }
                     },
@@ -3160,7 +3169,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "15919:1:0",
+                        "src": "15886:1:0",
                         "valueSize": 1
                       }
                     },
@@ -3232,7 +3241,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "15853:1:0",
+                        "src": "15919:1:0",
                         "valueSize": 1
                       }
                     },
@@ -3241,7 +3250,7 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "15886:1:0",
+                        "src": "15952:1:0",
                         "valueSize": 1
                       }
                     },
@@ -5284,6 +5293,15 @@
                         "declaration": 32,
                         "isOffset": false,
                         "isSlot": false,
+                        "src": "15754:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "x": {
+                        "declaration": 32,
+                        "isOffset": false,
+                        "isSlot": false,
                         "src": "13048:1:0",
                         "valueSize": 1
                       }
@@ -7197,15 +7215,6 @@
                       }
                     },
                     {
-                      "x": {
-                        "declaration": 32,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "15754:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
                       "y": {
                         "declaration": 35,
                         "isOffset": false,
@@ -7337,15 +7346,6 @@
                         "isOffset": false,
                         "isSlot": false,
                         "src": "5050:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
-                      "y": {
-                        "declaration": 35,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "7318:1:0",
                         "valueSize": 1
                       }
                     },
@@ -8619,20 +8619,11 @@
                       }
                     },
                     {
-                      "x": {
-                        "declaration": 32,
+                      "y": {
+                        "declaration": 35,
                         "isOffset": false,
                         "isSlot": false,
-                        "src": "15952:1:0",
-                        "valueSize": 1
-                      }
-                    },
-                    {
-                      "x": {
-                        "declaration": 32,
-                        "isOffset": false,
-                        "isSlot": false,
-                        "src": "15985:1:0",
+                        "src": "7318:1:0",
                         "valueSize": 1
                       }
                     },
@@ -8948,6 +8939,15 @@
                         "isOffset": false,
                         "isSlot": false,
                         "src": "15904:1:0",
+                        "valueSize": 1
+                      }
+                    },
+                    {
+                      "x": {
+                        "declaration": 32,
+                        "isOffset": false,
+                        "isSlot": false,
+                        "src": "15985:1:0",
                         "valueSize": 1
                       }
                     },
@@ -9436,7 +9436,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6866,
+                                "referencedDeclaration": 6864,
                                 "src": "16853:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -9483,7 +9483,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6873,
+                          "referencedDeclaration": 6871,
                           "src": "16843:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -9835,7 +9835,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6867,
+                              "referencedDeclaration": 6865,
                               "src": "16995:6:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -9970,7 +9970,7 @@
                                       "name": "mulmod",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6880,
+                                      "referencedDeclaration": 6878,
                                       "src": "17048:6:0",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10024,7 +10024,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6880,
+                                  "referencedDeclaration": 6878,
                                   "src": "17037:6:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10091,7 +10091,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6867,
+                              "referencedDeclaration": 6865,
                               "src": "17030:6:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10279,7 +10279,7 @@
                         "name": "mulmod",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6880,
+                        "referencedDeclaration": 6878,
                         "src": "17121:6:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11190,7 +11190,7 @@
                                       "name": "mulmod",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6880,
+                                      "referencedDeclaration": 6878,
                                       "src": "17395:6:0",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11244,7 +11244,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6880,
+                                  "referencedDeclaration": 6878,
                                   "src": "17384:6:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11311,7 +11311,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6867,
+                              "referencedDeclaration": 6865,
                               "src": "17377:6:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11861,7 +11861,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6880,
+                                  "referencedDeclaration": 6878,
                                   "src": "17564:6:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11937,10 +11937,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6883,
+                            "referencedDeclaration": 6881,
                             "src": "17556:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -12109,7 +12109,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6866,
+                                  "referencedDeclaration": 6864,
                                   "src": "17692:3:0",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -12290,10 +12290,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6883,
+                            "referencedDeclaration": 6881,
                             "src": "17733:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -12452,7 +12452,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6866,
+                                "referencedDeclaration": 6864,
                                 "src": "17790:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -12931,7 +12931,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6866,
+                                "referencedDeclaration": 6864,
                                 "src": "18362:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -12978,7 +12978,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6873,
+                          "referencedDeclaration": 6871,
                           "src": "18352:9:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -13382,7 +13382,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 6873,
+                              "referencedDeclaration": 6871,
                               "type": "function (bytes memory) pure returns (bytes32)",
                               "value": "keccak256"
                             },
@@ -13436,7 +13436,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6866,
+                                      "referencedDeclaration": 6864,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -13740,15 +13740,6 @@
                     "attributes": {
                       "externalReferences": [
                         {
-                          "y": {
-                            "declaration": 35,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "4581:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
                           "x": {
                             "declaration": 32,
                             "isOffset": false,
@@ -13902,6 +13893,15 @@
                           }
                         },
                         {
+                          "y": {
+                            "declaration": 35,
+                            "isOffset": false,
+                            "isSlot": false,
+                            "src": "4581:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
                           "x": {
                             "declaration": 32,
                             "isOffset": false,
@@ -13943,6 +13943,15 @@
                             "isOffset": false,
                             "isSlot": false,
                             "src": "4153:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
+                          "x": {
+                            "declaration": 32,
+                            "isOffset": false,
+                            "isSlot": false,
+                            "src": "4786:1:0",
                             "valueSize": 1
                           }
                         },
@@ -14086,16 +14095,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "4470:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
-                          "p": {
-                            "declaration": 38,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "4476:1:0",
+                            "src": "4511:1:0",
                             "valueSize": 1
                           }
                         },
@@ -14104,7 +14104,16 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "4786:1:0",
+                            "src": "4514:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
+                          "p": {
+                            "declaration": 38,
+                            "isOffset": false,
+                            "isSlot": false,
+                            "src": "4517:1:0",
                             "valueSize": 1
                           }
                         },
@@ -14140,16 +14149,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "4511:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
-                          "x": {
-                            "declaration": 32,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "4514:1:0",
+                            "src": "4470:1:0",
                             "valueSize": 1
                           }
                         },
@@ -14158,7 +14158,7 @@
                             "declaration": 38,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "4517:1:0",
+                            "src": "4476:1:0",
                             "valueSize": 1
                           }
                         },
@@ -15144,6 +15144,15 @@
                           }
                         },
                         {
+                          "x": {
+                            "declaration": 32,
+                            "isOffset": false,
+                            "isSlot": false,
+                            "src": "15820:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
                           "y": {
                             "declaration": 35,
                             "isOffset": false,
@@ -15202,7 +15211,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "15820:1:0",
+                            "src": "15853:1:0",
                             "valueSize": 1
                           }
                         },
@@ -16417,7 +16426,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "15919:1:0",
+                            "src": "15886:1:0",
                             "valueSize": 1
                           }
                         },
@@ -16489,7 +16498,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "15853:1:0",
+                            "src": "15919:1:0",
                             "valueSize": 1
                           }
                         },
@@ -16498,7 +16507,7 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "15886:1:0",
+                            "src": "15952:1:0",
                             "valueSize": 1
                           }
                         },
@@ -18541,6 +18550,15 @@
                             "declaration": 32,
                             "isOffset": false,
                             "isSlot": false,
+                            "src": "15754:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
+                          "x": {
+                            "declaration": 32,
+                            "isOffset": false,
+                            "isSlot": false,
                             "src": "13048:1:0",
                             "valueSize": 1
                           }
@@ -20454,15 +20472,6 @@
                           }
                         },
                         {
-                          "x": {
-                            "declaration": 32,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "15754:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
                           "y": {
                             "declaration": 35,
                             "isOffset": false,
@@ -20594,15 +20603,6 @@
                             "isOffset": false,
                             "isSlot": false,
                             "src": "5050:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
-                          "y": {
-                            "declaration": 35,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "7318:1:0",
                             "valueSize": 1
                           }
                         },
@@ -21876,20 +21876,11 @@
                           }
                         },
                         {
-                          "x": {
-                            "declaration": 32,
+                          "y": {
+                            "declaration": 35,
                             "isOffset": false,
                             "isSlot": false,
-                            "src": "15952:1:0",
-                            "valueSize": 1
-                          }
-                        },
-                        {
-                          "x": {
-                            "declaration": 32,
-                            "isOffset": false,
-                            "isSlot": false,
-                            "src": "15985:1:0",
+                            "src": "7318:1:0",
                             "valueSize": 1
                           }
                         },
@@ -22205,6 +22196,15 @@
                             "isOffset": false,
                             "isSlot": false,
                             "src": "15904:1:0",
+                            "valueSize": 1
+                          }
+                        },
+                        {
+                          "x": {
+                            "declaration": 32,
+                            "isOffset": false,
+                            "isSlot": false,
+                            "src": "15985:1:0",
                             "valueSize": 1
                           }
                         },
@@ -22761,7 +22761,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6873,
+                                  "referencedDeclaration": 6871,
                                   "type": "function (bytes memory) pure returns (bytes32)",
                                   "value": "keccak256"
                                 },
@@ -22811,7 +22811,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6866,
+                                          "referencedDeclaration": 6864,
                                           "type": "abi",
                                           "value": "abi"
                                         },
@@ -23127,7 +23127,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6880,
+                                  "referencedDeclaration": 6878,
                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                   "value": "mulmod"
                                 },
@@ -23264,7 +23264,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6867,
+                                          "referencedDeclaration": 6865,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -23393,7 +23393,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6867,
+                                          "referencedDeclaration": 6865,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -23435,7 +23435,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6880,
+                                              "referencedDeclaration": 6878,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -23491,7 +23491,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6880,
+                                                  "referencedDeclaration": 6878,
                                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                                   "value": "mulmod"
                                                 },
@@ -24560,7 +24560,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6867,
+                                          "referencedDeclaration": 6865,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -24602,7 +24602,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6880,
+                                              "referencedDeclaration": 6878,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -24658,7 +24658,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6880,
+                                                  "referencedDeclaration": 6878,
                                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                                   "value": "mulmod"
                                                 },
@@ -25272,10 +25272,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6883,
+                                      "referencedDeclaration": 6881,
                                       "type": "function (bool,string memory) pure",
                                       "value": "require"
                                     },
@@ -25332,7 +25332,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6880,
+                                              "referencedDeclaration": 6878,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -25636,7 +25636,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6866,
+                                              "referencedDeclaration": 6864,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -25750,10 +25750,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6883,
+                                      "referencedDeclaration": 6881,
                                       "type": "function (bool,string memory) pure",
                                       "value": "require"
                                     },
@@ -25901,7 +25901,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6866,
+                                              "referencedDeclaration": 6864,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -26436,7 +26436,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6873,
+                                  "referencedDeclaration": 6871,
                                   "type": "function (bytes memory) pure returns (bytes32)",
                                   "value": "keccak256"
                                 },
@@ -26486,7 +26486,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6866,
+                                          "referencedDeclaration": 6864,
                                           "type": "abi",
                                           "value": "abi"
                                         },
@@ -26573,7 +26573,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T14:26:43.510Z",
+  "updatedAt": "2021-11-29T01:12:07.369Z",
   "devdoc": {
     "methods": {}
   },

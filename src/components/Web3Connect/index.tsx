@@ -16,6 +16,7 @@ import {
   useWallet,
   UseWalletProvider
 } from 'use-wallet'
+// import detectEthereumProvider from '@metamask/detect-provider';
 
 
 type Props = {
@@ -37,13 +38,23 @@ const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
     }
   })
 
+  const resetMetamask = async () => {
+    reset()
+    disconnectProvider()
+  }
+
   const connectMetamask = async () => {
     //@ts-ignore
-    connect('bsc')
+    // connect('bsc')
+    connect()
     // const provider = await detectEthereumProvider()
     // const provider = <window className="bin</window>
+
+    //this is only for bsc
     //@ts-ignore
-    const provider = window.BinanceChain
+    // const provider = window.BinanceChain
+
+    const provider = await detectEthereumProvider();
 
     if (provider) {
       // if (provider !== window.ethereum) {
@@ -87,7 +98,7 @@ const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
         <div className={styles.bold}>{getTypeOfAccount()}:</div>
         <div>{account1}</div>
         <div>
-          <Button variant="contained" onClick={() => reset()}>
+          <Button variant="contained" onClick={() => resetMetamask()}>
             Disconnect
           </Button>
         </div>

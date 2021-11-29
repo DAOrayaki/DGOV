@@ -7,13 +7,21 @@ const writeToConfig = require("./utils/writeToConfig");
 module.exports = function(deployer) {
   deployer.then(async () => {
     const markets = require("../markets.config");
-    const conditionIds = markets.map(({ questionId }) =>
+    const newMarkets = require("../src/conf/ipfsmarkets.config.json")
+    const questionId = newMarkets.questionId
+    // const conditionIds = markets.map(({ questionId }) =>
+    //   web3.utils.soliditySha3(
+    //     { t: "address", v: deployConfig.oracle },
+    //     { t: "bytes32", v: questionId },
+    //     { t: "uint", v: 2 }
+    //   )
+    // );
+    const conditionIds = [
       web3.utils.soliditySha3(
         { t: "address", v: deployConfig.oracle },
-        { t: "bytes32", v: questionId },
-        { t: "uint", v: 2 }
-      )
-    );
+        { t: "bytes32", v: newMarkets.questionId },
+        { t: "uint", v: newMarkets.outcomes.length })
+    ]
 
     // const WETH9 = artifacts.require("WETH9");
     const YAKI = artifacts.require("YAKI");

@@ -4,14 +4,21 @@ import loadMarketMakersRepo from 'src/logic/MarketMakers'
 import { getConditionId, getPositionId } from 'src/utils/markets'
 import BigNumber from 'bignumber.js'
 import Layout from './Layout'
+import { create } from 'ipfs-http-client'
+const bs58 = require('bs58')
 
 BigNumber.config({ EXPONENTIAL_AT: 50 })
 
-const markets = require('src/conf/config.local.json')
+let utf8decoder = new TextDecoder()
+
+// const markets = require('src/conf/config.local.json')
 
 type MarketProps = {
   web3: any
   account: string
+  lmsrAddress: string
+  questionId: string
+  outcomeCount: number
 }
 
 enum MarketStage {
@@ -23,17 +30,38 @@ enum MarketStage {
 let conditionalTokensRepo: any
 let marketMakersRepo: any
 
-const Market: React.FC<MarketProps> = ({ web3, account }) => {
+function getIpfsHashFromBytes32(bytes32Hex: any) {
+  // Add our default ipfs values for first 2 bytes:
+  // function:0x12=sha2, size:0x20=256 bits
+  // and cut off leading "0x"
+  const hashHex = "1220" + bytes32Hex.slice(2)
+  const hashBytes = Buffer.from(hashHex, 'hex');
+  const hashStr = bs58.encode(hashBytes)
+  return hashStr
+}
+
+const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount }) => {
   const [isConditionLoaded, setIsConditionLoaded] = useState<boolean>(false)
   const [selectedAmount, setSelectedAmount] = useState<string>('')
   const [selectedOutcomeToken, setSelectedOutcomeToken] = useState<number>(0)
   const [marketInfo, setMarketInfo] = useState<any>(undefined)
+  //@ts-ignore
+  const client = create(process.env.REACT_APP_IPFS_ENDPOINT)
+  // const client = create({
+  //   host: 'localhost',
+  //   port: 5001,
+  //   protocol: 'http',
+  //   // headers: {
+  //   //   authorization: auth
+  //   // }
+    
+  // })
 
   useEffect(() => {
     const init = async () => {
       try {
-        conditionalTokensRepo = await loadConditionalTokensRepo(web3, markets.lmsrAddress, account)
-        marketMakersRepo = await loadMarketMakersRepo(web3, markets.lmsrAddress, account)
+        conditionalTokensRepo = await loadConditionalTokensRepo(web3, lmsrAddress, account)
+        marketMakersRepo = await loadMarketMakersRepo(web3, lmsrAddress, account)
         await getMarketInfo()
         setIsConditionLoaded(true)
       } catch (err) {
@@ -50,13 +78,43 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     const collateral = await marketMakersRepo.getCollateralToken()
     const conditionId = getConditionId(
       process.env.REACT_APP_ORACLE_ADDRESS,
-      markets.markets[0].questionId,
-      markets.markets[0].outcomes.length,
+      questionId,
+      outcomeCount,
     )
     const payoutDenominator = await conditionalTokensRepo.payoutDenominator(conditionId)
 
+    // var cid = questionId.slice(0, 46)
+    const cid = getIpfsHashFromBytes32(questionId)
+    //@ts-ignore
+    const stream = client.cat(cid)
+      let data = ''
+
+      for await ( const chunk of stream) {
+          // data += chunk.toString()
+          data += utf8decoder.decode(chunk)
+      }
+      console.log(data.toString())
+
+      var markets = JSON.parse(data)
+    // var markets = [
+    //   {
+    //     "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684332",
+    //     "title": "Will the summer 2020 in Germany break again weather records? ",
+    //     "outcomes": [
+    //       {
+    //         "title": "Yes",
+    //         "short": "Yes"
+    //       },
+    //       {
+    //         "title": "No",
+    //         "short": "No"
+    //       }
+    //     ]
+    //   }
+    // ]
+
     const outcomes = []
-    for (let outcomeIndex = 0; outcomeIndex < markets.markets[0].outcomes.length; outcomeIndex++) {
+    for (let outcomeIndex = 0; outcomeIndex < outcomeCount; outcomeIndex++) {
       const indexSet = (outcomeIndex === 0
         ? 1
         : parseInt(Math.pow(10, outcomeIndex).toString(), 2)
@@ -76,7 +134,9 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
 
       const outcome = {
         index: outcomeIndex,
-        title: markets.markets[0].outcomes[outcomeIndex].title,
+        // title: markets.markets[0].outcomes[outcomeIndex].title,
+        title: markets[0].outcomes[outcomeIndex].title,
+        // title: `outcome ${outcomeIndex}`,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
           .multipliedBy(100)
@@ -88,11 +148,11 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     }
 
     const marketData = {
-      lmsrAddress: markets.lmsrAddress,
-      title: markets.markets[0].title,
+      lmsrAddress: lmsrAddress,
+      title: markets[0].title,
       outcomes,
       stage: MarketStage[await marketMakersRepo.stage()],
-      questionId: markets.markets[0].questionId,
+      questionId: questionId,
       conditionId: conditionId,
       payoutDenominator: payoutDenominator,
     }
@@ -183,7 +243,7 @@ const Market: React.FC<MarketProps> = ({ web3, account }) => {
     //   (value: any, index: number) => (index === resolutionOutcomeIndex ? 1 : 0),
     // )
     const payouts = Array.from(
-      resolutionOutcomeIndex, (value: any, index: number) =>(value === true? 1: 0),
+      resolutionOutcomeIndex, (value: any, index: number) => (value === true ? 1 : 0),
     )
 
     const tx = await conditionalTokensRepo.reportPayouts(marketInfo.questionId, payouts, account)

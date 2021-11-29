@@ -36,7 +36,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"clone\",\"type\":\"address\"}],\"name\":\"CloneCreated\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"cloneConstructor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":\"ConstructedCloneFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"clone\",\"type\":\"address\"}],\"name\":\"CloneCreated\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"cloneConstructor\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":\"ConstructedCloneFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
@@ -296,7 +296,7 @@
                         "name": "abi",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6866,
+                        "referencedDeclaration": 6864,
                         "src": "330:3:10",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_abi",
@@ -982,10 +982,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "1329:7:10",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1498,7 +1498,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6866,
+                                  "referencedDeclaration": 6864,
                                   "type": "abi",
                                   "value": "abi"
                                 },
@@ -2154,10 +2154,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -2291,7 +2291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T14:26:43.605Z",
+  "updatedAt": "2021-11-29T01:12:07.471Z",
   "devdoc": {
     "methods": {}
   },

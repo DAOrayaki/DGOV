@@ -560,7 +560,7 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMClosed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"newFee\",\"type\":\"uint64\"}],\"name\":\"AMMFeeChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"AMMFeeWithdrawal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"fundingChange\",\"type\":\"int256\"}],\"name\":\"AMMFundingChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"transactor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"outcomeTokenNetCost\",\"type\":\"int256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"marketFees\",\"type\":\"uint256\"}],\"name\":\"AMMOutcomeTokenTrade\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMPaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMResumed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"FEE_RANGE\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"atomicOutcomeSlotCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"outcomeTokenCost\",\"type\":\"uint256\"}],\"name\":\"calcMarketFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"}],\"name\":\"calcNetCost\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"netCost\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"_fee\",\"type\":\"uint64\"}],\"name\":\"changeFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"fundingChange\",\"type\":\"int256\"}],\"name\":\"changeFunding\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"close\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"collateralToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"conditionIds\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"fee\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"funding\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onERC1155BatchReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onERC1155Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"pmSystem\",\"outputs\":[{\"internalType\":\"contract ConditionalTokens\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"resume\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"stage\",\"outputs\":[{\"internalType\":\"enum MarketMaker.Stage\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"},{\"internalType\":\"int256\",\"name\":\"collateralLimit\",\"type\":\"int256\"}],\"name\":\"trade\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"netCost\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"whitelist\",\"outputs\":[{\"internalType\":\"contract Whitelist\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"withdrawFees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"calcMarketFee(uint256)\":{\"details\":\"Calculates fee to be paid to market maker\",\"params\":{\"outcomeTokenCost\":\"Cost for buying outcome tokens\"},\"return\":\"Fee for trade\"},\"changeFunding(int256)\":{\"details\":\"Allows to fund the market with collateral tokens converting them into outcome tokens Note for the future: should combine splitPosition and mergePositions into one function, as code duplication causes things like this to happen.\"},\"close()\":{\"details\":\"Allows market owner to close the markets by transferring all remaining outcome tokens to the owner\"},\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * > Note: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"supportsInterface(bytes4)\":{\"details\":\"See `IERC165.supportsInterface`.     * Time complexity O(1), guaranteed to always use less than 30 000 gas.\"},\"trade(int256[],int256)\":{\"details\":\"Allows to trade outcome tokens and collateral with the market maker\",\"params\":{\"collateralLimit\":\"If positive, this is the limit for the amount of collateral tokens which will be sent to the market to conduct the trade. If negative, this is the minimum amount of collateral tokens which will be received from the market for the trade. If zero, there is no limit.\",\"outcomeTokenAmounts\":\"Amounts of each atomic outcome token to buy or sell. If positive, will buy this amount of outcome token from the market. If negative, will sell this amount back to the market instead. The indices of this array range from 0 to product(all conditions' outcomeSlotCounts)-1. For example, with two conditions with three outcome slots each and one condition with two outcome slots, you will have 3*3*2=18 total atomic outcome tokens, and the indices will range from 0 to 17. The indices map to atomic outcome slots depending on the order of the conditionIds. Let's say the first condition has slots A, B, C the second has slots X, Y, and the third has slots I, J, K. We can associate each atomic outcome token with indices by this map: A&X&I == 0 B&X&I == 1 C&X&I == 2 A&Y&I == 3 B&Y&I == 4 C&Y&I == 5 A&X&J == 6 B&X&J == 7 C&X&J == 8 A&Y&J == 9 B&Y&J == 10 C&Y&J == 11 A&X&K == 12 B&X&K == 13 C&X&K == 14 A&Y&K == 15 B&Y&K == 16 C&Y&K == 17 This order is calculated via the generateAtomicPositionId function below: C&Y&I -> (2, 1, 0) -> 2 + 3 * (1 + 2 * (0 + 3 * (0 + 0)))\"},\"return\":\"If positive, the amount of collateral sent to the market. If negative, the amount of collateral received from the market. If zero, no collateral was sent or received.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"withdrawFees()\":{\"details\":\"Allows market owner to withdraw fees generated by trades\",\"return\":\"Fee amount\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":\"MarketMaker\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x11a610a3fa07ac8a59a09a76fdb944f058fdb06d3414fe49995595e68cd17d41\",\"urls\":[\"bzz-raw://2a5c18b43bb4ebfaf9faa71b6b6dac1daf00f596625da94778594a70bc43b5c4\",\"dweb:/ipfs/QmWUFR7eKVsMS61UCK1yY2bQQhcqEQHAAmJ2FJ3GozWV8k\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd8e6583f45a98380ff10a5656a7ae7ba6a275e0d051043e5842f0d541abd7caa\",\"urls\":[\"bzz-raw://f2d5b356fa0ed73fa67eb5c5bb874aa382833bddd5fff30463868610b262c515\",\"dweb:/ipfs/QmYWqCK6moph6oeBEUc1nDaGz4GRdGXmykwKD5rykVbhcU\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x4971631d7de74464fed3e0abac04553e917be5e8cd10b3f825e2e7c39ccc2734\",\"urls\":[\"bzz-raw://a48ecdf843110a28c441681fd7172028bf72a03149c7016cc6472fde08f8a521\",\"dweb:/ipfs/QmRzsL1o6iVEFmqBYCo3XpM4kpvbK7iSJWssXHQ3gHb5uq\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa4addb4855f472eb1a4719298b5db759e475dd42bcd8de73d04c1ffc3b01bf40\",\"urls\":[\"bzz-raw://ab57c56ae8acce44a196cde3df144e12e8210d883b8c1b660f9a4e9e67fac00f\",\"dweb:/ipfs/QmQmjcWGQdmoogx9DBm8wtXxejXjDyuhmDFeihiCmzjd8N\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/Whitelist.sol\":{\"keccak256\":\"0xe608e935510e8190d6d9fd7a0a6ecc02776d0dd106cbcbe3bac5ee0309abfae5\",\"urls\":[\"bzz-raw://06eba859e4fd4f7f35ce5d652abd29858e3052872c2802ce80fc3df752387134\",\"dweb:/ipfs/QmXqMsiTBAgfgZvfL5rP1QjFhfw56JBdyVmJJRmB2WoFJ4\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMClosed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"newFee\",\"type\":\"uint64\"}],\"name\":\"AMMFeeChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"AMMFeeWithdrawal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"fundingChange\",\"type\":\"int256\"}],\"name\":\"AMMFundingChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"transactor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"outcomeTokenNetCost\",\"type\":\"int256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"marketFees\",\"type\":\"uint256\"}],\"name\":\"AMMOutcomeTokenTrade\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMPaused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"AMMResumed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"FEE_RANGE\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"atomicOutcomeSlotCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"outcomeTokenCost\",\"type\":\"uint256\"}],\"name\":\"calcMarketFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"}],\"name\":\"calcNetCost\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"netCost\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"_fee\",\"type\":\"uint64\"}],\"name\":\"changeFee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256\",\"name\":\"fundingChange\",\"type\":\"int256\"}],\"name\":\"changeFunding\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"close\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"collateralToken\",\"outputs\":[{\"internalType\":\"contract IERC20\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"conditionIds\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"fee\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"funding\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onERC1155BatchReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"onERC1155Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"pmSystem\",\"outputs\":[{\"internalType\":\"contract ConditionalTokens\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"resume\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"stage\",\"outputs\":[{\"internalType\":\"enum MarketMaker.Stage\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"int256[]\",\"name\":\"outcomeTokenAmounts\",\"type\":\"int256[]\"},{\"internalType\":\"int256\",\"name\":\"collateralLimit\",\"type\":\"int256\"}],\"name\":\"trade\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"netCost\",\"type\":\"int256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"whitelist\",\"outputs\":[{\"internalType\":\"contract Whitelist\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"withdrawFees\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"calcMarketFee(uint256)\":{\"details\":\"Calculates fee to be paid to market maker\",\"params\":{\"outcomeTokenCost\":\"Cost for buying outcome tokens\"},\"return\":\"Fee for trade\"},\"changeFunding(int256)\":{\"details\":\"Allows to fund the market with collateral tokens converting them into outcome tokens Note for the future: should combine splitPosition and mergePositions into one function, as code duplication causes things like this to happen.\"},\"close()\":{\"details\":\"Allows market owner to close the markets by transferring all remaining outcome tokens to the owner\"},\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * > Note: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"supportsInterface(bytes4)\":{\"details\":\"See `IERC165.supportsInterface`.     * Time complexity O(1), guaranteed to always use less than 30 000 gas.\"},\"trade(int256[],int256)\":{\"details\":\"Allows to trade outcome tokens and collateral with the market maker\",\"params\":{\"collateralLimit\":\"If positive, this is the limit for the amount of collateral tokens which will be sent to the market to conduct the trade. If negative, this is the minimum amount of collateral tokens which will be received from the market for the trade. If zero, there is no limit.\",\"outcomeTokenAmounts\":\"Amounts of each atomic outcome token to buy or sell. If positive, will buy this amount of outcome token from the market. If negative, will sell this amount back to the market instead. The indices of this array range from 0 to product(all conditions' outcomeSlotCounts)-1. For example, with two conditions with three outcome slots each and one condition with two outcome slots, you will have 3*3*2=18 total atomic outcome tokens, and the indices will range from 0 to 17. The indices map to atomic outcome slots depending on the order of the conditionIds. Let's say the first condition has slots A, B, C the second has slots X, Y, and the third has slots I, J, K. We can associate each atomic outcome token with indices by this map: A&X&I == 0 B&X&I == 1 C&X&I == 2 A&Y&I == 3 B&Y&I == 4 C&Y&I == 5 A&X&J == 6 B&X&J == 7 C&X&J == 8 A&Y&J == 9 B&Y&J == 10 C&Y&J == 11 A&X&K == 12 B&X&K == 13 C&X&K == 14 A&Y&K == 15 B&Y&K == 16 C&Y&K == 17 This order is calculated via the generateAtomicPositionId function below: C&Y&I -> (2, 1, 0) -> 2 + 3 * (1 + 2 * (0 + 3 * (0 + 0)))\"},\"return\":\"If positive, the amount of collateral sent to the market. If negative, the amount of collateral received from the market. If zero, no collateral was sent or received.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"withdrawFees()\":{\"details\":\"Allows market owner to withdraw fees generated by trades\",\"return\":\"Fee amount\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":\"MarketMaker\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x11a610a3fa07ac8a59a09a76fdb944f058fdb06d3414fe49995595e68cd17d41\",\"urls\":[\"bzz-raw://2a5c18b43bb4ebfaf9faa71b6b6dac1daf00f596625da94778594a70bc43b5c4\",\"dweb:/ipfs/QmWUFR7eKVsMS61UCK1yY2bQQhcqEQHAAmJ2FJ3GozWV8k\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0xd8e6583f45a98380ff10a5656a7ae7ba6a275e0d051043e5842f0d541abd7caa\",\"urls\":[\"bzz-raw://f2d5b356fa0ed73fa67eb5c5bb874aa382833bddd5fff30463868610b262c515\",\"dweb:/ipfs/QmYWqCK6moph6oeBEUc1nDaGz4GRdGXmykwKD5rykVbhcU\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x4971631d7de74464fed3e0abac04553e917be5e8cd10b3f825e2e7c39ccc2734\",\"urls\":[\"bzz-raw://a48ecdf843110a28c441681fd7172028bf72a03149c7016cc6472fde08f8a521\",\"dweb:/ipfs/QmRzsL1o6iVEFmqBYCo3XpM4kpvbK7iSJWssXHQ3gHb5uq\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa4addb4855f472eb1a4719298b5db759e475dd42bcd8de73d04c1ffc3b01bf40\",\"urls\":[\"bzz-raw://ab57c56ae8acce44a196cde3df144e12e8210d883b8c1b660f9a4e9e67fac00f\",\"dweb:/ipfs/QmQmjcWGQdmoogx9DBm8wtXxejXjDyuhmDFeihiCmzjd8N\"]},\"@gnosis.pm/conditional-tokens-market-makers/contracts/Whitelist.sol\":{\"keccak256\":\"0xe608e935510e8190d6d9fd7a0a6ecc02776d0dd106cbcbe3bac5ee0309abfae5\",\"urls\":[\"bzz-raw://06eba859e4fd4f7f35ce5d652abd29858e3052872c2802ce80fc3df752387134\",\"dweb:/ipfs/QmXqMsiTBAgfgZvfL5rP1QjFhfw56JBdyVmJJRmB2WoFJ4\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
@@ -1693,10 +1693,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "1898:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1890,7 +1890,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 6879,
+                                "referencedDeclaration": 6877,
                                 "src": "2057:3:8",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -2000,10 +2000,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6883,
+                      "referencedDeclaration": 6881,
                       "src": "1983:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2233,10 +2233,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6883,
+                      "referencedDeclaration": 6881,
                       "src": "2626:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2347,7 +2347,7 @@
                                       "name": "msg",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6879,
+                                      "referencedDeclaration": 6877,
                                       "src": "2884:3:8",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_magic_message",
@@ -2377,7 +2377,7 @@
                                         "name": "this",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 6923,
+                                        "referencedDeclaration": 6921,
                                         "src": "2904:4:8",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -2705,10 +2705,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6882,
+                            "referencedDeclaration": 6880,
                             "src": "2847:7:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3507,10 +3507,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6882,
+                            "referencedDeclaration": 6880,
                             "src": "3358:7:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4527,10 +4527,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6883,
+                      "referencedDeclaration": 6881,
                       "src": "4067:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4659,7 +4659,7 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 6923,
+                                  "referencedDeclaration": 6921,
                                   "src": "4329:4:8",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -4756,7 +4756,7 @@
                                       "name": "this",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6923,
+                                      "referencedDeclaration": 6921,
                                       "src": "4384:4:8",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -5275,7 +5275,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6923,
+                              "referencedDeclaration": 6921,
                               "src": "4723:4:8",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -5491,10 +5491,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "4764:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5730,10 +5730,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "6862:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6333,10 +6333,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "7253:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6675,10 +6675,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        6882,
-                        6883
+                        6880,
+                        6881
                       ],
-                      "referencedDeclaration": 6882,
+                      "referencedDeclaration": 6880,
                       "src": "7331:7:8",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -6789,7 +6789,7 @@
                                       "name": "msg",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 6879,
+                                      "referencedDeclaration": 6877,
                                       "src": "7557:3:8",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_magic_message",
@@ -6819,7 +6819,7 @@
                                         "name": "this",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 6923,
+                                        "referencedDeclaration": 6921,
                                         "src": "7577:4:8",
                                         "typeDescriptions": {
                                           "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -7147,10 +7147,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6882,
+                            "referencedDeclaration": 6880,
                             "src": "7503:7:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -7910,7 +7910,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6879,
+                            "referencedDeclaration": 6877,
                             "src": "8401:3:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -7940,7 +7940,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6923,
+                              "referencedDeclaration": 6921,
                               "src": "8421:4:8",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -8279,7 +8279,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6879,
+                          "referencedDeclaration": 6877,
                           "src": "8623:3:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -9016,7 +9016,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6923,
+                              "referencedDeclaration": 6921,
                               "src": "9064:4:8",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -9066,7 +9066,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 6879,
+                            "referencedDeclaration": 6877,
                             "src": "9071:3:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -9276,7 +9276,7 @@
                                     "name": "msg",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 6879,
+                                    "referencedDeclaration": 6877,
                                     "src": "9190:3:8",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_magic_message",
@@ -9429,10 +9429,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              6882,
-                              6883
+                              6880,
+                              6881
                             ],
-                            "referencedDeclaration": 6882,
+                            "referencedDeclaration": 6880,
                             "src": "9157:7:8",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -9858,7 +9858,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6923,
+                          "referencedDeclaration": 6921,
                           "src": "9736:4:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -9926,7 +9926,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6923,
+                              "referencedDeclaration": 6921,
                               "src": "9764:4:8",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -10222,7 +10222,7 @@
                           "name": "this",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6923,
+                          "referencedDeclaration": 6921,
                           "src": "10051:4:8",
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -10290,7 +10290,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 6923,
+                              "referencedDeclaration": 6921,
                               "src": "10079:4:8",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_MarketMaker_$3937",
@@ -13946,10 +13946,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -14080,10 +14080,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6883,
+                              "referencedDeclaration": 6881,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -14265,7 +14265,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6879,
+                                          "referencedDeclaration": 6877,
                                           "type": "msg",
                                           "value": "msg"
                                         },
@@ -14594,10 +14594,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6883,
+                              "referencedDeclaration": 6881,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -14767,10 +14767,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6882,
+                                      "referencedDeclaration": 6880,
                                       "type": "function (bool) pure",
                                       "value": "require"
                                     },
@@ -14870,7 +14870,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6879,
+                                                  "referencedDeclaration": 6877,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
@@ -14923,7 +14923,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6923,
+                                                  "referencedDeclaration": 6921,
                                                   "type": "contract MarketMaker",
                                                   "value": "this"
                                                 },
@@ -15853,10 +15853,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6882,
+                                      "referencedDeclaration": 6880,
                                       "type": "function (bool) pure",
                                       "value": "require"
                                     },
@@ -16944,10 +16944,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6883,
+                              "referencedDeclaration": 6881,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -17477,7 +17477,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6923,
+                                          "referencedDeclaration": 6921,
                                           "type": "contract MarketMaker",
                                           "value": "this"
                                         },
@@ -17638,7 +17638,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6923,
+                                              "referencedDeclaration": 6921,
                                               "type": "contract MarketMaker",
                                               "value": "this"
                                             },
@@ -18032,7 +18032,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6923,
+                                      "referencedDeclaration": 6921,
                                       "type": "contract MarketMaker",
                                       "value": "this"
                                     },
@@ -18086,10 +18086,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -18510,10 +18510,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -19163,10 +19163,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -19368,10 +19368,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                6882,
-                                6883
+                                6880,
+                                6881
                               ],
-                              "referencedDeclaration": 6882,
+                              "referencedDeclaration": 6880,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -19679,10 +19679,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6882,
+                                      "referencedDeclaration": 6880,
                                       "type": "function (bool) pure",
                                       "value": "require"
                                     },
@@ -19782,7 +19782,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6879,
+                                                  "referencedDeclaration": 6877,
                                                   "type": "msg",
                                                   "value": "msg"
                                                 },
@@ -19835,7 +19835,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 6923,
+                                                  "referencedDeclaration": 6921,
                                                   "type": "contract MarketMaker",
                                                   "value": "this"
                                                 },
@@ -20951,7 +20951,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6879,
+                                      "referencedDeclaration": 6877,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -21004,7 +21004,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6923,
+                                      "referencedDeclaration": 6921,
                                       "type": "contract MarketMaker",
                                       "value": "this"
                                     },
@@ -21327,7 +21327,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6879,
+                                  "referencedDeclaration": 6877,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -22154,7 +22154,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6923,
+                                      "referencedDeclaration": 6921,
                                       "type": "contract MarketMaker",
                                       "value": "this"
                                     },
@@ -22185,7 +22185,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 6879,
+                                      "referencedDeclaration": 6877,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -22342,10 +22342,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        6882,
-                                        6883
+                                        6880,
+                                        6881
                                       ],
-                                      "referencedDeclaration": 6882,
+                                      "referencedDeclaration": 6880,
                                       "type": "function (bool) pure",
                                       "value": "require"
                                     },
@@ -22426,7 +22426,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 6879,
+                                              "referencedDeclaration": 6877,
                                               "type": "msg",
                                               "value": "msg"
                                             },
@@ -22994,7 +22994,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6923,
+                                  "referencedDeclaration": 6921,
                                   "type": "contract MarketMaker",
                                   "value": "this"
                                 },
@@ -23049,7 +23049,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6923,
+                                          "referencedDeclaration": 6921,
                                           "type": "contract MarketMaker",
                                           "value": "this"
                                         },
@@ -23405,7 +23405,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 6923,
+                                  "referencedDeclaration": 6921,
                                   "type": "contract MarketMaker",
                                   "value": "this"
                                 },
@@ -23460,7 +23460,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 6923,
+                                          "referencedDeclaration": 6921,
                                           "type": "contract MarketMaker",
                                           "value": "this"
                                         },
@@ -25881,7 +25881,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T14:26:43.594Z",
+  "updatedAt": "2021-11-29T01:12:07.457Z",
   "devdoc": {
     "methods": {
       "calcMarketFee(uint256)": {
