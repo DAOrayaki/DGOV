@@ -41,9 +41,11 @@ var writeToConfig = require("./utils/writeToConfig");
 var markets = require("../markets.config");
 var CID = require('cids');
 var bs58 = require('bs58');
-// const client = create('http://127.0.0.1:5001')
+//@ts-ignore
+var client = (0, ipfs_http_client_1.create)("http://162.62.52.82:5001");
+// console.log(process.env.REACT_APP_IPFS_ENDPOINT)
 // const client = create('http://cloudflare-ipfs.com')
-var client = (0, ipfs_http_client_1.create)('http://ipfs.io');
+// const client = create('http://ipfs.io')
 function getBytes32FromIpfsHash(ipfsListing) {
     return "0x" + bs58.decode(ipfsListing).slice(2).toString('hex');
 }
@@ -77,6 +79,11 @@ function main() {
                     console.log(markets[0].outcomes);
                     cid_str = getIpfsHashFromBytes32(cid_hex);
                     console.log('cid_str: ' + cid_str);
+                    writeToConfig({
+                        questionId: cid_hex,
+                        title: markets[0].title,
+                        outcomes: markets[0].outcomes
+                    });
                     return [2 /*return*/];
             }
         });

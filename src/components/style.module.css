@@ -61,3 +61,8 @@ h3 {
 .bold {
   font-weight: bold;
 }
+
+.bar {
+  display: inline-block;
+  margin-top:15px;
+}

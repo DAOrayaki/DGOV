@@ -19,6 +19,8 @@ type MarketProps = {
   lmsrAddress: string
   questionId: string
   outcomeCount: number
+  oracle: string
+  creator: string
 }
 
 enum MarketStage {
@@ -40,7 +42,7 @@ function getIpfsHashFromBytes32(bytes32Hex: any) {
   return hashStr
 }
 
-const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount }) => {
+const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount, oracle, creator }) => {
   const [isConditionLoaded, setIsConditionLoaded] = useState<boolean>(false)
   const [selectedAmount, setSelectedAmount] = useState<string>('')
   const [selectedOutcomeToken, setSelectedOutcomeToken] = useState<number>(0)
@@ -74,10 +76,11 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
   }, [])
 
   const getMarketInfo = async () => {
-    if (!process.env.REACT_APP_ORACLE_ADDRESS) return
+    if (!oracle) return
     const collateral = await marketMakersRepo.getCollateralToken()
     const conditionId = getConditionId(
-      process.env.REACT_APP_ORACLE_ADDRESS,
+      // process.env.REACT_APP_ORACLE_ADDRESS,
+      oracle,
       questionId,
       outcomeCount,
     )
@@ -96,22 +99,6 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       console.log(data.toString())
 
       var markets = JSON.parse(data)
-    // var markets = [
-    //   {
-    //     "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684332",
-    //     "title": "Will the summer 2020 in Germany break again weather records? ",
-    //     "outcomes": [
-    //       {
-    //         "title": "Yes",
-    //         "short": "Yes"
-    //       },
-    //       {
-    //         "title": "No",
-    //         "short": "No"
-    //       }
-    //     ]
-    //   }
-    // ]
 
     const outcomes = []
     for (let outcomeIndex = 0; outcomeIndex < outcomeCount; outcomeIndex++) {
@@ -269,6 +256,8 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       redeem={redeem}
       close={close}
       resolve={resolve}
+      oracle={oracle}
+      creator={creator}
     />
   )
 }

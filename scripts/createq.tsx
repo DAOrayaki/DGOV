@@ -4,9 +4,11 @@ const markets = require("../markets.config");
 const CID = require('cids')
 const bs58 = require('bs58')
 
-// const client = create('http://127.0.0.1:5001')
+//@ts-ignore
+const client = create("http://162.62.52.82:5001")
+// console.log(process.env.REACT_APP_IPFS_ENDPOINT)
 // const client = create('http://cloudflare-ipfs.com')
-const client = create('http://ipfs.io')
+// const client = create('http://ipfs.io')
 
 function getBytes32FromIpfsHash(ipfsListing:any) {
   return "0x"+bs58.decode(ipfsListing).slice(2).toString('hex')
@@ -49,11 +51,11 @@ async function main() {
     var cid_str = getIpfsHashFromBytes32(cid_hex)
     console.log('cid_str: ' + cid_str)
     
-    // writeToConfig({
-    //     questionId:  cid_hex,
-    //     title: markets[0].title,
-    //     outcomes: markets[0].outcomes
-    // })
+    writeToConfig({
+        questionId:  cid_hex,
+        title: markets[0].title,
+        outcomes: markets[0].outcomes
+    })
     
 }
 

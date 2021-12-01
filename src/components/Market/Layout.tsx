@@ -45,6 +45,8 @@ type LayoutProps = {
   redeem: any
   close: any
   resolve: any
+  oracle: string
+  creator: string
 }
 
 const TradingForm: React.FC<TradingFormProps> = ({
@@ -205,6 +207,8 @@ const Layout: React.FC<LayoutProps> = ({
   redeem,
   close,
   resolve,
+  oracle,
+  creator
 }) => {
   return (
     <Paper className={styles.condition}>
@@ -227,10 +231,10 @@ const Layout: React.FC<LayoutProps> = ({
             buy={buy}
             sell={sell}
           />
-          {account === process.env.REACT_APP_OPERATOR_ADDRESS && (
+          {account && account.toLowerCase() === creator && (
             <OperatorActions isMarketClosed={isMarketClosed} close={close} />
           )}
-          {account === process.env.REACT_APP_ORACLE_ADDRESS && (
+          {account && account.toLowerCase() === oracle && (
             <OracleActions
               isMarketClosed={isMarketClosed}
               marketInfo={marketInfo}

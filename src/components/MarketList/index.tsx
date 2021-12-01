@@ -70,7 +70,7 @@ const MarketList: React.FC<MarketProps> = ({ web3, account, address }) => {
    }
   `
   const { loading, error, data, refetch } = useQuery(MARKET_QUERY, {
-    variables: { 'id': address },
+    variables: { 'id': address.toLowerCase() },
     fetchPolicy: "no-cache"
   }
   )
@@ -83,9 +83,22 @@ const MarketList: React.FC<MarketProps> = ({ web3, account, address }) => {
   return (
     //@ts-ignore
     <div>
+      {data.lmsrmarketMaker ? (
+        <>
+          <Market
+            web3={web3}
+            account={account}
+            lmsrAddress={address}
+            questionId={data.lmsrmarketMaker.questionId}
+            outcomeCount={data.lmsrmarketMaker.outcomeSlotCount}
+            oracle={data.lmsrmarketMaker.oracle}
+            creator={data.lmsrmarketMaker.creator} />
+        </>
+       ) : ( 
+         <div>No data found</div> 
+       )} 
       {/* <p>{data.lmsrmarketMaker.id}</p> */}
-      <Market web3={web3} account={account} lmsrAddress={address} questionId={data.lmsrmarketMaker.questionId} outcomeCount={data.lmsrmarketMaker.outcomeSlotCount} />
-      <button onClick={() => refetch()}>Refetch!</button>
+      {/* <button onClick={() => refetch()}>Refetch!</button> */}
     </div>
   )
 
