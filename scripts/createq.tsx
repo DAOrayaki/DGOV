@@ -5,7 +5,7 @@ const CID = require('cids')
 const bs58 = require('bs58')
 
 //@ts-ignore
-const client = create("http://162.62.52.82:5001")
+const client = create("https://ipfs.daorayaki.cn")
 // console.log(process.env.REACT_APP_IPFS_ENDPOINT)
 // const client = create('http://cloudflare-ipfs.com')
 // const client = create('http://ipfs.io')

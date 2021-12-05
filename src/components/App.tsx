@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Suspense, lazy } from 'react'
 import Web3 from 'web3'
 import Web3ConnectButton from 'src/components/Web3Connect'
 // import MarketProvider from 'src/components/Market'
@@ -17,8 +17,10 @@ import MarketProvider from 'src/components/MarketList'
 import Header from 'src/components/Header'
 import { Container, Row, Col } from "react-bootstrap";
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
-import About from 'src/components/childs/About'
-import Home from 'src/components/childs/Home'
+// import About from 'src/components/childs/About'
+// import Home from 'src/components/childs/Home'
+const About = lazy(() => import('src/components/childs/About'))
+const Home = lazy(() => import('src/components/childs/Home'))
 
 
 
@@ -74,38 +76,39 @@ const App: React.FC = () => {
         <Row>
           {/* <Container> */}
           <Col className="text-center">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/markets">
+                  {account && web3 ? (
+                    <ApolloProvider client={client}>
+                      <MarketRoutes web3={web3} account={account} />
+                    </ApolloProvider>
+                  ) : (
+                    <div> Connect your account first </div>
+                  )
+                  }
+                </Route>
+                <Route path="/home">
+                  <Home />
+                </Route>
+                <Route path="/">
+                  {/* <Redirect to="/markets"></Redirect> */}
+                  {account && web3 ? (
+                    <ApolloProvider client={client}>
+                      <MarketRoutes web3={web3} account={account} />
+                    </ApolloProvider>
+                  ) : (
+                    <div> Connect your account first </div>
+                  )
+                  }
 
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/markets">
-                {account && web3 ? (
-                  <ApolloProvider client={client}>
-                    <MarketRoutes web3={web3} account={account} />
-                  </ApolloProvider>
-                ) : (
-                  <div> Connect your account first </div>
-                )
-                }
-              </Route>
-              <Route path="/home">
-                <Home />
-              </Route>
-              <Route path="/">
-                {/* <Redirect to="/markets"></Redirect> */}
-                {account && web3 ? (
-                  <ApolloProvider client={client}>
-                    <MarketRoutes web3={web3} account={account} />
-                  </ApolloProvider>
-                ) : (
-                  <div> Connect your account first </div>
-                )
-                }
+                </Route>
 
-              </Route>
-
-            </Switch>
+              </Switch>
+            </Suspense>
           </Col>
           {/* </Container> */}
         </Row>
