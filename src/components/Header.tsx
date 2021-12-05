@@ -22,27 +22,28 @@ type HeaderProps = {
     setProviderData: any
 }
 
-const Header: React.FC<HeaderProps> = ({account, setProviderData}) => {
+const Header: React.FC<HeaderProps> = ({ account, setProviderData }) => {
     return (
         <Navbar>
-        <Container>
-            
-            <Navbar.Brand href="/home" as={Nav.Link}>
-                DGOV 2.0
-            </Navbar.Brand>
+            <Container>
 
-            <Navbar.Brand href="/markets" as={Nav.Link}>
-                Markets
-            </Navbar.Brand>
+                <Navbar.Brand href="/home" as={Nav.Link}>
+                    DGOV 2.0
+                </Navbar.Brand>
+
+                <Navbar.Brand href="/markets" as={Nav.Link}>
+                    Markets
+                </Navbar.Brand>
+                <Navbar.Brand href="/about" as={Nav.Link}>
+                    {/* <Nav.Link href="/about"> About</Nav.Link> */}
+                    About
+                </Navbar.Brand>
                 <Nav>
-                    <Nav.Link href="/about"> About</Nav.Link>
-               </Nav>
-               <Nav>
-                               <Web3ConnectButton account1={account} setProviderData={setProviderData} />
-               </Nav>
+                    <Web3ConnectButton account1={account} setProviderData={setProviderData} />
+                </Nav>
 
 
-        </Container>
+            </Container>
         </Navbar>
 
     )

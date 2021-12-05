@@ -6,6 +6,7 @@ import { getWeb3Account } from 'src/utils/web3'
 import styles from './style.module.css'
 import {
   BrowserRouter as Router,
+  // HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -92,7 +93,16 @@ const App: React.FC = () => {
                 <Home />
               </Route>
               <Route path="/">
-                <Redirect to="/markets"></Redirect>
+                {/* <Redirect to="/markets"></Redirect> */}
+                {account && web3 ? (
+                  <ApolloProvider client={client}>
+                    <MarketRoutes web3={web3} account={account} />
+                  </ApolloProvider>
+                ) : (
+                  <div> Connect your account first </div>
+                )
+                }
+
               </Route>
 
             </Switch>
