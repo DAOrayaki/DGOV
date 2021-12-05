@@ -1,9 +1,6 @@
 import React, { useState, Suspense, lazy } from 'react'
 import Web3 from 'web3'
-import Web3ConnectButton from 'src/components/Web3Connect'
-// import MarketProvider from 'src/components/Market'
 import { getWeb3Account } from 'src/utils/web3'
-import styles from './style.module.css'
 import {
   BrowserRouter as Router,
   // HashRouter as Router,
@@ -11,16 +8,13 @@ import {
   Route,
   Link,
   useRouteMatch,
-  Redirect
 } from 'react-router-dom';
-import MarketProvider from 'src/components/MarketList'
-import Header from 'src/components/Header'
 import { Container, Row, Col } from "react-bootstrap";
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
-// import About from 'src/components/childs/About'
-// import Home from 'src/components/childs/Home'
 const About = lazy(() => import('src/components/childs/About'))
 const Home = lazy(() => import('src/components/childs/Home'))
+const Header = lazy(() => import('src/components/Header'))
+const MarketProvider = lazy(() => import('src/components/MarketList'))
 
 
 
@@ -56,7 +50,9 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Header account={account} setProviderData={setProviderData}> </Header>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header account={account} setProviderData={setProviderData}> </Header>
+      </Suspense>
       <br></br>
       <Container >
         <Row className="align-items-center">
@@ -192,6 +188,8 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
         {marketlist}
       </ul>
 
+      <Suspense fallback={<div>Loading...</div>}>
+
       <Switch>
         <Route path={`${match.path}/:address`}>
           <MarketProvider web3={web3} account={account} />
@@ -200,6 +198,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
           <h3>Please select a markets.</h3>
         </Route>
       </Switch>
+      </Suspense>
     </div>
   )
 }

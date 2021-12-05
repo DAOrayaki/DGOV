@@ -1,22 +1,9 @@
 import React, { useEffect } from 'react'
-import Web3Connect from 'web3connect'
-import Button from '@material-ui/core/Button'
-import WalletConnectProvider from '@walletconnect/web3-provider'
-import { getCurrentNetworkName } from 'src/utils/web3'
-import styles from '../style.module.css'
-import Fortmatic from "fortmatic"
-import Web3 from 'web3';
 import detectEthereumProvider from '@metamask/detect-provider'
 import {
-  BscConnector,
-  UserRejectedRequestError
-} from '@binance-chain/bsc-connector'
-import {
-  ConnectionRejectedError,
   useWallet,
-  UseWalletProvider
 } from 'use-wallet'
-import { Card, DropdownButton, Dropdown } from 'react-bootstrap'
+import { DropdownButton, Dropdown, Button } from 'react-bootstrap'
 // import detectEthereumProvider from '@metamask/detect-provider';
 
 
@@ -87,7 +74,7 @@ const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
       <Dropdown.Item as="button" onClick={() => resetMetamask()}>Disconnect</Dropdown.Item>
     </DropdownButton>
   ) : (
-    <Button variant="contained" onClick={connectMetamask}>
+    <Button variant="secondary" onClick={connectMetamask}>
       Connect
     </Button>
   )

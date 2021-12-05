@@ -1328,15 +1328,6 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@binance-chain/bsc-connector@^1.0.3":
-  "integrity" "sha512-f53UZhsov7r38gE8uuUiynif36T+/CvEdDu8rgpADVjzk/OfnSE60DMeei8IcqWBVO52r7PyohWjaAd3LT97xQ=="
-  "resolved" "https://registry.npmjs.org/@binance-chain/bsc-connector/-/bsc-connector-1.0.3.tgz"
-  "version" "1.0.3"
-  dependencies:
-    "@web3-react/abstract-connector" "^6.0.7"
-    "@web3-react/types" "^6.0.7"
-    "tiny-warning" "^1.0.3"
-
 "@chainsafe/libp2p-noise@^4.0.0":
   "integrity" "sha1-h7yUTVsXsaTZy+DZYM4Y4DyY51c="
   "resolved" "https://registry.nlark.com/@chainsafe/libp2p-noise/download/@chainsafe/libp2p-noise-4.1.1.tgz"
@@ -1866,11 +1857,6 @@
     "@ethersproject/logger" "^5.4.0"
     "@ethersproject/properties" "^5.4.0"
     "@ethersproject/strings" "^5.4.0"
-
-"@fortawesome/fontawesome-free@^5.15.4":
-  "integrity" "sha1-7NpXErYayFLHYNizx5yWrcpVVOU="
-  "resolved" "https://registry.npmmirror.com/@fortawesome/fontawesome-free/download/@fortawesome/fontawesome-free-5.15.4.tgz"
-  "version" "5.15.4"
 
 "@gar/promisify@^1.0.1":
   "integrity" "sha512-82cpyJyKRoQoRi+14ibCeGPu0CwypgtBAdBhq1WfvagpCZNKqwXbKwXllYSMG91DhmG4jt9gN8eP6lGOtozuaw=="
@@ -3429,7 +3415,7 @@
   "resolved" "https://registry.npmmirror.com/@types/ms/download/@types/ms-0.7.31.tgz"
   "version" "0.7.31"
 
-"@types/node@*", "@types/node@>=13.7.0", "@types/node@>=6":
+"@types/node@*", "@types/node@>=13.7.0":
   "integrity" "sha512-pLUPDn+YG3FYEt/pHI74HmnJOWzeR+tOIQzUx93pi9M7D8OE7PSLr97HboXwk5F+JS+TLtWuzCOW97AHjmOXXA=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-16.7.13.tgz"
   "version" "16.7.13"
@@ -4282,14 +4268,6 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@wry/context@^0.4.0":
-  "integrity" "sha1-5Q9fodbPqr8pd9H9pa6RcX+IFfg="
-  "resolved" "https://registry.nlark.com/@wry/context/download/@wry/context-0.4.4.tgz"
-  "version" "0.4.4"
-  dependencies:
-    "@types/node" ">=6"
-    "tslib" "^1.9.3"
-
 "@wry/context@^0.6.0":
   "integrity" "sha1-w8KcCtYirbAPalMwPE+WXuBuvrI="
   "resolved" "https://registry.nlark.com/@wry/context/download/@wry/context-0.6.1.tgz"
@@ -4631,40 +4609,6 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
-"apollo-boost@^0.4.9":
-  "integrity" "sha1-qzulOcLKlE5v0VZYOhsZVLF6Z5E="
-  "resolved" "https://registry.nlark.com/apollo-boost/download/apollo-boost-0.4.9.tgz"
-  "version" "0.4.9"
-  dependencies:
-    "apollo-cache" "^1.3.5"
-    "apollo-cache-inmemory" "^1.6.6"
-    "apollo-client" "^2.6.10"
-    "apollo-link" "^1.0.6"
-    "apollo-link-error" "^1.0.3"
-    "apollo-link-http" "^1.3.1"
-    "graphql-tag" "^2.4.2"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.10.0"
-
-"apollo-cache-inmemory@^1.6.6":
-  "integrity" "sha1-VtHypGOmudsy6fqZCvFtKgCCBv0="
-  "resolved" "https://registry.npm.taobao.org/apollo-cache-inmemory/download/apollo-cache-inmemory-1.6.6.tgz"
-  "version" "1.6.6"
-  dependencies:
-    "apollo-cache" "^1.3.5"
-    "apollo-utilities" "^1.3.4"
-    "optimism" "^0.10.0"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.10.0"
-
-"apollo-cache@^1.3.5", "apollo-cache@1.3.5":
-  "integrity" "sha1-nb6/yNvo/n+XulaKIkvKLF2B9GE="
-  "resolved" "https://registry.npm.taobao.org/apollo-cache/download/apollo-cache-1.3.5.tgz"
-  "version" "1.3.5"
-  dependencies:
-    "apollo-utilities" "^1.3.4"
-    "tslib" "^1.10.0"
-
 "apollo-cache@1.3.2":
   "integrity" "sha1-303OViQNbJXGE1ENfkCfchTm0mo="
   "resolved" "https://registry.npm.taobao.org/apollo-cache/download/apollo-cache-1.3.2.tgz"
@@ -4672,20 +4616,6 @@
   dependencies:
     "apollo-utilities" "^1.3.2"
     "tslib" "^1.9.3"
-
-"apollo-client@^2.6.10":
-  "integrity" "sha1-hmNwR7UdlAyOqncaTOGwLfFr6mo="
-  "resolved" "https://registry.npm.taobao.org/apollo-client/download/apollo-client-2.6.10.tgz"
-  "version" "2.6.10"
-  dependencies:
-    "@types/zen-observable" "^0.8.0"
-    "apollo-cache" "1.3.5"
-    "apollo-link" "^1.0.0"
-    "apollo-utilities" "1.3.4"
-    "symbol-observable" "^1.0.2"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.10.0"
-    "zen-observable" "^0.8.0"
 
 "apollo-client@2.6.3":
   "integrity" "sha1-m7LUL7WfFXLlFBfzQcX3Q3mNIts="
@@ -4701,43 +4631,7 @@
     "tslib" "^1.9.3"
     "zen-observable" "^0.8.0"
 
-"apollo-link-error@^1.0.3":
-  "integrity" "sha1-waG7h2/+OAgCyN8FBqMsM6rShM0="
-  "resolved" "https://registry.nlark.com/apollo-link-error/download/apollo-link-error-1.1.13.tgz"
-  "version" "1.1.13"
-  dependencies:
-    "apollo-link" "^1.2.14"
-    "apollo-link-http-common" "^0.2.16"
-    "tslib" "^1.9.3"
-
-"apollo-link-http-common@^0.2.14", "apollo-link-http-common@^0.2.16":
-  "integrity" "sha1-dWdJ2vxzJ5LIygkj+aQFZLfFnsw="
-  "resolved" "https://registry.npm.taobao.org/apollo-link-http-common/download/apollo-link-http-common-0.2.16.tgz"
-  "version" "0.2.16"
-  dependencies:
-    "apollo-link" "^1.2.14"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.9.3"
-
-"apollo-link-http@^1.3.1":
-  "integrity" "sha1-SZ6fFxG/aUSX8CxRrxLYLeXY2Lo="
-  "resolved" "https://registry.npm.taobao.org/apollo-link-http/download/apollo-link-http-1.5.17.tgz"
-  "version" "1.5.17"
-  dependencies:
-    "apollo-link" "^1.2.14"
-    "apollo-link-http-common" "^0.2.16"
-    "tslib" "^1.9.3"
-
-"apollo-link-http@1.5.15":
-  "integrity" "sha1-EGqyO7iZe9VZZdBYVXNtMxGWUs8="
-  "resolved" "https://registry.npm.taobao.org/apollo-link-http/download/apollo-link-http-1.5.15.tgz"
-  "version" "1.5.15"
-  dependencies:
-    "apollo-link" "^1.2.12"
-    "apollo-link-http-common" "^0.2.14"
-    "tslib" "^1.9.3"
-
-"apollo-link@^1.0.0", "apollo-link@^1.0.6", "apollo-link@^1.2.12", "apollo-link@^1.2.14":
+"apollo-link@^1.0.0":
   "integrity" "sha1-P+2ktH+eu6f0Fgvvi5d7pyW2hNk="
   "resolved" "https://registry.nlark.com/apollo-link/download/apollo-link-1.2.14.tgz"
   "version" "1.2.14"
@@ -4747,7 +4641,7 @@
     "tslib" "^1.9.3"
     "zen-observable-ts" "^0.8.21"
 
-"apollo-utilities@^1.3.0", "apollo-utilities@^1.3.4", "apollo-utilities@1.3.4":
+"apollo-utilities@^1.3.0":
   "integrity" "sha1-YSnkOOi+IBtsVbDxPOSdLHF1yc8="
   "resolved" "https://registry.npm.taobao.org/apollo-utilities/download/apollo-utilities-1.3.4.tgz"
   "version" "1.3.4"
@@ -10583,7 +10477,7 @@
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.8.tgz"
   "version" "4.2.8"
 
-"graphql-tag@^2.12.3", "graphql-tag@^2.4.2":
+"graphql-tag@^2.12.3":
   "integrity" "sha1-1EGlacHSU37xDKPRYztIclMptfE="
   "resolved" "https://registry.npmmirror.com/graphql-tag/download/graphql-tag-2.12.6.tgz?cache=0&sync_timestamp=1636204264735&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fgraphql-tag%2Fdownload%2Fgraphql-tag-2.12.6.tgz"
   "version" "2.12.6"
@@ -15769,13 +15663,6 @@
   "version" "5.5.0"
   dependencies:
     "is-wsl" "^1.1.0"
-
-"optimism@^0.10.0":
-  "integrity" "sha1-FjJo/cdB3qL7UPMAvt2oA1ZEX9c="
-  "resolved" "https://registry.nlark.com/optimism/download/optimism-0.10.3.tgz"
-  "version" "0.10.3"
-  dependencies:
-    "@wry/context" "^0.4.0"
 
 "optimism@^0.16.1":
   "integrity" "sha1-fI78HzF58YMHuIfhjBXFtxM/bn0="

@@ -1,6 +1,6 @@
 import React from 'react'
 import App from 'src/components/App'
-import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client"
 
 
 const client = new ApolloClient({

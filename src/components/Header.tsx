@@ -1,21 +1,11 @@
-import React from "react";
+import React, {lazy} from "react";
 import {
     Container,
     Navbar,
     Nav,
-    NavDropdown
-    // Form,
-    // FormControl,
-    // Button
 } from "react-bootstrap";
 import Web3ConnectButton from 'src/components/Web3Connect'
-
-
-const navBarStyles = {
-    backgroundColor: "#fff",
-    backgroundImage: "linear-gradient(0deg, #D2D2D2 0%, #97D9E1 100%);",
-    boxShadow: "0 0 6px 0 rgba(0, 0, 0, 0.3)"
-};
+// const Web3ConnectButton = lazy(()=> import('src/components/Web3Connect'))
 
 type HeaderProps = {
     account: any
@@ -41,8 +31,6 @@ const Header: React.FC<HeaderProps> = ({ account, setProviderData }) => {
                 <Nav>
                     <Web3ConnectButton account1={account} setProviderData={setProviderData} />
                 </Nav>
-
-
             </Container>
         </Navbar>
 

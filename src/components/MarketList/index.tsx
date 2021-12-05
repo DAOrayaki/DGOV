@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import { render } from "react-dom";
+import React from "react";
 
 // import ApolloClient from "apollo-boost";
 // import { ApolloProvider, useQuery } from "@apollo/react-hooks";

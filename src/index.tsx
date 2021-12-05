@@ -3,17 +3,10 @@ import ReactDOM from 'react-dom'
 import Root from './Root'
 import * as serviceWorker from './serviceWorker'
 import {
-    BscConnector,
-    UserRejectedRequestError,
-} from '@binance-chain/bsc-connector'
-
-import {
-    ConnectionRejectedError,
-    useWallet,
     UseWalletProvider,
 } from 'use-wallet'
 import "bootstrap/dist/css/bootstrap.css"; // Import precompiled Bootstrap css
-import "@fortawesome/fontawesome-free/css/all.css";
+// import "@fortawesome/fontawesome-free/css/all.css";
 // import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
 
 
@@ -27,24 +20,8 @@ import "@fortawesome/fontawesome-free/css/all.css";
 ReactDOM.render(
 
     // <ApolloProvider client={client}>
-        <UseWalletProvider
-
-            connectors={{
-                //@ts-ignore
-                bsc: {
-                    web3ReactConnector() {
-                        return new BscConnector({ supportedChainIds: [56, 97] })
-                    },
-                    //@ts-ignore
-                    handleActivationError(err) {
-                        if (err instanceof UserRejectedRequestError) {
-                            return new ConnectionRejectedError()
-                        }
-                    },
-                },
-            }}
-        >
-
+    //@ts-ignore
+        <UseWalletProvider>
             <Root />
         </UseWalletProvider>
 
