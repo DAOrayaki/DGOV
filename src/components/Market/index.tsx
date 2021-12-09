@@ -5,6 +5,8 @@ import { getConditionId, getPositionId } from 'src/utils/markets'
 import BigNumber from 'bignumber.js'
 import Layout from './Layout'
 import { create } from 'ipfs-http-client'
+import Web3 from 'web3'
+// import {web3} from 'web3'
 const bs58 = require('bs58')
 
 BigNumber.config({ EXPONENTIAL_AT: 50 })
@@ -56,7 +58,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
   //   // headers: {
   //   //   authorization: auth
   //   // }
-    
+
   // })
 
   useEffect(() => {
@@ -90,15 +92,15 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     const cid = getIpfsHashFromBytes32(questionId)
     //@ts-ignore
     const stream = client.cat(cid)
-      let data = ''
+    let data = ''
 
-      for await ( const chunk of stream) {
-          // data += chunk.toString()
-          data += utf8decoder.decode(chunk)
-      }
-      console.log(data.toString())
+    for await (const chunk of stream) {
+      // data += chunk.toString()
+      data += utf8decoder.decode(chunk)
+    }
+    console.log(data.toString())
 
-      var markets = JSON.parse(data)
+    var markets = JSON.parse(data)
 
     const outcomes = []
     for (let outcomeIndex = 0; outcomeIndex < outcomeCount; outcomeIndex++) {
@@ -149,15 +151,18 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
 
   const buy = async () => {
     const collateral = await marketMakersRepo.getCollateralToken()
-    const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
-      new BigNumber(Math.pow(10, collateral.decimals)),
-    )
+    // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
+    //   new BigNumber(Math.pow(10, collateral.decimals)),
+    // ).toString()
+    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
 
     const outcomeTokenAmounts = Array.from(
       { length: marketInfo.outcomes.length },
       (value: any, index: number) =>
-        index === selectedOutcomeToken ? formatedAmount : new BigNumber(0),
+        index === selectedOutcomeToken ? formatedAmount : Web3.utils.toBN(0),
     )
+
+    console.log("Bignumber Created")
 
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
 
@@ -178,9 +183,15 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
 
   const sell = async () => {
     const collateral = await marketMakersRepo.getCollateralToken()
-    const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
-      new BigNumber(Math.pow(10, collateral.decimals)),
-    )
+    // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
+    //   new BigNumber(Math.pow(10, collateral.decimals)),
+    // )
+    // const formatedAmount = Web3.utils.toBN(0).sub(
+      // Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals))))
+
+    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+
+
 
     const isApproved = await conditionalTokensRepo.isApprovedForAll(account, marketInfo.lmsrAddress)
     if (!isApproved) {
@@ -188,7 +199,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     }
 
     const outcomeTokenAmounts = Array.from({ length: marketInfo.outcomes.length }, (v, i) =>
-      i === selectedOutcomeToken ? formatedAmount.negated() : new BigNumber(0),
+      i === selectedOutcomeToken ? formatedAmount.neg() : Web3.utils.toBN(0),
     )
     const profit = (await marketMakersRepo.calcNetCost(outcomeTokenAmounts)).neg()
 

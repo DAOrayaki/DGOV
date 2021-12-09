@@ -3607,11 +3607,6 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/zen-observable@^0.8.0":
-  "integrity" "sha1-eB02DCgkNklLMv59n3+OZLMRiqM="
-  "resolved" "https://registry.npmmirror.com/@types/zen-observable/download/@types/zen-observable-0.8.3.tgz?cache=0&sync_timestamp=1637270528764&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fzen-observable%2Fdownload%2F%40types%2Fzen-observable-0.8.3.tgz"
-  "version" "0.8.3"
-
 "@typescript-eslint/eslint-plugin@^4.0.0", "@typescript-eslint/eslint-plugin@^4.5.0", "@typescript-eslint/eslint-plugin@>= 4":
   "integrity" "sha512-iPKZTZNavAlOhfF4gymiSuUkgLne/nh5Oz2/mdiUmuZVD42m9PapnCnzjxuDsnpnbH3wT5s2D8bw6S39TC6GNw=="
   "resolved" "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.31.0.tgz"
@@ -4275,13 +4270,6 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@wry/equality@^0.1.2":
-  "integrity" "sha1-NcsVbkqWaVqoGp7MTQN4e8F/F5A="
-  "resolved" "https://registry.nlark.com/@wry/equality/download/@wry/equality-0.1.11.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40wry%2Fequality%2Fdownload%2F%40wry%2Fequality-0.1.11.tgz"
-  "version" "0.1.11"
-  dependencies:
-    "tslib" "^1.9.3"
-
 "@wry/equality@^0.5.0":
   "integrity" "sha1-csinp9iE3/MLYS9PhGTromwIDnM="
   "resolved" "https://registry.nlark.com/@wry/equality/download/@wry/equality-0.5.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40wry%2Fequality%2Fdownload%2F%40wry%2Fequality-0.5.2.tgz"
@@ -4608,68 +4596,6 @@
   dependencies:
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
-
-"apollo-cache@1.3.2":
-  "integrity" "sha1-303OViQNbJXGE1ENfkCfchTm0mo="
-  "resolved" "https://registry.npm.taobao.org/apollo-cache/download/apollo-cache-1.3.2.tgz"
-  "version" "1.3.2"
-  dependencies:
-    "apollo-utilities" "^1.3.2"
-    "tslib" "^1.9.3"
-
-"apollo-client@2.6.3":
-  "integrity" "sha1-m7LUL7WfFXLlFBfzQcX3Q3mNIts="
-  "resolved" "https://registry.npm.taobao.org/apollo-client/download/apollo-client-2.6.3.tgz"
-  "version" "2.6.3"
-  dependencies:
-    "@types/zen-observable" "^0.8.0"
-    "apollo-cache" "1.3.2"
-    "apollo-link" "^1.0.0"
-    "apollo-utilities" "1.3.2"
-    "symbol-observable" "^1.0.2"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.9.3"
-    "zen-observable" "^0.8.0"
-
-"apollo-link@^1.0.0":
-  "integrity" "sha1-P+2ktH+eu6f0Fgvvi5d7pyW2hNk="
-  "resolved" "https://registry.nlark.com/apollo-link/download/apollo-link-1.2.14.tgz"
-  "version" "1.2.14"
-  dependencies:
-    "apollo-utilities" "^1.3.0"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.9.3"
-    "zen-observable-ts" "^0.8.21"
-
-"apollo-utilities@^1.3.0":
-  "integrity" "sha1-YSnkOOi+IBtsVbDxPOSdLHF1yc8="
-  "resolved" "https://registry.npm.taobao.org/apollo-utilities/download/apollo-utilities-1.3.4.tgz"
-  "version" "1.3.4"
-  dependencies:
-    "@wry/equality" "^0.1.2"
-    "fast-json-stable-stringify" "^2.0.0"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.10.0"
-
-"apollo-utilities@^1.3.2":
-  "integrity" "sha1-YSnkOOi+IBtsVbDxPOSdLHF1yc8="
-  "resolved" "https://registry.npm.taobao.org/apollo-utilities/download/apollo-utilities-1.3.4.tgz"
-  "version" "1.3.4"
-  dependencies:
-    "@wry/equality" "^0.1.2"
-    "fast-json-stable-stringify" "^2.0.0"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.10.0"
-
-"apollo-utilities@1.3.2":
-  "integrity" "sha1-jL3PiwEvZkzWy1dn9hMPWu2RFck="
-  "resolved" "https://registry.npm.taobao.org/apollo-utilities/download/apollo-utilities-1.3.2.tgz"
-  "version" "1.3.2"
-  dependencies:
-    "@wry/equality" "^0.1.2"
-    "fast-json-stable-stringify" "^2.0.0"
-    "ts-invariant" "^0.4.0"
-    "tslib" "^1.9.3"
 
 "aproba@^1.1.1":
   "integrity" "sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw=="
@@ -10484,7 +10410,7 @@
   dependencies:
     "tslib" "^2.1.0"
 
-"graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0", "graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.0.0 || ^15.0.0 || ^16.0.0":
+"graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0", "graphql@^14.0.0 || ^15.0.0 || ^16.0.0":
   "integrity" "sha1-f6eagKab5KMcJ92oJNwE2sIDWnI="
   "resolved" "https://registry.npmmirror.com/graphql/download/graphql-14.7.0.tgz"
   "version" "14.7.0"
@@ -19774,11 +19700,6 @@
     "tar" "^4.0.2"
     "xhr-request" "^1.0.1"
 
-"symbol-observable@^1.0.2":
-  "integrity" "sha1-wiaIrtTqs83C3+rLtWFmBWCgCAQ="
-  "resolved" "https://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.2.0.tgz?cache=0&sync_timestamp=1618452296973&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsymbol-observable%2Fdownload%2Fsymbol-observable-1.2.0.tgz"
-  "version" "1.2.0"
-
 "symbol-observable@^4.0.0":
   "integrity" "sha1-W0JfGSJ56H8vm5N6yFQNGYSzkgU="
   "resolved" "https://registry.nlark.com/symbol-observable/download/symbol-observable-4.0.0.tgz"
@@ -20165,13 +20086,6 @@
   "resolved" "https://registry.npmjs.org/tryer/-/tryer-1.0.1.tgz"
   "version" "1.0.1"
 
-"ts-invariant@^0.4.0":
-  "integrity" "sha1-l6UjUYaI+TqvrQGw6A64A+sqvYY="
-  "resolved" "https://registry.nlark.com/ts-invariant/download/ts-invariant-0.4.4.tgz?cache=0&sync_timestamp=1631219162667&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fts-invariant%2Fdownload%2Fts-invariant-0.4.4.tgz"
-  "version" "0.4.4"
-  dependencies:
-    "tslib" "^1.9.3"
-
 "ts-invariant@^0.9.0":
   "integrity" "sha1-S0HgqAwlMKVs5Lj9ThQYOqrA76g="
   "resolved" "https://registry.nlark.com/ts-invariant/download/ts-invariant-0.9.3.tgz?cache=0&sync_timestamp=1631219162667&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fts-invariant%2Fdownload%2Fts-invariant-0.9.3.tgz"
@@ -20194,7 +20108,7 @@
     "minimist" "^1.2.0"
     "strip-bom" "^3.0.0"
 
-"tslib@^1.10.0", "tslib@^1.8.1", "tslib@^1.9.0", "tslib@^1.9.3":
+"tslib@^1.10.0", "tslib@^1.8.1", "tslib@^1.9.0":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
@@ -22504,14 +22418,6 @@
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
 
-"zen-observable-ts@^0.8.21":
-  "integrity" "sha1-hdADH7veHro80H07qQ2iQSFfQh0="
-  "resolved" "https://registry.npmmirror.com/zen-observable-ts/download/zen-observable-ts-0.8.21.tgz?cache=0&sync_timestamp=1637188139472&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fzen-observable-ts%2Fdownload%2Fzen-observable-ts-0.8.21.tgz"
-  "version" "0.8.21"
-  dependencies:
-    "tslib" "^1.9.3"
-    "zen-observable" "^0.8.0"
-
 "zen-observable-ts@^1.2.0":
   "integrity" "sha512-hc/TGiPkAWpByykMwDcem3SdUgA4We+0Qb36bItSuJC9xD0XVBZoFHYoadAomDSNf64CG8Ydj0Qb8Od8BUWz5g=="
   "resolved" "https://registry.npmmirror.com/zen-observable-ts/download/zen-observable-ts-1.2.3.tgz?cache=0&sync_timestamp=1637188139472&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fzen-observable-ts%2Fdownload%2Fzen-observable-ts-1.2.3.tgz"
@@ -22519,7 +22425,7 @@
   dependencies:
     "zen-observable" "0.8.15"
 
-"zen-observable@^0.8.0", "zen-observable@0.8.15":
+"zen-observable@0.8.15":
   "integrity" "sha1-lkFcUS2OP/2SCv04iWBOMLnqrBU="
   "resolved" "https://registry.npm.taobao.org/zen-observable/download/zen-observable-0.8.15.tgz"
   "version" "0.8.15"
