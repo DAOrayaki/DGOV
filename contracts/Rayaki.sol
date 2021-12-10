@@ -353,8 +353,8 @@ contract YAKI is Context, IBEP20, MyOwnable {
 //   uint8 public decimals = 18;
 
   constructor() public {
-    _name = "YAKI Token";
-    _symbol = "YAKI";
+    _name = "Yaki-ID";
+    _symbol = "YAKI-ID";
     _decimals = 18;
     _totalSupply = 10000000 * (10**uint256(_decimals));
     _balances[msg.sender] = _totalSupply;

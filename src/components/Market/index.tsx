@@ -187,7 +187,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     //   new BigNumber(Math.pow(10, collateral.decimals)),
     // )
     // const formatedAmount = Web3.utils.toBN(0).sub(
-      // Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals))))
+    // Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals))))
 
     const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
 

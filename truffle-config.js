@@ -61,10 +61,13 @@ module.exports = {
         gasPrice: 22000000000 // Specified in Wei
       },
       testnet: {
-        provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+        // provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
+        provider: () => new HDWalletProvider(mnemonic, "wss://speedy-nodes-nyc.moralis.io/8f971d85e65a3fc4b8b05e8f/bsc/testnet/ws"),
+        networkCheckTimeout: 999999,
         network_id: 97,
         confirmations: 10,
         timeoutBlocks: 200,
+        gas: 5500000,
         skipDryRun: true
       },
 
@@ -76,9 +79,11 @@ module.exports = {
       //   skipDryRun: true
       // },
       bsc: {
-        provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
+        provider: () => new HDWalletProvider(mnemonic, `wss://speedy-nodes-nyc.moralis.io/8f971d85e65a3fc4b8b05e8f/bsc/mainnet/ws`),
+        networkCheckTimeout: 999999,
         network_id: 56,
         confirmations: 10,
+        gas: 21000,
         timeoutBlocks: 200,
         skipDryRun: true
       },

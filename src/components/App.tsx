@@ -17,7 +17,6 @@ const Header = lazy(() => import('src/components/Header'))
 const MarketProvider = lazy(() => import('src/components/MarketList'))
 
 
-
 const App: React.FC = () => {
   const [web3, setWeb3] = useState<any>(undefined)
   const [account, setAccount] = useState<string>('')
