@@ -23,7 +23,31 @@ require('dotenv').config()
 const HDWalletProvider = require('@truffle/hdwallet-provider')
 // const mnemonic = process.env.REACT_APP_OPERATOR_MNEMONIC || 'myth like bonus scare over problem client lizard pioneer submit female collect'
 const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const API_PATH = '../apikeys.js'
+
+
+const fileExists = _path =>
+  fs.existsSync(_path)
+
+const getExternalVariable = _variable =>
+  fileExists(API_PATH)
+    ? require(API_PATH)[_variable]
+    : process.env[_variable]
+    ? process.env[_variable]
+    : (
+      console.log(
+        `Cannot migrate! Please provide '` +
+        _variable +
+        `' as an environment variable, or export it from '` +
+        API_PATH +
+        `'!`
+      ),
+      process.exit(1)
+    )
+
+const mnemonic = getExternalVariable('mnemonic')
+// console.log('aa - process.env.MNEMONIC : '+mnemonic);
 
 const createInfuraEntry = (networkName, networkId, gasPrice) => ({
   [networkName]: {
@@ -83,7 +107,7 @@ module.exports = {
         networkCheckTimeout: 999999,
         network_id: 56,
         confirmations: 10,
-        gas: 21000,
+        // gas: 22000,
         timeoutBlocks: 200,
         skipDryRun: true
       },

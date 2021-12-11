@@ -8,6 +8,7 @@ import {
   Route,
   Link,
   useRouteMatch,
+  Redirect
 } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
@@ -90,15 +91,15 @@ const App: React.FC = () => {
                   <Home />
                 </Route>
                 <Route path="/">
-                  {/* <Redirect to="/markets"></Redirect> */}
-                  {account && web3 ? (
+                  <Redirect to="/markets"></Redirect>
+                  {/* {account && web3 ? (
                     <ApolloProvider client={client}>
                       <MarketRoutes web3={web3} account={account} />
                     </ApolloProvider>
                   ) : (
                     <div> Connect your account first </div>
                   )
-                  }
+                  } */}
 
                 </Route>
 

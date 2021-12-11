@@ -29775,6 +29775,12 @@
     "version": "0.5.17+commit.d19bba13.Emscripten.clang"
   },
   "networks": {
+    "56": {
+      "events": {},
+      "links": {},
+      "address": "0xb14Cd8850e86fB6B4A64746C72603f232263f1b4",
+      "transactionHash": "0x9234a7d475acd6a44cb026fe53b897262c0dda98c6876a327df27b03c0bfde28"
+    },
     "97": {
       "events": {},
       "links": {},
@@ -29795,8 +29801,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-10T03:08:00.086Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-12-11T16:48:47.430Z",
   "devdoc": {
     "author": "Alan Lu - <alan.lu@gnosis.pm>Stefan George - <stefan@gnosis.pm>",
     "methods": {
