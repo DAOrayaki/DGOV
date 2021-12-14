@@ -1,6 +1,6 @@
 import ConditionalTokens from '../abi/ConditionalTokens.json'
 import LMSRMarketMaker from '../abi/LMSRMarketMaker.json'
-import YAKI from '../abi/YAKI.json'
+import YAKI from '../abi/YAKIID.json'
 
 const TruffleContract = require('@truffle/contract')
 

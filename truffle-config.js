@@ -84,6 +84,7 @@ module.exports = {
         gas: 6721975,
         gasPrice: 22000000000 // Specified in Wei
       },
+
       testnet: {
         // provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545`),
         provider: () => new HDWalletProvider(mnemonic, "wss://speedy-nodes-nyc.moralis.io/8f971d85e65a3fc4b8b05e8f/bsc/testnet/ws"),

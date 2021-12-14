@@ -29798,10 +29798,17 @@
       "links": {},
       "address": "0x8e6bc00D6e50700a3Cc9C600e9470a9C2C78531D",
       "transactionHash": "0x379a3614c2a9e3ab3fd098f843090c0b2a4aacf45d9baf6f019ebe291ff85b76"
+    },
+    "1639474047006": {
+      "events": {},
+      "links": {},
+      "address": "0x3B6b9a4eb23277fe7bbb396Bf8dED8f05fb4042c",
+      "transactionHash": "0x22459f6b1543b07d2ec8cf0baf9cca3fd69b601ea83317e6cc9cd262a0b2c334"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-11T16:48:47.430Z",
+  "updatedAt": "2021-12-14T14:45:46.023Z",
+  "networkType": "ethereum",
   "devdoc": {
     "author": "Alan Lu - <alan.lu@gnosis.pm>Stefan George - <stefan@gnosis.pm>",
     "methods": {

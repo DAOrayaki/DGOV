@@ -8,8 +8,11 @@ module.exports = function (deployer) {
             .require("ConditionalTokens")
             .deployed();
 
-        console.log(lmsrMarketMakerFactory.address)
-        console.log(conditionalTokens.address)
+        const YAKI = await artifacts.require("YAKIID").deployed();
+
+        console.log('lmsr:' + lmsrMarketMakerFactory.address)
+        console.log('conditon:' + conditionalTokens.address)
+        console.log('yaki: ' + YAKI.address)
     })
 
 };

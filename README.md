@@ -1,5 +1,12 @@
 # DAORayaki Governance Tools
 
+## YakiPoint
+
+### name
+### symbol
+
+### balance
+
 ## Framework
 1. The graph
 

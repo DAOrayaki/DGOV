@@ -35,7 +35,9 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write './src/**/*.{ts,tsx}'",
-    "prettier-check": "prettier --check './src/**/*.{ts,tsx}'"
+    "prettier-check": "prettier --check './src/**/*.{ts,tsx}'",
+    "build-scripts": "tsc scripts/createq.tsx",
+    "upload-config": "node scripts/createq.js"
   },
   "eslintConfig": {
     "extends": "react-app"

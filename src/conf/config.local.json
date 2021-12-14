@@ -1,11 +1,11 @@
 {
-  "network": "https://data-seed-prebsc-1-s1.binance.org:8545",
-  "networkId": 56,
-  "lmsrAddress": "0xB687d95Dc64624a43ABA6836Ed505FadDa8F01C4",
+  "network": "local",
+  "networkId": 1639474047006,
+  "lmsrAddress": "0xeC1C6411eE2D1560C189A8741DF5d0AC97aB1990",
   "markets": [
     {
       "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-      "title": "In season 009, Which proposal will pass and finished in time?",
+      "title": "In season 016, Which proposal will pass and finished in time?",
       "outcomes": [
         {
           "title": "DCP-1: Project cover",

@@ -42,10 +42,11 @@ var markets = require("../markets.config");
 var CID = require('cids');
 var bs58 = require('bs58');
 //@ts-ignore
-var client = (0, ipfs_http_client_1.create)("http://162.62.52.82:5001");
+// const client = create("https://ipfs.daorayaki.cn")
 // console.log(process.env.REACT_APP_IPFS_ENDPOINT)
 // const client = create('http://cloudflare-ipfs.com')
 // const client = create('http://ipfs.io')
+var client = (0, ipfs_http_client_1.create)("http://127.0.0.1:5001");
 function getBytes32FromIpfsHash(ipfsListing) {
     return "0x" + bs58.decode(ipfsListing).slice(2).toString('hex');
 }

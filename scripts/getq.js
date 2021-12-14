@@ -49,7 +49,8 @@ var markets = require("../markets.config");
 var newMarkets = require("../src/conf/ipfsmarkets.config.json");
 var bs58 = require('bs58');
 //@ts-ignore
-var client = (0, ipfs_http_client_1.create)("http://162.62.52.82:5001");
+// const client = create("https://ipfs.daorayaki.cn")
+var client = (0, ipfs_http_client_1.create)("http://127.0.0.1:5001");
 function getIpfsHashFromBytes32(bytes32Hex) {
     // Add our default ipfs values for first 2 bytes:
     // function:0x12=sha2, size:0x20=256 bits

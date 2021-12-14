@@ -24,7 +24,7 @@ module.exports = function(deployer) {
     ]
 
     // const WETH9 = artifacts.require("WETH9");
-    const YAKI = artifacts.require("YAKI");
+    const YAKI = artifacts.require("YAKIID");
     // const collateralToken = await WETH9.deployed();
     const collateralToken = await YAKI.deployed();
 
@@ -38,7 +38,7 @@ module.exports = function(deployer) {
 
     const { ammFunding } = deployConfig;
     // await collateralToken.deposit({ value: ammFunding });
-    await collateralToken.approve(lmsrMarketMakerFactory.address, ammFunding);
+    await collateralToken.approvePoint(lmsrMarketMakerFactory.address, ammFunding);
 
     // Get conditional tokens
     const conditionalTokens = await artifacts

@@ -1,3 +1,3 @@
 module.exports = function(deployer) {
-  deployer.deploy(artifacts.require("YAKI"));
+  deployer.deploy(artifacts.require("YAKIID"));
 };
