@@ -15,6 +15,7 @@ import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apo
 const About = lazy(() => import('src/components/childs/About'))
 const Home = lazy(() => import('src/components/childs/Home'))
 const Header = lazy(() => import('src/components/Header'))
+const YakiWallet = lazy(() => import('src/components/Yaki/index'))
 const MarketProvider = lazy(() => import('src/components/MarketList'))
 
 
@@ -90,17 +91,17 @@ const App: React.FC = () => {
                 <Route path="/home">
                   <Home />
                 </Route>
-                <Route path="/">
-                  <Redirect to="/markets"></Redirect>
-                  {/* {account && web3 ? (
-                    <ApolloProvider client={client}>
-                      <MarketRoutes web3={web3} account={account} />
-                    </ApolloProvider>
+                <Route path="/wallet">
+                  {account && web3 ? (
+                    <YakiWallet web3={web3} account={account} yakiAddress="0x59d3631c86BbE35EF041872d502F218A39FBa150" />
                   ) : (
                     <div> Connect your account first </div>
                   )
-                  } */}
 
+                  }
+                </Route>
+                <Route path="/">
+                  <Redirect to="/markets"></Redirect>
                 </Route>
 
               </Switch>
@@ -190,14 +191,14 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
 
       <Suspense fallback={<div>Loading...</div>}>
 
-      <Switch>
-        <Route path={`${match.path}/:address`}>
-          <MarketProvider web3={web3} account={account} />
-        </Route>
-        <Route path={match.path}>
-          <h3>Please select a markets.</h3>
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path={`${match.path}/:address`}>
+            <MarketProvider web3={web3} account={account} />
+          </Route>
+          <Route path={match.path}>
+            <h3>Please select a markets.</h3>
+          </Route>
+        </Switch>
       </Suspense>
     </div>
   )

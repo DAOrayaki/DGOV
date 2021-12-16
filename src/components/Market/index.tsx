@@ -170,7 +170,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     const collateralBalance = await collateral.contract.allowancePoint(account, marketInfo.lmsrAddress)
     if (cost.gt(collateralBalance)) {
       // await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
-      await collateral.contract.approvePoint(marketInfo.lmsrAddress, formatedAmount.toString(), {
+      await collateral.contract.approvePoint(marketInfo.lmsrAddress, formatedAmount, {
         from: account,
       })
     }

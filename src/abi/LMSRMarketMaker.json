@@ -11686,10 +11686,16 @@
       "links": {
         "Fixed192x64Math": "0x3B6b9a4eb23277fe7bbb396Bf8dED8f05fb4042c"
       }
+    },
+    "1639643279924": {
+      "events": {},
+      "links": {
+        "Fixed192x64Math": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550"
+      }
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-14T15:11:50.614Z",
+  "updatedAt": "2021-12-16T11:05:42.965Z",
   "devdoc": {
     "author": "Alan Lu - <alan.lu@gnosis.pm>",
     "methods": {

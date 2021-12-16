@@ -1,7 +1,7 @@
 module.exports = [
   {
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In season 016, Which proposal will pass and finished in time?",
+    title: "In season 017, Which proposal will pass and finished in time?",
     outcomes: [
       {
         title: "DCP-1: Project cover",

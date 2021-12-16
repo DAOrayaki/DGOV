@@ -12747,10 +12747,119 @@
       },
       "address": "0xc929a2B92405e5eE834A9623A65b634B923Cc3C3",
       "transactionHash": "0x70628fbc38625384fdbdb5a03211882e800eb1cae20d6b45868d85224dc019f2"
+    },
+    "1639643279924": {
+      "events": {
+        "0x631ac92e0a879a687b1bd27a7dcbf3ec0be307aa0a1046c0df4109be02c49307": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "initialFunding",
+              "type": "uint256"
+            }
+          ],
+          "name": "AMMCreated",
+          "type": "event"
+        },
+        "0x3d2b821286d97aa9d35330d87a82f7b548b9737b10e2d1ba59994edfd50e9d2b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "target",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "clone",
+              "type": "address"
+            }
+          ],
+          "name": "CloneCreated",
+          "type": "event"
+        },
+        "0x6867cd3ddf1a2f1ce80923be4ebe91b6cdab90ef2266e1b5c38c3e509ad0d8f8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "creator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract LMSRMarketMaker",
+              "name": "lmsrMarketMaker",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract ConditionalTokens",
+              "name": "pmSystem",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "contract YAKIPoint",
+              "name": "collateralToken",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bytes32[]",
+              "name": "conditionIds",
+              "type": "bytes32[]"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint64",
+              "name": "fee",
+              "type": "uint64"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "funding",
+              "type": "uint256"
+            }
+          ],
+          "name": "LMSRMarketMakerCreation",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {
+        "Fixed192x64Math": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550"
+      },
+      "address": "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7",
+      "transactionHash": "0xf88a5981e4cfc855dc708047374b4e5e5ea69351cf58c2f9cf2c67b57f2ed409"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-12-14T15:12:00.454Z",
+  "updatedAt": "2021-12-16T11:06:01.133Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

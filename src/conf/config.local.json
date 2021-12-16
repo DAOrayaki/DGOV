@@ -1,11 +1,11 @@
 {
   "network": "local",
-  "networkId": 1639474047006,
-  "lmsrAddress": "0xeC1C6411eE2D1560C189A8741DF5d0AC97aB1990",
+  "networkId": 1639643279924,
+  "lmsrAddress": "0x01Da9ec913F82a784ba03eC61CdBCf8877Add8cE",
   "markets": [
     {
       "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-      "title": "In season 016, Which proposal will pass and finished in time?",
+      "title": "In season 017, Which proposal will pass and finished in time?",
       "outcomes": [
         {
           "title": "DCP-1: Project cover",
