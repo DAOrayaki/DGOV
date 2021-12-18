@@ -45,10 +45,10 @@ const getExternalVariable = _variable =>
         process.exit(1)
     )
 
-// const mnemonic = getExternalVariable('mnemonic')
-// console.log('aa - process.env.MNEMONIC : '+mnemonic);
+const mnemonic = getExternalVariable('mnemonic')
+    // console.log('aa - process.env.MNEMONIC : '+mnemonic);
 
-const mnemonic = process.env.REACT_APP_OPERATOR_MNEMONIC || 'myth like bonus scare over problem client lizard pioneer submit female collect'
+// const mnemonic = process.env.REACT_APP_OPERATOR_MNEMONIC || 'myth like bonus scare over problem client lizard pioneer submit female collect'
 
 const createInfuraEntry = (networkName, networkId, gasPrice) => ({
     [networkName]: {
@@ -79,7 +79,7 @@ module.exports = {
     networks: Object.assign({
             development: {
                 host: '127.0.0.1',
-                port: 8545,
+                port: 62743,
                 network_id: '*',
                 gas: 6721975,
                 gasPrice: 22000000000 // Specified in Wei

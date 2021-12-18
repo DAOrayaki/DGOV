@@ -1,12 +1,12 @@
 {
   "network": "local",
   "networkId": 1639788503582,
-  "lmsrAddress": "0x4479B49eE193E6107Ed2Ad38A9b089Ee362542BA",
+  "lmsrAddress": "0x481980b16bFce94efACAA348B7818f77Ae217F07",
   "markets": [
     {
       "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-      "title": "In season 022, Which proposal will pass and finished in time?",
-      "questionType": 0,
+      "title": "In season 023, Which proposal will be the hot trend?",
+      "questionType": 1,
       "outcomes": [
         {
           "title": "DCP-1: Project cover",

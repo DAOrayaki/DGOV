@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
                         </NavDropdown>
 
                         <NavDropdown title="Content space" id="content-space">
-                            <NavDropdown.Item href="#action/3.1">Discussion Forum</NavDropdown.Item>
+                            <NavDropdown.Item href="https://forum.daorayaki.cn/">Discussion Forum</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Ranked writers</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Ranked topics</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.4">Predictors space</NavDropdown.Item>
