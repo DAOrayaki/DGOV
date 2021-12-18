@@ -3464,7 +3464,15 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-router-dom@^5.3.2":
+"@types/react-router-bootstrap@^0.24.5":
+  "integrity" "sha1-kle6PfsBzaIBqsn6Bc3j6wnqWyc="
+  "resolved" "https://registry.npmmirror.com/@types/react-router-bootstrap/download/@types/react-router-bootstrap-0.24.5.tgz"
+  "version" "0.24.5"
+  dependencies:
+    "@types/react" "*"
+    "@types/react-router-dom" "*"
+
+"@types/react-router-dom@*", "@types/react-router-dom@^5.3.2":
   "integrity" "sha1-69jhRc8FbbXGbrHaxjxy9S6FQu4="
   "resolved" "https://registry.npmmirror.com/@types/react-router-dom/download/@types/react-router-dom-5.3.2.tgz?cache=0&sync_timestamp=1637449508387&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Freact-router-dom%2Fdownload%2F%40types%2Freact-router-dom-5.3.2.tgz"
   "version" "5.3.2"
@@ -17111,7 +17119,7 @@
     "react-is" "^16.3.2"
     "warning" "^4.0.0"
 
-"prop-types@^15.0.0", "prop-types@^15.5.4", "prop-types@^15.6.2", "prop-types@^15.7.2":
+"prop-types@^15.0.0", "prop-types@^15.5.10", "prop-types@^15.5.4", "prop-types@^15.6.2", "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   "version" "15.7.2"
@@ -17534,7 +17542,14 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
   "version" "0.8.3"
 
-"react-router-dom@^5.3.0":
+"react-router-bootstrap@^0.25.0":
+  "integrity" "sha1-XRqZtbiiAWwBH8RgGdI5flY84N8="
+  "resolved" "https://registry.npmmirror.com/react-router-bootstrap/download/react-router-bootstrap-0.25.0.tgz"
+  "version" "0.25.0"
+  dependencies:
+    "prop-types" "^15.5.10"
+
+"react-router-dom@^5.3.0", "react-router-dom@>=4.0.0":
   "integrity" "sha1-2hv7U1oOiacSqTuX3Xb0etHzI2M="
   "resolved" "https://registry.npmmirror.com/react-router-dom/download/react-router-dom-5.3.0.tgz?cache=0&sync_timestamp=1636500332816&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Freact-router-dom%2Fdownload%2Freact-router-dom-5.3.0.tgz"
   "version" "5.3.0"

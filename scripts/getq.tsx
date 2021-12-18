@@ -5,8 +5,8 @@ const newMarkets = require("../src/conf/ipfsmarkets.config.json")
 const bs58 = require('bs58')
 
 //@ts-ignore
-// const client = create("https://ipfs.daorayaki.cn")
-const client = create("http://127.0.0.1:5001")
+const client = create("https://ipfs.daorayaki.cn")
+// const client = create("http://127.0.0.1:5001")
 
 function getIpfsHashFromBytes32(bytes32Hex: any) {
   // Add our default ipfs values for first 2 bytes:

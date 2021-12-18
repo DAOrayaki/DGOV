@@ -1,6 +1,6 @@
 {
-  "questionId": "0x992e1c37330136b8ca4459d61bdccd32289cda41a269754dc6aebfb0792c9739",
-  "title": "In season 017, Which proposal will pass and finished in time?",
+  "questionId": "0x59e89ffd925887224482e9c5f6628788fc23428143d4cab4b8109f49964aef47",
+  "title": "In season 023, Which proposal will be the hot trend?",
   "outcomes": [
     {
       "title": "DCP-1: Project cover",
@@ -34,5 +34,6 @@
       "title": "DCP-8: Tools develop",
       "short": "DCP-8"
     }
-  ]
+  ],
+  "questionType": 1
 }

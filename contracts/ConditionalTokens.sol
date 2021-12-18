@@ -11,11 +11,15 @@ contract ConditionalTokens is ERC1155 {
     /// @param oracle The account assigned to report the result for the prepared condition.
     /// @param questionId An identifier for the question to be answered by the oracle.
     /// @param outcomeSlotCount The number of outcome slots which should be used for this condition. Must not exceed 256.
+    /// @param questionTitle The des
+    /// @param questionType The des
     event ConditionPreparation(
         bytes32 indexed conditionId,
         address indexed oracle,
         bytes32 indexed questionId,
-        uint outcomeSlotCount
+        uint outcomeSlotCount,
+        string questionTitle,
+        uint questionType
     );
 
     event ConditionResolution(
@@ -63,14 +67,16 @@ contract ConditionalTokens is ERC1155 {
     /// @param oracle The account assigned to report the result for the prepared condition.
     /// @param questionId An identifier for the question to be answered by the oracle.
     /// @param outcomeSlotCount The number of outcome slots which should be used for this condition. Must not exceed 256.
-    function prepareCondition(address oracle, bytes32 questionId, uint outcomeSlotCount) external {
+    /// @param questionTitle The title of the question
+    /// @param questionType The type of the question
+    function prepareCondition(address oracle, bytes32 questionId, uint outcomeSlotCount, string calldata questionTitle, uint questionType ) external {
         // Limit of 256 because we use a partition array that is a number of 256 bits.
         require(outcomeSlotCount <= 256, "too many outcome slots");
         require(outcomeSlotCount > 1, "there should be more than one outcome slot");
         bytes32 conditionId = CTHelpers.getConditionId(oracle, questionId, outcomeSlotCount);
         require(payoutNumerators[conditionId].length == 0, "condition already prepared");
         payoutNumerators[conditionId] = new uint[](outcomeSlotCount);
-        emit ConditionPreparation(conditionId, oracle, questionId, outcomeSlotCount);
+        emit ConditionPreparation(conditionId, oracle, questionId, outcomeSlotCount, questionTitle, questionType);
     }
 
     /// @dev Called by the oracle for reporting results of conditions. Will set the payout vector for the condition with the ID ``keccak256(abi.encodePacked(oracle, questionId, outcomeSlotCount))``, where oracle is the message sender, questionId is one of the parameters of this function, and outcomeSlotCount is the length of the payouts parameter, which contains the payoutNumerators for each outcome slot of the condition.

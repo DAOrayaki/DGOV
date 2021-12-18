@@ -3,11 +3,13 @@ import detectEthereumProvider from '@metamask/detect-provider'
 import {
   useWallet,
 } from 'use-wallet'
-import { DropdownButton, Dropdown, Button } from 'react-bootstrap'
+import { DropdownButton, Dropdown, Button, Container, Row, Col } from 'react-bootstrap'
+import YakiButton from 'src/components/Web3Connect/YakiButton'
 // import detectEthereumProvider from '@metamask/detect-provider';
 
 
 type Props = {
+  web3: any
   account1: string
   setProviderData: Function
 }
@@ -15,7 +17,7 @@ type Props = {
 let web3ConnectListenersAdded = false
 
 
-const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
+const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData }) => {
   const connectProvider = (provider: any) => setProviderData(provider)
   const disconnectProvider = () => setProviderData()
   const { account, connect, reset, status } = useWallet()
@@ -69,10 +71,27 @@ const Web3ConnectButton: React.FC<Props> = ({ account1, setProviderData }) => {
     // <Button variant="contained" onClick={() => resetMetamask()}>
     //   Disconnect {account1}
     // </Button>
-    <DropdownButton id="dropdown-item-button" title="Account" variant="secondary">
-      <Dropdown.ItemText>{account1}</Dropdown.ItemText>
-      <Dropdown.Item as="button" onClick={() => resetMetamask()}>Disconnect</Dropdown.Item>
-    </DropdownButton>
+    <>
+      <Container>
+        {/* <Row> */}
+        <Row>
+          <Col md={4}>
+            <DropdownButton id="dropdown-item-button" title="Account" variant="secondary" >
+              <Dropdown.ItemText>{account1}</Dropdown.ItemText>
+              <Dropdown.Item as="button" onClick={() => resetMetamask()}>Disconnect  </Dropdown.Item>
+            </DropdownButton>
+          </Col>
+          {/* </Row> */}
+          {/* <Row className="mt-2"> */}
+          <Col md={7}>
+            {/* @ts-ignore */}
+            <YakiButton web3={web3} account={account1} yakiAddress={process.env.REACT_APP_YAKI_ADDRESS}></YakiButton>
+          </Col>
+          {/* </Row> */}
+        </Row>
+      </Container>
+    </>
+
   ) : (
     <Button variant="secondary" onClick={connectMetamask}>
       Connect
