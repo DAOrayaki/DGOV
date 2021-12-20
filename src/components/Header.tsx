@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
     };
 
     return (
-        <Navbar>
+        <Navbar expand="lg" className={styles.navbarcollapse}>
             <Container fluid>
                 <Navbar.Brand className="justify-content-start align-text-bottom d-inline-block" as={Link} to="/home">
                     <img
@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav className="ms-auto mt-0">
+                    <Nav className="ms-auto">
                         <NavDropdown title="Hot trends markets" id="hot-trend-markets">
                             <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/current">Current market</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/marketlist">Market List</NavDropdown.Item>

@@ -97,16 +97,16 @@ const TradingForm: React.FC<TradingFormProps> = ({
           value={selectedOutcomeToken}
         > */}
         <Row >
-          <Col md={1}>
+          <Col sm md={1}>
             <p>Trend</p>
           </Col>
-          <Col md={6}>
+          <Col sm md={6}>
             <p> </p>
           </Col>
-          <Col md={2}>
+          <Col sm md={2}>
             <p>Price(YakID)</p>
           </Col>
-          <Col md={3}>
+          <Col sm md={3}>
             <p>MyShares</p>
           </Col>
 
@@ -128,11 +128,11 @@ const TradingForm: React.FC<TradingFormProps> = ({
                 label={outcome.title}
               /> */}
             <Row>
-              <Col md={1}>
+              <Col sm md={1}>
                 <Form.Check type="radio" id={`checkitem${index}`} name="checkitems" onChange={e => setSelectedOutcomeToken(index)}>
                 </Form.Check>
               </Col>
-              <Col md={6}>
+              <Col sm md={6}>
                 <Row className="d-inline">
                   <Form.Label>{outcome.title}</Form.Label>
                 </Row>
@@ -140,10 +140,10 @@ const TradingForm: React.FC<TradingFormProps> = ({
                   <ProgressBar className="pl-0 ml-0" now={parseFloat(outcome.probability.toString()) * 100} label={`${parseFloat(outcome.probability.toString()) * 100}%`}></ProgressBar>
                 </Row>
               </Col>
-              <Col md={2}>
+              <Col sm md={2}>
                 <div className={styles.outcomeInfo}>{outcome.probability.toString()}</div>
               </Col>
-              <Col md={3}>
+              <Col sm md={3}>
                 <div className={styles.outcomeInfo}>
                   {outcome.balance.toFixed(5).toString()}
                 </div>
@@ -187,9 +187,6 @@ const TradingModal: React.FC<TradingModalProps> = ({
   return (
     <>
       <Modal show={modelShow} onHide={() => setModalShow(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
 
         <Modal.Body>
           {/* <p>Modal body text goes here.</p> */}
@@ -372,7 +369,7 @@ const Layout: React.FC<LayoutProps> = ({
       {isConditionLoaded ? (
         <>
           <Row className="justify-content-md-center mt-5">
-            <Col xs lg="6">
+            <Col xs sm lg="6">
               <Row>
                 <h2 className="text-center mb-5">{marketInfo.title}</h2>
               </Row>
@@ -382,20 +379,20 @@ const Layout: React.FC<LayoutProps> = ({
                 </Row>
                 <Row>
 
-                  <Col md={3} className="justify-content-md-center">
+                  <Col sm md={3} className="justify-content-md-center">
                     <p className="mb-0 text-center"> {marketInfo.funding} Yakid </p>
                     <p className="mt-0 text-center">Liqudity</p>
                   </Col>
-                  <Col md={3}>
+                  <Col sm md={3}>
                     <p className="mb-0 text-center"> {marketInfo.totalVolume} Yakid </p>
                     <p className="mt-0 text-center">Total Volume</p>
 
                   </Col>
-                  <Col md={4}>
+                  <Col sm md={4}>
                     <p className="mb-0 text-center"> {startDate} </p>
                     <p className="mt-0 text-center">Closing Date</p>
                   </Col>
-                  <Col md={2}>
+                  <Col sm md={2}>
                     <p className="mb-0 text-center"> {diffDays} day</p>
                     <p className="mt-0 text-center">Remaining</p>
                   </Col>

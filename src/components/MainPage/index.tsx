@@ -16,8 +16,8 @@ const MainLayout: React.FC = () => {
                             <p className="display-5 ms-5">We must decentralize information</p>
                         </div>
                     </Col>
-                    <Col xs={4} md={4} className="align-items-end">
-                        <div className={style.blankDiv}>
+                    <Col xs={3} sm={{span: 12, offset:1}} md={3} className="align-items-end">
+                        <div className={`${style.blankDiv} ${style.miniBlankDiv}`}>
                             <img src={core} alt="" width="600vw" className="rounded float-end align-bottom align-items-end"></img>
                         </div>
 

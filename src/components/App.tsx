@@ -3,6 +3,12 @@ import Web3 from 'web3'
 import { getWeb3Account } from 'src/utils/web3'
 
 import Layout from 'src/components/Layout'
+import bg from 'src/images/bg.svg'
+
+var setionStyle = {
+  backgroundImage: `url(${bg})`,
+  backgroundSize: `100% auto`
+}
 
 const App: React.FC = () => {
   const [web3, setWeb3] = useState<any>(undefined)
@@ -25,7 +31,9 @@ const App: React.FC = () => {
 
   return (
     <>
-    <Layout web3={web3} account={account} setProviderData={setProviderData} ></Layout>
+      <div style={setionStyle}>
+        <Layout web3={web3} account={account} setProviderData={setProviderData} ></Layout>
+      </div>
     </>
   )
 }
