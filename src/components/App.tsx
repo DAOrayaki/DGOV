@@ -7,7 +7,7 @@ import bg from 'src/images/bg.svg'
 
 var setionStyle = {
   backgroundImage: `url(${bg})`,
-  backgroundSize: `100% auto`
+  backgroundSize: `100% 100%`
 }
 
 const App: React.FC = () => {

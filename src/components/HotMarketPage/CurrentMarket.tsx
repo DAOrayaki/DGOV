@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MarketLayout from './MarketLayout'
 // const Market = lazy(() => import('src/components/Market/index'))
 import Market from 'src/components/Market'
+import SpinnerPage from 'src/components/SpinnerPage'
 
 
 
@@ -60,6 +61,7 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
           }
           oracle
           questionId
+          questionType
           outcomeSlotCount
         }
    }
@@ -69,7 +71,7 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
     }
     )
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return (<><SpinnerPage /></>)
 
     if (error) return <p>Error :</p>
 
@@ -97,7 +99,9 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
                         outcomeCount={lmsrmarketMaker.outcomeSlotCount}
                         oracle={lmsrmarketMaker.oracle}
                         creator={lmsrmarketMaker.creator}
-                        createTime={d} />
+                        createTime={d} 
+                        questionType={lmsrmarketMaker.questionType}
+                        />
                 </>
             ) : (
                 <h1 className="text-center">No data found</h1>

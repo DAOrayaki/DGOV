@@ -66,19 +66,24 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
     return startDate
   }
 
+    const getID = (str: string) => {
+    let num = str.match(/\d+\-?\d+\-?\d+/g); 
+    return num
+  }
   const marketlist = data.lmsrmarketMakers.map(
     (data: any) =>
       <Card
         bg="light"
         key={data.id}
         text='dark'
-        className="mb-8"
+        className="mb-8 bg-transparent border border-primary"
       >
         <Card.Body>
 
-          <Row>
-            <Col md={4}>
-              {data.id}
+          <Row className="justify-content-center">
+            <Col md={2}>
+              {/* {data.id} */}
+              {getID(data.questionTitle)}
             </Col>
             <Col md={6}>
               <Link to={`/markets/hottrendmarkets/markets/${data.id}`} key={data.id}>
@@ -105,7 +110,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
 
 
   return (
-    <Container className={[styles.conditon, "mt-5"].join(' ')}>
+    <Container className={[styles.conditon, "mt-5", "bg-transparent"].join(' ')}>
       <h1  className="text-center">Market Lists</h1>
       {marketlist}
 

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 
 import styles from 'src/components/style.module.css'
+import SpinnerPage from 'src/components/SpinnerPage'
 
 const Header = lazy(() => import('src/components/Header'))
 const YakiWallet = lazy(() => import('src/components/Yaki/index'))
@@ -28,12 +29,12 @@ const Layout: React.FC<LayoutProperty> = ({
         <Router>
             
             <div className={styles.headerBar}>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={SpinnerPage}>
                     <Header web3={web3} account={account} setProviderData={setProviderData}> </Header>
                 </Suspense>
             </div>
             <div className={styles.mainContent}>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={SpinnerPage}>
                     <Switch>
                         <Route path="/markets/researchmarkets">
                             <MarketPage web3={web3} account={account}></MarketPage>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import loadYakiTokenRepo from "src/logic/YakiToken";
 import Web3 from 'web3'
@@ -17,6 +18,7 @@ const YakiButton: React.FC<YakiWalletProps> = ({
 }) => {
     const [isYakiTokenLoaded, setIsYakiTokenLoaded] = useState<boolean>(false)
     const [tokenInfo, setTokenInfo] = useState<any>(undefined)
+    const history = useHistory();
 
     console.log(yakiAddress)
 
@@ -50,18 +52,29 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         setTokenInfo(yakiData)
     }
 
+    if (isYakiTokenLoaded) {
+
+        console.log(tokenInfo.balance)
+    }
+
+    const goWallet = () => {
+        history.push("/wallet")
+    }
 
     return (
         <>
-            {isYakiTokenLoaded && web3 ? 
-            (
-                <Button variant="outline-dark" className="pl-2">
-                    {tokenInfo.balance} YakID
-                </Button>
-            )
-             : (
-                <div>Loading...</div>
-            )}
+            {isYakiTokenLoaded && web3 ?
+                (
+                    <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
+                        { `${tokenInfo.balance} YakID`} 
+                    </Button>
+                )
+                : (
+                    <Button variant="outline-dark" className="pl-2 ms-4">
+                        Loading
+                    </Button>
+
+                )}
         </>
     )
 }

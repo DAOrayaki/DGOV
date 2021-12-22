@@ -21,14 +21,14 @@ const SubHeader: React.FC = () => {
                     <Navbar.Brand as={Link} to="/markets/hottrendmarkets/marketlist" className="text-light">
                         Market List
                     </Navbar.Brand>
-
+{/* 
                     <Navbar.Brand href="/home" className="text-light">
                         Top Ranked
                     </Navbar.Brand>
 
                     <Navbar.Brand href="/home" className="text-light">
                         Top Predictors
-                    </Navbar.Brand>
+                    </Navbar.Brand> */}
 
                 </Container>
             </Navbar>

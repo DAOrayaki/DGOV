@@ -96,12 +96,9 @@ const TradingForm: React.FC<TradingFormProps> = ({
           onChange={e => setSelectedOutcomeToken(parseInt(e.target.value))}
           value={selectedOutcomeToken}
         > */}
-        <Row >
-          <Col sm md={1}>
-            <p>Trend</p>
-          </Col>
-          <Col sm md={6}>
-            <p> </p>
+        <Row className="mt-4">
+          <Col sm md={7}>
+            <p className="text-center">Trend</p>
           </Col>
           <Col sm md={2}>
             <p>Price(YakID)</p>
@@ -129,7 +126,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
               /> */}
             <Row>
               <Col sm md={1}>
-                <Form.Check type="radio" id={`checkitem${index}`} name="checkitems" onChange={e => setSelectedOutcomeToken(index)}>
+                <Form.Check type="radio" id={`checkitem${index}`} name="checkitems" onChange={e => setSelectedOutcomeToken(index)} checked={index == selectedOutcomeToken}>
                 </Form.Check>
               </Col>
               <Col sm md={6}>
@@ -137,7 +134,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
                   <Form.Label>{outcome.title}</Form.Label>
                 </Row>
                 <Row>
-                  <ProgressBar className="pl-0 ml-0" now={parseFloat(outcome.probability.toString()) * 100} label={`${parseFloat(outcome.probability.toString()) * 100}%`}></ProgressBar>
+                  <ProgressBar className="pl-0 ml-0" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
                 </Row>
               </Col>
               <Col sm md={2}>
@@ -226,6 +223,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setRedeemShow(true)}
           // onClick={redeem}
           disabled={!isMarketClosed || !marketInfo.payoutDenominator}
+          className="me-0"
         >
           Redeem
         </Button>
@@ -233,6 +231,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setBuyShow(true)}
           // onClick={buy} 
           disabled={isMarketClosed}
+          className="me-1"
         >
           Buy
         </Button>
@@ -240,6 +239,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setSellShow(true)}
           // onClick={sell}
           disabled={isMarketClosed}
+          className="me-1"
         >
           Sell
         </Button>
@@ -342,27 +342,44 @@ const Layout: React.FC<LayoutProps> = ({
   createTime
 }) => {
 
+  console.log(marketInfo)
+  const stage1_duration = marketInfo && marketInfo.questionType == 0 ? (4) : (3)
+  const stage2_duration = marketInfo && marketInfo.questionType == 0 ? (7) : (4)
+
   var d = createTime
-  var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + 7) + " " + d.getHours() + ":" + d.getMinutes()
 
   let nowDate: Date = new Date(Date.now())
   var diff = nowDate.getTime() - d.getTime();
   diff = diff > 0 ? diff : 0;
-  var diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+  var diffDays = Math.ceil(diff / (1000 * 3600 * 24)) - 1;
   var stage = isMarketClosed ? 1 : 0
   console.log(stage)
 
   if (isMarketClosed && marketInfo.payoutDenominator) {
     stage = 2
   }
-  if (stage == 1) {
-    diffDays = diffDays - 7
-    diffDays = diffDays > 0 ? diffDays : 0
-  }
 
-  var nowProgress = (diffDays / 7) * 100
+  var nowProgress
+  if (stage == 1) {
+    diffDays = diffDays - stage1_duration
+    diffDays = diffDays > 0 ? diffDays : 0
+    console.log('diffdays' + diffDays)
+    nowProgress = (diffDays / stage2_duration) * 100
+    var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + stage1_duration + stage2_duration) + " " + d.getHours() + ":" + d.getMinutes()
+    var remainDays = stage2_duration + stage2_duration - diffDays
+
+  } else {
+    console.log('diffdays' + diffDays)
+    console.log('duration' + stage1_duration)
+
+    nowProgress = (diffDays / stage1_duration) * 100
+    var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + stage1_duration) + " " + d.getHours() + ":" + d.getMinutes()
+    var remainDays = stage1_duration - diffDays
+
+  }
   console.log(nowProgress)
   console.log(stage)
+  console.log(oracle)
 
   return (
     <Container className={[styles.conditon].join(' ')}>
@@ -373,33 +390,33 @@ const Layout: React.FC<LayoutProps> = ({
               <Row>
                 <h2 className="text-center mb-5">{marketInfo.title}</h2>
               </Row>
-              <Row className="mt-2 pt-4 bg-light">
+              <Row className="mt-2 pt-4 bg-transparent border border-primary">
                 <Row>
                   <Progress now={nowProgress} stage={stage}></Progress>
                 </Row>
                 <Row>
 
                   <Col sm md={3} className="justify-content-md-center">
-                    <p className="mb-0 text-center"> {marketInfo.funding} Yakid </p>
+                    <p className="mb-0 text-center"> <strong> {marketInfo.funding} Yakid </strong></p>
                     <p className="mt-0 text-center">Liqudity</p>
                   </Col>
                   <Col sm md={3}>
-                    <p className="mb-0 text-center"> {marketInfo.totalVolume} Yakid </p>
+                    <p className="mb-0 text-center"> <strong> {marketInfo.totalVolume} Yakid </strong></p>
                     <p className="mt-0 text-center">Total Volume</p>
 
                   </Col>
                   <Col sm md={4}>
-                    <p className="mb-0 text-center"> {startDate} </p>
-                    <p className="mt-0 text-center">Closing Date</p>
+                    <p className="mb-0 text-center"> <strong> {startDate} </strong></p>
+                    <p className="mt-0 text-center">{stage == 0 ? (`Closing Date`) : (`Resolving Date`)}</p>
                   </Col>
                   <Col sm md={2}>
-                    <p className="mb-0 text-center"> {diffDays} day</p>
+                    <p className="mb-0 text-center"> <strong> {remainDays} days </strong></p>
                     <p className="mt-0 text-center">Remaining</p>
                   </Col>
 
                 </Row>
               </Row>
-              <Row className="mt-2 bg-light">
+              <Row className="mt-2 bg-transparent border border-primary">
                 <TradingForm
                   isMarketClosed={isMarketClosed}
                   marketInfo={marketInfo}
@@ -436,10 +453,7 @@ const Layout: React.FC<LayoutProps> = ({
       ) : (
         <div>
           <h1 className="text-center">Loading...</h1>
-          </div>
-        // <Spinner animation="border" role="status" className="align-center">
-          // <span className="visually-hidden">Loading...</span>
-        // </Spinner>
+        </div>
       )}
 
     </Container>

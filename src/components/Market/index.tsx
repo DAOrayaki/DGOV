@@ -24,6 +24,7 @@ type MarketProps = {
   oracle: string
   creator: string
   createTime: any
+  questionType: number
 }
 
 enum MarketStage {
@@ -45,7 +46,7 @@ function getIpfsHashFromBytes32(bytes32Hex: any) {
   return hashStr
 }
 
-const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount, oracle, creator, createTime }) => {
+const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount, oracle, creator, createTime, questionType }) => {
   const [isConditionLoaded, setIsConditionLoaded] = useState<boolean>(false)
   const [selectedAmount, setSelectedAmount] = useState<string>('')
   const [selectedOutcomeToken, setSelectedOutcomeToken] = useState<number>(0)
@@ -132,11 +133,12 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
         // title: `outcome ${outcomeIndex}`,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
-          // .multipliedBy(100)
           .toFixed(3),
+          // .multipliedBy(100)
         balance: new BigNumber(balance).dividedBy(Math.pow(10, collateral.decimals)),
         payoutNumerator: payoutNumerator,
       }
+      console.log(outcome)
       outcomes.push(outcome)
     }
 
@@ -149,8 +151,8 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       conditionId: conditionId,
       payoutDenominator: payoutDenominator,
       funding: new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
-      totalVolume: new BigNumber(totalSupply).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2)
-
+      totalVolume: new BigNumber(totalSupply).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
+      questionType: questionType
     }
 
     setMarketInfo(marketData)

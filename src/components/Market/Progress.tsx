@@ -24,7 +24,7 @@ const CloseProgress: React.FC<StageProperty> = ({
                     </Col>
 
                     <Col md={4} sm={4}>
-                        <ProgressBar now={now} label={`${now}%`}></ProgressBar >
+                        <ProgressBar now={now} label={`${now.toFixed(2)}%`}></ProgressBar >
                     </Col>
                     <Col md={1} sm={1}>
                         <div className={styles.circleGray}>
@@ -80,7 +80,7 @@ const ResolveProgress: React.FC<StageProperty> = ({
                         </div>
                     </Col>
                     <Col md={4} sm={4}>
-                        <ProgressBar now={now} label={`${now}%`}></ProgressBar >
+                        <ProgressBar now={now} label={`${now.toFixed(2)}%`}></ProgressBar >
                     </Col>
                     <Col md={1} sm={1}>
                         <div className={styles.circleGray}></div>

@@ -1,15 +1,15 @@
 {
   "network": "local",
-  "networkId": 1639845568013,
-  "lmsrAddress": "0xDF9FD2e8Cf22F173168F320172bBBB29f6d6b011",
+  "networkId": 97,
+  "lmsrAddress": "0x98F251b791F74fbba9d5EcFb7839cC9b0D200480",
   "markets": [
     {
       "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-      "title": "In season 024, Which proposal will be the hot trend?",
+      "title": "In season 2021-12-1, Which proposal will be the hot trend?",
       "questionType": 1,
       "outcomes": [
         {
-          "title": "DCP-1: Project cover",
+          "title": "DCP-2: Project cover",
           "short": "DCP-1"
         },
         {

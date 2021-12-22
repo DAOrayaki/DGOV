@@ -34,6 +34,7 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
           }
           oracle
           questionId
+          questionType
           outcomeSlotCount
         }
    }
@@ -69,6 +70,7 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
                             oracle={data.lmsrmarketMaker.oracle}
                             creator={data.lmsrmarketMaker.creator} 
                             createTime={d}
+                            questionType={data.questionType}
                             />
 
                     </Suspense>

@@ -76,8 +76,8 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
         {/* <Row> */}
         <Row>
           <Col md={4}>
-            <DropdownButton id="dropdown-item-button" title="Account" variant="secondary" >
-              <Dropdown.ItemText>{account1}</Dropdown.ItemText>
+            <DropdownButton id="dropdown-item-button" title={ account1.slice(0, 4) + "..." + account1.slice(-4)} variant="secondary" className="me-5">
+              {/* <Dropdown.ItemText>{account1}</Dropdown.ItemText> */}
               <Dropdown.Item as="button" onClick={() => resetMetamask()}>Disconnect  </Dropdown.Item>
             </DropdownButton>
           </Col>

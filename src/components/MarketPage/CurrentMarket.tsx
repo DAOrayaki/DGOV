@@ -61,6 +61,7 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
           oracle
           questionId
           outcomeSlotCount
+          questionType
         }
    }
   `
@@ -97,6 +98,7 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
                         outcomeCount={lmsrmarketMaker.outcomeSlotCount}
                         oracle={lmsrmarketMaker.oracle}
                         creator={lmsrmarketMaker.creator}
+                        questionType={lmsrmarketMaker.questionType}
                         createTime={d} />
                 </>
             ) : (

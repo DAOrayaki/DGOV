@@ -1,9 +1,9 @@
 module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In season 024, Which proposal will be the hot trend?",
-    questionType: 0,
+    title: "In season 2021-12-1, Which proposal will be the hot trend?",
+    questionType: 1,
     outcomes: [{
-            title: "DCP-1: Project cover",
+            title: "DCP-2: Project cover",
             short: "DCP-1"
         },
         {
