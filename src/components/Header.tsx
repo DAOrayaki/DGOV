@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
                             <NavDropdown.Item href="#action/3.4">Top predictors</NavDropdown.Item> */}
                         </NavDropdown>
 
-                        <NavDropdown title= {<span className="h5 font-weight-bold text-dark">Hot Trends Markets </span>} id="hot-trend-markets" className={styles.dropdownMenu}>
+                        <NavDropdown title= {<span className="h5 font-weight-bold text-dark">Hot Trends Markets </span>} id="hot-trend-markets">
                             <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/current">Current market</NavDropdown.Item>
                             <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/marketlist">Market List</NavDropdown.Item>
                             {/* <NavDropdown.Item >Top ranked</NavDropdown.Item>
