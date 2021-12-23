@@ -397,7 +397,7 @@ const Layout: React.FC<LayoutProps> = ({
                 <Row>
 
                   <Col sm md={3} className="justify-content-md-center">
-                    <p className="mb-0 text-center"> <strong> {marketInfo.funding} Yakid </strong></p>
+                    <p className="mb-0 text-center"> <strong> {marketInfo.funding}k Yakid </strong></p>
                     <p className="mt-0 text-center">Liqudity</p>
                   </Col>
                   <Col sm md={3}>

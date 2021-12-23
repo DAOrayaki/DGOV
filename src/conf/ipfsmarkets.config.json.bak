@@ -1,9 +1,9 @@
 {
-  "questionId": "0x707d3946dc6c8e0d88cd35eb582ca70caff3f78296569da3e9158bf0fed472db",
+  "questionId": "0xd1f1d43a57cd8b01a901573d2fe15a74627b8a4bbe19f95ca3ed5cbaa45010d8",
   "title": "In season 2021-12-1, Which proposal will be the hot trend?",
   "outcomes": [
     {
-      "title": "DCP-1: Project cover",
+      "title": "DCP-2: Project cover",
       "short": "DCP-1"
     },
     {
@@ -35,5 +35,5 @@
       "short": "DCP-8"
     }
   ],
-  "questionType": 0
+  "questionType": 1
 }
