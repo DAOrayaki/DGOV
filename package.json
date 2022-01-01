@@ -1,77 +1,77 @@
 {
-  "name": "DGV2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@apollo/client": "^3.5.5",
-    "@material-ui/core": "^4.12.3",
-    "@metamask/detect-provider": "^1.2.0",
-    "@truffle/contract": "^4.3.33",
-    "@types/react": "^17.0.20",
-    "@types/react-dom": "^17.0.9",
-    "@walletconnect/web3-provider": "^1.6.5",
-    "bignumber.js": "^9.0.1",
-    "bootstrap": "^5.1.3",
-    "bs58": "^4.0.1",
-    "decimal.js-light": "^2.5.1",
-    "fortmatic": "^2.2.1",
-    "ipfs-core": "^0.12.2",
-    "ipfs-http-client": "^54.0.2",
-    "prettier": "^2.3.2",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.0.2",
-    "react-dom": "^17.0.2",
-    "react-markdown": "^7.1.1",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^5.3.0",
-    "remark-gfm": "^3.0.1",
-    "typescript": "~4.4.2",
-    "use-wallet": "^0.8.0",
-    "web3": "^1.6.0",
-    "web3connect": "^1.0.0-beta.33"
-  },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired --max_old_space_size=4096 build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "prettier": "prettier --write './src/**/*.{ts,tsx}'",
-    "prettier-check": "prettier --check './src/**/*.{ts,tsx}'",
-    "build-scripts": "tsc scripts/createq.tsx",
-    "upload-config": "node scripts/createq.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@gnosis.pm/conditional-tokens-contracts": "1.0.3",
-    "@gnosis.pm/conditional-tokens-market-makers": "1.8.1",
-    "@gnosis.pm/util-contracts": "3.0.0-alpha.3",
-    "@metamask/eslint-config": "^2.0.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@truffle/hdwallet-provider": "^1.5.0",
-    "@types/jest": "^27.0.1",
-    "@types/react-router-bootstrap": "^0.24.5",
-    "@types/react-router-dom": "^5.3.2",
-    "canonical-weth": "^1.4.0",
-    "dotenv": "^10.0.0",
-    "http-proxy-middleware": "^2.0.1",
-    "react-app-rewired": "^2.1.8",
-    "react-dev-utils": "^11.0.4",
-    "react-scripts": "^4.0.3"
-  }
+    "name": "DGV2",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@apollo/client": "^3.5.5",
+        "@metamask/detect-provider": "^1.2.0",
+        "@truffle/contract": "^4.3.33",
+        "@walletconnect/web3-provider": "^1.6.5",
+        "bignumber.js": "^9.0.1",
+        "bootstrap": "^5.1.3",
+        "bs58": "^4.0.1",
+        "decimal.js-light": "^2.5.1",
+        "fortmatic": "^2.2.1",
+        "ipfs-core": "^0.12.2",
+        "ipfs-http-client": "^54.0.2",
+        "prettier": "^2.3.2",
+        "react": "^17.0.2",
+        "react-bootstrap": "^2.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-bootstrap": "^0.25.0",
+        "react-router-dom": "^5.3.0",
+        "typescript": "~4.4.2",
+        "use-wallet": "^0.8.0",
+        "web3": "^1.6.0",
+        "web3connect": "^1.0.0-beta.33"
+    },
+    "scripts": {
+        "start": "react-app-rewired start",
+        "build": "react-app-rewired --max_old_space_size=4096 build",
+        "test": "react-app-rewired test",
+        "eject": "react-scripts eject",
+        "prettier": "prettier --write './src/**/*.{ts,tsx}'",
+        "prettier-check": "prettier --check './src/**/*.{ts,tsx}'",
+        "build-scripts": "tsc scripts/createq.tsx",
+        "upload-config": "node scripts/createq.js",
+        "analyse": "source-map-explorer build/static/js/1.4e3f931c.*",
+        "recreate": "truffle migrate -f 11"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@gnosis.pm/conditional-tokens-contracts": "1.0.3",
+        "@gnosis.pm/conditional-tokens-market-makers": "1.8.1",
+        "@gnosis.pm/util-contracts": "3.0.0-alpha.3",
+        "@metamask/eslint-config": "^2.0.0",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.0.0",
+        "@testing-library/user-event": "^13.2.1",
+        "@truffle/hdwallet-provider": "^1.5.0",
+        "@types/jest": "^27.0.1",
+        "@types/react": "^17.0.20",
+        "@types/react-dom": "^17.0.9",
+        "@types/react-router-bootstrap": "^0.24.5",
+        "@types/react-router-dom": "^5.3.2",
+        "canonical-weth": "^1.4.0",
+        "dotenv": "^10.0.0",
+        "http-proxy-middleware": "^2.0.1",
+        "react-app-rewired": "^2.1.8",
+        "react-dev-utils": "^11.0.4",
+        "react-scripts": "^4.0.3",
+        "source-map-explorer": "^2.5.2"
+    }
 }

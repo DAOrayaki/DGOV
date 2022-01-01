@@ -21,12 +21,6 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
     const [recipient, setRecipient] = useState<string>('')
 
     console.log(yakiAddress)
-    const updateTik = () => {
-        if (isYakiTokenLoaded) {
-            console.log('update info')
-            getYakiInfo()
-        }
-    }
 
 
     useEffect(() => {
@@ -62,9 +56,10 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
             decimals: decimals
         }
 
+        console.log(yakiData.balance)
+
         setTokenInfo(yakiData)
 
-        setInterval(updateTik, 1000)
     }
 
     const transform = async () => {
@@ -81,8 +76,9 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
         <>
             {isYakiTokenLoaded ? (<Layout
                 account={account}
-                tokenSymbol={tokenInfo.symbol}
-                tokenAmount={tokenInfo.balance}
+                // tokenSymbol={tokenInfo.symbol}
+                // tokenAmount={tokenInfo.balance}
+                tokenInfo={tokenInfo}
                 setSelectedAmount={setSelectedAmount}
                 selectedAmount={selectedAmount}
                 setRecipient={setRecipient}

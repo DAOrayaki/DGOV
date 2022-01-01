@@ -11,6 +11,23 @@ type YakiWalletProps = {
     yakiAddress: string
 }
 
+
+type YakiButtonProps = {
+    tokenInfo: any
+    goWallet: any
+}
+
+const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet }) => {
+    return (
+        <>
+                    <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
+                        {`${tokenInfo.balance} YakID`}
+                    </Button>
+        </>
+    )
+
+}
+
 let yakiTokenRepo: any
 
 const YakiButton: React.FC<YakiWalletProps> = ({
@@ -34,7 +51,7 @@ const YakiButton: React.FC<YakiWalletProps> = ({
                 yakiTokenRepo = await loadYakiTokenRepo(web3, yakiAddress, account)
                 await getYakiInfo()
                 setIsYakiTokenLoaded(true)
-                setInterval(updateTik, 5000)
+                setInterval(updateTik, 1000)
             } catch (err) {
                 setIsYakiTokenLoaded(false)
                 console.error(err)
@@ -72,9 +89,10 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         <>
             {isYakiTokenLoaded && web3 ?
                 (
-                    <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
-                        {`${tokenInfo.balance} YakID`}
-                    </Button>
+                    // <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
+                    //     {`${tokenInfo.balance} YakID`}
+                    // </Button>
+                    <YakiButtonComp tokenInfo={tokenInfo} goWallet={goWallet}></YakiButtonComp>
                 )
                 : (
                     <Button variant="outline-dark" className="pl-2 ms-4">

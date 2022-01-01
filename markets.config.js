@@ -1,38 +1,38 @@
 module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In season 2021-12-23, Which proposal will be the hot trend?",
-    questionType: 0,
+    title: "In the season 2021-12-24, Which proposals will pass and be finished in time?",
+    questionType: 0, //0 for research 1 for hot
     outcomes: [{
-            title: "DCP-2: Project cover",
-            short: "DCP-1"
-        },
-        {
-            title: "DCP-2: Tools develop",
-            short: "DCP-2"
-        },
-        {
-            title: "DCP-3: Tools develop",
-            short: "DCP-3"
-        },
-        {
-            title: "DCP-4: Tools develop",
-            short: "DCP-4"
-        },
-        {
-            title: "DCP-5: Project cover",
+            title: "DCP-5: Do a video about explaining how DAO works",
             short: "DCP-5"
         },
         {
-            title: "DCP-6: Tools develop",
+            title: "DCP-6: Cover a new project",
             short: "DCP-6"
         },
         {
-            title: "DCP-7: Tools develop",
+            title: "DCP-7: Writing a analysis about DAO",
             short: "DCP-7"
         },
         {
-            title: "DCP-8: Tools develop",
+            title: "DCP-8: Translate a latest report",
             short: "DCP-8"
+        },
+        {
+            title: "DCP-9: Cover Project Metafactory",
+            short: "DCP-9"
+        },
+        {
+            title: "DCP-10: Writing a survey of voting tools",
+            short: "DCP-10"
+        },
+        {
+            title: "DCP-11: Cover Project ConstitutionDAO",
+            short: "DCP-11"
+        },
+        {
+            title: "DCP-0:None",
+            short: "DCP-0"
         }
     ]
 }];

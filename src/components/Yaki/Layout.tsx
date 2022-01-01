@@ -3,8 +3,7 @@ import { Form, Row, Col, Container, Button } from "react-bootstrap"
 
 type TokenAccountProps = {
     account: string
-    tokenSymbol: string
-    tokenAmount: string
+    tokenInfo: any
     setSelectedAmount: any
     selectedAmount: string
     transform: any
@@ -15,8 +14,7 @@ type TokenAccountProps = {
 const Layout: React.FC<TokenAccountProps> = (
     {
         account,
-        tokenSymbol,
-        tokenAmount,
+        tokenInfo,
         setSelectedAmount,
         selectedAmount,
         transform,
@@ -36,7 +34,7 @@ const Layout: React.FC<TokenAccountProps> = (
                                 Token Name
                             </Form.Label>
                             <Col sm="10">
-                                <Form.Control plaintext readOnly defaultValue={tokenSymbol}></Form.Control>
+                                <Form.Control plaintext readOnly defaultValue={tokenInfo.symbol}></Form.Control>
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="yakiBalance">
@@ -44,7 +42,7 @@ const Layout: React.FC<TokenAccountProps> = (
                                 Balance
                             </Form.Label>
                             <Col sm="10">
-                                <Form.Control plaintext readOnly defaultValue={tokenAmount} />
+                                <Form.Control plaintext readOnly value={tokenInfo.balance || ''} />
                             </Col>
                         </Form.Group>
 

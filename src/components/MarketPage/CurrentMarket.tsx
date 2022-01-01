@@ -1,7 +1,8 @@
 import React from "react";
+// import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
-import { useParams } from 'react-router-dom';
-import MarketLayout from './MarketLayout'
+// import { useParams } from 'react-router-dom';
+// import MarketLayout from './MarketLayout'
 // const Market = lazy(() => import('src/components/Market/index'))
 import Market from 'src/components/Market'
 
@@ -99,7 +100,8 @@ const CurrentMarket: React.FC<MarketProviderProps> = ({ web3, account }) => {
                         oracle={lmsrmarketMaker.oracle}
                         creator={lmsrmarketMaker.creator}
                         questionType={lmsrmarketMaker.questionType}
-                        createTime={d} />
+                        createTime={d} 
+                        />
                 </>
             ) : (
                 <h1 className="text-center">No data found</h1>

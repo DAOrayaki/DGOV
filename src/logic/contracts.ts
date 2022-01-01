@@ -1,6 +1,6 @@
-import ConditionalTokens from '../abi/ConditionalTokens.json'
-import LMSRMarketMaker from '../abi/LMSRMarketMaker.json'
-import YAKI from '../abi/YAKIID.json'
+import React, { lazy } from 'react'
+
+
 
 const TruffleContract = require('@truffle/contract')
 
@@ -17,6 +17,7 @@ const resetContracts = () => {
 const loadLMSRMarketMakerContract = async (web3: any) => {
   let lmsrMarketMakerContract
   if (!contracts) {
+    const LMSRMarketMaker = require('../abi/LMSRMarketMaker.min.json')
     lmsrMarketMakerContract = TruffleContract(LMSRMarketMaker)
     lmsrMarketMakerContract.setProvider(web3.currentProvider)
   }
@@ -26,6 +27,7 @@ const loadLMSRMarketMakerContract = async (web3: any) => {
 const loadConditionalTokensContract = async (web3: any) => {
   let conditionalTokensContract
   if (!contracts) {
+    const ConditionalTokens = require('../abi/ConditionalTokens.min.json')
     conditionalTokensContract = TruffleContract(ConditionalTokens)
     conditionalTokensContract.setProvider(web3.currentProvider)
   }
@@ -36,6 +38,8 @@ const loadWETH9Contract = async (web3: any) => {
   let weth9Contract
   if (!contracts) {
     // weth9Contract = TruffleContract(WETH9)
+
+    const YAKI = require('../abi/YAKIID.min.json')
     weth9Contract = TruffleContract(YAKI)
     weth9Contract.setProvider(web3.currentProvider)
   }
