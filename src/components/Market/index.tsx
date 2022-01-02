@@ -48,6 +48,7 @@ function getIpfsHashFromBytes32(bytes32Hex: any) {
 
 const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId, outcomeCount, oracle, creator, createTime, questionType }) => {
   const [isConditionLoaded, setIsConditionLoaded] = useState<boolean>(false)
+  const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
   const [selectedAmount, setSelectedAmount] = useState<string>('')
   const [selectedOutcomeToken, setSelectedOutcomeToken] = useState<number>(0)
   const [marketInfo, setMarketInfo] = useState<any>(undefined)
@@ -105,6 +106,8 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     var markets = JSON.parse(data)
     const funding = await marketMakersRepo.funding()
     const totalSupply = await collateral.contract.totalSupply()
+    const collateralBalance = await collateral.contract.allowancePoint(account, lmsrAddress)
+
 
 
     const outcomes = []
@@ -134,7 +137,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
           .toFixed(3),
-          // .multipliedBy(100)
+        // .multipliedBy(100)
         balance: new BigNumber(balance).dividedBy(Math.pow(10, collateral.decimals)),
         payoutNumerator: payoutNumerator,
       }
@@ -152,10 +155,43 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       payoutDenominator: payoutDenominator,
       funding: new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
       totalVolume: new BigNumber(totalSupply).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
+      collateralBalance: new BigNumber(collateralBalance).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
       questionType: questionType
     }
 
     setMarketInfo(marketData)
+  }
+
+  const approve = async () => {
+    const collateral = await marketMakersRepo.getCollateralToken()
+    // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
+    //   new BigNumber(Math.pow(10, collateral.decimals)),
+    // ).toString()
+    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+
+    const outcomeTokenAmounts = Array.from(
+      { length: marketInfo.outcomes.length },
+      (value: any, index: number) =>
+        index === selectedOutcomeToken ? formatedAmount : Web3.utils.toBN(0),
+    )
+
+    console.log("Bignumber Created")
+
+    const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
+
+    // const collateralBalance = await collateral.contract.balanceOf(account)
+    const collateralBalance = await collateral.contract.allowancePoint(account, marketInfo.lmsrAddress)
+
+    if (cost.gt(collateralBalance)) {
+      // await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
+      await collateral.contract.approvePoint(marketInfo.lmsrAddress, formatedAmount.toString(), {
+        from: account,
+      })
+      setIsEnoughBalance(true)
+    } else {
+      setIsEnoughBalance(true)
+    }
+    await getMarketInfo()
   }
 
   const buy = async () => {
@@ -176,13 +212,13 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
 
     // const collateralBalance = await collateral.contract.balanceOf(account)
-    const collateralBalance = await collateral.contract.allowancePoint(account, marketInfo.lmsrAddress)
-    if (cost.gt(collateralBalance)) {
-      // await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
-      await collateral.contract.approvePoint(marketInfo.lmsrAddress, formatedAmount.toString(), {
-        from: account,
-      })
-    }
+    // const collateralBalance = await collateral.contract.allowancePoint(account, marketInfo.lmsrAddress)
+    // if (cost.gt(collateralBalance)) {
+    //   // await collateral.contract.deposit({ value: formatedAmount.toString(), from: account })
+    //   await collateral.contract.approvePoint(marketInfo.lmsrAddress, formatedAmount.toString(), {
+    //     from: account,
+    //   })
+    // }
 
     const tx = await marketMakersRepo.trade(outcomeTokenAmounts, cost, account)
     console.log({ tx })
@@ -271,6 +307,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       selectedAmount={selectedAmount}
       setSelectedOutcomeToken={setSelectedOutcomeToken}
       selectedOutcomeToken={selectedOutcomeToken}
+      approve={approve}
       buy={buy}
       sell={sell}
       redeem={redeem}

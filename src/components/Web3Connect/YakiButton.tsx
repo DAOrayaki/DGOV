@@ -20,9 +20,9 @@ type YakiButtonProps = {
 const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet }) => {
     return (
         <>
-                    <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
-                        {`${tokenInfo.balance} YakID`}
-                    </Button>
+            <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
+                {`${tokenInfo.balance} YakID`}
+            </Button>
         </>
     )
 
@@ -39,26 +39,36 @@ const YakiButton: React.FC<YakiWalletProps> = ({
 
     console.log(yakiAddress)
     const updateTik = () => {
-        if (isYakiTokenLoaded) {
+        if (yakiTokenRepo) {
+
             console.log('update info')
             getYakiInfo()
+        } else {
+            console.log('yaki not loaded update')
         }
     }
+    // setInterval(updateTik, 1000)
+    var intId: any
 
     useEffect(() => {
+
         const init = async () => {
             try {
                 yakiTokenRepo = await loadYakiTokenRepo(web3, yakiAddress, account)
                 await getYakiInfo()
                 setIsYakiTokenLoaded(true)
-                setInterval(updateTik, 1000)
             } catch (err) {
                 setIsYakiTokenLoaded(false)
                 console.error(err)
             }
         }
 
-        init()
+        init().then(() => {
+            if (intId) {
+                clearInterval(intId)
+            }
+            intId = setInterval(updateTik, 1000)
+        })
     }, [])
 
     const getYakiInfo = async () => {

@@ -20,6 +20,7 @@ type TraderActionsProps = {
   isMarketClosed: boolean
   selectedAmount: string
   redeem: any
+  approve: any
   buy: any
   sell: any
   setSelectedAmount: any
@@ -48,6 +49,18 @@ type TradingModalProps = {
   setSelectedAmount: any
 }
 
+type BuyingModalProps = {
+  buyFunc: any
+  approveFunc: any
+  setModalShow: any
+  modelShow: boolean
+  marketInfo: any
+  isMarketClosed: boolean
+  selectedAmount: string
+  setSelectedAmount: any
+}
+
+
 type LayoutProps = {
   account: string
   isConditionLoaded: boolean
@@ -57,6 +70,7 @@ type LayoutProps = {
   selectedAmount: string
   setSelectedOutcomeToken: any
   selectedOutcomeToken: number
+  approve: any
   buy: any
   sell: any
   redeem: any
@@ -154,6 +168,83 @@ const TradingForm: React.FC<TradingFormProps> = ({
   </>
 )
 
+const BuyingModal: React.FC<BuyingModalProps> = ({
+  buyFunc,
+  approveFunc,
+  setModalShow,
+  modelShow,
+  marketInfo,
+  isMarketClosed,
+  selectedAmount,
+  setSelectedAmount
+}) => {
+
+  const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
+  const [isApproving, setIsApproving] = useState<boolean>(false)
+
+  const buy = () => {
+    var buyAmount = parseFloat(selectedAmount)
+    var balance = parseFloat(marketInfo.collateralBalance)
+
+    buyFunc()
+
+    setModalShow(false)
+    if (balance < buyAmount) {
+      setIsEnoughBalance(false)
+    }
+  }
+
+  const approve = async () => {
+    var buyAmount = parseFloat(selectedAmount)
+    var balance = parseFloat(marketInfo.collateralBalance)
+    if (balance >= buyAmount) {
+      console.log('bigger')
+      setIsEnoughBalance(true)
+    } else {
+      console.log('approving')
+      setIsApproving(true)
+      approveFunc()
+        .then(() => setIsEnoughBalance(true), () => setIsEnoughBalance(false))
+        .catch(() => { console.log("something is wrong") })
+        .then(() => setIsApproving(false))
+    }
+    console.log('isApproving :' + isApproving)
+    console.log('balance :' + balance)
+    console.log('buyAmount : ' + buyAmount)
+
+  }
+
+  return (
+    <>
+      <Modal show={modelShow} onHide={() => setModalShow(false)}>
+
+        <Modal.Body>
+          {/* <p>Modal body text goes here.</p> */}
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Output Shares</Form.Label>
+            <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} />
+          </Form.Group>
+          <div className={isApproving ? ('d-block') : ('d-none')}>
+            <Spinner as="span" animation="border" role="status">
+            </Spinner>
+            <span>Approving... Please dont close this window</span>
+          </div>
+        </Modal.Body>
+
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => { approve() }} className={isEnoughBalance ? ('d-none') : ('d-block')} >Approve</Button>
+          <Button variant="secondary" onClick={() => setModalShow(false)}>Close</Button>
+          <Button variant="primary" onClick={buy} className={isEnoughBalance ? ('d-block') : ('d-none')}>Buy</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  )
+
+
+}
+
+
 const TradingModal: React.FC<TradingModalProps> = ({
   action,
   actionFunc,
@@ -207,6 +298,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
   isMarketClosed,
   selectedAmount,
   redeem,
+  approve,
   buy,
   sell,
   setSelectedAmount
@@ -244,18 +336,26 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           Sell
         </Button>
 
-        <TradingModal action="buy" actionFunc={buy} modelShow={buyShow} setModalShow={setBuyShow}
+        {/* <TradingModal action="buy" actionFunc={buy} modelShow={buyShow} setModalShow={setBuyShow}
           marketInfo={marketInfo}
           isMarketClosed={isMarketClosed}
           selectedAmount={selectedAmount}
           setSelectedAmount={setSelectedAmount}
-        ></TradingModal>
+        ></TradingModal> */}
+        <BuyingModal buyFunc={buy} approveFunc={approve} modelShow={buyShow}
+          setModalShow={setBuyShow}
+          marketInfo={marketInfo}
+          isMarketClosed={isMarketClosed}
+          selectedAmount={selectedAmount}
+          setSelectedAmount={setSelectedAmount}
+        >
+        </BuyingModal>
+
         <TradingModal action="sell" actionFunc={sell} modelShow={sellShow} setModalShow={setSellShow}
           marketInfo={marketInfo}
           isMarketClosed={isMarketClosed}
           selectedAmount={selectedAmount}
           setSelectedAmount={setSelectedAmount}
-
         ></TradingModal>
         <TradingModal action="redeem" actionFunc={redeem} modelShow={redeemShow} setModalShow={setRedeemShow}
           marketInfo={marketInfo}
@@ -332,6 +432,7 @@ const Layout: React.FC<LayoutProps> = ({
   selectedAmount,
   setSelectedOutcomeToken,
   selectedOutcomeToken,
+  approve,
   buy,
   sell,
   redeem,
@@ -431,6 +532,7 @@ const Layout: React.FC<LayoutProps> = ({
                   isMarketClosed={isMarketClosed}
                   selectedAmount={selectedAmount}
                   redeem={redeem}
+                  approve={approve}
                   buy={buy}
                   sell={sell}
                   setSelectedAmount={setSelectedAmount}
