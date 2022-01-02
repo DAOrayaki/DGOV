@@ -222,7 +222,7 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
           {/* <p>Modal body text goes here.</p> */}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Output Shares</Form.Label>
-            <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} />
+            <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} value={selectedAmount} readOnly={isApproving}/>
           </Form.Group>
           <div className={isApproving ? ('d-block') : ('d-none')}>
             <Spinner as="span" animation="border" role="status">
