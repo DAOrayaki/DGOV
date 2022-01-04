@@ -141,8 +141,9 @@
     .actions {
         display: flex;
         flex-direction: row-reverse;
-        /* justify-content: space-evenly; */
-        margin: 0 auto;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* margin: 0 auto; */
         width: 300px;
     }
     h3 {
@@ -175,3 +176,8 @@
         margin-top: 15px;
     }
 }
+
+.progress-bar-custom {
+    background-color: purple;
+    color: black;
+  }

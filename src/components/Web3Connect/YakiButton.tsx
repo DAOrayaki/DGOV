@@ -15,14 +15,22 @@ type YakiWalletProps = {
 type YakiButtonProps = {
     tokenInfo: any
     goWallet: any
+    isError: boolean
+    networkId: string
+
 }
 
-const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet }) => {
+const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet, isError, networkId }) => {
     return (
         <>
-            <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
+            {!isError ? (<Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
                 {`${tokenInfo.balance} YakID`}
-            </Button>
+            </Button>) : (
+                <Button variant="danger" className="pl-2 ms-4" onClick={goWallet}>
+                    {`Wrong network : ${networkId}`}
+                </Button>
+            )
+            }
         </>
     )
 
@@ -35,6 +43,8 @@ const YakiButton: React.FC<YakiWalletProps> = ({
 }) => {
     const [isYakiTokenLoaded, setIsYakiTokenLoaded] = useState<boolean>(false)
     const [tokenInfo, setTokenInfo] = useState<any>(undefined)
+    const [networkId, setNetworkId] = useState<string>("")
+    const [isError, setIsError] = useState<boolean>(false)
     const history = useHistory();
 
     console.log(yakiAddress)
@@ -54,11 +64,16 @@ const YakiButton: React.FC<YakiWalletProps> = ({
 
         const init = async () => {
             try {
+
+                const networkType = await web3.eth.net.getNetworkType()
                 yakiTokenRepo = await loadYakiTokenRepo(web3, yakiAddress, account)
+                setNetworkId(networkType)
                 await getYakiInfo()
                 setIsYakiTokenLoaded(true)
+                setIsError(false)
             } catch (err) {
                 setIsYakiTokenLoaded(false)
+                setIsError(true)
                 console.error(err)
             }
         }
@@ -102,12 +117,21 @@ const YakiButton: React.FC<YakiWalletProps> = ({
                     // <Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
                     //     {`${tokenInfo.balance} YakID`}
                     // </Button>
-                    <YakiButtonComp tokenInfo={tokenInfo} goWallet={goWallet}></YakiButtonComp>
+                    <YakiButtonComp tokenInfo={tokenInfo} goWallet={goWallet}
+                        isError={isError} networkId={networkId}></YakiButtonComp>
                 )
                 : (
-                    <Button variant="outline-dark" className="pl-2 ms-4">
-                        Loading
-                    </Button>
+                    web3 && isError ? (
+                        <YakiButtonComp tokenInfo={tokenInfo} goWallet={goWallet}
+                            isError={isError} networkId={networkId}></YakiButtonComp>
+
+
+                    ) : (
+                        <Button variant="outline-dark" className="pl-2 ms-4">
+                            Loading
+                        </Button>
+
+                    )
 
                 )}
         </>

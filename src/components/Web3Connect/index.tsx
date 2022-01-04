@@ -36,7 +36,18 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
   const connectMetamask = async () => {
     //@ts-ignore
     // connect('bsc')
-    connect()
+    connect().then(() => {
+      detectEthereumProvider().then((result) => {
+        if (result) {
+          connectProvider(result)
+        }
+
+      })
+      // const provider = await detectEthereumProvider();
+      // if (provider) {
+        // connectProvider(provider)
+      // }
+    })
     // const provider = await detectEthereumProvider()
     // const provider = <window className="bin</window>
 
@@ -44,14 +55,14 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
     //@ts-ignore
     // const provider = window.BinanceChain
 
-    const provider = await detectEthereumProvider();
+    // const provider = await detectEthereumProvider();
 
-    if (provider) {
+    // if (provider) {
       // if (provider !== window.ethereum) {
       // console.log('Do you have multiple wallets installed?')
       // }
-      connectProvider(provider)
-    }
+      // connectProvider(provider)
+    // }
 
   }
 

@@ -148,7 +148,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
                   <Form.Label>{outcome.title}</Form.Label>
                 </Row>
                 <Row>
-                  <ProgressBar className="pl-0 ml-0" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
+                  <ProgressBar className="pl-0 ml-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
                 </Row>
               </Col>
               <Col sm md={2}>
@@ -181,6 +181,9 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
   const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
   const [isApproving, setIsApproving] = useState<boolean>(false)
+  const [isError, setIsError] = useState<boolean>(false)
+  const [errorInfo, setErrorInfo] = useState<string>("")
+  const min_buy = 1
 
   const buy = () => {
     var buyAmount = parseFloat(selectedAmount)
@@ -214,16 +217,37 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
   }
 
+  const checkInput = async (e: any) => {
+    var value = e.target.value
+    value = parseFloat(value)
+    if (value < min_buy) {
+      setIsError(true)
+      setErrorInfo(`The output share should bigger than ${min_buy}`)
+    }else{
+      setIsError(false)
+      setSelectedAmount(e.target.value)
+
+    }
+  }
+
   return (
     <>
       <Modal show={modelShow} onHide={() => setModalShow(false)}>
 
         <Modal.Body>
           {/* <p>Modal body text goes here.</p> */}
+          <Form.Group className="mb-3" controlId="formApproveBalance">
+            <Form.Label>Approved Tokens</Form.Label>
+            <Form.Control type="number" readOnly value={marketInfo.collateralBalance}/>
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Output Shares</Form.Label>
-            <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} value={selectedAmount} readOnly={isApproving}/>
+            <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving}/>
           </Form.Group>
+          <div className={isError? ('d-block'): ('d-none')}>
+            <span>{errorInfo}</span>
+          </div>
           <div className={isApproving ? ('d-block') : ('d-none')}>
             <Spinner as="span" animation="border" role="status">
             </Spinner>
@@ -278,6 +302,7 @@ const TradingModal: React.FC<TradingModalProps> = ({
 
         <Modal.Body>
           {/* <p>Modal body text goes here.</p> */}
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Output Shares</Form.Label>
             <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} />
@@ -315,7 +340,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setRedeemShow(true)}
           // onClick={redeem}
           disabled={!isMarketClosed || !marketInfo.payoutDenominator}
-          className="me-0"
+          className="align-self-start"
         >
           Redeem
         </Button>
@@ -323,7 +348,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setBuyShow(true)}
           // onClick={buy} 
           disabled={isMarketClosed}
-          className="me-1"
+          className="justify-content-end"
         >
           Buy
         </Button>
@@ -331,7 +356,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           onClick={() => setSellShow(true)}
           // onClick={sell}
           disabled={isMarketClosed}
-          className="me-1"
+          className="justify-content-start"
         >
           Sell
         </Button>

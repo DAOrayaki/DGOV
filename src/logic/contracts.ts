@@ -61,18 +61,23 @@ const loadContracts = async (web3: any, lmsrAddress: string, account: string) =>
       const LMSRMarketMakerContract = await loadLMSRMarketMakerContract(web3)
       const ConditionalTokensContract = await loadConditionalTokensContract(web3)
       const WETH9Contract = await loadWETH9Contract(web3)
+      try {
+        const lmsrMarketMaker = await LMSRMarketMakerContract.at(lmsrAddress)
+        const conditionalTokens = await ConditionalTokensContract.at(await lmsrMarketMaker.pmSystem())
 
-      const lmsrMarketMaker = await LMSRMarketMakerContract.at(lmsrAddress)
-      const conditionalTokens = await ConditionalTokensContract.at(await lmsrMarketMaker.pmSystem())
-      const collateralToken = {
-        address: await lmsrMarketMaker.collateralToken(),
-        contract: await WETH9Contract.at(await lmsrMarketMaker.collateralToken()),
-        name: 'YAKI TOKEN',
-        decimals: 18,
-        symbol: 'YAKI',
+        const collateralToken = {
+          address: await lmsrMarketMaker.collateralToken(),
+          contract: await WETH9Contract.at(await lmsrMarketMaker.collateralToken()),
+          name: 'YAKI TOKEN',
+          decimals: 18,
+          symbol: 'YAKI',
+        }
+
+        contracts = { lmsrMarketMaker, conditionalTokens, collateralToken }
       }
-
-      contracts = { lmsrMarketMaker, conditionalTokens, collateralToken }
+      catch (error) {
+        console.log('error')
+      }
     }
     return contracts
   } catch (err) {

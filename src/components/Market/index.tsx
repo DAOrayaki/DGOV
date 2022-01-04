@@ -155,7 +155,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       payoutDenominator: payoutDenominator,
       funding: new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
       totalVolume: new BigNumber(totalSupply).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
-      collateralBalance: new BigNumber(collateralBalance).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
+      collateralBalance: new BigNumber(collateralBalance).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2),
       questionType: questionType
     }
 
@@ -199,7 +199,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
     //   new BigNumber(Math.pow(10, collateral.decimals)),
     // ).toString()
-    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+    const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
 
     const outcomeTokenAmounts = Array.from(
       { length: marketInfo.outcomes.length },
@@ -226,6 +226,21 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     await getMarketInfo()
   }
 
+  const calcCost = async () => {
+        const collateral = await marketMakersRepo.getCollateralToken()
+        const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
+    const outcomeTokenAmounts = Array.from(
+      { length: marketInfo.outcomes.length },
+      (value: any, index: number) =>
+        index === selectedOutcomeToken ? formatedAmount : Web3.utils.toBN(0),
+    )
+
+    console.log("Bignumber Created")
+
+    const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
+    return cost
+  }
+
   const sell = async () => {
     const collateral = await marketMakersRepo.getCollateralToken()
     // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
@@ -234,8 +249,9 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     // const formatedAmount = Web3.utils.toBN(0).sub(
     // Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals))))
 
-    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+    // const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
 
+    const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
 
 
     const isApproved = await conditionalTokensRepo.isApprovedForAll(account, marketInfo.lmsrAddress)

@@ -56,7 +56,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
 
   if (loading) return <p>Loading...</p>
 
-  if (error) return <p>Error :</p>
+  if (error) return <p>Network Error, please refresh the page</p>
 
   console.log(data.lmsrmarketMakers)
 
