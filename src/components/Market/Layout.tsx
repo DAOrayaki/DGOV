@@ -2,7 +2,7 @@ import React from 'react'
 // import { Paper, Button, TextField, RadioGroup, FormControlLabel, Radio} from '@material-ui/core'
 import { Container, Button, Form, Row, Col, ProgressBar, Modal, InputGroup, FormControl, Spinner } from "react-bootstrap"
 import styles from '../style.module.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 //@ts-ignore
 import Progress from 'src/components/Market/Progress'
 
@@ -24,7 +24,7 @@ type TraderActionsProps = {
   buy: any
   sell: any
   setSelectedAmount: any
-
+  calcCost: any
 }
 
 type OperatorActionsProps = {
@@ -58,6 +58,7 @@ type BuyingModalProps = {
   isMarketClosed: boolean
   selectedAmount: string
   setSelectedAmount: any
+  calcCost: any
 }
 
 
@@ -79,6 +80,7 @@ type LayoutProps = {
   oracle: string
   creator: string
   createTime: any
+  calcCost: any
 }
 
 const TradingForm: React.FC<TradingFormProps> = ({
@@ -176,7 +178,8 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
   marketInfo,
   isMarketClosed,
   selectedAmount,
-  setSelectedAmount
+  setSelectedAmount,
+  calcCost
 }) => {
 
   const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
@@ -184,6 +187,17 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
   const [isError, setIsError] = useState<boolean>(false)
   const [errorInfo, setErrorInfo] = useState<string>("")
   const min_buy = 1
+  const [costInfo, setCostInfo] = useState<any>({
+    baseCost: 0,
+    fee: 0,
+    potentialProfit: 0,
+    total: 0
+  })
+
+  // useEffect(() => {
+  //   console.log('updated effect')
+  //   // updateConstInfo()
+  // }, [])
 
   const buy = () => {
     var buyAmount = parseFloat(selectedAmount)
@@ -217,16 +231,55 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
   }
 
+
+  const updateConstInfo = async (parms:string) => {
+      if (parms != "") {
+        const cost = await calcCost(parms)
+
+        // calcCost().then((cost: any) => {
+        const costInfoDic = {
+          baseCost: cost,
+          fee: 0,
+          potentialProfit: parseFloat(parms) - parseFloat(cost),
+          total:parms 
+        }
+
+        setCostInfo(costInfoDic)
+
+        console.log(costInfo)
+        // })
+      }
+
+  }
+
   const checkInput = async (e: any) => {
     var value = e.target.value
     value = parseFloat(value)
+
     if (value < min_buy) {
       setIsError(true)
       setErrorInfo(`The output share should bigger than ${min_buy}`)
-    }else{
+    } else {
       setIsError(false)
       setSelectedAmount(e.target.value)
+      updateConstInfo(e.target.value)
+      // if (selectedAmount != "") {
+      //   const cost = await calcCost()
 
+      //   // calcCost().then((cost: any) => {
+      //   const costInfoDic = {
+      //     baseCost: cost,
+      //     fee: 0,
+      //     potentialProfit: parseFloat(selectedAmount) - parseFloat(cost),
+      //     total: selectedAmount
+      //   }
+
+      //   setCostInfo(costInfoDic)
+
+      //   console.log(costInfo)
+      //   // })
+
+      // }
     }
   }
 
@@ -236,23 +289,49 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
         <Modal.Body>
           {/* <p>Modal body text goes here.</p> */}
-          <Form.Group className="mb-3" controlId="formApproveBalance">
-            <Form.Label>Approved Tokens</Form.Label>
-            <Form.Control type="number" readOnly value={marketInfo.collateralBalance}/>
-          </Form.Group>
+          <Row>
+            <Col md={5}>
+              <Form.Group as={Row} className="mb-3 d-line" controlId="formApproveBalance">
+                <Form.Label>Approved Tokens</Form.Label>
+                <Form.Control type="number" readOnly value={marketInfo.collateralBalance} />
+              </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Output Shares</Form.Label>
-            <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving}/>
-          </Form.Group>
-          <div className={isError? ('d-block'): ('d-none')}>
-            <span>{errorInfo}</span>
-          </div>
-          <div className={isApproving ? ('d-block') : ('d-none')}>
-            <Spinner as="span" animation="border" role="status">
-            </Spinner>
-            <span>Approving... Please dont close this window</span>
-          </div>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Output Shares</Form.Label>
+                <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving} />
+              </Form.Group>
+            </Col>
+            <Col md={7}>
+              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
+                <Form.Label>Base Cost</Form.Label>
+                <Form.Control type="number" readOnly value={costInfo.baseCost} />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Fee</Form.Label>
+                <Form.Control type="number" placeholder="Enter output shares " readOnly value={costInfo.fee} />
+              </Form.Group>
+
+              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
+                <Form.Label>Potential Profit</Form.Label>
+                <Form.Control type="number" readOnly value={costInfo.potentialProfit} />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Total</Form.Label>
+                <Form.Control readOnly value={costInfo.total} />
+              </Form.Group>
+
+            </Col>
+          </Row>
+          <Row>
+            <div className={isError ? ('d-block') : ('d-none')}>
+              <span>{errorInfo}</span>
+            </div>
+            <div className={isApproving ? ('d-block') : ('d-none')}>
+              <Spinner as="span" animation="border" role="status">
+              </Spinner>
+              <span>Approving... Please dont close this window</span>
+            </div>
+          </Row>
         </Modal.Body>
 
 
@@ -326,7 +405,8 @@ const TraderActions: React.FC<TraderActionsProps> = ({
   approve,
   buy,
   sell,
-  setSelectedAmount
+  setSelectedAmount,
+  calcCost
 }) => {
   const [buyShow, setBuyShow] = useState(false)
   const [sellShow, setSellShow] = useState(false)
@@ -337,7 +417,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
       <div className={styles.actions}>
         <Button
           variant="outline-dark"
-          onClick={() => setRedeemShow(true)}
+          onClick={() => redeem()}
           // onClick={redeem}
           disabled={!isMarketClosed || !marketInfo.payoutDenominator}
           className="align-self-start"
@@ -373,6 +453,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
           isMarketClosed={isMarketClosed}
           selectedAmount={selectedAmount}
           setSelectedAmount={setSelectedAmount}
+          calcCost={calcCost}
         >
         </BuyingModal>
 
@@ -465,7 +546,8 @@ const Layout: React.FC<LayoutProps> = ({
   resolve,
   oracle,
   creator,
-  createTime
+  createTime,
+  calcCost
 }) => {
 
   console.log(marketInfo)
@@ -561,6 +643,7 @@ const Layout: React.FC<LayoutProps> = ({
                   buy={buy}
                   sell={sell}
                   setSelectedAmount={setSelectedAmount}
+                  calcCost={calcCost}
                 />
               </Row>
               {account && account.toLowerCase() === creator && (

@@ -167,7 +167,14 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
     //   new BigNumber(Math.pow(10, collateral.decimals)),
     // ).toString()
-    const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+    // const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
+    // const formatedAmount = Web3.utils.toBN(String(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)))
+    var amount = parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)
+    var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
+
+    const formatedAmount = Web3.utils.toBN(amount_str)
+
+
 
     const outcomeTokenAmounts = Array.from(
       { length: marketInfo.outcomes.length },
@@ -199,7 +206,12 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
     //   new BigNumber(Math.pow(10, collateral.decimals)),
     // ).toString()
-    const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
+    // const formatedAmount = Web3.utils.toBN(String(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)))
+    var amount = parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)
+    var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
+
+    const formatedAmount = Web3.utils.toBN(amount_str)
+
 
     const outcomeTokenAmounts = Array.from(
       { length: marketInfo.outcomes.length },
@@ -226,9 +238,14 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     await getMarketInfo()
   }
 
-  const calcCost = async () => {
-        const collateral = await marketMakersRepo.getCollateralToken()
-        const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
+  const calcCost = async (parms: string) => {
+    const collateral = await marketMakersRepo.getCollateralToken()
+    // console.log(selectedAmount)
+    var amount = parseFloat(parms) * Math.pow(10, collateral.decimals)
+    var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
+
+    const formatedAmount = Web3.utils.toBN(amount_str)
+
     const outcomeTokenAmounts = Array.from(
       { length: marketInfo.outcomes.length },
       (value: any, index: number) =>
@@ -238,7 +255,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     console.log("Bignumber Created")
 
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
-    return cost
+    return  new BigNumber(cost).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2)
   }
 
   const sell = async () => {
@@ -251,7 +268,14 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
 
     // const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
 
-    const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
+    // const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
+    // const formatedAmount = Web3.utils.toBN(String(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)))
+    var amount = parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)
+    var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
+
+    const formatedAmount = Web3.utils.toBN(amount_str)
+
+
 
 
     const isApproved = await conditionalTokensRepo.isApprovedForAll(account, marketInfo.lmsrAddress)
@@ -332,6 +356,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       oracle={oracle}
       creator={creator}
       createTime={createTime}
+      calcCost = {calcCost}
     />
   )
 }
