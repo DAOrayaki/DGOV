@@ -79,11 +79,14 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         }
 
         init().then(() => {
-            if (intId) {
-                clearInterval(intId)
-            }
+            // if (intId) {
+            // clearInterval(intId)
+            // }
             intId = setInterval(updateTik, 1000)
         })
+        return () => {
+            clearInterval(intId)
+        }
     }, [])
 
     const getYakiInfo = async () => {

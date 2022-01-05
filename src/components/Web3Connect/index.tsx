@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import detectEthereumProvider from '@metamask/detect-provider'
 import {
   useWallet,
@@ -21,16 +21,26 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
   const connectProvider = (provider: any) => setProviderData(provider)
   const disconnectProvider = () => setProviderData()
   const { account, connect, reset, status } = useWallet()
+  const [loginStage, setLoginStage] = useState<boolean>(false)
+  const itemKey = 'dgov-login-state'
 
   useEffect(() => {
     if (!web3ConnectListenersAdded) {
       web3ConnectListenersAdded = true
+    }
+    const login_state = localStorage.getItem(itemKey)
+    if (login_state == '0' && !loginStage) {
+      connectMetamask()
+    }else if (login_state=='1' && loginStage){
+      resetMetamask()
     }
   })
 
   const resetMetamask = async () => {
     reset()
     disconnectProvider()
+    localStorage.setItem(itemKey, '1')
+    setLoginStage(false)
   }
 
   const connectMetamask = async () => {
@@ -45,9 +55,12 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
       })
       // const provider = await detectEthereumProvider();
       // if (provider) {
-        // connectProvider(provider)
+      // connectProvider(provider)
       // }
     })
+
+    localStorage.setItem(itemKey, '0')
+    setLoginStage(true)
     // const provider = await detectEthereumProvider()
     // const provider = <window className="bin</window>
 
@@ -58,10 +71,10 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
     // const provider = await detectEthereumProvider();
 
     // if (provider) {
-      // if (provider !== window.ethereum) {
-      // console.log('Do you have multiple wallets installed?')
-      // }
-      // connectProvider(provider)
+    // if (provider !== window.ethereum) {
+    // console.log('Do you have multiple wallets installed?')
+    // }
+    // connectProvider(provider)
     // }
 
   }
@@ -87,7 +100,7 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
         {/* <Row> */}
         <Row>
           <Col md={4}>
-            <DropdownButton id="dropdown-item-button" title={ account1.slice(0, 4) + "..." + account1.slice(-4)} variant="secondary" className="me-5">
+            <DropdownButton id="dropdown-item-button" title={account1.slice(0, 4) + "..." + account1.slice(-4)} variant="secondary" className="me-5">
               {/* <Dropdown.ItemText>{account1}</Dropdown.ItemText> */}
               <Dropdown.Item as="button" onClick={() => resetMetamask()}>Disconnect  </Dropdown.Item>
             </DropdownButton>

@@ -21,7 +21,7 @@ ReactDOM.render(
 
     // <ApolloProvider client={client}>
     //@ts-ignore
-        <UseWalletProvider>
+        <UseWalletProvider autoConnect={true}>
             <Root />
         </UseWalletProvider>
 

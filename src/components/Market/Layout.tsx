@@ -1,6 +1,8 @@
 import React from 'react'
 // import { Paper, Button, TextField, RadioGroup, FormControlLabel, Radio} from '@material-ui/core'
 import { Container, Button, Form, Row, Col, ProgressBar, Modal, InputGroup, FormControl, Spinner } from "react-bootstrap"
+import { Link, NavLink } from 'react-router-dom'
+
 import styles from '../style.module.css'
 import { useState, useEffect } from "react"
 //@ts-ignore
@@ -147,7 +149,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
               </Col>
               <Col sm md={6}>
                 <Row className="d-inline">
-                  <Form.Label>{outcome.title}</Form.Label>
+                  <Form.Label>{outcome.link?(<a href={outcome.link}>{outcome.title}</a>): (outcome.title)}</Form.Label>
                 </Row>
                 <Row>
                   <ProgressBar className="pl-0 ml-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
@@ -291,7 +293,7 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
           {/* <p>Modal body text goes here.</p> */}
           <Row>
             <Col md={5}>
-              <Form.Group as={Row} className="mb-3 d-line" controlId="formApproveBalance">
+              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
                 <Form.Label>Approved Tokens</Form.Label>
                 <Form.Control type="number" readOnly value={marketInfo.collateralBalance} />
               </Form.Group>

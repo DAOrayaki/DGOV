@@ -133,7 +133,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
         index: outcomeIndex,
         // title: markets.markets[0].outcomes[outcomeIndex].title,
         title: markets[0].outcomes[outcomeIndex].title,
-        // title: `outcome ${outcomeIndex}`,
+        link: markets[0].outcomes[outcomeIndex].link,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
           .toFixed(3),
@@ -148,6 +148,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     const marketData = {
       lmsrAddress: lmsrAddress,
       title: markets[0].title,
+      link: markets[0].link,
       outcomes,
       stage: MarketStage[await marketMakersRepo.stage()],
       questionId: questionId,
