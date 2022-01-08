@@ -11,6 +11,7 @@ import {
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
 import { Container, Card, Row, Col } from "react-bootstrap";
 import styles from '../style.module.css'
+import SpinnerPage from 'src/components/SpinnerPage'
 
 const MarketProvider = lazy(() => import('src/components/HotMarketPage/MarketProvider'))
 
@@ -51,18 +52,20 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
   }
   )
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <SpinnerPage />
 
   if (error) return <p>Network Error, please refresh the page</p>
 
   console.log(data.lmsrmarketMakers)
 
   const covertPayouts = (payouts: Array<string>) => {
-    let result = new Array<string>(payouts.length);
+    let result = new Array<string>();
+    // let result = payouts.filter((e, i, a)=>{return e!="0"})
 
     for (let i = 0; i < payouts.length; i++) {
       if (payouts[i] != '0') {
         result.push(i.toString())
+        console.log(payouts[i])
       }
     }
     return result.join(',')
@@ -99,15 +102,16 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
             <Col md={6}>
               <Link to={`/markets/hottrendmarkets/markets/${data.id}`} key={data.id}>
                 <p>{data.questionTitle}</p>
-                <p>{data.condition.payouts? ("Winners: " + covertPayouts(data.condition.payouts)):("Winners: --")}</p>
               </Link>
+
+                <p className="text-muted">{data.condition.payouts? ("Winners: " + covertPayouts(data.condition.payouts)):("Winners: --")}</p>
             </Col>
             <Col md={2}>
-              <p>{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p>
-              <p>Open time: {convertTime(data.creationTimestamp)} </p>
-              <p>Close time: {convertTime(data.closeTimeStamp)}</p>
-              <p>Close time: {convertTime(data.condition.resolutionTimestamp)}</p>
-
+              {/* <p>{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p> */}
+              <p className="mb-0 text-muted">{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p>
+              <p className="mb-0 text-muted">Open time: {convertTime(data.creationTimestamp)} </p>
+              <p className="mb-0 text-muted">Close time: {convertTime(data.closeTimeStamp)}</p>
+              <p className="mb-0 text-muted">Resolve time: {convertTime(data.condition.resolutionTimestamp)}</p>
             </Col>
           </Row>
         </Card.Body>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Row, Col, Container, Button } from "react-bootstrap"
+import SpinnerPage from 'src/components/SpinnerPage'
 
 type TokenAccountProps = {
     account: string
@@ -71,7 +72,7 @@ const Layout: React.FC<TokenAccountProps> = (
                 </Container>
 
             ) : (
-                <div>Loading...</div>
+                <SpinnerPage />
             )
             }
         </>

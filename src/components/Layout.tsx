@@ -27,7 +27,7 @@ const Layout: React.FC<LayoutProperty> = ({
 
     return (
         <Router>
-            
+
             <div className={styles.headerBar}>
                 <Suspense fallback={SpinnerPage}>
                     <Header web3={web3} account={account} setProviderData={setProviderData}> </Header>
@@ -46,10 +46,13 @@ const Layout: React.FC<LayoutProperty> = ({
                         <Route path="/wallet">
                             {account && web3 ? (
 
-                        //@ts-ignore
+                                //@ts-ignore
                                 <YakiWallet web3={web3} account={account} yakiAddress={process.env.REACT_APP_YAKI_ADDRESS} />
                             ) : (
-                                <div> Connect your account first </div>
+                                <>
+                                    <h1 className="text-center">
+                                        Connect your account first</h1>
+                                </>
                             )
 
                             }

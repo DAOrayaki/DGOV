@@ -5,7 +5,9 @@ import { Spinner } from 'react-bootstrap'
 const SpinnerPage: React.FC = () => {
     return (
         <>
-            <Spinner animation="border">Loading...</Spinner>
+            <h1 className="text-center">
+                <Spinner animation="border" as="span"></Spinner>Loading...</h1>
+            
         </>
     )
 }

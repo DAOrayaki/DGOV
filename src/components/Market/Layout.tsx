@@ -7,27 +7,10 @@ import styles from '../style.module.css'
 import { useState, useEffect } from "react"
 //@ts-ignore
 import Progress from 'src/components/Market/Progress'
+import SpinnerPage from 'src/components/SpinnerPage'
+import TradingForm from './TradingForm'
+import TraderActions from './TradingActions'
 
-
-type TradingFormProps = {
-  isMarketClosed: boolean
-  marketInfo: any
-  setSelectedAmount: any
-  setSelectedOutcomeToken: any
-  selectedOutcomeToken: number
-}
-
-type TraderActionsProps = {
-  marketInfo: any
-  isMarketClosed: boolean
-  selectedAmount: string
-  redeem: any
-  approve: any
-  buy: any
-  sell: any
-  setSelectedAmount: any
-  calcCost: any
-}
 
 type OperatorActionsProps = {
   isMarketClosed: boolean
@@ -40,28 +23,7 @@ type OracleActionsProps = {
   resolve: any
 }
 
-type TradingModalProps = {
-  action: string
-  actionFunc: any
-  setModalShow: any
-  modelShow: boolean
-  marketInfo: any
-  isMarketClosed: boolean
-  selectedAmount: string
-  setSelectedAmount: any
-}
 
-type BuyingModalProps = {
-  buyFunc: any
-  approveFunc: any
-  setModalShow: any
-  modelShow: boolean
-  marketInfo: any
-  isMarketClosed: boolean
-  selectedAmount: string
-  setSelectedAmount: any
-  calcCost: any
-}
 
 
 type LayoutProps = {
@@ -83,400 +45,6 @@ type LayoutProps = {
   creator: string
   createTime: any
   calcCost: any
-}
-
-const TradingForm: React.FC<TradingFormProps> = ({
-  isMarketClosed,
-  marketInfo,
-  setSelectedAmount,
-  setSelectedOutcomeToken,
-  selectedOutcomeToken,
-}) => (
-  <>
-    <Form>
-      {/* <div className={styles.inputContainer}>
-      <TextField
-        variant="filled"
-          label="Collateral value"
-          type="number"
-          onChange={e => setSelectedAmount(e.target.value)}
-          disabled={isMarketClosed}
-        />
-      </div> */}
-      {/* <Form.Group className="mb-3" controlId='amount'>
-        <Form.Label>Yaki</Form.Label>
-      </Form.Group> */}
-
-      <Form.Group>
-        {/* <Form.Check type="checkbox" label
-        <RadioGroup
-          defaultValue={0}
-          onChange={e => setSelectedOutcomeToken(parseInt(e.target.value))}
-          value={selectedOutcomeToken}
-        > */}
-        <Row className="mt-4">
-          <Col sm md={7}>
-            <p className="text-center">Trend</p>
-          </Col>
-          <Col sm md={2}>
-            <p>Price(YakID)</p>
-          </Col>
-          <Col sm md={3}>
-            <p>MyShares</p>
-          </Col>
-
-        </Row>
-        {marketInfo.outcomes.map((outcome: any, index: number) => (
-          <div
-            key={outcome.title}
-            className={[
-              styles.outcome,
-              marketInfo.payoutDenominator > 0 && outcome.payoutNumerator > 0 && styles.rightOutcome,
-              marketInfo.payoutDenominator > 0 &&
-              !(outcome.payoutNumerator > 0) &&
-              styles.wrongOutcome,
-            ].join(' ')}
-          >
-            {/* <FormControlLabel
-                value={!isMarketClosed ? outcome.index : 'disabled'}
-                control={<Radio color="primary" />}
-                label={outcome.title}
-              /> */}
-            <Row>
-              <Col sm md={1}>
-                <Form.Check type="radio" id={`checkitem${index}`} name="checkitems" onChange={e => setSelectedOutcomeToken(index)} checked={index == selectedOutcomeToken}>
-                </Form.Check>
-              </Col>
-              <Col sm md={6}>
-                <Row className="d-inline">
-                  <Form.Label>{outcome.link ? (<a href={outcome.link}>{outcome.title}</a>) : (outcome.title)}</Form.Label>
-                </Row>
-                <Row>
-                  <ProgressBar className="pl-0 ml-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
-                </Row>
-              </Col>
-              <Col sm md={2}>
-                <div className={styles.outcomeInfo}>{outcome.probability.toString()}</div>
-              </Col>
-              <Col sm md={3}>
-                <div className={styles.outcomeInfo}>
-                  {outcome.balance.toFixed(5).toString()}
-                </div>
-              </Col>
-            </Row>
-          </div>
-        ))}
-        {/* </RadioGroup> */}
-      </Form.Group>
-    </Form >
-  </>
-)
-
-const BuyingModal: React.FC<BuyingModalProps> = ({
-  buyFunc,
-  approveFunc,
-  setModalShow,
-  modelShow,
-  marketInfo,
-  isMarketClosed,
-  selectedAmount,
-  setSelectedAmount,
-  calcCost
-}) => {
-
-  const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
-  const [isApproving, setIsApproving] = useState<boolean>(false)
-  const [isError, setIsError] = useState<boolean>(false)
-  const [errorInfo, setErrorInfo] = useState<string>("")
-  const min_buy = 1
-  const [costInfo, setCostInfo] = useState<any>({
-    baseCost: 0,
-    fee: 0,
-    potentialProfit: 0,
-    total: 0
-  })
-
-  // useEffect(() => {
-  //   console.log('updated effect')
-  //   // updateConstInfo()
-  // }, [])
-
-  const buy = () => {
-    var buyAmount = parseFloat(selectedAmount)
-    var balance = parseFloat(marketInfo.collateralBalance)
-
-    buyFunc()
-
-    setModalShow(false)
-    if (balance < buyAmount) {
-      setIsEnoughBalance(false)
-    }
-  }
-
-  const approve = async () => {
-    var buyAmount = parseFloat(selectedAmount)
-    var balance = parseFloat(marketInfo.collateralBalance)
-    if (balance >= buyAmount) {
-      console.log('bigger')
-      setIsEnoughBalance(true)
-    } else {
-      console.log('approving')
-      setIsApproving(true)
-      approveFunc()
-        .then(() => setIsEnoughBalance(true), () => setIsEnoughBalance(false))
-        .catch(() => { console.log("something is wrong") })
-        .then(() => setIsApproving(false))
-    }
-    console.log('isApproving :' + isApproving)
-    console.log('balance :' + balance)
-    console.log('buyAmount : ' + buyAmount)
-
-  }
-
-
-  const updateConstInfo = async (parms: string) => {
-    if (parms != "") {
-      const cost = await calcCost(parms)
-
-      // calcCost().then((cost: any) => {
-      const costInfoDic = {
-        baseCost: cost,
-        fee: 0,
-        potentialProfit: parseFloat(parms) - parseFloat(cost),
-        total: parms
-      }
-
-      setCostInfo(costInfoDic)
-
-      console.log(costInfo)
-      // })
-    }
-
-  }
-
-  const checkInput = async (e: any) => {
-    var value = e.target.value
-    value = parseFloat(value)
-
-    if (value < min_buy) {
-      setIsError(true)
-      setErrorInfo(`The output share should bigger than ${min_buy}`)
-    } else {
-      setIsError(false)
-      setSelectedAmount(e.target.value)
-      updateConstInfo(e.target.value)
-      // if (selectedAmount != "") {
-      //   const cost = await calcCost()
-
-      //   // calcCost().then((cost: any) => {
-      //   const costInfoDic = {
-      //     baseCost: cost,
-      //     fee: 0,
-      //     potentialProfit: parseFloat(selectedAmount) - parseFloat(cost),
-      //     total: selectedAmount
-      //   }
-
-      //   setCostInfo(costInfoDic)
-
-      //   console.log(costInfo)
-      //   // })
-
-      // }
-    }
-  }
-
-  return (
-    <>
-      <Modal show={modelShow} onHide={() => setModalShow(false)}>
-
-        <Modal.Body>
-          {/* <p>Modal body text goes here.</p> */}
-          <Row>
-            <Col md={5}>
-              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
-                <Form.Label>Approved Tokens</Form.Label>
-                <Form.Control type="number" readOnly value={marketInfo.collateralBalance} />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Output Shares</Form.Label>
-                <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving} />
-              </Form.Group>
-            </Col>
-            <Col md={7}>
-              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
-                <Form.Label>Base Cost</Form.Label>
-                <Form.Control type="number" readOnly value={costInfo.baseCost} />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Fee</Form.Label>
-                <Form.Control type="number" placeholder="Enter output shares " readOnly value={costInfo.fee} />
-              </Form.Group>
-
-              <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
-                <Form.Label>Potential Profit</Form.Label>
-                <Form.Control type="number" readOnly value={costInfo.potentialProfit} />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Total</Form.Label>
-                <Form.Control readOnly value={costInfo.total} />
-              </Form.Group>
-
-            </Col>
-          </Row>
-          <Row>
-            <div className={isError ? ('d-block') : ('d-none')}>
-              <span>{errorInfo}</span>
-            </div>
-            <div className={isApproving ? ('d-block') : ('d-none')}>
-              <Spinner as="span" animation="border" role="status">
-              </Spinner>
-              <span>Approving... Please dont close this window</span>
-            </div>
-          </Row>
-        </Modal.Body>
-
-
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => { approve() }} className={isEnoughBalance ? ('d-none') : ('d-block')} >Approve</Button>
-          <Button variant="secondary" onClick={() => setModalShow(false)}>Close</Button>
-          <Button variant="primary" onClick={buy} className={isEnoughBalance ? ('d-block') : ('d-none')}>Buy</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  )
-
-
-}
-
-
-const TradingModal: React.FC<TradingModalProps> = ({
-  action,
-  actionFunc,
-  setModalShow,
-  modelShow,
-  marketInfo,
-  isMarketClosed,
-  selectedAmount,
-  setSelectedAmount
-}) => {
-  const onFire = () => {
-    actionFunc()
-    setModalShow(false)
-  }
-
-  const isDisabled = () => {
-    switch (action) {
-      case "buy":
-        return isMarketClosed || !selectedAmount
-
-      case "sell":
-        return isMarketClosed || !selectedAmount
-
-      case "redeem":
-        return !isMarketClosed || !marketInfo.payoutDenominator
-    }
-  }
-  return (
-    <>
-      <Modal show={modelShow} onHide={() => setModalShow(false)}>
-
-        <Modal.Body>
-          {/* <p>Modal body text goes here.</p> */}
-
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Output Shares</Form.Label>
-            <Form.Control type="number" placeholder="Enter output shares " onChange={e => setSelectedAmount(e.target.value)} />
-          </Form.Group>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setModalShow(false)}>Close</Button>
-          <Button variant="primary" onClick={onFire} disabled={isDisabled()}>{action}</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  )
-}
-
-const TraderActions: React.FC<TraderActionsProps> = ({
-  marketInfo,
-  isMarketClosed,
-  selectedAmount,
-  redeem,
-  approve,
-  buy,
-  sell,
-  setSelectedAmount,
-  calcCost
-}) => {
-  const [buyShow, setBuyShow] = useState(false)
-  const [sellShow, setSellShow] = useState(false)
-  const [redeemShow, setRedeemShow] = useState(false)
-
-  return (
-    <>
-      <div className={styles.actions}>
-        <Button
-          variant="outline-dark"
-          onClick={() => redeem()}
-          // onClick={redeem}
-          disabled={!isMarketClosed || !marketInfo.payoutDenominator}
-          className="align-self-start"
-        >
-          Redeem
-        </Button>
-        <Button variant="outline-dark"
-          onClick={() => setBuyShow(true)}
-          // onClick={buy} 
-          disabled={isMarketClosed}
-          className="justify-content-end"
-        >
-          Buy
-        </Button>
-        <Button variant="outline-dark"
-          onClick={() => setSellShow(true)}
-          // onClick={sell}
-          disabled={isMarketClosed}
-          className="justify-content-start"
-        >
-          Sell
-        </Button>
-
-        {/* <TradingModal action="buy" actionFunc={buy} modelShow={buyShow} setModalShow={setBuyShow}
-          marketInfo={marketInfo}
-          isMarketClosed={isMarketClosed}
-          selectedAmount={selectedAmount}
-          setSelectedAmount={setSelectedAmount}
-        ></TradingModal> */}
-        <BuyingModal buyFunc={buy} approveFunc={approve} modelShow={buyShow}
-          setModalShow={setBuyShow}
-          marketInfo={marketInfo}
-          isMarketClosed={isMarketClosed}
-          selectedAmount={selectedAmount}
-          setSelectedAmount={setSelectedAmount}
-          calcCost={calcCost}
-        >
-        </BuyingModal>
-
-        <TradingModal action="sell" actionFunc={sell} modelShow={sellShow} setModalShow={setSellShow}
-          marketInfo={marketInfo}
-          isMarketClosed={isMarketClosed}
-          selectedAmount={selectedAmount}
-          setSelectedAmount={setSelectedAmount}
-        ></TradingModal>
-        <TradingModal action="redeem" actionFunc={redeem} modelShow={redeemShow} setModalShow={setRedeemShow}
-          marketInfo={marketInfo}
-          isMarketClosed={isMarketClosed}
-          selectedAmount={selectedAmount}
-          setSelectedAmount={setSelectedAmount}
-
-        ></TradingModal>
-
-
-      </div>
-    </>
-  )
 }
 
 
@@ -559,7 +127,7 @@ const Layout: React.FC<LayoutProps> = ({
     stage1_duration = parseInt(marketInfo.closeDelay)
 
   } else {
-     stage1_duration = marketInfo && marketInfo.questionType == 0 ? (4) : (3)
+    stage1_duration = marketInfo && marketInfo.questionType == 0 ? (4) : (3)
   }
 
   if (marketInfo && marketInfo.resolveDelay) {
@@ -659,6 +227,7 @@ const Layout: React.FC<LayoutProps> = ({
                   sell={sell}
                   setSelectedAmount={setSelectedAmount}
                   calcCost={calcCost}
+                  selectedOutcomeToken={selectedOutcomeToken}
                 />
               </Row>
               {account && account.toLowerCase() === creator && (
@@ -677,7 +246,7 @@ const Layout: React.FC<LayoutProps> = ({
         </>
       ) : (
         <div>
-          <h1 className="text-center">Loading...</h1>
+          <SpinnerPage />
         </div>
       )}
 

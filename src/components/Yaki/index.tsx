@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import loadYakiTokenRepo from "src/logic/YakiToken";
 import Layout from './Layout'
 import Web3 from 'web3'
-
+import SpinnerPage from 'src/components/SpinnerPage'
 
 type YakiWalletProps = {
     web3: any
@@ -85,7 +85,7 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
                 transform={transform}
                 isYakiTokenLoaded={isYakiTokenLoaded}
             />) : (
-                <div>Loading...</div>
+                <SpinnerPage />
             )}
         </>
     )
