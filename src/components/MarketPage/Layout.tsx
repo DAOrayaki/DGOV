@@ -3,6 +3,7 @@ import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom'
 
 import SubHeader from 'src/components/MarketPage/SubHeader'
 import styles from 'src/components/style.module.css'
+import SpinnerPage from '../SpinnerPage'
 
 const CurrentMarket = lazy(() => import('src/components/MarketPage/CurrentMarket'))
 const MarketProvider = lazy(() => import('src/components/MarketPage/MarketProvider'))
@@ -27,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({
             </div>
             {account && web3 ? (
                 <>
-                    <Suspense fallback={<div>Loading...</div>}></Suspense>
+                    <Suspense fallback={<SpinnerPage/>}></Suspense>
                     <div className="mainContainer">
                         <Switch>
                             <Route path={`${match.path}/current`}>
@@ -47,7 +48,9 @@ const Layout: React.FC<LayoutProps> = ({
                     </div>
                 </>
             ) : (
-                <div> Connect your account first </div>
+                // <div> Connect your account first </div>
+                                <h1 className="text-center">
+                    Connect your account first</h1>
             )
             }
 

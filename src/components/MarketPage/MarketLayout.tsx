@@ -1,5 +1,6 @@
 import React, { useState, Suspense, lazy } from "react";
 import { ApolloProvider, useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client"
+import SpinnerPage from "../SpinnerPage";
 // import Market from 'src/components/Market'
 const Market = lazy(() => import('src/components/Market/index'))
 
@@ -45,7 +46,7 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
     )
     console.log(address)
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <SpinnerPage/>
 
     if (error) return <p>Error :</p>
     const lmsrmarketMaker = data.lmsrmarketMakers
@@ -75,7 +76,9 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
                     </Suspense>
                 </>
             ) : (
-                <div>No data found</div>
+                // <div>No data found</div>
+                                <h1 className="text-center">
+                    No data found</h1>
             )}
             {/* <p>{data.lmsrmarketMaker.id}</p> */}
             {/* <button onClick={() => refetch()}>Refetch!</button> */}

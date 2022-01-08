@@ -27,6 +27,18 @@ const RedeemModal: React.FC<RedeemModalProps> = ({
         ).then(() => setIsExecuting(false))
     }
 
+    const computeTotal = () => {
+        let total = 0
+        let den = parseFloat(marketInfo.payoutDenominator.toString())
+        for (let i = 0; i < marketInfo.outcomes.length; i++) {
+            let outcome = marketInfo.outcomes[i]
+            let numerator = parseFloat(outcome.payoutNumerator.toString())
+            let balance = parseFloat(outcome.balance.toFixed(5).toString())
+            total = total + (numerator / den) * balance
+        }
+        return total.toFixed(2)
+    }
+
     return (
         <>
             <Modal show={modelShow} onHide={() => setModalShow(false)}>
@@ -46,13 +58,16 @@ const RedeemModal: React.FC<RedeemModalProps> = ({
                                     marketInfo.outcomes.map((outcome: any, index: number) => (
                                         <tr>
                                             <td>{index}</td>
-                                            <td>{outcome.payoutNumerator.toString() != '0'? (`${outcome.payoutNumerator.toString()} / ${marketInfo.payoutDenominator.toString()}`) : (`${outcome.payoutNumerator.toString()}` )}</td>
-                                            <td>{outcome.balance.toFixed(2).toString()}</td>
+                                            <td>{outcome.payoutNumerator.toString() != '0' ? (`${outcome.payoutNumerator.toString()} / ${marketInfo.payoutDenominator.toString()}`) : (`${outcome.payoutNumerator.toString()}`)} YAKID/Share</td>
+                                            <td>{outcome.balance.toFixed(2).toString()} Shares</td>
                                         </tr>
                                     ))
                                 }
                             </tbody>
                         </Table>
+                    </Row>
+                    <Row>
+                                <p>In total: {computeTotal()} YAKID</p>
                     </Row>
                     <Row>
                         <div className={isExecuting ? ('d-block') : ('d-none')}>

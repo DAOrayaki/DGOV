@@ -77,7 +77,9 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
                     </Suspense>
                 </>
             ) : (
-                <div>No data found</div>
+                // <div>No data found</div>
+                                              <h1 className="text-center">
+                                        No data found</h1>
             )}
             {/* <p>{data.lmsrmarketMaker.id}</p> */}
             {/* <button onClick={() => refetch()}>Refetch!</button> */}
