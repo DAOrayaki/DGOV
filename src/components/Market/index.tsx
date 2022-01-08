@@ -157,7 +157,9 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       funding: new BigNumber(funding).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
       totalVolume: new BigNumber(totalSupply).dividedBy(Math.pow(10, collateral.decimals)).dividedBy(1000).toFixed(2),
       collateralBalance: new BigNumber(collateralBalance).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2),
-      questionType: questionType
+      questionType: questionType,
+      closeDelay: markets[0].closeDelay,
+      resolveDelay: markets[0].resolveDelay
     }
 
     setMarketInfo(marketData)

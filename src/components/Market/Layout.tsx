@@ -149,7 +149,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
               </Col>
               <Col sm md={6}>
                 <Row className="d-inline">
-                  <Form.Label>{outcome.link?(<a href={outcome.link}>{outcome.title}</a>): (outcome.title)}</Form.Label>
+                  <Form.Label>{outcome.link ? (<a href={outcome.link}>{outcome.title}</a>) : (outcome.title)}</Form.Label>
                 </Row>
                 <Row>
                   <ProgressBar className="pl-0 ml-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
@@ -234,23 +234,23 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
   }
 
 
-  const updateConstInfo = async (parms:string) => {
-      if (parms != "") {
-        const cost = await calcCost(parms)
+  const updateConstInfo = async (parms: string) => {
+    if (parms != "") {
+      const cost = await calcCost(parms)
 
-        // calcCost().then((cost: any) => {
-        const costInfoDic = {
-          baseCost: cost,
-          fee: 0,
-          potentialProfit: parseFloat(parms) - parseFloat(cost),
-          total:parms 
-        }
-
-        setCostInfo(costInfoDic)
-
-        console.log(costInfo)
-        // })
+      // calcCost().then((cost: any) => {
+      const costInfoDic = {
+        baseCost: cost,
+        fee: 0,
+        potentialProfit: parseFloat(parms) - parseFloat(cost),
+        total: parms
       }
+
+      setCostInfo(costInfoDic)
+
+      console.log(costInfo)
+      // })
+    }
 
   }
 
@@ -553,8 +553,21 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
 
   console.log(marketInfo)
-  const stage1_duration = marketInfo && marketInfo.questionType == 0 ? (4) : (3)
-  const stage2_duration = marketInfo && marketInfo.questionType == 0 ? (7) : (4)
+  var stage1_duration
+  var stage2_duration
+  if (marketInfo && marketInfo.closeDelay) {
+    stage1_duration = parseInt(marketInfo.closeDelay)
+
+  } else {
+     stage1_duration = marketInfo && marketInfo.questionType == 0 ? (4) : (3)
+  }
+
+  if (marketInfo && marketInfo.resolveDelay) {
+    stage2_duration = parseInt(marketInfo.resolveDelay)
+  } else {
+    stage2_duration = marketInfo && marketInfo.questionType == 0 ? (7) : (4)
+  }
+
 
   var d = createTime
 
@@ -611,7 +624,7 @@ const Layout: React.FC<LayoutProps> = ({
                     <p className="mt-0 text-center">Liqudity</p>
                   </Col>
                   <Col sm md={3}>
-                    <p className="mb-0 text-center"> <strong> {marketInfo.totalVolume} Yakid </strong></p>
+                    <p className="mb-0 text-center"> <strong> {marketInfo.totalVolume}k Yakid </strong></p>
                     <p className="mt-0 text-center">Total Volume</p>
 
                   </Col>

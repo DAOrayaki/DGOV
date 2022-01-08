@@ -163,10 +163,10 @@
         margin-left: 20px;
     }
     .rightOutcome {
-        border: 1px solid green;
+        border: 3px solid green;
     }
     .wrongOutcome {
-        border: 1px solid red;
+        border: 3px solid red;
     }
     .bold {
         font-weight: bold;
@@ -180,4 +180,12 @@
 .progress-bar-custom {
     background-color: purple;
     color: black;
-  }
+}
+
+.rightOutcome {
+    border: 3px solid green;
+}
+
+.wrongOutcome {
+    border: 3px solid red;
+}

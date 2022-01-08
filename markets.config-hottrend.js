@@ -2,6 +2,8 @@ module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
     title: "In season 2021-12-24, Which article will be the hot trend?",
     questionType: 1, //0 for research 1 for hot
+    closeDelay: 3,
+    resolveDelay: 3,
     outcomes: [{
             title: "DAO 的一大考验: 贡献定价、补偿以及实践模型",
             short: "Hot-1"

@@ -31,7 +31,7 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
     const login_state = localStorage.getItem(itemKey)
     if (login_state == '0' && !loginStage) {
       connectMetamask()
-    }else if (login_state=='1' && loginStage){
+    } else if (login_state == '1' && loginStage) {
       resetMetamask()
     }
   })
@@ -53,48 +53,15 @@ const Web3ConnectButton: React.FC<Props> = ({ web3, account1, setProviderData })
         }
 
       })
-      // const provider = await detectEthereumProvider();
-      // if (provider) {
-      // connectProvider(provider)
-      // }
     })
 
     localStorage.setItem(itemKey, '0')
     setLoginStage(true)
-    // const provider = await detectEthereumProvider()
-    // const provider = <window className="bin</window>
-
-    //this is only for bsc
-    //@ts-ignore
-    // const provider = window.BinanceChain
-
-    // const provider = await detectEthereumProvider();
-
-    // if (provider) {
-    // if (provider !== window.ethereum) {
-    // console.log('Do you have multiple wallets installed?')
-    // }
-    // connectProvider(provider)
-    // }
 
   }
 
-  // const getTypeOfAccount = () => {
-  //   let type: string
-  //   if (account1 === process.env.REACT_APP_OPERATOR_ADDRESS) {
-  //     type = 'Operator'
-  //   } else if (account1 === process.env.REACT_APP_ORACLE_ADDRESS) {
-  //     type = 'Oracle'
-  //   } else {
-  //     type = 'Trader'
-  //   }
-  //   return type
-  // }
 
   return account1 ? (
-    // <Button variant="contained" onClick={() => resetMetamask()}>
-    //   Disconnect {account1}
-    // </Button>
     <>
       <Container>
         {/* <Row> */}

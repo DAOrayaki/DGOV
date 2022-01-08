@@ -31,21 +31,18 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
           creator
           creationTimestamp
           collateralToken
-          conditions {
-            id
-            oracle
-            questionId
-            outcomeSlotCount
-          }
           funding
           fee
           condition {
             id
+            payouts
+            resolutionTimestamp
           }
           oracle
           questionId
           outcomeSlotCount
           questionTitle
+          closeTimeStamp
         }
    }
   `
@@ -60,14 +57,30 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
 
   console.log(data.lmsrmarketMakers)
 
+  const covertPayouts = (payouts: Array<string>) => {
+    let result = new Array<string>();
+    // let result = payouts.filter((e, i, a)=>{return e!="0"})
+
+    for (let i = 0; i < payouts.length; i++) {
+      if (payouts[i] != '0') {
+        result.push(i.toString())
+        console.log(payouts[i])
+      }
+    }
+    return result.join(',')
+  }
+
   const convertTime = (timeStamp: string) => {
+    if (timeStamp == "0") {
+      return "--"
+    }
     let d: Date = new Date(parseInt(timeStamp) * 1000)
     var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate()
     return startDate
   }
 
   const getID = (str: string) => {
-    let num = str.match(/\d+\-?\d+\-?\d+/g); 
+    let num = str.match(/\d+\-?\d+\-?\d+/g);
     return num
   }
 
@@ -89,11 +102,14 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
             <Col md={6}>
               <Link to={`/markets/researchmarkets/markets/${data.id}`} key={data.id}>
                 <p>{data.questionTitle}</p>
+                <p>{data.condition.payouts ? ("Winners: " + covertPayouts(data.condition.payouts)) : ("Winners: Not Decided Yet")}</p>
               </Link>
             </Col>
             <Col md={2}>
               <p>{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p>
               <p>Open time: {convertTime(data.creationTimestamp)} </p>
+              <p>Close time: {convertTime(data.closeTimeStamp)}</p>
+              <p>Resolve time: {convertTime(data.condition.resolutionTimestamp)}</p>
             </Col>
           </Row>
         </Card.Body>
