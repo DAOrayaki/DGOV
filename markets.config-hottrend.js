@@ -4,6 +4,7 @@ module.exports = [{
     questionType: 1, //0 for research 1 for hot
     closeDelay: 3,
     resolveDelay: 3,
+    resultCount: 1,
     outcomes: [{
             title: "DAO 的一大考验: 贡献定价、补偿以及实践模型",
             short: "Hot-1"

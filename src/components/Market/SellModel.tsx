@@ -69,7 +69,11 @@ const SellingModal: React.FC<SellingModalProps> = ({
         if (value < min_buy) {
             setIsError(true)
             setErrorInfo(`The output share should bigger than ${min_buy}`)
-        } else {
+        } else if(value > marketInfo.outcomes[selectedOutcomeToken].balance){
+            setIsError(true)
+            setErrorInfo(`The output share should lower than balance`)
+        }else
+        {
             setIsError(false)
             setSelectedAmount(e.target.value)
             updateConstInfo(e.target.value)
@@ -88,7 +92,7 @@ const SellingModal: React.FC<SellingModalProps> = ({
                                 <Form.Label>Shell Balance</Form.Label>
                                 <InputGroup>
                                     <Form.Control type="number" readOnly value={marketInfo.outcomes[selectedOutcomeToken].balance.toFixed(2).toString()} />
-                                    <InputGroup.Text>YAKID</InputGroup.Text>
+                                    <InputGroup.Text>Shares</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
 

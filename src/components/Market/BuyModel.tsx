@@ -27,9 +27,10 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
     useEffect(() => {
         updateConstInfo(selectedAmount)
+        checkInfo()
     }, [])
 
-    const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(false)
+    const [isEnoughBalance, setIsEnoughBalance] = useState<boolean>(parseFloat(selectedAmount) < parseFloat(marketInfo.collateralBalance))
     const [isApproving, setIsApproving] = useState<boolean>(false)
     const [isError, setIsError] = useState<boolean>(false)
     const [errorInfo, setErrorInfo] = useState<string>("")
@@ -41,6 +42,14 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
         total: 0
     })
 
+    const checkInfo = () => {
+        var buyAmount = parseFloat(selectedAmount)
+        var balance = parseFloat(marketInfo.collateralBalance)
+        if (balance < buyAmount) {
+            setIsEnoughBalance(false)
+        }
+    }
+    // checkInfo()
 
     const buy = () => {
         var buyAmount = parseFloat(selectedAmount)
@@ -78,11 +87,11 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
     const updateConstInfo = async (parms: string) => {
         if (parms != "") {
             const cost = await calcCost(parms)
-
+            const resultCount = marketInfo.resultCount ? (parseFloat(marketInfo.resultCount)) : 1
             const costInfoDic = {
                 baseCost: cost,
                 fee: 0,
-                potentialProfit: parseFloat(parms) - parseFloat(cost),
+                potentialProfit: parseFloat(parms) / resultCount - parseFloat(cost),
                 total: parms
             }
 
@@ -127,7 +136,7 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
                                 <Form.Label>Output Shares</Form.Label>
                                 <InputGroup>
                                     <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving} />
-                                    <InputGroup.Text>Shares</InputGroup.Text>
+                                    <InputGroup.Text>{isEnoughBalance ? ('Shares') : ('YAKID')} </InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
                         </Col>
@@ -151,7 +160,7 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
                             <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
                                 <Form.Label>Potential Profit</Form.Label>
                                 <InputGroup>
-                                    <Form.Control readOnly value={`${costInfo.potentialProfit}`} />
+                                    <Form.Control readOnly value={`${costInfo.potentialProfit.toFixed(2)}`} />
                                     <InputGroup.Text>YAKID</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
@@ -179,10 +188,12 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
 
                 <Modal.Footer className="d-flex justify-content-between">
-                    <Button variant="secondary" onClick={() => { approve() }} className={isEnoughBalance ? ('d-none') : ('d-block')} disabled={isApproving}>Approve</Button>
-
                     <Button variant="secondary" onClick={() => setModalShow(false)}>Close</Button>
+                    <Button variant="primary" onClick={() => { approve() }} className={isEnoughBalance ? ('d-none') : ('d-block')} disabled={isApproving}>Approve</Button>
+
+
                     <Button variant="primary" onClick={buy} className={isEnoughBalance ? ('d-block') : ('d-none')} disabled={isApproving}>Buy</Button>
+
                 </Modal.Footer>
             </Modal>
         </>

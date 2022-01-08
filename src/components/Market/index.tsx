@@ -139,7 +139,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
           .toFixed(3),
         // .multipliedBy(100)
         balance: new BigNumber(balance).dividedBy(Math.pow(10, collateral.decimals)),
-        payoutNumerator: payoutNumerator,
+        payoutNumerator: payoutNumerator
       }
       console.log(outcome)
       outcomes.push(outcome)
@@ -149,6 +149,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       lmsrAddress: lmsrAddress,
       title: markets[0].title,
       link: markets[0].link,
+      resultCount: markets[0].resultCount,
       outcomes,
       stage: MarketStage[await marketMakersRepo.stage()],
       questionId: questionId,

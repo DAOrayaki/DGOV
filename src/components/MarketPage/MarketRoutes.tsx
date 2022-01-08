@@ -106,7 +106,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
               </Link>
                 <p className="text-muted">{data.condition.payouts ? ("Winners: " + covertPayouts(data.condition.payouts)) : ("Winners: Not Decided Yet")}</p>
             </Col>
-            <Col md={2}>
+            <Col md={3}>
               <p className="mb-0 text-muted">{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p>
               <p className="mb-0 text-muted">Open time: {convertTime(data.creationTimestamp)} </p>
               <p className="mb-0 text-muted">Close time: {convertTime(data.closeTimeStamp)}</p>
