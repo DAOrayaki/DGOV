@@ -133,7 +133,7 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Output Shares</Form.Label>
+                                <Form.Label>I Want：</Form.Label>
                                 <InputGroup>
                                     <Form.Control type="number" placeholder="Enter output shares " onChange={e => checkInput(e)} value={selectedAmount} readOnly={isApproving} />
                                     <InputGroup.Text>{isEnoughBalance ? ('Shares') : ('YAKID')} </InputGroup.Text>
@@ -145,14 +145,14 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
 
                                 <Form.Label>Base Cost</Form.Label>
                                 <InputGroup>
-                                    <Form.Control readOnly value={`${costInfo.baseCost}`} />
+                                    <Form.Control readOnly value={isEnoughBalance? (`${costInfo.baseCost}`) :("*")} />
                                     <InputGroup.Text>YAKID</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Fee</Form.Label>
                                 <InputGroup>
-                                    <Form.Control placeholder="Enter output shares " readOnly value={`${costInfo.fee}`} />
+                                    <Form.Control placeholder="Enter output shares " readOnly value={isEnoughBalance? (`${costInfo.fee}`) : ("*")} />
                                     <InputGroup.Text>YAKID</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
@@ -160,14 +160,14 @@ const BuyingModal: React.FC<BuyingModalProps> = ({
                             <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
                                 <Form.Label>Potential Profit</Form.Label>
                                 <InputGroup>
-                                    <Form.Control readOnly value={`${costInfo.potentialProfit.toFixed(2)}`} />
+                                    <Form.Control readOnly value={isEnoughBalance? (`${costInfo.potentialProfit.toFixed(2)}`) : ("*")} />
                                     <InputGroup.Text>YAKID</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Total</Form.Label>
                                 <InputGroup>
-                                    <Form.Control readOnly value={`${costInfo.total}`} />
+                                    <Form.Control readOnly value={isEnoughBalance? (`${costInfo.total}`) : ("*")} />
                                     <InputGroup.Text>Shares</InputGroup.Text>
                                 </InputGroup>
                             </Form.Group>

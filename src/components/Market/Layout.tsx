@@ -45,6 +45,7 @@ type LayoutProps = {
   creator: string
   createTime: any
   calcCost: any
+  calcProfit: any
 }
 
 
@@ -117,7 +118,8 @@ const Layout: React.FC<LayoutProps> = ({
   oracle,
   creator,
   createTime,
-  calcCost
+  calcCost,
+  calcProfit
 }) => {
 
   console.log(marketInfo)
@@ -228,6 +230,7 @@ const Layout: React.FC<LayoutProps> = ({
                   setSelectedAmount={setSelectedAmount}
                   calcCost={calcCost}
                   selectedOutcomeToken={selectedOutcomeToken}
+                  calcProfit={calcProfit}
                 />
               </Row>
               {account && account.toLowerCase() === creator && (

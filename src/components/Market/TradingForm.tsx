@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Container, Button, Form, Row, Col, ProgressBar, Modal, InputGroup, FormControl, Spinner } from "react-bootstrap"
 import styles from '../style.module.css'
 
@@ -77,7 +77,9 @@ const TradingForm: React.FC<TradingFormProps> = ({
                   <Form.Label>{outcome.link ? (<a href={outcome.link}>{outcome.title}</a>) : (outcome.title)}</Form.Label>
                 </Row>
                 <Row>
-                  <ProgressBar className="pl-0 ml-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
+                  <div>
+                    <ProgressBar className="pl-0 ml-0 pr-0 mr-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
+                  </div>
                 </Row>
               </Col>
               <Col sm md={2}>

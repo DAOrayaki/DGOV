@@ -6,7 +6,7 @@ const SpinnerPage: React.FC = () => {
     return (
         <>
             <h1 className="text-center">
-                <Spinner animation="border" as="span"></Spinner>Loading...</h1>
+                <Spinner animation="border" as="span"></Spinner></h1>
             
         </>
     )

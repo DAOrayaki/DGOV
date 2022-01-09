@@ -17,6 +17,7 @@ type TraderActionsProps = {
     setSelectedAmount: any
     calcCost: any
     selectedOutcomeToken: number
+    calcProfit: any
 }
 
 const TraderActions: React.FC<TraderActionsProps> = ({
@@ -29,7 +30,8 @@ const TraderActions: React.FC<TraderActionsProps> = ({
     sell,
     setSelectedAmount,
     calcCost,
-    selectedOutcomeToken
+    selectedOutcomeToken,
+    calcProfit
 }) => {
     const [buyShow, setBuyShow] = useState(false)
     const [sellShow, setSellShow] = useState(false)
@@ -79,7 +81,7 @@ const TraderActions: React.FC<TraderActionsProps> = ({
                     isMarketClosed={isMarketClosed}
                     selectedAmount={selectedAmount}
                     setSelectedAmount={setSelectedAmount}
-                    calcCost={calcCost}
+                    calcCost={calcProfit}
                     selectedOutcomeToken={selectedOutcomeToken}
                 ></SellingModal>
                 <RedeemModal redeemFunc={redeem} modelShow={redeemShow} setModalShow={setRedeemShow}

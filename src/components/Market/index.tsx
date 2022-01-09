@@ -259,28 +259,30 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     console.log("Bignumber Created")
 
     const cost = await marketMakersRepo.calcNetCost(outcomeTokenAmounts)
-    return  new BigNumber(cost).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2)
+    return new BigNumber(cost).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2)
+  }
+
+  const calcProfit = async (parms: string) => {
+    const collateral = await marketMakersRepo.getCollateralToken()
+    // console.log(selectedAmount)
+    var amount = parseFloat(parms) * Math.pow(10, collateral.decimals)
+    var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
+
+    const formatedAmount = Web3.utils.toBN(amount_str)
+    const outcomeTokenAmounts = Array.from({ length: marketInfo.outcomes.length }, (v, i) =>
+      i === selectedOutcomeToken ? formatedAmount.neg() : Web3.utils.toBN(0),
+    )
+    const profit = (await marketMakersRepo.calcNetCost(outcomeTokenAmounts)).neg()
+    return new BigNumber(profit).dividedBy(Math.pow(10, collateral.decimals)).toFixed(2)
+
   }
 
   const sell = async () => {
     const collateral = await marketMakersRepo.getCollateralToken()
-    // const formatedAmount = new BigNumber(selectedAmount).multipliedBy(
-    //   new BigNumber(Math.pow(10, collateral.decimals)),
-    // )
-    // const formatedAmount = Web3.utils.toBN(0).sub(
-    // Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals))))
-
-    // const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, collateral.decimals)))
-
-    // const formatedAmount = Web3.utils.toBN(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals))
-    // const formatedAmount = Web3.utils.toBN(String(parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)))
     var amount = parseFloat(selectedAmount) * Math.pow(10, collateral.decimals)
     var amount_str = amount.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 20 })
 
     const formatedAmount = Web3.utils.toBN(amount_str)
-
-
-
 
     const isApproved = await conditionalTokensRepo.isApprovedForAll(account, marketInfo.lmsrAddress)
     if (!isApproved) {
@@ -360,7 +362,8 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
       oracle={oracle}
       creator={creator}
       createTime={createTime}
-      calcCost = {calcCost}
+      calcCost={calcCost}
+      calcProfit={calcProfit}
     />
   )
 }
