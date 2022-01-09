@@ -89,7 +89,7 @@ const SellingModal: React.FC<SellingModalProps> = ({
                     <Row>
                         <Col md={5}>
                             <Form.Group className="mb-3 d-line" controlId="formApproveBalance">
-                                <Form.Label>Shell Balance</Form.Label>
+                                <Form.Label>Balance</Form.Label>
                                 <InputGroup>
                                     <Form.Control type="number" readOnly value={marketInfo.outcomes[selectedOutcomeToken].balance.toFixed(2).toString()} />
                                     <InputGroup.Text>Shares</InputGroup.Text>
