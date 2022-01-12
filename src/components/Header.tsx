@@ -42,20 +42,20 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
                     <Nav className="ms-auto">
 
                         <Nav className="me-auto">
-                            <Nav.Link href="https://daorayaki.org/"><h5 className="font-weight-bold text-dark">DAOrayaki Articles</h5></Nav.Link>
+                            <Nav.Link href="https://media.daorayaki.org/"><h5 className="font-weight-bold text-dark">DAOrayaki Articles</h5></Nav.Link>
                         </Nav>
 
 
                         <NavDropdown title={ <span className="h5 font-weight-bold text-dark">Research Markets</span>} id="research-markets">
-                            <NavDropdown.Item as={NavLink} to="/markets/researchmarkets/current">Current market</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to="/markets/researchmarkets/marketlist">Market List</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/research/current">Current market</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/research/marketlist">Market List</NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.3">Top ranked</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.4">Top predictors</NavDropdown.Item> */}
                         </NavDropdown>
 
                         <NavDropdown title= {<span className="h5 font-weight-bold text-dark">Hot Trends Markets </span>} id="hot-trend-markets">
-                            <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/current">Current market</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to="/markets/hottrendmarkets/marketlist">Market List</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/current">Current market</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/marketlist">Market List</NavDropdown.Item>
                             {/* <NavDropdown.Item >Top ranked</NavDropdown.Item>
                             <NavDropdown.Item >Top predictors</NavDropdown.Item> */}
                         </NavDropdown>

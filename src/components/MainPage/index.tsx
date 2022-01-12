@@ -23,7 +23,7 @@ const MainLayout: React.FC = () => {
 
                             </Col>
                             <Col md={5}>
-                                <Button variant="outline-dark" className="me-1" href="https://daorayaki.org/">Start Reading</Button>
+                                <Button variant="outline-dark" className="me-1" href="https://media.daorayaki.org/">Start Reading</Button>
                                 <Button href="https://forum.daorayaki.cn/t/readme-daorayaki-content-process/48" variant="outline-dark">Start Writing</Button>
 
                             </Col>

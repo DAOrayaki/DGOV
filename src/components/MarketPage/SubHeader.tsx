@@ -14,11 +14,11 @@ const SubHeader: React.FC = () => {
         <>
             <Navbar>
                 <Container fluid className="justify-content-start text-light rounded">
-                        <Navbar.Brand as={Link} to="/markets/researchmarkets/current" className="text-light">
+                        <Navbar.Brand as={Link} to="/markets/research/current" className="text-light">
                             Current Market
                         </Navbar.Brand>
 
-                    <Navbar.Brand as={Link} to="/markets/researchmarkets/marketlist" className="text-light">
+                    <Navbar.Brand as={Link} to="/markets/research/marketlist" className="text-light">
                         Market List
                     </Navbar.Brand>
 {/* 
