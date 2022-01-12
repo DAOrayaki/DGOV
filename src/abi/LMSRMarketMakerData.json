@@ -34,9 +34,9 @@
       "type": "event"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/LMSRMarketMakerFactory.sol\":\"LMSRMarketMakerData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]},\"@gnosis.pm/util-contracts/contracts/Fixed192x64Math.sol\":{\"keccak256\":\"0xad15b641bf8f5862034749b679ab91cb2c330c2ca997da4455863dc169ab82d4\",\"urls\":[\"bzz-raw://8eb410f1015ba6faf23c17a5c94d5dce9838392639d01c20bc33d43669befb34\",\"dweb:/ipfs/QmScvV8NpQNBNApJXyLFcLAG4hwWExSkwPhWJrJxLqk9x5\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]},\"project:/contracts/CTHelpers.sol\":{\"keccak256\":\"0x858a7ad26ea79e245237efc1915642825b734c4bc967856fa7dcdfd4a48475e9\",\"urls\":[\"bzz-raw://db3e548e320f22c265c035d94d6244602186df241b3608e82f6589d1af38ad44\",\"dweb:/ipfs/QmcGRR4PYEbU4AUkejkgjNxEfvTk2UrPxWqQmbDsZ7Aoch\"]},\"project:/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x0c7fc9bd68dc2b070b4c4139a29373ae42f6b4215c2aba81119548ebb60e8dee\",\"urls\":[\"bzz-raw://d0f4545d73f75ae6ccacd0e5ffbcc5ed846533f7fd63c1d1c90e58af2ab981ba\",\"dweb:/ipfs/QmX5WmX9npF3PRA5Ew94FCca6u8dGUhBhhnQfFSKHtHCqW\"]},\"project:/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0x6a0cd9a28c7463f756dcf5bf4c1f88e7ab34c1d3a750e3249b2074deeea7c502\",\"urls\":[\"bzz-raw://f4815562ae75ba11f3961835e026dcd1c48cfecc8e4b41c77029cbf445a7d898\",\"dweb:/ipfs/QmWjSCmnjfUuHva3szwrf7gN2UGg2cgwoQEWyBzGWbTZXQ\"]},\"project:/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x9d4bf0a521a3ab0979d7121844b6fc161c9cdcef0a03dd76ebcd1020057c3a52\",\"urls\":[\"bzz-raw://cbf8fd208e204afc23be11a6cd50ef7eb18592afa214cfd3324310335310657c\",\"dweb:/ipfs/QmXgmf9HGLBSra9agvdV8KssaKnPWUnoirThoCGhH7QnjN\"]},\"project:/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0x7ba577633967a927ecdd79194c5ebeb508d45e19281e41ea7f539bc57d242e23\",\"urls\":[\"bzz-raw://b8e59ba83558783e5f7290f77f45e68f01d243241beed5d7dc8e5ac65fdfdd69\",\"dweb:/ipfs/QmX59BUksYSkGRYiGTSLjZe7CW34pxRiNhrVJap9yrUn2V\"]},\"project:/contracts/LMSRMarketMaker.sol\":{\"keccak256\":\"0x84c88a4f9453595804bc9ed77d8610b6393dfa327f964aab4d7d8b248e470c0d\",\"urls\":[\"bzz-raw://b112bfd08e26397a15cdffe2e4c2736e2295155d40554e2eb53e041f591dddd3\",\"dweb:/ipfs/QmWoC6R7B4tiUjz16617qKz3jqSAmBV7EXCkdVWL9Ej4az\"]},\"project:/contracts/LMSRMarketMakerFactory.sol\":{\"keccak256\":\"0xaf47860ea085ecc17f038bc0cb810eb56e23898ecb8523aa713e6aafa23ef183\",\"urls\":[\"bzz-raw://9bcc04d7295eada8074d4aa82fd0875b7ddd310ce23c1ae34377d4c32c7fea74\",\"dweb:/ipfs/QmUUwGHtMsJZXGiqwR1s1zS7A8sHevCXWVjoDms3Xoaqj5\"]},\"project:/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa493be855850bcaaf8646e95f948c18cb3d456b6ddda8e2266cf8488afe8d97e\",\"urls\":[\"bzz-raw://f095dbaa7231704de9e6a0afc175ca143e7fff38c7661b81a646691f1aee8a96\",\"dweb:/ipfs/QmWeYz9VBsWigCo2WaJuXCcN5CiPi5vYk2Uw4xdxYQztWq\"]},\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x3fb04e87cbcad58052bc5592df2dccca335cfc3641d9ea2a1cd1b11af2cae1fb\",\"urls\":[\"bzz-raw://b40f8cab0ce3e7993fbd83ab65d18b72f75303c5df60c21b363320936a4e754b\",\"dweb:/ipfs/Qmbjer6CBNAwzRvs5bfUUHKL3KKY6uPt5GkBe2odfFmR88\"]},\"project:/contracts/Whitelist.sol\":{\"keccak256\":\"0xf011085e035b539ef7fc3f20334fead876769f96db2d3d63454456e00ebd7fb1\",\"urls\":[\"bzz-raw://1acb6ccb0059f4da58cdf6f966e5ec6e407423e6f4dd2771d482d5de388bc48e\",\"dweb:/ipfs/QmUchbAAnmSqWBWikKmPWzmwnpqoTc8AJj8WzYzAAYEVeS\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a7231582022715d2a0be2e7e159673f60466083cbda74a92fdc7f694e2d62da12bcc075d964736f6c63430005110032",
-  "deployedBytecode": "0x6080604052600080fdfea265627a7a7231582022715d2a0be2e7e159673f60466083cbda74a92fdc7f694e2d62da12bcc075d964736f6c63430005110032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"initialFunding\",\"type\":\"uint256\"}],\"name\":\"AMMCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/LMSRMarketMakerFactory.sol\":\"LMSRMarketMakerData\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\":{\"keccak256\":\"0x921eadb1d6cd0e742448334fb84c39b358a18cdeb7c6badbb89cae847d44a201\",\"urls\":[\"bzz-raw://50e119d54fcd2b0a93cd36358ce28a810ed33f5058e1ed1a7be8ebec8942d1fe\",\"dweb:/ipfs/Qme871evGa1PBSBnV9PisLhYnFnnahLmBuy5KakLSUKRPF\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\":{\"keccak256\":\"0x5d1e709c759b9bd72865c8608582d66fc338fde3a77f41abb04ae943915a5695\",\"urls\":[\"bzz-raw://20ec11c598d3791fed1025a1a3d6f8b712107f04163247e1763b0ebe070b5a90\",\"dweb:/ipfs/QmQ727N1676jG9F5iwakSG2RNeV82TVBGJHgHPmHxib8ah\"]},\"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0xca815b5ca57df8f1056b962c2728d6a1e56fc7d9a7869ccee8f5a1ac6075b75d\",\"urls\":[\"bzz-raw://9123bbb9587710cf68d2e3ffd8e613769d69b91d58e9f77315e07b0936146329\",\"dweb:/ipfs/QmPnF3rGuY2H3Gifvha4dW7fJPptP7wJerHzjz4dpzfTJW\"]},\"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\":{\"keccak256\":\"0xd07c04b6aea8ff41993cb0179120bb7c2416476311d992633578f6084b4f783a\",\"urls\":[\"bzz-raw://0886273b56382bb71c6573e3ba4741c430faf323c8efa4c3314bb05252360fc7\",\"dweb:/ipfs/QmPXGzL5oMwUJSPxsD3L2bXxsaVqw88cGn6JzU6hskpL7U\"]},\"@gnosis.pm/util-contracts/contracts/Fixed192x64Math.sol\":{\"keccak256\":\"0xad15b641bf8f5862034749b679ab91cb2c330c2ca997da4455863dc169ab82d4\",\"urls\":[\"bzz-raw://8eb410f1015ba6faf23c17a5c94d5dce9838392639d01c20bc33d43669befb34\",\"dweb:/ipfs/QmScvV8NpQNBNApJXyLFcLAG4hwWExSkwPhWJrJxLqk9x5\"]},\"@gnosis.pm/util-contracts/contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xf96e8d30ae216bdded12e0330bd43258ff91d7f2e197ba51cd0bebe662b2abbb\",\"urls\":[\"bzz-raw://62377b6d4a2de90a35bee931abddadef8583a2adf32201c9d1c602eaeb7637f4\",\"dweb:/ipfs/QmbDxe1eTT69qjLHwYWhxUU9nnE7ACZHLbWJCW8unoP7ET\"]},\"openzeppelin-solidity/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0xac2eacd7e7762e275442f28f21d821544df5aae2ed7698af13be8c41b7005e2e\",\"urls\":[\"bzz-raw://8bdbefb642e7b08535c66bbf074e576cfef2300cdf910c1e0b211f6393833a28\",\"dweb:/ipfs/QmQhfx2Ufr8a2gFXm3KogL66xGgAuAWMwcamkWFKGG6Vya\"]},\"openzeppelin-solidity/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x661553e43d7c4fbb2de504e5999fd5c104d367488350ed5bf023031bd1ba5ac5\",\"urls\":[\"bzz-raw://b40442c5b350b57b88a081a1eacd2bac962d4ecc1f029f5447a18986f08f6f14\",\"dweb:/ipfs/QmV7wjtRf11ibUHh4g8JjuhMpy68pPhV95L2y46UBoRfsZ\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x4ccf2d7b51873db1ccfd54ca2adae5eac3b184f9699911ed4490438419f1c690\",\"urls\":[\"bzz-raw://d62d769b2219d5de39013093412623e624fa887f871826ea3bae6052ee893610\",\"dweb:/ipfs/QmV3yVktya1s617QmuzQR2CfuJgUi3dR2xEZY9ecmqZ2G1\"]},\"openzeppelin-solidity/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0xf79fb10e8235770eb4aea7249034076a3cc9f9119ad944fc48705bae9c9d20dc\",\"urls\":[\"bzz-raw://cd3429aa9a4878dcf6c73faa32c3722f4013d4be012ece543b246faa6b50f55c\",\"dweb:/ipfs/QmS55hgTvNEAKinus19m65CB4wcymN8EiUPFpRx5tYJ1i2\"]},\"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzz-raw://d0abb99bb8bfc2bc0a89902b8ed1dc0442ad08cc78cee64c291b3df6a27bcccc\",\"dweb:/ipfs/QmP5NaEwZthQeM2ESz4WTT3osrP7jhbvu7ocbttBi2JAw6\"]},\"openzeppelin-solidity/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzz-raw://75ae8d04454d1511a2ed986cc8585736f05c5c25280683b3d24712a9f414a4bf\",\"dweb:/ipfs/Qmb3kNCoBUZdah1AgBBD4zMk898j5Qw8ahT1w5cCMYp5Y3\"]},\"project:/contracts/CTHelpers.sol\":{\"keccak256\":\"0x858a7ad26ea79e245237efc1915642825b734c4bc967856fa7dcdfd4a48475e9\",\"urls\":[\"bzz-raw://db3e548e320f22c265c035d94d6244602186df241b3608e82f6589d1af38ad44\",\"dweb:/ipfs/QmcGRR4PYEbU4AUkejkgjNxEfvTk2UrPxWqQmbDsZ7Aoch\"]},\"project:/contracts/ConditionalTokens.sol\":{\"keccak256\":\"0x0c7fc9bd68dc2b070b4c4139a29373ae42f6b4215c2aba81119548ebb60e8dee\",\"urls\":[\"bzz-raw://d0f4545d73f75ae6ccacd0e5ffbcc5ed846533f7fd63c1d1c90e58af2ab981ba\",\"dweb:/ipfs/QmX5WmX9npF3PRA5Ew94FCca6u8dGUhBhhnQfFSKHtHCqW\"]},\"project:/contracts/ERC1155/ERC1155.sol\":{\"keccak256\":\"0x6a0cd9a28c7463f756dcf5bf4c1f88e7ab34c1d3a750e3249b2074deeea7c502\",\"urls\":[\"bzz-raw://f4815562ae75ba11f3961835e026dcd1c48cfecc8e4b41c77029cbf445a7d898\",\"dweb:/ipfs/QmWjSCmnjfUuHva3szwrf7gN2UGg2cgwoQEWyBzGWbTZXQ\"]},\"project:/contracts/ERC1155/IERC1155.sol\":{\"keccak256\":\"0x9d4bf0a521a3ab0979d7121844b6fc161c9cdcef0a03dd76ebcd1020057c3a52\",\"urls\":[\"bzz-raw://cbf8fd208e204afc23be11a6cd50ef7eb18592afa214cfd3324310335310657c\",\"dweb:/ipfs/QmXgmf9HGLBSra9agvdV8KssaKnPWUnoirThoCGhH7QnjN\"]},\"project:/contracts/ERC1155/IERC1155TokenReceiver.sol\":{\"keccak256\":\"0x7ba577633967a927ecdd79194c5ebeb508d45e19281e41ea7f539bc57d242e23\",\"urls\":[\"bzz-raw://b8e59ba83558783e5f7290f77f45e68f01d243241beed5d7dc8e5ac65fdfdd69\",\"dweb:/ipfs/QmX59BUksYSkGRYiGTSLjZe7CW34pxRiNhrVJap9yrUn2V\"]},\"project:/contracts/LMSRMarketMaker.sol\":{\"keccak256\":\"0x84c88a4f9453595804bc9ed77d8610b6393dfa327f964aab4d7d8b248e470c0d\",\"urls\":[\"bzz-raw://b112bfd08e26397a15cdffe2e4c2736e2295155d40554e2eb53e041f591dddd3\",\"dweb:/ipfs/QmWoC6R7B4tiUjz16617qKz3jqSAmBV7EXCkdVWL9Ej4az\"]},\"project:/contracts/LMSRMarketMakerFactory.sol\":{\"keccak256\":\"0xaf47860ea085ecc17f038bc0cb810eb56e23898ecb8523aa713e6aafa23ef183\",\"urls\":[\"bzz-raw://9bcc04d7295eada8074d4aa82fd0875b7ddd310ce23c1ae34377d4c32c7fea74\",\"dweb:/ipfs/QmUUwGHtMsJZXGiqwR1s1zS7A8sHevCXWVjoDms3Xoaqj5\"]},\"project:/contracts/MarketMaker.sol\":{\"keccak256\":\"0xa493be855850bcaaf8646e95f948c18cb3d456b6ddda8e2266cf8488afe8d97e\",\"urls\":[\"bzz-raw://f095dbaa7231704de9e6a0afc175ca143e7fff38c7661b81a646691f1aee8a96\",\"dweb:/ipfs/QmWeYz9VBsWigCo2WaJuXCcN5CiPi5vYk2Uw4xdxYQztWq\"]},\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x16a1ae5f4eb64d8d04029056a5bfaae06e8afa335697f54fa584a129d8f2f4dd\",\"urls\":[\"bzz-raw://74758d3a81c0e35c4e21cec99c9e422cff0b96f11d1e4efe7c0a4d7c58148505\",\"dweb:/ipfs/QmXG9Zt33bBEKEwxCgn8F837h7qLykr3MGMHPk9tRUxcsy\"]},\"project:/contracts/Whitelist.sol\":{\"keccak256\":\"0xf011085e035b539ef7fc3f20334fead876769f96db2d3d63454456e00ebd7fb1\",\"urls\":[\"bzz-raw://1acb6ccb0059f4da58cdf6f966e5ec6e407423e6f4dd2771d482d5de388bc48e\",\"dweb:/ipfs/QmUchbAAnmSqWBWikKmPWzmwnpqoTc8AJj8WzYzAAYEVeS\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820a1494c3dec16c5696fbc635abecbe4b14673cae55340600ab6ddbaae06c42af964736f6c63430005110032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820a1494c3dec16c5696fbc635abecbe4b14673cae55340600ab6ddbaae06c42af964736f6c63430005110032",
   "sourceMap": "812:846:29:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;812:846:29;;;;;;;",
   "deployedSourceMap": "812:846:29:-;;;;;",
   "source": "pragma solidity ^0.5.1;\r\n\r\nimport { IERC20 } from \"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\";\r\n// import { ConditionalTokens } from \"@gnosis.pm/conditional-tokens-contracts/contracts/ConditionalTokens.sol\";\r\n\r\nimport { ConditionalTokens } from \"./ConditionalTokens.sol\";\r\nimport { YAKIPoint } from \"./RayakiID.sol\";\r\n// import { CTHelpers } from \"@gnosis.pm/conditional-tokens-contracts/contracts/CTHelpers.sol\";\r\nimport { CTHelpers } from \"./CTHelpers.sol\";\r\nimport { ConstructedCloneFactory } from \"@gnosis.pm/util-contracts/contracts/ConstructedCloneFactory.sol\";\r\nimport { LMSRMarketMaker } from \"./LMSRMarketMaker.sol\";\r\nimport { Whitelist } from \"./Whitelist.sol\";\r\nimport { ERC1155TokenReceiver } from \"@gnosis.pm/conditional-tokens-contracts/contracts/ERC1155/ERC1155TokenReceiver.sol\";\r\n\r\ncontract LMSRMarketMakerData {\r\n    address internal _owner;\r\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\r\n\r\n\r\n    bytes4 internal constant _INTERFACE_ID_ERC165 = 0x01ffc9a7;\r\n    mapping(bytes4 => bool) internal _supportedInterfaces;\r\n\r\n\r\n    uint64 constant FEE_RANGE = 10**18;\r\n    event AMMCreated(uint initialFunding);\r\n    ConditionalTokens internal pmSystem;\r\n    YAKIPoint internal collateralToken;\r\n    bytes32[] internal conditionIds;\r\n    uint internal atomicOutcomeSlotCount;\r\n    uint64 internal fee;\r\n    uint internal funding;\r\n    Stage internal stage;\r\n    Whitelist internal whitelist;\r\n\r\n    uint[] internal outcomeSlotCounts;\r\n    bytes32[][] internal collectionIds;\r\n    uint[] internal positionIds;\r\n\r\n    enum Stage {\r\n        Running,\r\n        Paused,\r\n        Closed\r\n    }\r\n}\r\n\r\ncontract LMSRMarketMakerFactory is ConstructedCloneFactory, LMSRMarketMakerData {\r\n    event LMSRMarketMakerCreation(address indexed creator, LMSRMarketMaker lmsrMarketMaker, ConditionalTokens pmSystem, YAKIPoint collateralToken, bytes32[] conditionIds, uint64 fee, uint funding);\r\n\r\n    LMSRMarketMaker public implementationMaster;\r\n\r\n    constructor() public {\r\n        implementationMaster = new LMSRMarketMaker();\r\n    }\r\n\r\n    function cloneConstructor(bytes calldata consData) external {\r\n        (\r\n            ConditionalTokens _pmSystem,\r\n            YAKIPoint _collateralToken,\r\n            bytes32[] memory _conditionIds,\r\n            uint64 _fee,\r\n            Whitelist _whitelist\r\n        ) = abi.decode(consData, (ConditionalTokens, YAKIPoint, bytes32[], uint64, Whitelist));\r\n\r\n        _owner = msg.sender;\r\n        emit OwnershipTransferred(address(0), _owner);\r\n\r\n        _supportedInterfaces[_INTERFACE_ID_ERC165] = true;\r\n        _supportedInterfaces[\r\n            ERC1155TokenReceiver(0).onERC1155Received.selector ^\r\n            ERC1155TokenReceiver(0).onERC1155BatchReceived.selector\r\n        ] = true;\r\n\r\n        // Validate inputs\r\n        require(address(_pmSystem) != address(0) && _fee < FEE_RANGE);\r\n        pmSystem = _pmSystem;\r\n        collateralToken = _collateralToken;\r\n        conditionIds = _conditionIds;\r\n        fee = _fee;\r\n        whitelist = _whitelist;\r\n\r\n        atomicOutcomeSlotCount = 1;\r\n        outcomeSlotCounts = new uint[](conditionIds.length);\r\n        for (uint i = 0; i < conditionIds.length; i++) {\r\n            uint outcomeSlotCount = pmSystem.getOutcomeSlotCount(conditionIds[i]);\r\n            atomicOutcomeSlotCount *= outcomeSlotCount;\r\n            outcomeSlotCounts[i] = outcomeSlotCount;\r\n        }\r\n        require(atomicOutcomeSlotCount > 1, \"conditions must be valid\");\r\n\r\n        collectionIds = new bytes32[][](conditionIds.length);\r\n        _recordCollectionIDsForAllConditions(conditionIds.length, bytes32(0));\r\n\r\n        stage = Stage.Paused;\r\n        emit AMMCreated(funding);\r\n    }\r\n\r\n    function _recordCollectionIDsForAllConditions(uint conditionsLeft, bytes32 parentCollectionId) private {\r\n        if(conditionsLeft == 0) {\r\n            positionIds.push(CTHelpers.getPositionId(collateralToken, parentCollectionId));\r\n            return;\r\n        }\r\n\r\n        conditionsLeft--;\r\n\r\n        uint outcomeSlotCount = outcomeSlotCounts[conditionsLeft];\r\n\r\n        collectionIds[conditionsLeft].push(parentCollectionId);\r\n        for(uint i = 0; i < outcomeSlotCount; i++) {\r\n            _recordCollectionIDsForAllConditions(\r\n                conditionsLeft,\r\n                CTHelpers.getCollectionId(\r\n                    parentCollectionId,\r\n                    conditionIds[conditionsLeft],\r\n                    1 << i\r\n                )\r\n            );\r\n        }\r\n    }\r\n\r\n    function createLMSRMarketMaker(ConditionalTokens pmSystem, YAKIPoint collateralToken, bytes32[] calldata conditionIds, uint64 fee, Whitelist whitelist, uint funding)\r\n        external\r\n        returns (LMSRMarketMaker lmsrMarketMaker)\r\n    {\r\n        lmsrMarketMaker = LMSRMarketMaker(createClone(address(implementationMaster), abi.encode(pmSystem, collateralToken, conditionIds, fee, whitelist)));\r\n        collateralToken.transferPointFrom(msg.sender, address(this), funding);\r\n        collateralToken.approvePoint(address(lmsrMarketMaker), funding);\r\n        lmsrMarketMaker.changeFunding(int(funding));\r\n        lmsrMarketMaker.resume();\r\n        lmsrMarketMaker.transferOwnership(msg.sender);\r\n        emit LMSRMarketMakerCreation(msg.sender, lmsrMarketMaker, pmSystem, collateralToken, conditionIds, fee, funding);\r\n    }\r\n}\r\n",
@@ -103,7 +103,7 @@
         "id": 8770,
         "nodeType": "ImportDirective",
         "scope": 9201,
-        "sourceUnit": 11469,
+        "sourceUnit": 11487,
         "src": "286:43:29",
         "symbolAliases": [
           {
@@ -167,7 +167,7 @@
         "id": 8778,
         "nodeType": "ImportDirective",
         "scope": 9201,
-        "sourceUnit": 11557,
+        "sourceUnit": 11575,
         "src": "640:44:29",
         "symbolAliases": [
           {
@@ -722,7 +722,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_Whitelist_$11556",
+              "typeIdentifier": "t_contract$_Whitelist_$11574",
               "typeString": "contract Whitelist"
             },
             "typeName": {
@@ -730,10 +730,10 @@
               "id": 8820,
               "name": "Whitelist",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11556,
+              "referencedDeclaration": 11574,
               "src": "1431:9:29",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Whitelist_$11556",
+                "typeIdentifier": "t_contract$_Whitelist_$11574",
                 "typeString": "contract Whitelist"
               }
             },
@@ -1446,7 +1446,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Whitelist_$11556",
+                        "typeIdentifier": "t_contract$_Whitelist_$11574",
                         "typeString": "contract Whitelist"
                       },
                       "typeName": {
@@ -1454,10 +1454,10 @@
                         "id": 8883,
                         "name": "Whitelist",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 11556,
+                        "referencedDeclaration": 11574,
                         "src": "2334:9:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_Whitelist_$11556",
+                          "typeIdentifier": "t_contract$_Whitelist_$11574",
                           "typeString": "contract Whitelist"
                         }
                       },
@@ -1562,10 +1562,10 @@
                             "name": "Whitelist",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11556,
+                            "referencedDeclaration": 11574,
                             "src": "2439:9:29",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_type$_t_contract$_Whitelist_$11556_$",
+                              "typeIdentifier": "t_type$_t_contract$_Whitelist_$11574_$",
                               "typeString": "type(contract Whitelist)"
                             }
                           }
@@ -1579,7 +1579,7 @@
                         "nodeType": "TupleExpression",
                         "src": "2389:60:29",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11556_$_$",
+                          "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11574_$_$",
                           "typeString": "tuple(type(contract ConditionalTokens),type(contract YAKIPoint),type(bytes32[] memory),type(uint64),type(contract Whitelist))"
                         }
                       }
@@ -1591,7 +1591,7 @@
                           "typeString": "bytes calldata"
                         },
                         {
-                          "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11556_$_$",
+                          "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11574_$_$",
                           "typeString": "tuple(type(contract ConditionalTokens),type(contract YAKIPoint),type(bytes32[] memory),type(uint64),type(contract Whitelist))"
                         }
                       ],
@@ -1601,7 +1601,7 @@
                         "name": "abi",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11820,
+                        "referencedDeclaration": 11838,
                         "src": "2368:3:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_abi",
@@ -1632,7 +1632,7 @@
                     "nodeType": "FunctionCall",
                     "src": "2368:82:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$_t_contract$_ConditionalTokens_$6928_$_t_contract$_YAKIPoint_$10980_$_t_array$_t_bytes32_$dyn_memory_$_t_uint64_$_t_contract$_Whitelist_$11556_$",
+                      "typeIdentifier": "t_tuple$_t_contract$_ConditionalTokens_$6928_$_t_contract$_YAKIPoint_$10980_$_t_array$_t_bytes32_$dyn_memory_$_t_uint64_$_t_contract$_Whitelist_$11574_$",
                       "typeString": "tuple(contract ConditionalTokens,contract YAKIPoint,bytes32[] memory,uint64,contract Whitelist)"
                     }
                   },
@@ -1670,7 +1670,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11833,
+                        "referencedDeclaration": 11851,
                         "src": "2472:3:29",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -2355,10 +2355,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11836,
+                      "referencedDeclaration": 11854,
                       "src": "2826:7:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2584,7 +2584,7 @@
                       "referencedDeclaration": 8821,
                       "src": "3034:9:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Whitelist_$11556",
+                        "typeIdentifier": "t_contract$_Whitelist_$11574",
                         "typeString": "contract Whitelist"
                       }
                     },
@@ -2599,13 +2599,13 @@
                       "referencedDeclaration": 8884,
                       "src": "3046:10:29",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_Whitelist_$11556",
+                        "typeIdentifier": "t_contract$_Whitelist_$11574",
                         "typeString": "contract Whitelist"
                       }
                     },
                     "src": "3034:22:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Whitelist_$11556",
+                      "typeIdentifier": "t_contract$_Whitelist_$11574",
                       "typeString": "contract Whitelist"
                     }
                   },
@@ -3279,10 +3279,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "3432:7:29",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4754,7 +4754,7 @@
                                   "referencedDeclaration": 9122,
                                   "src": "4902:9:29",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_contract$_Whitelist_$11556",
+                                    "typeIdentifier": "t_contract$_Whitelist_$11574",
                                     "typeString": "contract Whitelist"
                                   }
                                 }
@@ -4778,7 +4778,7 @@
                                     "typeString": "uint64"
                                   },
                                   {
-                                    "typeIdentifier": "t_contract$_Whitelist_$11556",
+                                    "typeIdentifier": "t_contract$_Whitelist_$11574",
                                     "typeString": "contract Whitelist"
                                   }
                                 ],
@@ -4788,7 +4788,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11820,
+                                  "referencedDeclaration": 11838,
                                   "src": "4845:3:29",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -4915,7 +4915,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11833,
+                          "referencedDeclaration": 11851,
                           "src": "4959:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4945,7 +4945,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11931,
+                            "referencedDeclaration": 11949,
                             "src": "4979:4:29",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_LMSRMarketMakerFactory_$9200",
@@ -5357,7 +5357,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11833,
+                          "referencedDeclaration": 11851,
                           "src": "5202:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -5443,7 +5443,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11833,
+                          "referencedDeclaration": 11851,
                           "src": "5253:3:29",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -5744,7 +5744,7 @@
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_Whitelist_$11556",
+                    "typeIdentifier": "t_contract$_Whitelist_$11574",
                     "typeString": "contract Whitelist"
                   },
                   "typeName": {
@@ -5752,10 +5752,10 @@
                     "id": 9121,
                     "name": "Whitelist",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 11556,
+                    "referencedDeclaration": 11574,
                     "src": "4648:9:29",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_Whitelist_$11556",
+                      "typeIdentifier": "t_contract$_Whitelist_$11574",
                       "typeString": "contract Whitelist"
                     }
                   },
@@ -5903,7 +5903,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 11469,
+          "SourceUnit": 11487,
           "absolutePath": "project:/contracts/RayakiID.sol",
           "file": "./RayakiID.sol",
           "scope": 9201,
@@ -5975,7 +5975,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 11557,
+          "SourceUnit": 11575,
           "absolutePath": "project:/contracts/Whitelist.sol",
           "file": "./Whitelist.sol",
           "scope": 9201,
@@ -6556,7 +6556,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Whitelist",
-                  "referencedDeclaration": 11556,
+                  "referencedDeclaration": 11574,
                   "type": "contract Whitelist"
                 },
                 "id": 8820,
@@ -7391,7 +7391,7 @@
                             "attributes": {
                               "contractScope": null,
                               "name": "Whitelist",
-                              "referencedDeclaration": 11556,
+                              "referencedDeclaration": 11574,
                               "type": "contract Whitelist"
                             },
                             "id": 8883,
@@ -7426,7 +7426,7 @@
                                   "typeString": "bytes calldata"
                                 },
                                 {
-                                  "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11556_$_$",
+                                  "typeIdentifier": "t_tuple$_t_type$_t_contract$_ConditionalTokens_$6928_$_$_t_type$_t_contract$_YAKIPoint_$10980_$_$_t_type$_t_array$_t_bytes32_$dyn_memory_ptr_$_$_t_type$_t_uint64_$_$_t_type$_t_contract$_Whitelist_$11574_$_$",
                                   "typeString": "tuple(type(contract ConditionalTokens),type(contract YAKIPoint),type(bytes32[] memory),type(uint64),type(contract Whitelist))"
                                 }
                               ],
@@ -7445,7 +7445,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11820,
+                                  "referencedDeclaration": 11838,
                                   "type": "abi",
                                   "value": "abi"
                                 },
@@ -7561,7 +7561,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11556,
+                                  "referencedDeclaration": 11574,
                                   "type": "type(contract Whitelist)",
                                   "value": "Whitelist"
                                 },
@@ -7629,7 +7629,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -8150,10 +8150,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11836,
+                              "referencedDeclaration": 11854,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -9275,10 +9275,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -10873,7 +10873,7 @@
                         "attributes": {
                           "contractScope": null,
                           "name": "Whitelist",
-                          "referencedDeclaration": 11556,
+                          "referencedDeclaration": 11574,
                           "type": "contract Whitelist"
                         },
                         "id": 9121,
@@ -11140,7 +11140,7 @@
                                               "typeString": "uint64"
                                             },
                                             {
-                                              "typeIdentifier": "t_contract$_Whitelist_$11556",
+                                              "typeIdentifier": "t_contract$_Whitelist_$11574",
                                               "typeString": "contract Whitelist"
                                             }
                                           ],
@@ -11159,7 +11159,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11820,
+                                              "referencedDeclaration": 11838,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -11346,7 +11346,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11399,7 +11399,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11931,
+                                  "referencedDeclaration": 11949,
                                   "type": "contract LMSRMarketMakerFactory",
                                   "value": "this"
                                 },
@@ -11820,7 +11820,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11921,7 +11921,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -12054,7 +12054,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:56.888Z",
+  "updatedAt": "2022-01-12T14:42:05.867Z",
   "devdoc": {
     "methods": {}
   },

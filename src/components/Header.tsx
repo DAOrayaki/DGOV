@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
                         </Nav>
 
                         <Nav className="me-auto">
-                            <Nav.Link href="https://forum.daorayaki.cn/"> <h5 className="font-weight-bold text-dark">Governance Forum</h5></Nav.Link>
+                            <Nav.Link href="https://forum.daorayaki.org/"> <h5 className="font-weight-bold text-dark">Governance Forum</h5></Nav.Link>
                         </Nav>
 
                         {/* <NavDropdown title="Content space" id="content-space"> */}

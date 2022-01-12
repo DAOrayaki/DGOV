@@ -257,7 +257,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11833,
+                        "referencedDeclaration": 11851,
                         "src": "666:3:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -583,10 +583,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "1010:7:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -657,7 +657,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11833,
+                        "referencedDeclaration": 11851,
                         "src": "1228:3:16",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -1281,10 +1281,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "2158:7:16",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1716,7 +1716,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2016,10 +2016,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -2208,7 +2208,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -2786,10 +2786,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -3069,7 +3069,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:56.991Z",
+  "updatedAt": "2022-01-12T14:42:05.942Z",
   "devdoc": {
     "details": "Contract module which provides a basic access control mechanism, where there is an account (an owner) that can be granted exclusive access to specific functions. * This module is used through inheritance. It will make available the modifier `onlyOwner`, which can be aplied to your functions to restrict their use to the owner.",
     "methods": {

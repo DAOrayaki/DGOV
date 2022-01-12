@@ -104,7 +104,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
               <Link to={`/markets/research/markets/${data.id}`} key={data.id}>
                 <p>{data.questionTitle}</p>
               </Link>
-                <p className="text-muted">{data.condition.payouts ? ("Winners: " + covertPayouts(data.condition.payouts)) : ("Winners: Not Decided Yet")}</p>
+              <p className="text-muted">{data.condition.payouts ? ("Winners: " + covertPayouts(data.condition.payouts)) : ("Winners: Not Decided Yet")}</p>
             </Col>
             <Col md={3}>
               <p className="mb-0 text-muted">{parseInt(data.funding) / Math.pow(10, 18)} YakID-Liquidity</p>
@@ -129,10 +129,19 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
 
   return (
     <Container className={[styles.conditon, "mt-5", "justify-content-center"].join(' ')}>
-      <h1 className="text-center">Market Lists</h1>
-      <Col xs sm lg="12">
-        {marketlist}
-      </Col>
+      {marketlist.length == 0 ? (
+        <h1 className="text-center">No data found</h1>
+      ) : (
+        <>
+          <h1 className="text-center">Market Lists</h1>
+          <Col xs sm lg="12">
+            {marketlist}
+          </Col>
+
+        </>
+
+      )}
+
     </Container>
   )
 }

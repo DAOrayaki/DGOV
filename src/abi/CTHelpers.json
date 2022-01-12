@@ -1,9 +1,9 @@
 {
   "contractName": "CTHelpers",
   "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CTHelpers.sol\":\"CTHelpers\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CTHelpers.sol\":{\"keccak256\":\"0x858a7ad26ea79e245237efc1915642825b734c4bc967856fa7dcdfd4a48475e9\",\"urls\":[\"bzz-raw://db3e548e320f22c265c035d94d6244602186df241b3608e82f6589d1af38ad44\",\"dweb:/ipfs/QmcGRR4PYEbU4AUkejkgjNxEfvTk2UrPxWqQmbDsZ7Aoch\"]},\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x3fb04e87cbcad58052bc5592df2dccca335cfc3641d9ea2a1cd1b11af2cae1fb\",\"urls\":[\"bzz-raw://b40f8cab0ce3e7993fbd83ab65d18b72f75303c5df60c21b363320936a4e754b\",\"dweb:/ipfs/Qmbjer6CBNAwzRvs5bfUUHKL3KKY6uPt5GkBe2odfFmR88\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
-  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158201027b3672741c12dc2148f3c7ff179a26fd9c309813dd104f40a08b41c7df52a64736f6c63430005110032",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a723158201027b3672741c12dc2148f3c7ff179a26fd9c309813dd104f40a08b41c7df52a64736f6c63430005110032",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CTHelpers.sol\":\"CTHelpers\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/CTHelpers.sol\":{\"keccak256\":\"0x858a7ad26ea79e245237efc1915642825b734c4bc967856fa7dcdfd4a48475e9\",\"urls\":[\"bzz-raw://db3e548e320f22c265c035d94d6244602186df241b3608e82f6589d1af38ad44\",\"dweb:/ipfs/QmcGRR4PYEbU4AUkejkgjNxEfvTk2UrPxWqQmbDsZ7Aoch\"]},\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x16a1ae5f4eb64d8d04029056a5bfaae06e8afa335697f54fa584a129d8f2f4dd\",\"urls\":[\"bzz-raw://74758d3a81c0e35c4e21cec99c9e422cff0b96f11d1e4efe7c0a4d7c58148505\",\"dweb:/ipfs/QmXG9Zt33bBEKEwxCgn8F837h7qLykr3MGMHPk9tRUxcsy\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
+  "bytecode": "0x60556023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a7231582068c420c2bc8795e26e01473ca8994437c7a5f1c12b04c2f4bb746c0f4076e07c64736f6c63430005110032",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea265627a7a7231582068c420c2bc8795e26e01473ca8994437c7a5f1c12b04c2f4bb746c0f4076e07c64736f6c63430005110032",
   "sourceMap": "159:18743:20:-;;132:2:-1;166:7;155:9;146:7;137:37;255:7;249:14;246:1;241:23;235:4;232:33;222:2;;269:9;222:2;293:9;290:1;283:20;323:4;314:7;306:22;347:7;338;331:24",
   "deployedSourceMap": "159:18743:20:-;;;;;;;;",
   "source": "pragma solidity ^0.5.1;\r\n\r\n// import { IERC20 } from \"openzeppelin-solidity/contracts/token/ERC20/IERC20.sol\";\r\nimport { YAKIPoint } from \"./RayakiID.sol\";\r\n\r\nlibrary CTHelpers {\r\n    /// @dev Constructs a condition ID from an oracle, a question ID, and the outcome slot count for the question.\r\n    /// @param oracle The account assigned to report the result for the prepared condition.\r\n    /// @param questionId An identifier for the question to be answered by the oracle.\r\n    /// @param outcomeSlotCount The number of outcome slots which should be used for this condition. Must not exceed 256.\r\n    function getConditionId(address oracle, bytes32 questionId, uint outcomeSlotCount) internal pure returns (bytes32) {\r\n        return keccak256(abi.encodePacked(oracle, questionId, outcomeSlotCount));\r\n    }\r\n\r\n    uint constant P = 21888242871839275222246405745257275088696311157297823662689037894645226208583;\r\n    uint constant B = 3;\r\n\r\n    function sqrt(uint x) private pure returns (uint y) {\r\n        uint p = P;\r\n        // solium-disable-next-line security/no-inline-assembly\r\n        assembly {\r\n            // add chain generated via https://crypto.stackexchange.com/q/27179/71252\r\n            // and transformed to the following program:\r\n\r\n            // x=1; y=x+x; z=y+y; z=z+z; y=y+z; x=x+y; y=y+x; z=y+y; t=z+z; t=z+t; t=t+t;\r\n            // t=t+t; z=z+t; x=x+z; z=x+x; z=z+z; y=y+z; z=y+y; z=z+z; z=z+z; z=y+z; x=x+z;\r\n            // z=x+x; z=z+z; z=z+z; z=x+z; y=y+z; x=x+y; z=x+x; z=z+z; y=y+z; z=y+y; t=z+z;\r\n            // t=t+t; t=t+t; z=z+t; x=x+z; y=y+x; z=y+y; z=z+z; z=z+z; x=x+z; z=x+x; z=z+z;\r\n            // z=x+z; z=z+z; z=z+z; z=x+z; y=y+z; z=y+y; t=z+z; t=t+t; t=z+t; t=y+t; t=t+t;\r\n            // t=t+t; t=t+t; t=t+t; z=z+t; x=x+z; z=x+x; z=x+z; y=y+z; z=y+y; z=y+z; z=z+z;\r\n            // t=z+z; t=z+t; w=t+t; w=w+w; w=w+w; w=w+w; w=w+w; t=t+w; z=z+t; x=x+z; y=y+x;\r\n            // z=y+y; x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; z=x+x; z=x+z; z=z+z; y=y+z; z=y+y;\r\n            // z=z+z; x=x+z; y=y+x; z=y+y; z=y+z; x=x+z; y=y+x; x=x+y; y=y+x; z=y+y; z=z+z;\r\n            // z=y+z; x=x+z; z=x+x; z=x+z; y=y+z; x=x+y; y=y+x; x=x+y; y=y+x; z=y+y; z=y+z;\r\n            // z=z+z; x=x+z; y=y+x; z=y+y; z=y+z; z=z+z; x=x+z; z=x+x; t=z+z; t=t+t; t=z+t;\r\n            // t=x+t; t=t+t; t=t+t; t=t+t; t=t+t; z=z+t; y=y+z; x=x+y; y=y+x; x=x+y; z=x+x;\r\n            // z=x+z; z=z+z; z=z+z; z=z+z; z=x+z; y=y+z; z=y+y; z=y+z; z=z+z; x=x+z; z=x+x;\r\n            // z=x+z; y=y+z; x=x+y; z=x+x; z=z+z; y=y+z; x=x+y; z=x+x; y=y+z; x=x+y; y=y+x;\r\n            // z=y+y; z=y+z; x=x+z; y=y+x; z=y+y; z=y+z; z=z+z; z=z+z; x=x+z; z=x+x; z=z+z;\r\n            // z=z+z; z=x+z; y=y+z; x=x+y; z=x+x; t=x+z; t=t+t; t=t+t; z=z+t; y=y+z; z=y+y;\r\n            // x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; y=y+x; z=y+y; t=y+z; z=y+t; z=z+z; z=z+z;\r\n            // z=t+z; x=x+z; y=y+x; x=x+y; y=y+x; x=x+y; z=x+x; z=x+z; y=y+z; x=x+y; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x; x=x+x;\r\n            // x=x+x; x=x+x; x=x+x; x=x+x; res=y+x\r\n            // res == (P + 1) // 4\r\n\r\n            y := mulmod(x, x, p)\r\n            {\r\n                let z := mulmod(y, y, p)\r\n                z := mulmod(z, z, p)\r\n                y := mulmod(y, z, p)\r\n                x := mulmod(x, y, p)\r\n                y := mulmod(y, x, p)\r\n                z := mulmod(y, y, p)\r\n                {\r\n                    let t := mulmod(z, z, p)\r\n                    t := mulmod(z, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    z := mulmod(z, t, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(y, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    t := mulmod(z, z, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    z := mulmod(z, t, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(x, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    t := mulmod(z, z, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(z, t, p)\r\n                    t := mulmod(y, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    z := mulmod(z, t, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    t := mulmod(z, z, p)\r\n                    t := mulmod(z, t, p)\r\n                    {\r\n                        let w := mulmod(t, t, p)\r\n                        w := mulmod(w, w, p)\r\n                        w := mulmod(w, w, p)\r\n                        w := mulmod(w, w, p)\r\n                        w := mulmod(w, w, p)\r\n                        t := mulmod(t, w, p)\r\n                    }\r\n                    z := mulmod(z, t, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(x, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(y, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    t := mulmod(z, z, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(z, t, p)\r\n                    t := mulmod(x, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    z := mulmod(z, t, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(x, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    z := mulmod(y, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    x := mulmod(x, z, p)\r\n                    z := mulmod(x, x, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(x, z, p)\r\n                    y := mulmod(y, z, p)\r\n                    x := mulmod(x, y, p)\r\n                    z := mulmod(x, x, p)\r\n                    t := mulmod(x, z, p)\r\n                    t := mulmod(t, t, p)\r\n                    t := mulmod(t, t, p)\r\n                    z := mulmod(z, t, p)\r\n                    y := mulmod(y, z, p)\r\n                    z := mulmod(y, y, p)\r\n                    x := mulmod(x, z, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    x := mulmod(x, y, p)\r\n                    y := mulmod(y, x, p)\r\n                    z := mulmod(y, y, p)\r\n                    t := mulmod(y, z, p)\r\n                    z := mulmod(y, t, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(z, z, p)\r\n                    z := mulmod(t, z, p)\r\n                }\r\n                x := mulmod(x, z, p)\r\n                y := mulmod(y, x, p)\r\n                x := mulmod(x, y, p)\r\n                y := mulmod(y, x, p)\r\n                x := mulmod(x, y, p)\r\n                z := mulmod(x, x, p)\r\n                z := mulmod(x, z, p)\r\n                y := mulmod(y, z, p)\r\n            }\r\n            x := mulmod(x, y, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            x := mulmod(x, x, p)\r\n            y := mulmod(y, x, p)\r\n        }\r\n    }\r\n\r\n    /// @dev Constructs an outcome collection ID from a parent collection and an outcome collection.\r\n    /// @param parentCollectionId Collection ID of the parent outcome collection, or bytes32(0) if there's no parent.\r\n    /// @param conditionId Condition ID of the outcome collection to combine with the parent outcome collection.\r\n    /// @param indexSet Index set of the outcome collection to combine with the parent outcome collection.\r\n    function getCollectionId(bytes32 parentCollectionId, bytes32 conditionId, uint indexSet) internal view returns (bytes32) {\r\n        uint x1 = uint(keccak256(abi.encodePacked(conditionId, indexSet)));\r\n        bool odd = x1 >> 255 != 0;\r\n        uint y1;\r\n        uint yy;\r\n        do {\r\n            x1 = addmod(x1, 1, P);\r\n            yy = addmod(mulmod(x1, mulmod(x1, x1, P), P), B, P);\r\n            y1 = sqrt(yy);\r\n        } while(mulmod(y1, y1, P) != yy);\r\n        if(odd && y1 % 2 == 0 || !odd && y1 % 2 == 1)\r\n            y1 = P - y1;\r\n\r\n        uint x2 = uint(parentCollectionId);\r\n        if(x2 != 0) {\r\n            odd = x2 >> 254 != 0;\r\n            x2 = (x2 << 2) >> 2;\r\n            yy = addmod(mulmod(x2, mulmod(x2, x2, P), P), B, P);\r\n            uint y2 = sqrt(yy);\r\n            if(odd && y2 % 2 == 0 || !odd && y2 % 2 == 1)\r\n                y2 = P - y2;\r\n            require(mulmod(y2, y2, P) == yy, \"invalid parent collection ID\");\r\n\r\n            (bool success, bytes memory ret) = address(6).staticcall(abi.encode(x1, y1, x2, y2));\r\n            require(success, \"ecadd failed\");\r\n            (x1, y1) = abi.decode(ret, (uint, uint));\r\n        }\r\n\r\n        if(y1 % 2 == 1)\r\n            x1 ^= 1 << 254;\r\n\r\n        return bytes32(x1);\r\n    }\r\n\r\n    /// @dev Constructs a position ID from a collateral token and an outcome collection. These IDs are used as the ERC-1155 ID for this contract.\r\n    /// @param collateralToken Collateral token which backs the position.\r\n    /// @param collectionId ID of the outcome collection associated with this position.\r\n    function getPositionId(YAKIPoint collateralToken, bytes32 collectionId) internal pure returns (uint) {\r\n        return uint(keccak256(abi.encodePacked(collateralToken, collectionId)));\r\n    }\r\n}",
@@ -35,7 +35,7 @@
         "id": 5655,
         "nodeType": "ImportDirective",
         "scope": 5951,
-        "sourceUnit": 11469,
+        "sourceUnit": 11487,
         "src": "112:43:20",
         "symbolAliases": [
           {
@@ -132,7 +132,7 @@
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11820,
+                            "referencedDeclaration": 11838,
                             "src": "747:3:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
@@ -179,7 +179,7 @@
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11827,
+                      "referencedDeclaration": 11845,
                       "src": "737:9:20",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -9436,7 +9436,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11820,
+                                "referencedDeclaration": 11838,
                                 "src": "17293:3:20",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -9483,7 +9483,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11827,
+                          "referencedDeclaration": 11845,
                           "src": "17283:9:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -9835,7 +9835,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11821,
+                              "referencedDeclaration": 11839,
                               "src": "17440:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -9970,7 +9970,7 @@
                                       "name": "mulmod",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 11834,
+                                      "referencedDeclaration": 11852,
                                       "src": "17494:6:20",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10024,7 +10024,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11834,
+                                  "referencedDeclaration": 11852,
                                   "src": "17483:6:20",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10091,7 +10091,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11821,
+                              "referencedDeclaration": 11839,
                               "src": "17476:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -10279,7 +10279,7 @@
                         "name": "mulmod",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 11834,
+                        "referencedDeclaration": 11852,
                         "src": "17569:6:20",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11190,7 +11190,7 @@
                                       "name": "mulmod",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 11834,
+                                      "referencedDeclaration": 11852,
                                       "src": "17851:6:20",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11244,7 +11244,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11834,
+                                  "referencedDeclaration": 11852,
                                   "src": "17840:6:20",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11311,7 +11311,7 @@
                               "name": "addmod",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 11821,
+                              "referencedDeclaration": 11839,
                               "src": "17833:6:20",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_addmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11861,7 +11861,7 @@
                                   "name": "mulmod",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11834,
+                                  "referencedDeclaration": 11852,
                                   "src": "18024:6:20",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_mulmod_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
@@ -11937,10 +11937,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              11836,
-                              11837
+                              11854,
+                              11855
                             ],
-                            "referencedDeclaration": 11837,
+                            "referencedDeclaration": 11855,
                             "src": "18016:7:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -12109,7 +12109,7 @@
                                   "name": "abi",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 11820,
+                                  "referencedDeclaration": 11838,
                                   "src": "18154:3:20",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_magic_abi",
@@ -12290,10 +12290,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              11836,
-                              11837
+                              11854,
+                              11855
                             ],
-                            "referencedDeclaration": 11837,
+                            "referencedDeclaration": 11855,
                             "src": "18196:7:20",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -12452,7 +12452,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11820,
+                                "referencedDeclaration": 11838,
                                 "src": "18254:3:20",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -12931,7 +12931,7 @@
                                 "name": "abi",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 11820,
+                                "referencedDeclaration": 11838,
                                 "src": "18842:3:20",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_abi",
@@ -12978,7 +12978,7 @@
                           "name": "keccak256",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11827,
+                          "referencedDeclaration": 11845,
                           "src": "18832:9:20",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
@@ -13180,7 +13180,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 11469,
+          "SourceUnit": 11487,
           "absolutePath": "project:/contracts/RayakiID.sol",
           "file": "./RayakiID.sol",
           "scope": 5951,
@@ -13382,7 +13382,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11827,
+                              "referencedDeclaration": 11845,
                               "type": "function (bytes memory) pure returns (bytes32)",
                               "value": "keccak256"
                             },
@@ -13436,7 +13436,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 11820,
+                                      "referencedDeclaration": 11838,
                                       "type": "abi",
                                       "value": "abi"
                                     },
@@ -22761,7 +22761,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11827,
+                                  "referencedDeclaration": 11845,
                                   "type": "function (bytes memory) pure returns (bytes32)",
                                   "value": "keccak256"
                                 },
@@ -22811,7 +22811,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 11820,
+                                          "referencedDeclaration": 11838,
                                           "type": "abi",
                                           "value": "abi"
                                         },
@@ -23127,7 +23127,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11834,
+                                  "referencedDeclaration": 11852,
                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                   "value": "mulmod"
                                 },
@@ -23264,7 +23264,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 11821,
+                                          "referencedDeclaration": 11839,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -23393,7 +23393,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 11821,
+                                          "referencedDeclaration": 11839,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -23435,7 +23435,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11834,
+                                              "referencedDeclaration": 11852,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -23491,7 +23491,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 11834,
+                                                  "referencedDeclaration": 11852,
                                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                                   "value": "mulmod"
                                                 },
@@ -24560,7 +24560,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 11821,
+                                          "referencedDeclaration": 11839,
                                           "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                           "value": "addmod"
                                         },
@@ -24602,7 +24602,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11834,
+                                              "referencedDeclaration": 11852,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -24658,7 +24658,7 @@
                                                   "overloadedDeclarations": [
                                                     null
                                                   ],
-                                                  "referencedDeclaration": 11834,
+                                                  "referencedDeclaration": 11852,
                                                   "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                                   "value": "mulmod"
                                                 },
@@ -25272,10 +25272,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        11836,
-                                        11837
+                                        11854,
+                                        11855
                                       ],
-                                      "referencedDeclaration": 11837,
+                                      "referencedDeclaration": 11855,
                                       "type": "function (bool,string memory) pure",
                                       "value": "require"
                                     },
@@ -25332,7 +25332,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11834,
+                                              "referencedDeclaration": 11852,
                                               "type": "function (uint256,uint256,uint256) pure returns (uint256)",
                                               "value": "mulmod"
                                             },
@@ -25636,7 +25636,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11820,
+                                              "referencedDeclaration": 11838,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -25750,10 +25750,10 @@
                                         }
                                       ],
                                       "overloadedDeclarations": [
-                                        11836,
-                                        11837
+                                        11854,
+                                        11855
                                       ],
-                                      "referencedDeclaration": 11837,
+                                      "referencedDeclaration": 11855,
                                       "type": "function (bool,string memory) pure",
                                       "value": "require"
                                     },
@@ -25901,7 +25901,7 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 11820,
+                                              "referencedDeclaration": 11838,
                                               "type": "abi",
                                               "value": "abi"
                                             },
@@ -26436,7 +26436,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11827,
+                                  "referencedDeclaration": 11845,
                                   "type": "function (bytes memory) pure returns (bytes32)",
                                   "value": "keccak256"
                                 },
@@ -26486,7 +26486,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 11820,
+                                          "referencedDeclaration": 11838,
                                           "type": "abi",
                                           "value": "abi"
                                         },
@@ -26573,7 +26573,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:56.810Z",
+  "updatedAt": "2022-01-12T14:42:05.804Z",
   "devdoc": {
     "methods": {}
   },

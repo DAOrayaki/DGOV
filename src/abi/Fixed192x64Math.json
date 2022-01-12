@@ -507,10 +507,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11836,
+                      "referencedDeclaration": 11854,
                       "src": "904:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1626,10 +1626,10 @@
                       "name": "revert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11838,
-                        11839
+                        11856,
+                        11857
                       ],
-                      "referencedDeclaration": 11838,
+                      "referencedDeclaration": 11856,
                       "src": "1977:6:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -1835,10 +1835,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11836,
+                      "referencedDeclaration": 11854,
                       "src": "2466:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2807,7 +2807,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11822,
+                      "referencedDeclaration": 11840,
                       "src": "3095:6:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -11374,10 +11374,10 @@
                       "name": "revert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11838,
-                        11839
+                        11856,
+                        11857
                       ],
-                      "referencedDeclaration": 11838,
+                      "referencedDeclaration": 11856,
                       "src": "6989:6:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -11583,10 +11583,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11836,
+                      "referencedDeclaration": 11854,
                       "src": "7389:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -14069,10 +14069,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11836,
+                      "referencedDeclaration": 11854,
                       "src": "8851:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -14919,10 +14919,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11836,
+                              "referencedDeclaration": 11854,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -16210,10 +16210,10 @@
                                 null
                               ],
                               "overloadedDeclarations": [
-                                11838,
-                                11839
+                                11856,
+                                11857
                               ],
-                              "referencedDeclaration": 11838,
+                              "referencedDeclaration": 11856,
                               "type": "function () pure",
                               "value": "revert"
                             },
@@ -16377,10 +16377,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11836,
+                              "referencedDeclaration": 11854,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -17401,7 +17401,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11822,
+                              "referencedDeclaration": 11840,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -26449,10 +26449,10 @@
                                 null
                               ],
                               "overloadedDeclarations": [
-                                11838,
-                                11839
+                                11856,
+                                11857
                               ],
-                              "referencedDeclaration": 11838,
+                              "referencedDeclaration": 11856,
                               "type": "function () pure",
                               "value": "revert"
                             },
@@ -26616,10 +26616,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11836,
+                              "referencedDeclaration": 11854,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -29221,10 +29221,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11836,
+                              "referencedDeclaration": 11854,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -29775,6 +29775,12 @@
     "version": "0.5.17+commit.d19bba13.Emscripten.clang"
   },
   "networks": {
+    "56": {
+      "events": {},
+      "links": {},
+      "address": "0xfBC0543935DB337E5bB09F8b3749Df2A4B254b49",
+      "transactionHash": "0x66c301a4da15eabfc72f7c787a89f6daaa8aef1ec2537d82893bcbb02a6c0f4b"
+    },
     "97": {
       "events": {},
       "links": {},
@@ -29783,7 +29789,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:56.953Z",
+  "updatedAt": "2022-01-12T14:42:05.913Z",
   "devdoc": {
     "author": "Alan Lu - <alan.lu@gnosis.pm>Stefan George - <stefan@gnosis.pm>",
     "methods": {

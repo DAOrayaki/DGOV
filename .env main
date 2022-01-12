@@ -4,5 +4,5 @@ REACT_APP_FUNDING=10000000000000
 REACT_APP_INFURA_ID=
 REACT_APP_NETWORK_ID=97
 REACT_APP_NETWORK=https://data-seed-prebsc-1-s1.binance.org:8545
-REACT_APP_GRAPHQL_ENDPOINT=https://api.thegraph.com/subgraphs/name/unhappydog/dgovsubgraph
+REACT_APP_GRAPHQL_ENDPOINT=https://api.thegraph.com/subgraphs/name/will-holden/dgov2subgraph
 REACT_APP_IPFS_ENDPOINT=https://ipfs.daorayaki.cn

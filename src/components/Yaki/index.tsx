@@ -72,6 +72,17 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
         await getYakiInfo()
     }
 
+
+    const mint = async () => {
+        const formatedAmount = Web3.utils.toBN(selectedAmount).mul(Web3.utils.toBN(Math.pow(10, tokenInfo.decimals)))
+
+        const tx = await yakiTokenRepo.mintPoint(formatedAmount, account)
+
+        console.log({ tx })
+
+        await getYakiInfo()
+    }
+
     return (
         <>
             {isYakiTokenLoaded ? (<Layout
@@ -83,6 +94,7 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
                 selectedAmount={selectedAmount}
                 setRecipient={setRecipient}
                 transform={transform}
+                mint={mint}
                 isYakiTokenLoaded={isYakiTokenLoaded}
             />) : (
                 <SpinnerPage />

@@ -9,6 +9,7 @@ type TokenAccountProps = {
     selectedAmount: string
     transform: any
     isYakiTokenLoaded: boolean
+    mint: any
     setRecipient: any
 }
 
@@ -20,6 +21,7 @@ const Layout: React.FC<TokenAccountProps> = (
         selectedAmount,
         transform,
         isYakiTokenLoaded,
+        mint,
         setRecipient
     }
 ) => {
@@ -66,6 +68,10 @@ const Layout: React.FC<TokenAccountProps> = (
 
                         <Button onClick={e=>transform()}>
                             Submit
+                        </Button>
+
+                        <Button onClick={e=>mint()}>
+                           Mint 
                         </Button>
 
                     </Form>

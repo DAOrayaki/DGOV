@@ -41,6 +41,10 @@ class YakiTokenRepo {
         return this.yakiToken.tranferPointFrom(sender, recipient, amount, { from })
     }
 
+    mintPoint = async(amount: number, from: string) => {
+        return this.yakiToken.mintPoint(amount, { from })
+    }
+
 }
 
 export default YakiTokenRepo

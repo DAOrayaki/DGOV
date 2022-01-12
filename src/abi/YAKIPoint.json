@@ -216,12 +216,12 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approvePoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"pointBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferPoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferPointFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RayakiID.sol\":\"YAKIPoint\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x3fb04e87cbcad58052bc5592df2dccca335cfc3641d9ea2a1cd1b11af2cae1fb\",\"urls\":[\"bzz-raw://b40f8cab0ce3e7993fbd83ab65d18b72f75303c5df60c21b363320936a4e754b\",\"dweb:/ipfs/Qmbjer6CBNAwzRvs5bfUUHKL3KKY6uPt5GkBe2odfFmR88\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approvePoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"pointBalanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferPoint\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferPointFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/RayakiID.sol\":\"YAKIPoint\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/RayakiID.sol\":{\"keccak256\":\"0x16a1ae5f4eb64d8d04029056a5bfaae06e8afa335697f54fa584a129d8f2f4dd\",\"urls\":[\"bzz-raw://74758d3a81c0e35c4e21cec99c9e422cff0b96f11d1e4efe7c0a4d7c58148505\",\"dweb:/ipfs/QmXG9Zt33bBEKEwxCgn8F837h7qLykr3MGMHPk9tRUxcsy\"]},\"project:/contracts/util-contracts/SignedSafeMath.sol\":{\"keccak256\":\"0xa59b9c902be628cb51c7fb13ea9de37e4bb9abff0b620623e46c9a335c63d93a\",\"urls\":[\"bzz-raw://722407d637bf3c5fe9d2e9703e2919fb81eb6b21e0b7d1e791f630cfe1af810e\",\"dweb:/ipfs/QmVS45qjqHzaj6C8F7Dy7jGmtAxWV647nAPYZ4QfqQBjyp\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity 0.5.17;\r\n\r\nimport {MySafeMath} from './util-contracts/SignedSafeMath.sol';\r\n\r\ninterface YAKIPoint {\r\n  function totalSupply() external view returns (uint256);\r\n\r\n  function decimals() external view returns (uint8);\r\n\r\n  function symbol() external view returns (string memory);\r\n\r\n  function name() external view returns (string memory);\r\n\r\n  /**\r\n   */\r\n  function transferPointFrom(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) external returns (bool);\r\n\r\n  function approvePoint(address spender, uint256 amount) external returns (bool);\r\n\r\n  function pointBalanceOf(address account) external view returns (uint256);\r\n\r\n  function transferPoint(address recipient, uint256 amount) external returns (bool);\r\n\r\n  /**\r\n   * @dev Emitted when `value` tokens are moved from one account (`from`) to\r\n   * another (`to`).\r\n   *\r\n   * Note that `value` may be zero.\r\n   */\r\n  event Transfer(address indexed from, address indexed to, uint256 value);\r\n\r\n  /**\r\n   * @dev Emitted when the allowance of a `spender` for an `owner` is set by\r\n   * a call to {approve}. `value` is the new allowance.\r\n   */\r\n  event Approval(address indexed owner, address indexed spender, uint256 value);\r\n}\r\n\r\n/*\r\n * @dev Provides information about the current execution context, including the\r\n * sender of the transaction and its data. While these are generally available\r\n * via msg.sender and msg.data, they should not be accessed in such a direct\r\n * manner, since when dealing with GSN meta-transactions the account sending and\r\n * paying for execution may not be the actual sender (as far as an application\r\n * is concerned).\r\n *\r\n * This contract is only required for intermediate, library-like contracts.\r\n */\r\ncontract Context {\r\n  // Empty internal constructor, to prevent people from mistakenly deploying\r\n  // an instance of this contract, which should be used via inheritance.\r\n  constructor() internal {}\r\n\r\n  function _msgSender() internal view returns (address payable) {\r\n    return msg.sender;\r\n  }\r\n\r\n  function _msgData() internal view returns (bytes memory) {\r\n    this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691\r\n    return msg.data;\r\n  }\r\n}\r\n\r\n/**\r\n * @dev Contract module which provides a basic access control mechanism, where\r\n * there is an account (an owner) that can be granted exclusive access to\r\n * specific functions.\r\n *\r\n * By default, the owner account will be the one that deploys the contract. This\r\n * can later be changed with {transferOwnership}.\r\n *\r\n * This module is used through inheritance. It will make available the modifier\r\n * `onlyOwner`, which can be applied to your functions to restrict their use to\r\n * the owner.\r\n */\r\ncontract MyOwnable is Context {\r\n  address private _owner;\r\n\r\n  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\r\n\r\n  /**\r\n   * @dev Initializes the contract setting the deployer as the initial owner.\r\n   */\r\n  constructor() internal {\r\n    address msgSender = _msgSender();\r\n    _owner = msgSender;\r\n    emit OwnershipTransferred(address(0), msgSender);\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the address of the current owner.\r\n   */\r\n  function owner() public view returns (address) {\r\n    return _owner;\r\n  }\r\n\r\n  /**\r\n   * @dev Throws if called by any account other than the owner.\r\n   */\r\n  modifier onlyOwner() {\r\n    require(_owner == _msgSender(), 'Ownable: caller is not the owner');\r\n    _;\r\n  }\r\n\r\n  /**\r\n   * @dev Leaves the contract without owner. It will not be possible to call\r\n   * `onlyOwner` functions anymore. Can only be called by the current owner.\r\n   *\r\n   * NOTE: Renouncing ownership will leave the contract without an owner,\r\n   * thereby removing any functionality that is only available to the owner.\r\n   */\r\n  function renounceOwnership() public onlyOwner {\r\n    emit OwnershipTransferred(_owner, address(0));\r\n    _owner = address(0);\r\n  }\r\n\r\n  /**\r\n   * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n   * Can only be called by the current owner.\r\n   */\r\n  function transferOwnership(address newOwner) public onlyOwner {\r\n    _transferOwnership(newOwner);\r\n  }\r\n\r\n  /**\r\n   * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n   */\r\n  function _transferOwnership(address newOwner) internal {\r\n    require(newOwner != address(0), 'Ownable: new owner is the zero address');\r\n    emit OwnershipTransferred(_owner, newOwner);\r\n    _owner = newOwner;\r\n  }\r\n}\r\n\r\ncontract YAKIID is YAKIPoint, MyOwnable {\r\n  using MySafeMath for uint256;\r\n\r\n  mapping(address => uint256) private _balances;\r\n\r\n  mapping(address => mapping(address => uint256)) private _allowances;\r\n\r\n  uint256 private _totalSupply;\r\n  uint8 private _decimals;\r\n  string private _symbol;\r\n  string private _name;\r\n\r\n  constructor() public {\r\n    _name = 'Yaki identity';\r\n    _symbol = 'YAKID';\r\n    _decimals = 18;\r\n    _totalSupply = 10000000 * (10**uint256(_decimals));\r\n    _balances[msg.sender] = _totalSupply;\r\n\r\n    emit Transfer(address(0), msg.sender, _totalSupply);\r\n  }\r\n\r\n  /**\r\n   * @dev Sets `amount` as the allowance of `spender` over the `owner`s tokens.\r\n   *\r\n   * This is internal function is equivalent to `approve`, and can be used to\r\n   * e.g. set automatic allowances for certain subsystems, etc.\r\n   *\r\n   * Emits an {Approval} event.\r\n   *\r\n   * Requirements:\r\n   *\r\n   * - `owner` cannot be the zero address.\r\n   * - `spender` cannot be the zero address.\r\n   */\r\n  function _approve(\r\n    address owner,\r\n    address spender,\r\n    uint256 amount\r\n  ) internal {\r\n    require(owner != address(0), 'BEP20: approve from the zero address');\r\n    require(spender != address(0), 'BEP20: approve to the zero address');\r\n\r\n    _allowances[owner][spender] = amount;\r\n    emit Approval(owner, spender, amount);\r\n  }\r\n\r\n  function _transfer(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) internal {\r\n    require(sender != address(0), 'BEP20: transfer from the zero address');\r\n    require(recipient != address(0), 'BEP20: transfer to the zero address');\r\n\r\n    _balances[sender] = _balances[sender].sub(amount, 'BEP20: transfer amount exceeds balance');\r\n    _balances[recipient] = _balances[recipient].add(amount);\r\n\r\n    emit Transfer(sender, recipient, amount);\r\n  }\r\n\r\n  function totalSupply() external view returns (uint256) {\r\n    return _totalSupply;\r\n  }\r\n\r\n  function decimals() external view returns (uint8) {\r\n    return _decimals;\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the token symbol.\r\n   */\r\n  function symbol() external view returns (string memory) {\r\n    return _symbol;\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the token name.\r\n   */\r\n  function name() external view returns (string memory) {\r\n    return _name;\r\n  }\r\n\r\n  function transferPoint(address recipient, uint256 amount) external returns (bool) {\r\n    _transfer(_msgSender(), recipient, amount);\r\n    return true;\r\n  }\r\n\r\n  function approvePoint(address spender, uint256 amount) external returns (bool) {\r\n    _approve(_msgSender(), spender, amount);\r\n    return true;\r\n  }\r\n\r\n  function pointBalanceOf(address account) external view returns (uint256) {\r\n    return _balances[account];\r\n  }\r\n\r\n    /**\r\n   * @dev See {BEP20-allowance}.\r\n   */\r\n  function allowancePoint(address owner, address spender) external view returns (uint256) {\r\n    return _allowances[owner][spender];\r\n  }\r\n\r\n\r\n  function balanceOf(address account) external view returns (uint256) {\r\n    return _balances[account];\r\n  }\r\n\r\n\r\n  function transferPointFrom(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) external returns (bool) {\r\n    _transfer(sender, recipient, amount);\r\n    _approve(\r\n      sender,\r\n      _msgSender(),\r\n      _allowances[sender][_msgSender()].sub(\r\n        amount,\r\n        'DAOrayaki Point: transfer amount exceeds allowance'\r\n      )\r\n    );\r\n    return true;\r\n  }\r\n\r\n  /** @dev Creates `amount` tokens and assigns them to `account`, increasing\r\n   * the total supply.\r\n   *\r\n   * Emits a {Transfer} event with `from` set to the zero address.\r\n   *\r\n   * Requirements\r\n   *\r\n   * - `to` cannot be the zero address.\r\n   */\r\n  function _mint(address account, uint256 amount) internal {\r\n    require(account != address(0), 'BEP20: mint to the zero address');\r\n\r\n    _totalSupply = _totalSupply.add(amount);\r\n    _balances[account] = _balances[account].add(amount);\r\n    emit Transfer(address(0), account, amount);\r\n  }\r\n}\r\n",
+  "source": "pragma solidity 0.5.17;\r\n\r\nimport {MySafeMath} from './util-contracts/SignedSafeMath.sol';\r\n\r\ninterface YAKIPoint {\r\n  function totalSupply() external view returns (uint256);\r\n\r\n  function decimals() external view returns (uint8);\r\n\r\n  function symbol() external view returns (string memory);\r\n\r\n  function name() external view returns (string memory);\r\n\r\n  /**\r\n   */\r\n  function transferPointFrom(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) external returns (bool);\r\n\r\n  function approvePoint(address spender, uint256 amount) external returns (bool);\r\n\r\n  function pointBalanceOf(address account) external view returns (uint256);\r\n\r\n  function transferPoint(address recipient, uint256 amount) external returns (bool);\r\n\r\n  /**\r\n   * @dev Emitted when `value` tokens are moved from one account (`from`) to\r\n   * another (`to`).\r\n   *\r\n   * Note that `value` may be zero.\r\n   */\r\n  event Transfer(address indexed from, address indexed to, uint256 value);\r\n\r\n  /**\r\n   * @dev Emitted when the allowance of a `spender` for an `owner` is set by\r\n   * a call to {approve}. `value` is the new allowance.\r\n   */\r\n  event Approval(address indexed owner, address indexed spender, uint256 value);\r\n}\r\n\r\n/*\r\n * @dev Provides information about the current execution context, including the\r\n * sender of the transaction and its data. While these are generally available\r\n * via msg.sender and msg.data, they should not be accessed in such a direct\r\n * manner, since when dealing with GSN meta-transactions the account sending and\r\n * paying for execution may not be the actual sender (as far as an application\r\n * is concerned).\r\n *\r\n * This contract is only required for intermediate, library-like contracts.\r\n */\r\ncontract Context {\r\n  // Empty internal constructor, to prevent people from mistakenly deploying\r\n  // an instance of this contract, which should be used via inheritance.\r\n  constructor() internal {}\r\n\r\n  function _msgSender() internal view returns (address payable) {\r\n    return msg.sender;\r\n  }\r\n\r\n  function _msgData() internal view returns (bytes memory) {\r\n    this; // silence state mutability warning without generating bytecode - see https://github.com/ethereum/solidity/issues/2691\r\n    return msg.data;\r\n  }\r\n}\r\n\r\n/**\r\n * @dev Contract module which provides a basic access control mechanism, where\r\n * there is an account (an owner) that can be granted exclusive access to\r\n * specific functions.\r\n *\r\n * By default, the owner account will be the one that deploys the contract. This\r\n * can later be changed with {transferOwnership}.\r\n *\r\n * This module is used through inheritance. It will make available the modifier\r\n * `onlyOwner`, which can be applied to your functions to restrict their use to\r\n * the owner.\r\n */\r\ncontract MyOwnable is Context {\r\n  address private _owner;\r\n\r\n  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\r\n\r\n  /**\r\n   * @dev Initializes the contract setting the deployer as the initial owner.\r\n   */\r\n  constructor() internal {\r\n    address msgSender = _msgSender();\r\n    _owner = msgSender;\r\n    emit OwnershipTransferred(address(0), msgSender);\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the address of the current owner.\r\n   */\r\n  function owner() public view returns (address) {\r\n    return _owner;\r\n  }\r\n\r\n  /**\r\n   * @dev Throws if called by any account other than the owner.\r\n   */\r\n  modifier onlyOwner() {\r\n    require(_owner == _msgSender(), 'Ownable: caller is not the owner');\r\n    _;\r\n  }\r\n\r\n  /**\r\n   * @dev Leaves the contract without owner. It will not be possible to call\r\n   * `onlyOwner` functions anymore. Can only be called by the current owner.\r\n   *\r\n   * NOTE: Renouncing ownership will leave the contract without an owner,\r\n   * thereby removing any functionality that is only available to the owner.\r\n   */\r\n  function renounceOwnership() public onlyOwner {\r\n    emit OwnershipTransferred(_owner, address(0));\r\n    _owner = address(0);\r\n  }\r\n\r\n  /**\r\n   * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n   * Can only be called by the current owner.\r\n   */\r\n  function transferOwnership(address newOwner) public onlyOwner {\r\n    _transferOwnership(newOwner);\r\n  }\r\n\r\n  /**\r\n   * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n   */\r\n  function _transferOwnership(address newOwner) internal {\r\n    require(newOwner != address(0), 'Ownable: new owner is the zero address');\r\n    emit OwnershipTransferred(_owner, newOwner);\r\n    _owner = newOwner;\r\n  }\r\n}\r\n\r\ncontract YAKIID is YAKIPoint, MyOwnable {\r\n  using MySafeMath for uint256;\r\n\r\n  mapping(address => uint256) private _balances;\r\n\r\n  mapping(address => mapping(address => uint256)) private _allowances;\r\n\r\n  uint256 private _totalSupply;\r\n  uint8 private _decimals;\r\n  string private _symbol;\r\n  string private _name;\r\n\r\n  constructor() public {\r\n    _name = 'Yaki identity';\r\n    _symbol = 'YAKID';\r\n    _decimals = 18;\r\n    _totalSupply = 10000000 * (10**uint256(_decimals));\r\n    _balances[msg.sender] = _totalSupply;\r\n\r\n    emit Transfer(address(0), msg.sender, _totalSupply);\r\n  }\r\n\r\n  /**\r\n   * @dev Sets `amount` as the allowance of `spender` over the `owner`s tokens.\r\n   *\r\n   * This is internal function is equivalent to `approve`, and can be used to\r\n   * e.g. set automatic allowances for certain subsystems, etc.\r\n   *\r\n   * Emits an {Approval} event.\r\n   *\r\n   * Requirements:\r\n   *\r\n   * - `owner` cannot be the zero address.\r\n   * - `spender` cannot be the zero address.\r\n   */\r\n  function _approve(\r\n    address owner,\r\n    address spender,\r\n    uint256 amount\r\n  ) internal {\r\n    require(owner != address(0), 'BEP20: approve from the zero address');\r\n    require(spender != address(0), 'BEP20: approve to the zero address');\r\n\r\n    _allowances[owner][spender] = amount;\r\n    emit Approval(owner, spender, amount);\r\n  }\r\n\r\n  function _transfer(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) internal {\r\n    require(sender != address(0), 'BEP20: transfer from the zero address');\r\n    require(recipient != address(0), 'BEP20: transfer to the zero address');\r\n\r\n    _balances[sender] = _balances[sender].sub(amount, 'BEP20: transfer amount exceeds balance');\r\n    _balances[recipient] = _balances[recipient].add(amount);\r\n\r\n    emit Transfer(sender, recipient, amount);\r\n  }\r\n\r\n  function totalSupply() external view returns (uint256) {\r\n    return _totalSupply;\r\n  }\r\n\r\n  function decimals() external view returns (uint8) {\r\n    return _decimals;\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the token symbol.\r\n   */\r\n  function symbol() external view returns (string memory) {\r\n    return _symbol;\r\n  }\r\n\r\n  /**\r\n   * @dev Returns the token name.\r\n   */\r\n  function name() external view returns (string memory) {\r\n    return _name;\r\n  }\r\n\r\n  function transferPoint(address recipient, uint256 amount) external returns (bool) {\r\n    _transfer(_msgSender(), recipient, amount);\r\n    return true;\r\n  }\r\n\r\n  function approvePoint(address spender, uint256 amount) external returns (bool) {\r\n    _approve(_msgSender(), spender, amount);\r\n    return true;\r\n  }\r\n\r\n  function pointBalanceOf(address account) external view returns (uint256) {\r\n    return _balances[account];\r\n  }\r\n\r\n    /**\r\n   * @dev See {BEP20-allowance}.\r\n   */\r\n  function allowancePoint(address owner, address spender) external view returns (uint256) {\r\n    return _allowances[owner][spender];\r\n  }\r\n\r\n\r\n  function balanceOf(address account) external view returns (uint256) {\r\n    return _balances[account];\r\n  }\r\n\r\n\r\n  function transferPointFrom(\r\n    address sender,\r\n    address recipient,\r\n    uint256 amount\r\n  ) external returns (bool) {\r\n    _transfer(sender, recipient, amount);\r\n    _approve(\r\n      sender,\r\n      _msgSender(),\r\n      _allowances[sender][_msgSender()].sub(\r\n        amount,\r\n        'DAOrayaki Point: transfer amount exceeds allowance'\r\n      )\r\n    );\r\n    return true;\r\n  }\r\n\r\n  /** @dev Creates `amount` tokens and assigns them to `account`, increasing\r\n   * the total supply.\r\n   *\r\n   * Emits a {Transfer} event with `from` set to the zero address.\r\n   *\r\n   * Requirements\r\n   *\r\n   * - `to` cannot be the zero address.\r\n   */\r\n  function _mint(address account, uint256 amount) internal {\r\n    require(account != address(0), 'BEP20: mint to the zero address');\r\n\r\n    _totalSupply = _totalSupply.add(amount);\r\n    _balances[account] = _balances[account].add(amount);\r\n    emit Transfer(address(0), account, amount);\r\n  }\r\n\r\n    /**\r\n   * @dev Creates `amount` tokens and assigns them to `msg.sender`, increasing\r\n   * the total supply.\r\n   *\r\n   * Requirements\r\n   *\r\n   * - `msg.sender` must be the token owner\r\n   */\r\n  function mintPoint(uint256 amount) public onlyOwner returns (bool) {\r\n    _mint(_msgSender(), amount);\r\n    return true;\r\n  }\r\n}\r\n",
   "sourcePath": "F:\\workhome\\blockchain\\DGOV\\contracts\\RayakiID.sol",
   "ast": {
     "absolutePath": "project:/contracts/RayakiID.sol",
@@ -233,13 +233,13 @@
         11111
       ],
       "YAKIID": [
-        11468
+        11486
       ],
       "YAKIPoint": [
         10980
       ]
     },
-    "id": 11469,
+    "id": 11487,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -257,8 +257,8 @@
         "file": "./util-contracts/SignedSafeMath.sol",
         "id": 10907,
         "nodeType": "ImportDirective",
-        "scope": 11469,
-        "sourceUnit": 11819,
+        "scope": 11487,
+        "sourceUnit": 11837,
         "src": "27:63:33",
         "symbolAliases": [
           {
@@ -1127,7 +1127,7 @@
             "src": "1136:78:33"
           }
         ],
-        "scope": 11469,
+        "scope": 11487,
         "src": "94:1123:33"
       },
       {
@@ -1190,7 +1190,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11833,
+                      "referencedDeclaration": 11851,
                       "src": "2012:3:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -1284,7 +1284,7 @@
                     "name": "this",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 11901,
+                    "referencedDeclaration": 11919,
                     "src": "2098:4:33",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Context_$11005",
@@ -1304,7 +1304,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11833,
+                      "referencedDeclaration": 11851,
                       "src": "2235:3:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -1385,7 +1385,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 11469,
+        "scope": 11487,
         "src": "1731:521:33"
       },
       {
@@ -1967,10 +1967,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "3417:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2538,10 +2538,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "4371:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2739,7 +2739,7 @@
             "visibility": "internal"
           }
         ],
-        "scope": 11469,
+        "scope": 11487,
         "src": "2763:1764:33"
       },
       {
@@ -2789,9 +2789,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 11468,
+        "id": 11486,
         "linearizedBaseContracts": [
-          11468,
+          11486,
           11111,
           11005,
           10980
@@ -2806,10 +2806,10 @@
               "id": 11116,
               "name": "MySafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 11818,
+              "referencedDeclaration": 11836,
               "src": "4582:10:33",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_MySafeMath_$11818",
+                "typeIdentifier": "t_contract$_MySafeMath_$11836",
                 "typeString": "library MySafeMath"
               }
             },
@@ -2831,7 +2831,7 @@
             "id": 11122,
             "name": "_balances",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4611:45:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2876,7 +2876,7 @@
             "id": 11128,
             "name": "_allowances",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4663:67:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2940,7 +2940,7 @@
             "id": 11130,
             "name": "_totalSupply",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4737:28:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2966,7 +2966,7 @@
             "id": 11132,
             "name": "_decimals",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4770:23:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2992,7 +2992,7 @@
             "id": 11134,
             "name": "_symbol",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4798:22:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3018,7 +3018,7 @@
             "id": 11136,
             "name": "_name",
             "nodeType": "VariableDeclaration",
-            "scope": 11468,
+            "scope": 11486,
             "src": "4825:20:33",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3405,7 +3405,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11833,
+                          "referencedDeclaration": 11851,
                           "src": "5022:3:33",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3530,7 +3530,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 11833,
+                          "referencedDeclaration": 11851,
                           "src": "5083:3:33",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3630,7 +3630,7 @@
               "parameters": [],
               "src": "4873:0:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "4852:262:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3768,10 +3768,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "5628:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3922,10 +3922,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "5703:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4240,7 +4240,7 @@
               "parameters": [],
               "src": "5621:0:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "5526:340:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4378,10 +4378,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "5978:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4532,10 +4532,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "6055:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4703,7 +4703,7 @@
                         "lValueRequested": false,
                         "memberName": "sub",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 11701,
+                        "referencedDeclaration": 11719,
                         "src": "6155:21:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -4855,7 +4855,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 11658,
+                        "referencedDeclaration": 11676,
                         "src": "6256:24:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -5076,7 +5076,7 @@
               "parameters": [],
               "src": "5971:0:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "5872:471:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -5155,7 +5155,7 @@
               ],
               "src": "6394:9:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6349:87:33",
             "stateMutability": "view",
             "superFunction": 10912,
@@ -5234,7 +5234,7 @@
               ],
               "src": "6484:7:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6442:79:33",
             "stateMutability": "view",
             "superFunction": 10917,
@@ -5313,7 +5313,7 @@
               ],
               "src": "6618:15:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6578:83:33",
             "stateMutability": "view",
             "superFunction": 10922,
@@ -5392,7 +5392,7 @@
               ],
               "src": "6754:15:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6716:79:33",
             "stateMutability": "view",
             "superFunction": 10927,
@@ -5635,7 +5635,7 @@
               ],
               "src": "6876:6:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6801:155:33",
             "stateMutability": "nonpayable",
             "superFunction": 10963,
@@ -5878,7 +5878,7 @@
               ],
               "src": "7034:6:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "6962:149:33",
             "stateMutability": "nonpayable",
             "superFunction": 10947,
@@ -6012,7 +6012,7 @@
               ],
               "src": "7180:9:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "7117:111:33",
             "stateMutability": "view",
             "superFunction": 10954,
@@ -6200,7 +6200,7 @@
               ],
               "src": "7362:9:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "7284:135:33",
             "stateMutability": "view",
             "superFunction": null,
@@ -6334,7 +6334,7 @@
               ],
               "src": "7485:9:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "7427:106:33",
             "stateMutability": "view",
             "superFunction": null,
@@ -6618,7 +6618,7 @@
                           "lValueRequested": false,
                           "memberName": "sub",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 11701,
+                          "referencedDeclaration": 11719,
                           "src": "7766:37:33",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_string_memory_ptr_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -6837,7 +6837,7 @@
               ],
               "src": "7656:6:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "7541:382:33",
             "stateMutability": "nonpayable",
             "superFunction": 10938,
@@ -6975,10 +6975,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        11836,
-                        11837
+                        11854,
+                        11855
                       ],
-                      "referencedDeclaration": 11837,
+                      "referencedDeclaration": 11855,
                       "src": "8248:7:33",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -7070,7 +7070,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 11658,
+                        "referencedDeclaration": 11676,
                         "src": "8337:16:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -7222,7 +7222,7 @@
                         "lValueRequested": false,
                         "memberName": "add",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 11658,
+                        "referencedDeclaration": 11676,
                         "src": "8389:22:33",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -7459,18 +7459,237 @@
               "parameters": [],
               "src": "8241:0:33"
             },
-            "scope": 11468,
+            "scope": 11486,
             "src": "8184:290:33",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 11484,
+              "nodeType": "Block",
+              "src": "8743:58:33",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "id": 11477,
+                          "name": "_msgSender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10993,
+                          "src": "8756:10:33",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$__$returns$_t_address_payable_$",
+                            "typeString": "function () view returns (address payable)"
+                          }
+                        },
+                        "id": 11478,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "8756:12:33",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 11479,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11469,
+                        "src": "8770:6:33",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 11476,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11467,
+                      "src": "8750:5:33",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 11480,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "8750:27:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 11481,
+                  "nodeType": "ExpressionStatement",
+                  "src": "8750:27:33"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 11482,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "8791:4:33",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 11475,
+                  "id": 11483,
+                  "nodeType": "Return",
+                  "src": "8784:11:33"
+                }
+              ]
+            },
+            "documentation": "@dev Creates `amount` tokens and assigns them to `msg.sender`, increasing\nthe total supply.\n\n   * Requirements\n\n   * - `msg.sender` must be the token owner",
+            "id": 11485,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 11472,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 11471,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 11055,
+                  "src": "8718:9:33",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "8718:9:33"
+              }
+            ],
+            "name": "mintPoint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11470,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11469,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11485,
+                  "src": "8695:14:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11468,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8695:7:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8694:16:33"
+            },
+            "returnParameters": {
+              "id": 11475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11474,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11485,
+                  "src": "8737:4:33",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 11473,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8737:4:33",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8736:6:33"
+            },
+            "scope": 11486,
+            "src": "8676:125:33",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
           }
         ],
-        "scope": 11469,
-        "src": "4531:3946:33"
+        "scope": 11487,
+        "src": "4531:4273:33"
       }
     ],
-    "src": "0:8479:33"
+    "src": "0:8806:33"
   },
   "legacyAST": {
     "attributes": {
@@ -7483,7 +7702,7 @@
           11111
         ],
         "YAKIID": [
-          11468
+          11486
         ],
         "YAKIPoint": [
           10980
@@ -7505,10 +7724,10 @@
       },
       {
         "attributes": {
-          "SourceUnit": 11819,
+          "SourceUnit": 11837,
           "absolutePath": "project:/contracts/util-contracts/SignedSafeMath.sol",
           "file": "./util-contracts/SignedSafeMath.sol",
-          "scope": 11469,
+          "scope": 11487,
           "symbolAliases": [
             {
               "foreign": 10906,
@@ -7536,7 +7755,7 @@
             10980
           ],
           "name": "YAKIPoint",
-          "scope": 11469
+          "scope": 11487
         },
         "children": [
           {
@@ -8488,7 +8707,7 @@
             11005
           ],
           "name": "Context",
-          "scope": 11469
+          "scope": 11487
         },
         "children": [
           {
@@ -8631,7 +8850,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11833,
+                              "referencedDeclaration": 11851,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -8729,7 +8948,7 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 11901,
+                          "referencedDeclaration": 11919,
                           "type": "contract Context",
                           "value": "this"
                         },
@@ -8765,7 +8984,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11833,
+                              "referencedDeclaration": 11851,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -8811,7 +9030,7 @@
             11005
           ],
           "name": "MyOwnable",
-          "scope": 11469
+          "scope": 11487
         },
         "children": [
           {
@@ -9383,10 +9602,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -10040,10 +10259,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -10323,13 +10542,13 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            11468,
+            11486,
             11111,
             11005,
             10980
           ],
           "name": "YAKIID",
-          "scope": 11469
+          "scope": 11487
         },
         "children": [
           {
@@ -10380,7 +10599,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "MySafeMath",
-                  "referencedDeclaration": 11818,
+                  "referencedDeclaration": 11836,
                   "type": "library MySafeMath"
                 },
                 "id": 11116,
@@ -10405,7 +10624,7 @@
             "attributes": {
               "constant": false,
               "name": "_balances",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => uint256)",
@@ -10450,7 +10669,7 @@
             "attributes": {
               "constant": false,
               "name": "_allowances",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "mapping(address => mapping(address => uint256))",
@@ -10514,7 +10733,7 @@
             "attributes": {
               "constant": false,
               "name": "_totalSupply",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint256",
@@ -10540,7 +10759,7 @@
             "attributes": {
               "constant": false,
               "name": "_decimals",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint8",
@@ -10566,7 +10785,7 @@
             "attributes": {
               "constant": false,
               "name": "_symbol",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "string",
@@ -10592,7 +10811,7 @@
             "attributes": {
               "constant": false,
               "name": "_name",
-              "scope": 11468,
+              "scope": 11486,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "string",
@@ -10624,7 +10843,7 @@
                 null
               ],
               "name": "",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -11051,7 +11270,7 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 11833,
+                                      "referencedDeclaration": 11851,
                                       "type": "msg",
                                       "value": "msg"
                                     },
@@ -11211,7 +11430,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 11833,
+                                  "referencedDeclaration": 11851,
                                   "type": "msg",
                                   "value": "msg"
                                 },
@@ -11268,7 +11487,7 @@
                 null
               ],
               "name": "_approve",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "internal"
@@ -11404,10 +11623,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -11562,10 +11781,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -11915,7 +12134,7 @@
                 null
               ],
               "name": "_transfer",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "internal"
@@ -12051,10 +12270,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -12209,10 +12428,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -12425,7 +12644,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "sub",
-                                  "referencedDeclaration": 11701,
+                                  "referencedDeclaration": 11719,
                                   "type": "function (uint256,uint256,string memory) pure returns (uint256)"
                                 },
                                 "children": [
@@ -12607,7 +12826,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "add",
-                                  "referencedDeclaration": 11658,
+                                  "referencedDeclaration": 11676,
                                   "type": "function (uint256,uint256) pure returns (uint256)"
                                 },
                                 "children": [
@@ -12804,7 +13023,7 @@
                 null
               ],
               "name": "totalSupply",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": 10912,
               "visibility": "external"
@@ -12900,7 +13119,7 @@
                 null
               ],
               "name": "decimals",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": 10917,
               "visibility": "external"
@@ -12996,7 +13215,7 @@
                 null
               ],
               "name": "symbol",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": 10922,
               "visibility": "external"
@@ -13092,7 +13311,7 @@
                 null
               ],
               "name": "name",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": 10927,
               "visibility": "external"
@@ -13188,7 +13407,7 @@
                 null
               ],
               "name": "transferPoint",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": 10963,
               "visibility": "external"
@@ -13457,7 +13676,7 @@
                 null
               ],
               "name": "approvePoint",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": 10947,
               "visibility": "external"
@@ -13726,7 +13945,7 @@
                 null
               ],
               "name": "pointBalanceOf",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": 10954,
               "visibility": "external"
@@ -13874,7 +14093,7 @@
                 null
               ],
               "name": "allowancePoint",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -14078,7 +14297,7 @@
                 null
               ],
               "name": "balanceOf",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "external"
@@ -14226,7 +14445,7 @@
                 null
               ],
               "name": "transferPointFrom",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": 10938,
               "visibility": "external"
@@ -14579,7 +14798,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "sub",
-                                  "referencedDeclaration": 11701,
+                                  "referencedDeclaration": 11719,
                                   "type": "function (uint256,uint256,string memory) pure returns (uint256)"
                                 },
                                 "children": [
@@ -14778,7 +14997,7 @@
                 null
               ],
               "name": "_mint",
-              "scope": 11468,
+              "scope": 11486,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "internal"
@@ -14887,10 +15106,10 @@
                                 }
                               ],
                               "overloadedDeclarations": [
-                                11836,
-                                11837
+                                11854,
+                                11855
                               ],
-                              "referencedDeclaration": 11837,
+                              "referencedDeclaration": 11855,
                               "type": "function (bool,string memory) pure",
                               "value": "require"
                             },
@@ -15070,7 +15289,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "add",
-                                  "referencedDeclaration": 11658,
+                                  "referencedDeclaration": 11676,
                                   "type": "function (uint256,uint256) pure returns (uint256)"
                                 },
                                 "children": [
@@ -15206,7 +15425,7 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "member_name": "add",
-                                  "referencedDeclaration": 11658,
+                                  "referencedDeclaration": 11676,
                                   "type": "function (uint256,uint256) pure returns (uint256)"
                                 },
                                 "children": [
@@ -15434,16 +15653,261 @@
             "id": 11467,
             "name": "FunctionDefinition",
             "src": "8184:290:33"
+          },
+          {
+            "attributes": {
+              "documentation": "@dev Creates `amount` tokens and assigns them to `msg.sender`, increasing\nthe total supply.\n\n   * Requirements\n\n   * - `msg.sender` must be the token owner",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "mintPoint",
+              "scope": 11486,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amount",
+                      "scope": 11485,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 11468,
+                        "name": "ElementaryTypeName",
+                        "src": "8695:7:33"
+                      }
+                    ],
+                    "id": 11469,
+                    "name": "VariableDeclaration",
+                    "src": "8695:14:33"
+                  }
+                ],
+                "id": 11470,
+                "name": "ParameterList",
+                "src": "8694:16:33"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 11485,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 11473,
+                        "name": "ElementaryTypeName",
+                        "src": "8737:4:33"
+                      }
+                    ],
+                    "id": 11474,
+                    "name": "VariableDeclaration",
+                    "src": "8737:4:33"
+                  }
+                ],
+                "id": 11475,
+                "name": "ParameterList",
+                "src": "8736:6:33"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 11055,
+                      "type": "modifier ()",
+                      "value": "onlyOwner"
+                    },
+                    "id": 11471,
+                    "name": "Identifier",
+                    "src": "8718:9:33"
+                  }
+                ],
+                "id": 11472,
+                "name": "ModifierInvocation",
+                "src": "8718:9:33"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 11467,
+                              "type": "function (address,uint256)",
+                              "value": "_mint"
+                            },
+                            "id": 11476,
+                            "name": "Identifier",
+                            "src": "8750:5:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "type": "address payable",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 10993,
+                                  "type": "function () view returns (address payable)",
+                                  "value": "_msgSender"
+                                },
+                                "id": 11477,
+                                "name": "Identifier",
+                                "src": "8756:10:33"
+                              }
+                            ],
+                            "id": 11478,
+                            "name": "FunctionCall",
+                            "src": "8756:12:33"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 11469,
+                              "type": "uint256",
+                              "value": "amount"
+                            },
+                            "id": 11479,
+                            "name": "Identifier",
+                            "src": "8770:6:33"
+                          }
+                        ],
+                        "id": 11480,
+                        "name": "FunctionCall",
+                        "src": "8750:27:33"
+                      }
+                    ],
+                    "id": 11481,
+                    "name": "ExpressionStatement",
+                    "src": "8750:27:33"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 11475
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "74727565",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "bool",
+                          "type": "bool",
+                          "value": "true"
+                        },
+                        "id": 11482,
+                        "name": "Literal",
+                        "src": "8791:4:33"
+                      }
+                    ],
+                    "id": 11483,
+                    "name": "Return",
+                    "src": "8784:11:33"
+                  }
+                ],
+                "id": 11484,
+                "name": "Block",
+                "src": "8743:58:33"
+              }
+            ],
+            "id": 11485,
+            "name": "FunctionDefinition",
+            "src": "8676:125:33"
           }
         ],
-        "id": 11468,
+        "id": 11486,
         "name": "ContractDefinition",
-        "src": "4531:3946:33"
+        "src": "4531:4273:33"
       }
     ],
-    "id": 11469,
+    "id": 11487,
     "name": "SourceUnit",
-    "src": "0:8479:33"
+    "src": "0:8806:33"
   },
   "compiler": {
     "name": "solc",
@@ -15451,7 +15915,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:57.123Z",
+  "updatedAt": "2022-01-12T14:42:06.031Z",
   "devdoc": {
     "methods": {}
   },

@@ -279,4 +279,17 @@ contract YAKIID is YAKIPoint, MyOwnable {
     _balances[account] = _balances[account].add(amount);
     emit Transfer(address(0), account, amount);
   }
+
+    /**
+   * @dev Creates `amount` tokens and assigns them to `msg.sender`, increasing
+   * the total supply.
+   *
+   * Requirements
+   *
+   * - `msg.sender` must be the token owner
+   */
+  function mintPoint(uint256 amount) public onlyOwner returns (bool) {
+    _mint(_msgSender(), amount);
+    return true;
+  }
 }

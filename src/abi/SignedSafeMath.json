@@ -648,7 +648,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11822,
+                      "referencedDeclaration": 11840,
                       "src": "623:6:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -932,7 +932,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11822,
+                      "referencedDeclaration": 11840,
                       "src": "994:6:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -1496,7 +1496,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11822,
+                      "referencedDeclaration": 11840,
                       "src": "1213:6:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -2009,7 +2009,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 11822,
+                      "referencedDeclaration": 11840,
                       "src": "1421:6:12",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -2683,7 +2683,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11822,
+                              "referencedDeclaration": 11840,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -3103,7 +3103,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11822,
+                              "referencedDeclaration": 11840,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -3548,7 +3548,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11822,
+                              "referencedDeclaration": 11840,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -4089,7 +4089,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 11822,
+                              "referencedDeclaration": 11840,
                               "type": "function (bool) pure",
                               "value": "assert"
                             },
@@ -4423,7 +4423,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-08T09:22:56.976Z",
+  "updatedAt": "2022-01-12T14:42:05.932Z",
   "devdoc": {
     "details": "Math operations with safety checks that throw on error",
     "methods": {},

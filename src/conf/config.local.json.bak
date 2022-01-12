@@ -1,14 +1,15 @@
 {
   "network": "local",
   "networkId": 97,
-  "lmsrAddress": "0xAcA77E2DAA8Da10EEBe2e4D5aA074fD18Da3851E",
+  "lmsrAddress": "0x950baB68Ad91CaAb3C89A3EC1F52A0265108E40A",
   "markets": [
     {
       "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-      "title": "In the season 2021-1-10, Which proposals will pass and be finished in time?",
+      "title": "In the season 2021-1-11, Which proposals will pass and be finished in time?",
       "questionType": 0,
       "closeDelay": 4,
       "resolveDelay": 3,
+      "resultCount": 3,
       "outcomes": [
         {
           "title": "DCP-5: Do a video about explaining how DAO works",
