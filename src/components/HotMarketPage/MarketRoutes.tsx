@@ -100,7 +100,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
               {getID(data.questionTitle)}
             </Col>
             <Col md={6}>
-              <Link to={`/markets/hottrendmarkets/markets/${data.id}`} key={data.id}>
+              <Link to={`/markets/hottrend/markets/${data.id}`} key={data.id}>
                 <p>{data.questionTitle}</p>
               </Link>
 

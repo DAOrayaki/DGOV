@@ -36,10 +36,10 @@ const Layout: React.FC<LayoutProperty> = ({
             <div className={styles.mainContent}>
                 <Suspense fallback={SpinnerPage}>
                     <Switch>
-                        <Route path="/markets/researchmarkets">
+                        <Route path="/markets/research">
                             <MarketPage web3={web3} account={account}></MarketPage>
                         </Route>
-                        <Route path="/markets/hottrendmarkets">
+                        <Route path="/markets/hottrend">
                             <HotTrendPage web3={web3} account={account}></HotTrendPage>
                         </Route>
 
