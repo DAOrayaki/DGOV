@@ -22320,7 +22320,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-12T14:42:05.841Z",
+  "updatedAt": "2022-01-13T12:13:55.853Z",
   "devdoc": {
     "details": "Implementation of the basic standard multi-token. See https://eips.ethereum.org/EIPS/eip-1155 Originally based on code by Enjin: https://github.com/enjin/erc-1155",
     "methods": {
