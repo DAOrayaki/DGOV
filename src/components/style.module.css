@@ -39,11 +39,19 @@
         width: 100vw;
         /* background-color: white */
     }
-    .actions {
+    /* .actions {
         display: flex;
         flex-direction: row-reverse;
         /* justify-content: space-evenly; */
-        margin: 0 auto;
+    /* margin: 0 auto; */
+    /* width: 300px; */
+    /* } */
+    .actions {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        /* margin: 0 auto; */
         width: 300px;
     }
 }

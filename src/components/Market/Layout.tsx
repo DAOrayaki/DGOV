@@ -189,20 +189,20 @@ const Layout: React.FC<LayoutProps> = ({
                 </Row>
                 <Row>
 
-                  <Col sm md={3} className="justify-content-md-center">
+                  <Col xs sm md={3} className="justify-content-md-center">
                     <p className="mb-0 text-center"> <strong> {marketInfo.funding}k Yakid </strong></p>
                     <p className="mt-0 text-center">Liqudity</p>
                   </Col>
-                  <Col sm md={3}>
+                  <Col xs sm md={3}>
                     <p className="mb-0 text-center"> <strong> {marketInfo.totalVolume}k Yakid </strong></p>
                     <p className="mt-0 text-center">Total Volume</p>
 
                   </Col>
-                  <Col sm md={4}>
+                  <Col xs sm md={4}>
                     <p className="mb-0 text-center"> <strong> {startDate} </strong></p>
                     <p className="mt-0 text-center">{stage == 0 ? (`Closing Date`) : (`Resolving Date`)}</p>
                   </Col>
-                  <Col sm md={2}>
+                  <Col xs sm md={2}>
                     <p className="mb-0 text-center"> <strong> {remainDays} days </strong></p>
                     <p className="mt-0 text-center">Remaining</p>
                   </Col>

@@ -40,13 +40,13 @@ const TradingForm: React.FC<TradingFormProps> = ({
           value={selectedOutcomeToken}
         > */}
         <Row className="mt-4">
-          <Col sm md={7}>
+          <Col xs sm md={7}>
             <p className="text-center">Trend</p>
           </Col>
-          <Col sm md={2}>
+          <Col xs sm md={2}>
             <p>Price(YakID)</p>
           </Col>
-          <Col sm md={3}>
+          <Col xs sm md={3}>
             <p>MyShares</p>
           </Col>
 
@@ -68,11 +68,11 @@ const TradingForm: React.FC<TradingFormProps> = ({
                 label={outcome.title}
               /> */}
             <Row>
-              <Col sm md={1}>
+              <Col xs sm md={1}>
                 <Form.Check type="radio" id={`checkitem${index}`} name="checkitems" onChange={e => setSelectedOutcomeToken(index)} checked={index == selectedOutcomeToken}>
                 </Form.Check>
               </Col>
-              <Col sm md={6}>
+              <Col xs sm md={6}>
                 <Row className="d-inline">
                   <Form.Label>{outcome.link ? (<a href={outcome.link}>{outcome.title}</a>) : (outcome.title)}</Form.Label>
                 </Row>
@@ -82,10 +82,10 @@ const TradingForm: React.FC<TradingFormProps> = ({
                   </div>
                 </Row>
               </Col>
-              <Col sm md={2}>
+              <Col xs sm md={2}>
                 <div className={styles.outcomeInfo}>{outcome.probability.toString()}</div>
               </Col>
-              <Col sm md={3}>
+              <Col xs sm md={3}>
                 <div className={styles.outcomeInfo}>
                   {outcome.balance.toFixed(5).toString()}
                 </div>

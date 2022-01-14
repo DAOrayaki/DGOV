@@ -18,39 +18,39 @@ const CloseProgress: React.FC<StageProperty> = ({
         <>
             <Container fluid>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <div className={styles.circleRed}>
                         </div>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={now} label={`${now.toFixed(2)}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleGray}>
                         </div>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={0} label={`${0}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleGray}></div>
                     </Col>
 
                 </Row>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <p className="text-left">Start</p>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Close</p>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Resolve</p>
                     </Col>
 
@@ -67,40 +67,40 @@ const ResolveProgress: React.FC<StageProperty> = ({
         <>
             <Container fluid>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <div className={styles.circleRed}>
                         </div>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={100} label={`${100}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleRed}>
                         </div>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={now} label={`${now.toFixed(2)}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleGray}></div>
                     </Col>
 
                 </Row>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <p className="text-left">Start</p>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <p> ... </p>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Close</p>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Resolve</p>
                     </Col>
 
@@ -117,40 +117,40 @@ const EndProgress: React.FC<StageProperty> = ({
         <>
             <Container fluid>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <div className={styles.circleRed}>
                         </div>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={100} label={`${100}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleRed}>
                         </div>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <ProgressBar now={100} label={`${100}%`}></ProgressBar >
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <div className={styles.circleRed}></div>
                     </Col>
 
                 </Row>
                 <Row>
-                    <Col md={1} sm={1} className="justify-content-center">
+                    <Col md={1} xs={1} className="justify-content-center">
                         <p className="text-left">Start</p>
                     </Col>
 
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                         <p> ... </p>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Close</p>
                     </Col>
-                    <Col md={4} sm={4}>
+                    <Col md={4} xs={4}>
                     </Col>
-                    <Col md={1} sm={1}>
+                    <Col md={1} xs={1}>
                         <p className="text-left">Resolve</p>
                     </Col>
 
