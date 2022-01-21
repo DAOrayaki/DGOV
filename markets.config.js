@@ -1,49 +1,69 @@
 module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In season 2021-12-24, Which article will be the hot trend?",
-    questionType: 1, //0 for research 1 for hot
-    closeDelay: 3,
+    title: "In the season 2021-1-21, Which proposals will pass and be finished in time?",
+    questionType: 0, //0 for research 1 for hot
+    closeDelay: 4,
     resolveDelay: 3,
-    resultCount: 1,
+    resultCount: 5,
     outcomes: [{
-            title: "DAO 的一大考验: 贡献定价、补偿以及实践模型",
-            short: "Hot-1"
+            title: "DCP-12: DAOrayaki | DAOpunks Decentralized Art never been the same",
+            short: "DCP-12",
+            link: "https://forum.daorayaki.org/t/dcp-12-daorayaki-daopunks-decentralized-art-never-been-the-same/98"
         },
         {
-            title: "去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
-            short: "Hot-2"
+            title: "DCP-13: DAOrayaki | ensDAO a governance DAO for ENS protocol",
+            short: "DCP-13",
+            link: "https://forum.daorayaki.org/t/dcp-13-daorayaki-ensdao-a-governance-dao-for-ens-protocol/97"
+        },
+
+        {
+            title: "DCP-14: DAO Biweekly report",
+            short: "DCP-14",
+            link: "https://forum.daorayaki.org/t/preproposal-dao-biweekly-report/106"
         },
         {
-            title: "代币治理、乐观治理、安全卫士实现DAOs的三权分立治理",
-            short: "Hot-3"
+            title: "DCP-15 ：Cover Project Effect Network",
+            short: "DCP-15",
+            link: "https://forum.daorayaki.org/t/dcp-15-cover-project-effect-network/105"
         },
         {
-            title: "可转化治理分配:一种新型的有效分配治理代币的模型",
-            short: "Hot-4"
+            title: "DCP-16: Daorayaki | Web3 Collaborative Intelligence – Knowledge Trees, Knowledge Forest, and Community Contributions",
+            short: "DCP-16",
+            link: "https://forum.daorayaki.org/t/dcp-16-daorayaki-web3-collaborative-intelligence-knowledge-trees-knowledge-forest-and-community-contributions/109"
+
         },
         {
-            title: "基于非货币资本资助的二次方信任模型",
-            short: "Hot-5"
+            title: "DCP-17: DAOrayaki | DAOrayaki dGov model: Futarchy-based governance",
+            short: "DCP-17",
+            link: "https://forum.daorayaki.org/t/dcp-17-daorayaki-daorayaki-dgov-model-futarchy-based-governance/111/2"
+
         },
         {
-            title: "[op/zk] rollup / mixers / MACI的批量处理存款",
-            short: "Hot-6"
+            title: "DCP-18: DAOrayaki | How to study the mechanism of DAO with the help of computer simulation",
+            short: "DCP-18",
+            link: "https://forum.daorayaki.org/t/dcp-18-daorayaki-how-to-study-the-mechanism-of-dao-with-the-help-of-computer-simulation/107"
+
         },
         {
-            title: "Vitalik 最早提发表《自由激进主义》3.5w 字全文详解【上】",
-            short: "Hot-7"
+            title: "DCP-19：DAOrayaki|Step-By-Step Guide for Becoming a Blockchain Developer In 2022",
+            short: "DCP-19",
+            link: "https://forum.daorayaki.org/t/dcp-19-daorayaki-step-by-step-guide-for-becoming-a-blockchain-developer-in-2022/113"
+
         },
         {
-            title: "Vitalik 最早提发表《自由激进主义》3.5w 字全文详解【中】",
-            short: "Hot-8"
+            title: "DCP-20: DAOrayaki | What is Composability? Part 2: Scaling",
+            short: "DCP-20",
+            link: "https://forum.daorayaki.org/t/dcp-20-daorayaki-what-is-composability-part-2-scaling/110/3"
+
         },
         {
-            title: "Vitalik 等人《自由激进主义》3.5w 字全文详解【下】",
-            short: "Hot-9"
+            title: "DCP-21: DAOrayaki | DeFi Kingdoms a game, a DEX, a liquidity pool opportunity",
+            short: "DCP-21",
+            link: "https://forum.daorayaki.org/t/dcp-21-daorayaki-defi-kingdoms-a-game-a-dex-a-liquidity-pool-opportunity/99"
         },
         {
-            title: "DAO 行业进展（双周报） 12月上中旬",
-            short: "Hot-10"
+            title: "DCP-0:None",
+            short: "DCP-0"
         }
     ]
 }];

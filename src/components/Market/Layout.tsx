@@ -125,6 +125,8 @@ const Layout: React.FC<LayoutProps> = ({
   console.log(marketInfo)
   var stage1_duration
   var stage2_duration
+
+
   if (marketInfo && marketInfo.closeDelay) {
     stage1_duration = parseInt(marketInfo.closeDelay)
 
@@ -138,6 +140,13 @@ const Layout: React.FC<LayoutProps> = ({
     stage2_duration = marketInfo && marketInfo.questionType == 0 ? (7) : (4)
   }
 
+
+  // to be delete
+  if (marketInfo && marketInfo.closeDelay){
+    if(marketInfo.questionType == 0){
+      stage1_duration = stage1_duration - 2
+    }
+  }
 
   var d = createTime
 
