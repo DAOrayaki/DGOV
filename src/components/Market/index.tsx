@@ -136,7 +136,7 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
         link: markets[0].outcomes[outcomeIndex].link,
         probability: new BigNumber(probability)
           .dividedBy(Math.pow(2, 64))
-          .toFixed(3),
+          .toFixed(6),
         // .multipliedBy(100)
         balance: new BigNumber(balance).dividedBy(Math.pow(10, collateral.decimals)),
         payoutNumerator: payoutNumerator

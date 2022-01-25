@@ -78,7 +78,7 @@ const TradingForm: React.FC<TradingFormProps> = ({
                 </Row>
                 <Row>
                   <div>
-                    <ProgressBar className="pl-0 ml-0 pr-0 mr-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(2)}%`}></ProgressBar>
+                    <ProgressBar className="pl-0 ml-0 pr-0 mr-0" variant="custom" now={parseFloat(outcome.probability.toString()) * 100} label={`${(parseFloat(outcome.probability.toString()) * 100).toFixed(6)}%`}></ProgressBar>
                   </div>
                 </Row>
               </Col>
