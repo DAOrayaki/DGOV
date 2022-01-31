@@ -4423,7 +4423,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-01-21T10:30:22.601Z",
+  "updatedAt": "2022-01-25T12:02:34.812Z",
   "devdoc": {
     "details": "Math operations with safety checks that throw on error",
     "methods": {},

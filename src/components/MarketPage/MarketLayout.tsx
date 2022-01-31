@@ -36,6 +36,7 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
           oracle
           questionId
           outcomeSlotCount
+          questionType
         }
    }
   `
@@ -46,21 +47,21 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
     )
     console.log(address)
 
-    if (loading) return <SpinnerPage/>
+    if (loading) return <SpinnerPage />
 
     if (error) return <p>Error :</p>
-    const lmsrmarketMaker = data.lmsrmarketMakers
+    const lmsrmarketMaker = data.lmsrmarketMaker
     let d: Date = new Date(Date.now())
     if (lmsrmarketMaker) {
         d = new Date(parseInt(lmsrmarketMaker.creationTimestamp) * 1000);
     }
-    
+
     return (
         //@ts-ignore
         <div>
             {data.lmsrmarketMaker ? (
                 <>
-                    <Suspense fallback={<div>Loading...</div>}>
+                    <Suspense fallback={<h1 className="text-center">Loading...</h1>}>
                         <Market
                             web3={web3}
                             account={account}
@@ -68,16 +69,16 @@ const MarketLayout: React.FC<MarketProps> = ({ web3, account, address }) => {
                             questionId={data.lmsrmarketMaker.questionId}
                             outcomeCount={data.lmsrmarketMaker.outcomeSlotCount}
                             oracle={data.lmsrmarketMaker.oracle}
-                            creator={data.lmsrmarketMaker.creator} 
+                            creator={data.lmsrmarketMaker.creator}
                             createTime={d}
-                            questionType={data.questionType}
-                            />
+                            questionType={data.lmsrmarketMaker.questionType}
+                        />
 
                     </Suspense>
                 </>
             ) : (
                 // <div>No data found</div>
-                                <h1 className="text-center">
+                <h1 className="text-center">
                     No data found</h1>
             )}
             {/* <p>{data.lmsrmarketMaker.id}</p> */}

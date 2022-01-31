@@ -341,8 +341,13 @@ const Market: React.FC<MarketProps> = ({ web3, account, lmsrAddress, questionId,
     await getMarketInfo()
   }
 
-  const isMarketClosed =
-    isConditionLoaded && MarketStage[marketInfo.stage].toString() === MarketStage.Closed.toString()
+  var isMarketClosed
+  if (marketInfo){
+  isMarketClosed =
+    MarketStage[marketInfo.stage].toString() === MarketStage.Closed.toString()
+  }else{
+    isMarketClosed = false
+  }
   return (
     <Layout
       account={account}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import loadYakiTokenRepo from "src/logic/YakiToken";
+import BigNumber from 'bignumber.js'
 import Web3 from 'web3'
 
 
@@ -47,11 +48,11 @@ const YakiButton: React.FC<YakiWalletProps> = ({
     const [isError, setIsError] = useState<boolean>(false)
     const history = useHistory();
 
-    console.log(yakiAddress)
+    // console.log(yakiAddress)
     const updateTik = () => {
         if (yakiTokenRepo) {
 
-            console.log('update info')
+            // console.log('update info')
             getYakiInfo()
         } else {
             console.log('yaki not loaded update')
@@ -92,10 +93,11 @@ const YakiButton: React.FC<YakiWalletProps> = ({
     const getYakiInfo = async () => {
         const decimals = await yakiTokenRepo.decimals()
         const balanceAmount = await yakiTokenRepo.pointBanlanceOf(account)
-        const balance = Web3.utils.toBN(balanceAmount).div(
-            Web3.utils.toBN(Math.pow(10, decimals))
-        ).toString()
-        console.log(balance)
+        // const balance = Web3.utils.toBN(balanceAmount).div(
+        //     Web3.utils.toBN(Math.pow(10, decimals))
+        // ).toString()
+        const balance = new BigNumber(balanceAmount).dividedBy(Math.pow(10, decimals)).toFixed(3)
+        // console.log(balance)
 
         const yakiData = {
             balance: balance,
@@ -104,10 +106,10 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         setTokenInfo(yakiData)
     }
 
-    if (isYakiTokenLoaded) {
+    // if (isYakiTokenLoaded) {
 
-        console.log(tokenInfo.balance)
-    }
+    //     console.log(tokenInfo.balance)
+    // }
 
     const goWallet = () => {
         history.push("/wallet")

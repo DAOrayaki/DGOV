@@ -1,46 +1,51 @@
 {
-  "questionId": "0x3572635f8aa1195c52ac4e1d454ccdde8348861461c57ac9fa7be954e7a054f7",
-  "title": "In season 2021-12-24, Which article will be the hot trend?",
+  "questionId": "0x6715e594855b01b7da83204a66929761b80463ec7898e634504023f4801be112",
+  "title": "In season 2021-1-25, Which article will be the hot trend?",
   "outcomes": [
     {
-      "title": "DAO 的一大考验: 贡献定价、补偿以及实践模型",
-      "short": "Hot-1"
+      "title": "DAOrayaki ｜如何进行良好的治理",
+      "short": "Hot-1",
+      "link": "https://media.daorayaki.org/how-to-think-about-good-governance/"
     },
     {
-      "title": "去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
-      "short": "Hot-2"
+      "title": "DAOrayaki ｜如何留住DAO里高质量的贡献者",
+      "short": "Hot-2",
+      "link": "https://media.daorayaki.org/how-to-retain-high-value-contributors-to-your-dao/"
     },
     {
-      "title": "代币治理、乐观治理、安全卫士实现DAOs的三权分立治理",
-      "short": "Hot-3"
+      "title": "DAOrayaki ｜独家报道: 用科罗拉多州合作法规解开 DAO 之谜",
+      "short": "Hot-3",
+      "link": "https://daorayaki.org/exclusive-report/"
     },
     {
-      "title": "可转化治理分配:一种新型的有效分配治理代币的模型",
-      "short": "Hot-4"
+      "title": "DAOrayaki｜二次方融资的社交网络",
+      "short": "Hot-4",
+      "link": "https://daorayaki.org/a-quadratic-funding-powered-social-network/"
     },
     {
-      "title": "基于非货币资本资助的二次方信任模型",
-      "short": "Hot-5"
+      "title": "DAOrayaki ｜Chainlink 2.0: 超线性抵押的经济学解释",
+      "short": "Hot-5",
+      "link": "https://daorayaki.org/chainlink-2-0/"
     },
     {
-      "title": "[op/zk] rollup / mixers / MACI的批量处理存款",
-      "short": "Hot-6"
+      "title": "DAOrayaki ｜万字详解GameFi——元宇宙的DeFi",
+      "short": "Hot-6",
+      "link": "https://daorayaki.org/gamefi-defi-in-the-metaverse/"
     },
     {
-      "title": "Vitalik 最早提发表《自由激进主义》3.5w 字全文详解【上】",
-      "short": "Hot-7"
+      "title": "DAOrayaki ｜NFT艺术对数字艺术的影响",
+      "short": "Hot-7",
+      "link": "https://daorayaki.org/daorayaki-nftart/"
     },
     {
-      "title": "Vitalik 最早提发表《自由激进主义》3.5w 字全文详解【中】",
-      "short": "Hot-8"
+      "title": "DAOrayaki ｜DAO 的一大考验：贡献定价、补偿以及实践模型",
+      "short": "Hot-8",
+      "link": "https://daorayaki.org/daorayaki-a-big-test-for-daos/"
     },
     {
-      "title": "Vitalik 等人《自由激进主义》3.5w 字全文详解【下】",
-      "short": "Hot-9"
-    },
-    {
-      "title": "DAO 行业进展（双周报） 12月上中旬",
-      "short": "Hot-10"
+      "title": "DAOrayaki ｜去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
+      "short": "Hot-9",
+      "link": "https://daorayaki.org/decentralizing-journals-and-peer-review-daos/"
     }
   ],
   "questionType": 1

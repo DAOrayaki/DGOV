@@ -136,17 +136,20 @@ const Layout: React.FC<LayoutProps> = ({
 
   if (marketInfo && marketInfo.resolveDelay) {
     stage2_duration = parseInt(marketInfo.resolveDelay)
+    if(marketInfo.questionType == 0) {
+      stage2_duration = parseInt(marketInfo.resolveDelay) + 10
+    }
   } else {
     stage2_duration = marketInfo && marketInfo.questionType == 0 ? (7) : (4)
   }
 
 
   // to be delete
-  if (marketInfo && marketInfo.closeDelay){
-    if(marketInfo.questionType == 0){
-      stage1_duration = stage1_duration - 2
-    }
-  }
+  // if (marketInfo && marketInfo.closeDelay){
+  //   if(marketInfo.questionType == 0){
+  //     stage1_duration = stage1_duration - 2
+  //   }
+  // }
 
   var d = createTime
 
@@ -157,7 +160,7 @@ const Layout: React.FC<LayoutProps> = ({
   var stage = isMarketClosed ? 1 : 0
   console.log(stage)
 
-  if (isMarketClosed && marketInfo.payoutDenominator) {
+  if (isMarketClosed && marketInfo.payoutDenominator.toNumber()) {
     stage = 2
   }
 
@@ -167,18 +170,27 @@ const Layout: React.FC<LayoutProps> = ({
     diffDays = diffDays > 0 ? diffDays : 0
     console.log('diffdays' + diffDays)
     nowProgress = (diffDays / stage2_duration) * 100
-    var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + stage1_duration + stage2_duration) + " " + d.getHours() + ":" + d.getMinutes()
-    var remainDays = stage2_duration + stage2_duration - diffDays
+    
+    var endDate = new Date(d.getTime() + (stage1_duration + stage2_duration) * 1000 * 3600 * 24)
+    var endDate_str = endDate.getFullYear() + "-" + (endDate.getMonth() + 1) + "-" + (endDate.getDate()) 
+    var remainDays = stage2_duration - diffDays - 1
 
   } else {
     console.log('diffdays' + diffDays)
     console.log('duration' + stage1_duration)
 
     nowProgress = (diffDays / stage1_duration) * 100
-    var startDate = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + (d.getDate() + stage1_duration) + " " + d.getHours() + ":" + d.getMinutes()
-    var remainDays = stage1_duration - diffDays
+    var endDate = new Date(d.getTime() + (stage1_duration + stage2_duration) * 1000 * 3600 * 24)
+    var endDate_str = endDate.getFullYear() + "-" + (endDate.getMonth() + 1) + "-" + (endDate.getDate()) 
+    var remainDays = stage1_duration - diffDays + 1
 
   }
+
+  // if (marketInfo && marketInfo.questionType == 0) {
+  //   remainDays += 11
+  // }
+
+  remainDays = remainDays >= 0? remainDays: 0
   console.log(nowProgress)
   console.log(stage)
   console.log(oracle)
@@ -208,7 +220,7 @@ const Layout: React.FC<LayoutProps> = ({
 
                   </Col>
                   <Col xs sm md={4}>
-                    <p className="mb-0 text-center"> <strong> {startDate} </strong></p>
+                    <p className="mb-0 text-center"> <strong> {endDate_str} </strong></p>
                     <p className="mt-0 text-center">{stage == 0 ? (`Closing Date`) : (`Resolving Date`)}</p>
                   </Col>
                   <Col xs sm md={2}>

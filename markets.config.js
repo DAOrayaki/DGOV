@@ -1,69 +1,59 @@
 module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In the season 2021-1-21, Which proposals will pass and be finished in time?",
-    questionType: 0, //0 for research 1 for hot
-    closeDelay: 4,
+    title: "In season 2021-1-25, Which article will be the hot trend?",
+    questionType: 1, //0 for research 1 for hot
+    closeDelay: 3,
     resolveDelay: 3,
-    resultCount: 5,
+    resultCount: 1,
     outcomes: [{
-            title: "DCP-12: DAOrayaki | DAOpunks Decentralized Art never been the same",
-            short: "DCP-12",
-            link: "https://forum.daorayaki.org/t/dcp-12-daorayaki-daopunks-decentralized-art-never-been-the-same/98"
+            title: "DAOrayaki ｜如何进行良好的治理",
+            short: "Hot-1",
+            link: "https://media.daorayaki.org/how-to-think-about-good-governance/"
         },
         {
-            title: "DCP-13: DAOrayaki | ensDAO a governance DAO for ENS protocol",
-            short: "DCP-13",
-            link: "https://forum.daorayaki.org/t/dcp-13-daorayaki-ensdao-a-governance-dao-for-ens-protocol/97"
-        },
-
-        {
-            title: "DCP-14: DAO Biweekly report",
-            short: "DCP-14",
-            link: "https://forum.daorayaki.org/t/preproposal-dao-biweekly-report/106"
+            title: "DAOrayaki ｜如何留住DAO里高质量的贡献者",
+            short: "Hot-2",
+            link: "https://media.daorayaki.org/how-to-retain-high-value-contributors-to-your-dao/"
         },
         {
-            title: "DCP-15 ：Cover Project Effect Network",
-            short: "DCP-15",
-            link: "https://forum.daorayaki.org/t/dcp-15-cover-project-effect-network/105"
+            title: "DAOrayaki ｜独家报道: 用科罗拉多州合作法规解开 DAO 之谜",
+            short: "Hot-3",
+            link: "https://daorayaki.org/exclusive-report/"
         },
         {
-            title: "DCP-16: Daorayaki | Web3 Collaborative Intelligence – Knowledge Trees, Knowledge Forest, and Community Contributions",
-            short: "DCP-16",
-            link: "https://forum.daorayaki.org/t/dcp-16-daorayaki-web3-collaborative-intelligence-knowledge-trees-knowledge-forest-and-community-contributions/109"
-
+            title: "DAOrayaki｜二次方融资的社交网络",
+            short: "Hot-4",
+            link: "https://daorayaki.org/a-quadratic-funding-powered-social-network/"
         },
         {
-            title: "DCP-17: DAOrayaki | DAOrayaki dGov model: Futarchy-based governance",
-            short: "DCP-17",
-            link: "https://forum.daorayaki.org/t/dcp-17-daorayaki-daorayaki-dgov-model-futarchy-based-governance/111/2"
-
+            title: "DAOrayaki ｜Chainlink 2.0: 超线性抵押的经济学解释",
+            short: "Hot-5",
+            link: "https://daorayaki.org/chainlink-2-0/"
         },
         {
-            title: "DCP-18: DAOrayaki | How to study the mechanism of DAO with the help of computer simulation",
-            short: "DCP-18",
-            link: "https://forum.daorayaki.org/t/dcp-18-daorayaki-how-to-study-the-mechanism-of-dao-with-the-help-of-computer-simulation/107"
-
+            title: "DAOrayaki ｜万字详解GameFi——元宇宙的DeFi",
+            short: "Hot-6",
+            link: "https://daorayaki.org/gamefi-defi-in-the-metaverse/"
         },
         {
-            title: "DCP-19：DAOrayaki|Step-By-Step Guide for Becoming a Blockchain Developer In 2022",
-            short: "DCP-19",
-            link: "https://forum.daorayaki.org/t/dcp-19-daorayaki-step-by-step-guide-for-becoming-a-blockchain-developer-in-2022/113"
-
+            title: "DAOrayaki ｜NFT艺术对数字艺术的影响",
+            short: "Hot-7",
+            link: "https://daorayaki.org/daorayaki-nftart/"
         },
         {
-            title: "DCP-20: DAOrayaki | What is Composability? Part 2: Scaling",
-            short: "DCP-20",
-            link: "https://forum.daorayaki.org/t/dcp-20-daorayaki-what-is-composability-part-2-scaling/110/3"
-
+            title: "DAOrayaki ｜DAO 的一大考验: 贡献定价、补偿以及实践模型",
+            short: "Hot-8",
+            link: "https://daorayaki.org/daorayaki-a-big-test-for-daos/"
         },
         {
-            title: "DCP-21: DAOrayaki | DeFi Kingdoms a game, a DEX, a liquidity pool opportunity",
-            short: "DCP-21",
-            link: "https://forum.daorayaki.org/t/dcp-21-daorayaki-defi-kingdoms-a-game-a-dex-a-liquidity-pool-opportunity/99"
+            title: "DAOrayaki ｜去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
+            short: "Hot-9",
+            link: "https://daorayaki.org/decentralizing-journals-and-peer-review-daos/"
         },
         {
-            title: "DCP-0:None",
-            short: "DCP-0"
+            title: "DAOrayaki ｜DAO与组织管理发展史",
+            short: "Hot-10",
+            link: "https://media.daorayaki.org/daos-unlock-how-were-made-to-work/"
         }
     ]
 }];

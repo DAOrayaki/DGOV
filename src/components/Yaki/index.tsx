@@ -3,6 +3,7 @@ import loadYakiTokenRepo from "src/logic/YakiToken";
 import Layout from './Layout'
 import Web3 from 'web3'
 import SpinnerPage from 'src/components/SpinnerPage'
+import BigNumber from 'bignumber.js'
 
 type YakiWalletProps = {
     web3: any
@@ -43,9 +44,10 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
     const getYakiInfo = async () => {
         const decimals = await yakiTokenRepo.decimals()
         const balanceAmount = await yakiTokenRepo.pointBanlanceOf(account)
-        const balance = Web3.utils.toBN(balanceAmount).div(
-            Web3.utils.toBN(Math.pow(10, decimals))
-        )
+        // const balance = Web3.utils.toBN(balanceAmount).div(
+            // Web3.utils.toBN(Math.pow(10, decimals))
+        // )
+        const balance = new BigNumber(balanceAmount).dividedBy(Math.pow(10, decimals)).toFixed(3)
         const symbol = await yakiTokenRepo.symbol()
         const name = await yakiTokenRepo.name()
 
@@ -56,7 +58,7 @@ const YakiWallet: React.FC<YakiWalletProps> = ({
             decimals: decimals
         }
 
-        console.log(yakiData.balance)
+        // console.log(yakiData.balance)
 
         setTokenInfo(yakiData)
 
