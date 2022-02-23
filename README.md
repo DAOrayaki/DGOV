@@ -23,4 +23,20 @@ the core of this tools, we use gnosis condional token for this.
 
 ## DAOrayaki Subgraph
 
-1. 
+## Deploy Market
+
+1. upload config file
+
+```python
+
+yarn upload-config
+
+```
+
+2. deploy to bsc
+
+```python
+
+yarn recreate
+
+```

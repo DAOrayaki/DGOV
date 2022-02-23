@@ -80,6 +80,16 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
     return startDate
   }
 
+  const processTitle = (title: string) =>{
+    // console.log(title.slice(3,3))
+    title = title.replace('pass and be finished in time', 'be passed and finished on time')
+    if (title.slice(3,6) == "the") {
+      return title.slice(0,3) + title.slice(6)
+    } else{
+      return title
+    }
+  }
+
   const getID = (str: string) => {
     let num = str.match(/\d+\-?\d+\-?\d+/g);
     return num
@@ -101,7 +111,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
             </Col>
             <Col md={6}>
               <Link to={`/markets/hottrend/markets/${data.id}`} key={data.id}>
-                <p>{data.questionTitle}</p>
+                <p>{ processTitle(data.questionTitle)}</p>
               </Link>
 
               <p className="text-muted">{data.condition.payouts ? ("Winners: " + covertPayouts(data.condition.payouts)) : ("Winners: --")}</p>
@@ -128,7 +138,7 @@ const MarketRoutes: React.FC<MarketProps> = ({ web3, account }) => {
         <h1 className="text-center">No data found</h1>
       ) : (
         <>
-          <h1 className="text-center">Market Lists</h1>
+          <h1 className="text-center">Markets List</h1>
           <Col xs sm lg="12">
             {marketlist}
           </Col>

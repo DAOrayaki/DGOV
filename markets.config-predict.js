@@ -1,6 +1,6 @@
 module.exports = [{
     questionId: "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
-    title: "In the season 2021-1-11, Which proposals will pass and be finished in time?",
+    title: "In the season 2021-1-11, Which proposals will be passed and finished on time?",
     questionType: 0, //0 for research 1 for hot
     closeDelay: 4,
     resolveDelay: 3,

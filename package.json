@@ -35,7 +35,7 @@
         "build-scripts": "tsc scripts/createq.tsx",
         "upload-config": "node scripts/createq.js",
         "analyse": "source-map-explorer build/static/js/1.4e3f931c.*",
-        "recreate": "truffle migrate -f 11"
+        "recreate": "truffle migrate -f 11 --network bsc"
     },
     "eslintConfig": {
         "extends": "react-app"

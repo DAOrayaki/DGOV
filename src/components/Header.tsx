@@ -47,15 +47,15 @@ const Header: React.FC<HeaderProps> = ({ web3, account, setProviderData }) => {
 
 
                         <NavDropdown title={ <span className="h5 font-weight-bold text-dark">Research Markets</span>} id="research-markets">
-                            <NavDropdown.Item as={NavLink} to="/markets/research/current">Current market</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to="/markets/research/marketlist">Market List</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/research/current">Current Market</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/research/marketlist">Markets List</NavDropdown.Item>
                             {/* <NavDropdown.Item href="#action/3.3">Top ranked</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.4">Top predictors</NavDropdown.Item> */}
                         </NavDropdown>
 
                         <NavDropdown title= {<span className="h5 font-weight-bold text-dark">Hot Trends Markets </span>} id="hot-trend-markets">
-                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/current">Current market</NavDropdown.Item>
-                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/marketlist">Market List</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/current">Current Market</NavDropdown.Item>
+                            <NavDropdown.Item as={NavLink} to="/markets/hottrend/marketlist">Markets List</NavDropdown.Item>
                             {/* <NavDropdown.Item >Top ranked</NavDropdown.Item>
                             <NavDropdown.Item >Top predictors</NavDropdown.Item> */}
                         </NavDropdown>

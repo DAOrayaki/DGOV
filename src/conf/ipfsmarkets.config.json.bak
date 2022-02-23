@@ -1,5 +1,5 @@
 {
-  "questionId": "0x6715e594855b01b7da83204a66929761b80463ec7898e634504023f4801be112",
+  "questionId": "0x98b3dcfcb6b29372e6ce245edee35847a944ecfb532823e255889da2ec0002bf",
   "title": "In season 2021-1-25, Which article will be the hot trend?",
   "outcomes": [
     {
@@ -38,7 +38,7 @@
       "link": "https://daorayaki.org/daorayaki-nftart/"
     },
     {
-      "title": "DAOrayaki ｜DAO 的一大考验：贡献定价、补偿以及实践模型",
+      "title": "DAOrayaki ｜DAO 的一大考验: 贡献定价、补偿以及实践模型",
       "short": "Hot-8",
       "link": "https://daorayaki.org/daorayaki-a-big-test-for-daos/"
     },
@@ -46,6 +46,11 @@
       "title": "DAOrayaki ｜去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
       "short": "Hot-9",
       "link": "https://daorayaki.org/decentralizing-journals-and-peer-review-daos/"
+    },
+    {
+      "title": "DAOrayaki ｜DAO与组织管理发展史",
+      "short": "Hot-10",
+      "link": "https://media.daorayaki.org/daos-unlock-how-were-made-to-work/"
     }
   ],
   "questionType": 1
