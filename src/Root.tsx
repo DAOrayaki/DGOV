@@ -13,7 +13,6 @@ const client = new ApolloClient({
 const Root: React.FC = () => {
     return (
     <ApolloProvider client={client}>
-
     <App />
     </ApolloProvider>
     )

@@ -1,60 +1,44 @@
 {
   "network": "local",
   "networkId": 56,
-  "lmsrAddress": "0xF0D96a7EDe982Cb7AC4b5104E5cB3ED669eFF002",
+  "lmsrAddress": "0x25690252b633bb98E38379d16Cc8E89a9fa0006b",
   "markets": [
     {
-      "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684343",
-      "title": "In season 2022-2-21, Which article will be the hot trend?",
-      "questionType": 1,
-      "closeDelay": 3,
+      "questionId": "0x4b22fe478b95fdaa835ddddf631ab29f12900b62061e0c5fd8564ddb7b684342",
+      "title": "In season 2022-2-25, Which proposals will be passed and finished on time?",
+      "questionType": 0,
+      "closeDelay": 4,
       "resolveDelay": 3,
-      "resultCount": 1,
+      "resultCount": 4,
       "outcomes": [
         {
-          "title": "DAOrayaki ｜a16z：Web2和Web3之间被忽视的连接：托管问题",
-          "short": "Hot-1",
-          "link": "https://media.daorayaki.org/the-missing-link-between-web2-and-web3/"
+          "title": "DCP-22: DAOrayaki | Quantum Computing and Finance",
+          "short": "DCP-22",
+          "link": "https://forum.daorayaki.org/t/dcp-22-quantum-computing-and-finance/134"
         },
         {
-          "title": "DAOrayaki ｜DeSci: 非专利长寿药再利用的财务新模式",
-          "short": "Hot-2",
-          "link": "https://media.daorayaki.org/a-new-financial-model-for-repurposing-off-patent-longevity-medicines/"
+          "title": "DCP-23: DAOrayaki | Democracy, Media, Freedom ",
+          "short": "DCP-23",
+          "link": "https://forum.daorayaki.org/t/dcp-23-democracy-media-freedom/135/3"
         },
         {
-          "title": "DAOrayaki ｜合作经济学：反对技术统治的非暴力革命",
-          "short": "Hot-3",
-          "link": "https://media.daorayaki.org/collaborative-economics/"
+          "title": "DCP-24: DAOrayaki | The Unimaginable Geometry of the Metaverse: Breaking out of Skeuomorphic Space",
+          "short": "DCP-24",
+          "link": "https://forum.daorayaki.org/t/dcp-24-daorayki-the-unimaginable-geometry-of-the-metaverse-breaking-out-of-skeuomorphic-space/136"
         },
         {
-          "title": "DAOrayaki ｜2022 DAO 研究更新：DAO 建设者需要什么？",
-          "short": "Hot-4",
-          "link": " https://media.daorayaki.org/2022-dao-research-update/"
+          "title": "DCP-25 ：DAO Bi-Weekly Report",
+          "short": "DCP-25",
+          "link": "https://forum.daorayaki.org/t/dcp-25-dao-bi-weekly-report/133"
         },
         {
-          "title": "DAOrayaki ｜Web3时代里的原住民与原生项目的无边界在线协作",
-          "short": "Hot-5",
-          "link": "https://media.daorayaki.org/daorayaki-web3/"
+          "title": "DCP-26: Daorayaki | DeSci, an opportunity to decentralize scientific research and publication",
+          "short": "DCP-26",
+          "link": "https://forum.daorayaki.org/t/dcp-26-daorayaki-desci-an-opportunity-to-decentralize-scientific-research-and-publication/137"
         },
         {
-          "title": "DAOrayaki ｜代币工程：新型组织构建路径",
-          "short": "Hot-6",
-          "link": "https://media.daorayaki.org/token-engineering-is-the-future-of-organizational-design/"
-        },
-        {
-          "title": "DAOrayaki ｜生物技术DAO的兴起",
-          "short": "Hot-7",
-          "link": "https://media.daorayaki.org/the-emergence-of-biotech-daos/"
-        },
-        {
-          "title": "DAOrayaki ｜合作社（CO-OPS）和 DAOs 可以互相学习什么",
-          "short": "Hot-8",
-          "link": "https://media.daorayaki.org/what-co-ops-and-daos-can-learn-from-each-other/"
-        },
-        {
-          "title": "DAOrayaki ｜社交代币经济学：Rally 和 Roll 模型",
-          "short": "Hot-9",
-          "link": "https://media.daorayaki.org/social-token-economics/"
+          "title": "DCP-0: None",
+          "short": "DCP-0"
         }
       ]
     }

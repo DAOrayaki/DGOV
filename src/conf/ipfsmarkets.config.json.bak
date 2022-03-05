@@ -1,57 +1,36 @@
 {
-  "questionId": "0x98b3dcfcb6b29372e6ce245edee35847a944ecfb532823e255889da2ec0002bf",
-  "title": "In season 2021-1-25, Which article will be the hot trend?",
+  "questionId": "0xadc498ef94b988c6ab1641aff16e4bab69cd77599708341ab419fd0335747366",
+  "title": "In season 2022-2-25, Which proposals will be passed and finished on time?",
   "outcomes": [
     {
-      "title": "DAOrayaki ｜如何进行良好的治理",
-      "short": "Hot-1",
-      "link": "https://media.daorayaki.org/how-to-think-about-good-governance/"
+      "title": "DCP-22: DAOrayaki | Quantum Computing and Finance",
+      "short": "DCP-22",
+      "link": "https://forum.daorayaki.org/t/dcp-22-quantum-computing-and-finance/134"
     },
     {
-      "title": "DAOrayaki ｜如何留住DAO里高质量的贡献者",
-      "short": "Hot-2",
-      "link": "https://media.daorayaki.org/how-to-retain-high-value-contributors-to-your-dao/"
+      "title": "DCP-23: DAOrayaki | Democracy, Media, Freedom ",
+      "short": "DCP-23",
+      "link": "https://forum.daorayaki.org/t/dcp-23-democracy-media-freedom/135/3"
     },
     {
-      "title": "DAOrayaki ｜独家报道: 用科罗拉多州合作法规解开 DAO 之谜",
-      "short": "Hot-3",
-      "link": "https://daorayaki.org/exclusive-report/"
+      "title": "DCP-24: DAOrayaki | The Unimaginable Geometry of the Metaverse: Breaking out of Skeuomorphic Space",
+      "short": "DCP-24",
+      "link": "https://forum.daorayaki.org/t/dcp-24-daorayki-the-unimaginable-geometry-of-the-metaverse-breaking-out-of-skeuomorphic-space/136"
     },
     {
-      "title": "DAOrayaki｜二次方融资的社交网络",
-      "short": "Hot-4",
-      "link": "https://daorayaki.org/a-quadratic-funding-powered-social-network/"
+      "title": "DCP-25 ：DAO Bi-Weekly Report",
+      "short": "DCP-25",
+      "link": "https://forum.daorayaki.org/t/dcp-25-dao-bi-weekly-report/133"
     },
     {
-      "title": "DAOrayaki ｜Chainlink 2.0: 超线性抵押的经济学解释",
-      "short": "Hot-5",
-      "link": "https://daorayaki.org/chainlink-2-0/"
+      "title": "DCP-26: Daorayaki | DeSci, an opportunity to decentralize scientific research and publication",
+      "short": "DCP-26",
+      "link": "https://forum.daorayaki.org/t/dcp-26-daorayaki-desci-an-opportunity-to-decentralize-scientific-research-and-publication/137"
     },
     {
-      "title": "DAOrayaki ｜万字详解GameFi——元宇宙的DeFi",
-      "short": "Hot-6",
-      "link": "https://daorayaki.org/gamefi-defi-in-the-metaverse/"
-    },
-    {
-      "title": "DAOrayaki ｜NFT艺术对数字艺术的影响",
-      "short": "Hot-7",
-      "link": "https://daorayaki.org/daorayaki-nftart/"
-    },
-    {
-      "title": "DAOrayaki ｜DAO 的一大考验: 贡献定价、补偿以及实践模型",
-      "short": "Hot-8",
-      "link": "https://daorayaki.org/daorayaki-a-big-test-for-daos/"
-    },
-    {
-      "title": "DAOrayaki ｜去中心化期刊和同行评审DAO——科学文章发表之合法性的演变",
-      "short": "Hot-9",
-      "link": "https://daorayaki.org/decentralizing-journals-and-peer-review-daos/"
-    },
-    {
-      "title": "DAOrayaki ｜DAO与组织管理发展史",
-      "short": "Hot-10",
-      "link": "https://media.daorayaki.org/daos-unlock-how-were-made-to-work/"
+      "title": "DCP-0: None",
+      "short": "DCP-0"
     }
   ],
-  "questionType": 1
+  "questionType": 0
 }

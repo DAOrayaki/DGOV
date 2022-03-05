@@ -1328,6 +1328,34 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@binance-chain/bsc-connector@^1.0.0", "@binance-chain/bsc-connector@^1.0.3":
+  "integrity" "sha512-f53UZhsov7r38gE8uuUiynif36T+/CvEdDu8rgpADVjzk/OfnSE60DMeei8IcqWBVO52r7PyohWjaAd3LT97xQ=="
+  "resolved" "https://registry.npmmirror.com/@binance-chain/bsc-connector/-/bsc-connector-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "@web3-react/abstract-connector" "^6.0.7"
+    "@web3-react/types" "^6.0.7"
+    "tiny-warning" "^1.0.3"
+
+"@binance-chain/bsc-use-wallet@^0.8.1":
+  "integrity" "sha512-EzE0egFpf5sgWmpkVnbBgtBlTQwdVZqfVPE/7ASMDIZ84asQ96uO/4L4bK6iBhQgCaTMNXk4k3pUiqzVHNqPFQ=="
+  "resolved" "https://registry.npmmirror.com/@binance-chain/bsc-use-wallet/-/bsc-use-wallet-0.8.1.tgz"
+  "version" "0.8.1"
+  dependencies:
+    "@aragon/provided-connector" "^6.0.7"
+    "@binance-chain/bsc-connector" "^1.0.3"
+    "@web3-react/authereum-connector" "^6.1.1"
+    "@web3-react/core" "^6.1.1"
+    "@web3-react/fortmatic-connector" "^6.0.9"
+    "@web3-react/frame-connector" "^6.0.9"
+    "@web3-react/injected-connector" "^6.0.7"
+    "@web3-react/portis-connector" "^6.1.1"
+    "@web3-react/squarelink-connector" "^6.1.1"
+    "@web3-react/torus-connector" "^6.1.1"
+    "@web3-react/walletconnect-connector" "^6.1.4"
+    "@web3-react/walletlink-connector" "^6.1.1"
+    "jsbi" "^3.1.1"
+
 "@chainsafe/libp2p-noise@^4.0.0":
   "integrity" "sha1-h7yUTVsXsaTZy+DZYM4Y4DyY51c="
   "resolved" "https://registry.nlark.com/@chainsafe/libp2p-noise/download/@chainsafe/libp2p-noise-4.1.1.tgz"

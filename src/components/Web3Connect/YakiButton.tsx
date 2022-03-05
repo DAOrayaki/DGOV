@@ -10,6 +10,8 @@ type YakiWalletProps = {
     web3: any
     account: string
     yakiAddress: string
+    disconnect: any
+    changeNetwork: any
 }
 
 
@@ -22,14 +24,72 @@ type YakiButtonProps = {
 }
 
 const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet, isError, networkId }) => {
+
+    const getNetwork = (netId: string) => {
+        let netIdName, explorerUrl;
+        switch (netId.toString()) {
+            case "1":
+                netIdName = 'Foundation'
+                explorerUrl = 'https://etherscan.io'
+                console.log('This is Foundation', netId)
+                break;
+            case "3":
+                netIdName = 'Ropsten'
+                explorerUrl = 'https://ropsten.etherscan.io'
+                console.log('This is Ropsten', netId)
+                break;
+            case "4":
+                netIdName = 'Rinkeby'
+                explorerUrl = 'https://rinkeby.etherscan.io'
+                console.log('This is Rinkeby', netId)
+                break;
+            case "42":
+                netIdName = 'Kovan'
+                explorerUrl = 'https://kovan.etherscan.io'
+                console.log('This is Kovan', netId)
+                break;
+            case "99":
+                netIdName = 'POA Core'
+                explorerUrl = 'https://poaexplorer.com'
+                console.log('This is Core', netId)
+                break;
+            case "77":
+                netIdName = 'POA Sokol'
+                explorerUrl = 'https://sokol.poaexplorer.com'
+                console.log('This is Sokol', netId)
+                break;
+            case "56":
+                netIdName = 'BSC'
+                explorerUrl = 'https://bscscan.com'
+                console.log('This is BSC', netId)
+                break;
+            case "137":
+                netIdName = 'Matic Network'
+                explorerUrl = 'https://polygonscan.com/'
+                console.log('This is Polygon', netId)
+                break;
+            default:
+                netIdName = 'Unknown'
+                console.log('This is an unknown network.', netId)
+        }
+
+        // return netIdName, explorerUrl;
+        return netIdName
+    }
+
     return (
         <>
             {!isError ? (<Button variant="outline-dark" className="pl-2 ms-4" onClick={goWallet}>
                 {`${tokenInfo.balance} YakID`}
             </Button>) : (
+                <>
+                <p className="text-danger">{`Wrong network : ${getNetwork(networkId)}`}</p>
+                <p>
                 <Button variant="danger" className="pl-2 ms-4" onClick={goWallet}>
-                    {`Wrong network : ${networkId}`}
+                    Switch to BSC
                 </Button>
+                </p>
+                </>
             )
             }
         </>
@@ -40,7 +100,7 @@ const YakiButtonComp: React.FC<YakiButtonProps> = ({ tokenInfo, goWallet, isErro
 let yakiTokenRepo: any
 
 const YakiButton: React.FC<YakiWalletProps> = ({
-    web3, account, yakiAddress
+    web3, account, yakiAddress, disconnect, changeNetwork
 }) => {
     const [isYakiTokenLoaded, setIsYakiTokenLoaded] = useState<boolean>(false)
     const [tokenInfo, setTokenInfo] = useState<any>(undefined)
@@ -51,9 +111,9 @@ const YakiButton: React.FC<YakiWalletProps> = ({
     // console.log(yakiAddress)
     const updateTik = () => {
         if (yakiTokenRepo) {
-
             // console.log('update info')
-            getYakiInfo()
+                getYakiInfo()
+
         } else {
             console.log('yaki not loaded update')
         }
@@ -66,7 +126,8 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         const init = async () => {
             try {
 
-                const networkType = await web3.eth.net.getNetworkType()
+                // const networkType = await web3.eth.net.getNetworkType()
+                const networkType = await web3.eth.net.getId() // get the network id
                 yakiTokenRepo = await loadYakiTokenRepo(web3, yakiAddress, account)
                 setNetworkId(networkType)
                 await getYakiInfo()
@@ -104,6 +165,7 @@ const YakiButton: React.FC<YakiWalletProps> = ({
         }
 
         setTokenInfo(yakiData)
+
     }
 
     // if (isYakiTokenLoaded) {
@@ -127,7 +189,7 @@ const YakiButton: React.FC<YakiWalletProps> = ({
                 )
                 : (
                     web3 && isError ? (
-                        <YakiButtonComp tokenInfo={tokenInfo} goWallet={goWallet}
+                        <YakiButtonComp tokenInfo={tokenInfo} goWallet={() => { changeNetwork(); disconnect() }}
                             isError={isError} networkId={networkId}></YakiButtonComp>
 
 
